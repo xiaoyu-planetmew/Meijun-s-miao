@@ -2,30 +2,34 @@ using UnityEngine;
 using System.Collections;
 
 public class birdMove : MonoBehaviour {
-    public float speed = 2; //[1] 物体移动速度
-    public Transform []target;  // [2] 目标
-    public float delta = 0.2f; // 误差值
-    private static int i = 0;
-
-    void Update () {
-        moveTo ();  
+    public int index = 0;                       //从初始位置触发
+    public float speed = 0.05f;                 //移动速度
+    public Transform[] theWayPoints;            //移动目标点组
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
-
-    void moveTo(){
-        // [3] 重新初始化目标点
-        //target [i].position = new Vector3 (target [i].position.x, target [i].position.y, 0);
-
-        // [4] 让物体朝向目标点 
-        transform.LookAt (target [i]);
-
-        // [5] 物体向前移动
-        transform.Translate (Vector3.forward * Time.deltaTime * speed);
-
-        // [6] 判断物体是否到达目标点
-        if (transform.position.x > target[i].position.x - delta 
-            && transform.position.x < target[i].position.x + delta
-            && transform.position.y > target[i].position.y - delta
-            && transform.position.y < target[i].position.y + delta)
-            i = (i+1)%target.Length;
+    // Update is called once per frame
+    void Update()
+    {
+        //未达到指定的index位置，调用MoveToThePoints函数每帧继续移动
+        if (transform.position != theWayPoints[index].position)
+        {
+            MoveToThePoints();  
+        }
+        //到了数组指定index位置,改变index值，不断循环
+        else
+        {
+            index = ++index % theWayPoints.Length;
+        }
+    }
+    void MoveToThePoints()
+    {
+        //从当前位置按照指定速度移到index位置，记得speed * Time.deltaTime，不然会瞬移
+        Vector2 temp = Vector2.MoveTowards(transform.position, theWayPoints[index].position, speed * Time.deltaTime);
+        //考虑到可能有碰撞检测，所以使用刚体的移动方式
+        GetComponent<Rigidbody2D>().MovePosition(temp);
+    
     }
 }
