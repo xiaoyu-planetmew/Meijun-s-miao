@@ -16,7 +16,7 @@ public class birdMove : MonoBehaviour {
         //未达到指定的index位置，调用MoveToThePoints函数每帧继续移动
         if (transform.position != theWayPoints[index].position)
         {
-            MoveToThePoints();  
+            Invoke( "MoveToThePoints" , 2f);  
         }
         //到了数组指定index位置,改变index值，不断循环
         else
