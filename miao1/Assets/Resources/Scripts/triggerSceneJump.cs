@@ -17,7 +17,7 @@ public class triggerSceneJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x - player.transform.position.x < 2)
+        if(Mathf.Abs(transform.position.x - player.transform.position.x) < 2)
         {
             SceneManager.LoadScene(sceneNum);
         }
