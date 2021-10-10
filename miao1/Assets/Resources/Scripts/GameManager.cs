@@ -12,6 +12,7 @@ public class GameManager: MonoBehaviour
     public List<int> itemNumbers = new List<int>();//HOW MANY ITEMS WE HAVE
     public List<Item> CharCollections = new List<Item>();
     public GameObject[] slots;
+    public GameObject player;
 
 
     public ItemButton thisButton;//Keep Track of which Item Button We are mouse Hovering

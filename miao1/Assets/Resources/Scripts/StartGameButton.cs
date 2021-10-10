@@ -20,6 +20,6 @@ public class StartGameButton : MonoBehaviour {
 
     private void StartGame()
     {
-        SceneManager.LoadScene(sceneNum);
+        SceneManager.LoadSceneAsync(sceneNum);
     }
 }

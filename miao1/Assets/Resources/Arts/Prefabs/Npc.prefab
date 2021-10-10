@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4633223629773115497}
   - component: {fileID: 7481697276356717233}
   - component: {fileID: 1008119435145559581}
-  - component: {fileID: 6297204513371017314}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -79,20 +78,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4465537, y: 2.572041}
   m_EdgeRadius: 0
---- !u!114 &6297204513371017314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349055113251026424}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c90398b73f4b64ea7e6295e162a9ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  chatUI: {fileID: 0}
 --- !u!1001 &9086058369276025804
 PrefabInstance:
   m_ObjectHideFlags: 0

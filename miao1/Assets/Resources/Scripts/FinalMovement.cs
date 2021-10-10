@@ -52,10 +52,10 @@ public class FinalMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
-
+        var i = transform.localScale.y;
         if (horizontalMove != 0)
         {
-            transform.localScale = new Vector3(horizontalMove * 0.4f, 0.4f, 0.4f);
+            transform.localScale = new Vector3(horizontalMove * i, i, i);
         }
 
     }
