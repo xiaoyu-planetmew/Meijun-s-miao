@@ -21,5 +21,8 @@ public class StartGameButton : MonoBehaviour {
     private void StartGame()
     {
         SceneManager.LoadSceneAsync(sceneNum);
+		
+        Time.timeScale = 1.0f;
+        GameManager.instance.isPaused = false;
     }
 }
