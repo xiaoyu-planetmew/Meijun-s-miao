@@ -55,7 +55,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         if(thisItem != null)
         {
-            Debug.Log("ENTER " + thisItem.itemName + " SLOT");
+            //Debug.Log("ENTER " + thisItem.itemName + " SLOT");
 
             tooltip.ShowTooltip();
 

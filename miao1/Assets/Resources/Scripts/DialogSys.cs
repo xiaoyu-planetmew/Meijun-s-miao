@@ -43,6 +43,7 @@ public class DialogSys : MonoBehaviour
         {
             startButton.SetActive(false);
         }
+        
     }
     void GetTextFromFile(TextAsset file)
     {
@@ -107,6 +108,8 @@ public class DialogSys : MonoBehaviour
             textBackgroundRight.gameObject.SetActive(true);
         }
         isTalking = true;
+        Time.timeScale = 0.0f;
+        GameManager.instance.isPaused = true;
         index = 0;
         textLabelcn.GetComponent<TMP_Text>().text = textList[index];
         textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
@@ -142,6 +145,8 @@ public class DialogSys : MonoBehaviour
                 textLabelcn.gameObject.SetActive(false);
                 textLabelen.gameObject.SetActive(false);
                 isTalking = false;
+                Time.timeScale = 1.0f;
+                GameManager.instance.isPaused = false;
             }
         }
         if(holdTarget)
@@ -176,6 +181,8 @@ public class DialogSys : MonoBehaviour
                 textLabelcn.gameObject.SetActive(false);
                 textLabelen.gameObject.SetActive(false);
                 isTalking = false;
+                Time.timeScale = 1.0f;
+                GameManager.instance.isPaused = false;
                 sceneTransButton.SetActive(false);
             }
         }

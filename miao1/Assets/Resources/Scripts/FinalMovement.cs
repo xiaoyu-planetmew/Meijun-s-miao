@@ -13,7 +13,7 @@ public class FinalMovement : MonoBehaviour
     private float horizontalMove;
     public Transform groundCheck;
     public LayerMask ground;
-
+    
     public bool isGround, isJump, isDashing;
 
     bool jumpPressed;
