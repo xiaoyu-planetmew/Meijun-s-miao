@@ -38,6 +38,7 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.SetActive(false);
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+                minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
                 BRhythmManager.instance.NoteHit();
             }
         }

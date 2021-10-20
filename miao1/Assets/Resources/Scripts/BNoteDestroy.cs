@@ -8,8 +8,9 @@ public class BNoteDestroy : MonoBehaviour
 
         other.gameObject.SetActive(false);          //对象池方法，把子弹失效就好了
         other.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
-        other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
         
+        other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+        other.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
         BRhythmManager.instance.NoteMissed();
     }
 }

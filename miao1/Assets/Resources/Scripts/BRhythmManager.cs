@@ -24,8 +24,8 @@ public class BRhythmManager : MonoBehaviour
     public int currentScore;
     public int scorePerNote = 1;
     public Text scoreText;
-    [Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
-    [EventID]
+    //[Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
+    //[EventID]
     //public string eventID;
     //public NoteObject noteObject;
     //Koreography playingKoreo;
