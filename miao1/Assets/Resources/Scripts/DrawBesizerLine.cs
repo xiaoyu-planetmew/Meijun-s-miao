@@ -5,17 +5,28 @@ using UnityEngine;
 
 public class DrawBesizerLine : MonoBehaviour
 {
-    public GameObject[] basePoint;  //基础点
+    //public GameObject[] basePoint;  //基础点
+    public List<Transform> basePoint = new List<Transform>();
     public int baseCount = 50;  //两个基础点之间的取点数量   值越大曲线就越平滑  但同时计算量也也越大
     public static List<Vector3> lsPoint = new List<Vector3>();
     public Transform sphere;   //目标小球
-    float speed = 60;   //运动速度
+    public float speed = 60;   //运动速度
     public float length = 0;   //小球当前的运动轨迹长度
     LineRenderer lineRender;
+    public GameObject line;
 
     void Start()
     {
-        lineRender = gameObject.GetComponent<LineRenderer>();
+        //basePoint = line.GetComponentsInChildren<GameObject>();
+        foreach(Transform child in line.transform)
+        {
+            //Debug.Log(child.gameObject.name);
+            basePoint.Add(child);
+            //basePoint[i] = line.transform.GetChild(i).gameObject;
+        }
+        
+        lineRender = line.gameObject.GetComponent<LineRenderer>();
+
         InitPoint();
     }
 
@@ -34,10 +45,10 @@ public class DrawBesizerLine : MonoBehaviour
     void InitPoint()
     {
         //获取指定的点的信息
-        Vector3[] pointPos = new Vector3[basePoint.Length];
+        Vector3[] pointPos = new Vector3[basePoint.Count];
         for (int i = 0; i < pointPos.Length; i++)
         {
-            pointPos[i] = basePoint[i].transform.position;
+            pointPos[i] = basePoint[i].position;
         }
         GetTrackPoint(pointPos);
     }
