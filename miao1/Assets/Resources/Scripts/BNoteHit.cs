@@ -7,10 +7,13 @@ public class BNoteHit : MonoBehaviour
     public KeyCode keyToPress;
     public GameObject notes;
     public List<GameObject> notelist = new List<GameObject>();
+    public GameObject key;
+    public GameObject clickDown;
     // Start is called before the first frame update
     void Start()
     {
-        
+        key = this.transform.GetChild(0).gameObject;
+        clickDown = this.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -18,6 +21,24 @@ public class BNoteHit : MonoBehaviour
     {
         notelist = BRhythmManager.instance.pooledObjects;
         noteOnTime();
+        if(Input.GetKeyDown(keyToPress))
+        {
+            key.SetActive(false);
+            clickDown.SetActive(true);
+            ;
+        }
+        if (Input.GetKey(keyToPress))
+        {
+            key.SetActive(false);
+            clickDown.SetActive(true);
+            ;
+        }
+        if (Input.GetKeyUp(keyToPress))
+        {
+            key.SetActive(true);
+            clickDown.SetActive(false);
+            
+        }
     }
     void noteOnTime()
     {

@@ -7,21 +7,23 @@ public class BNoteGenerate : MonoBehaviour
     //传统创建子弹方法需要的子弹perfabs
     //public GameObject shotObj;
 
-    public GameObject shotSpawn;                //子弹发射的初始化位置
+    //public GameObject shotSpawn;                //子弹发射的初始化位置
 
-    public float fireRate = 0.2f;               //每次发射子弹事件间隔
+    //public float fireRate = 0.2f;               //每次发射子弹事件间隔
 
-    private float nextFire;                     //下一次发射子弹的时间
+    //private float nextFire;                     //下一次发射子弹的时间
     public GameObject lines;
-    public GameObject line1;
+    
     public List<Transform> lineList;
     public List<float> trackTime = new List<float>();
     
     public List<int> line = new List<int>();
     public List<bool> usedNote;
+    public float startTime;
     //public List<float> noteInterval = new List<float>();
     void Start()
     {
+        startTime = Time.time;
         lineList = new List<Transform>();
         
         usedNote = new List<bool>();
@@ -34,6 +36,7 @@ public class BNoteGenerate : MonoBehaviour
         for(int i = 0; i < trackTime.Count; i++)
         {
             usedNote.Add(true);
+            trackTime[i] = trackTime[i] - 4.33f;
         }
         /*
         noteInterval[0] = trackTime[0];
@@ -47,7 +50,7 @@ public class BNoteGenerate : MonoBehaviour
     {
         for(int i = 0; i < trackTime.Count; i++)
         {
-            if(Time.time > trackTime[i] && usedNote[i] == true)
+            if(Time.time - startTime > trackTime[i] && usedNote[i] == true)
             {
                 GameObject bullet = BRhythmManager.instance.GetPooledObject();
                 Transform startLocation = lineList[line[i] - 1].GetChild(0);
@@ -56,6 +59,14 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.SetActive(true);        //激活子弹并初始化子弹的位置
                     bullet.transform.position = startLocation.position;
                     bullet.GetComponent<DrawBesizerLine>().line = lineList[line[i] - 1].gameObject;
+                    if(line[i] == 1 || line[i] == 4)
+                    {
+                        bullet.GetComponent<DrawBesizerLine>().speed = 62.3f;
+                    }
+                    if(!(line[i] == 1 || line[i] == 4))
+                    {
+                        bullet.GetComponent<DrawBesizerLine>().speed = 60f;
+                    }
                     bullet.GetComponent<DrawBesizerLine>().enabled = true; 
                 }
                 usedNote[i] = false;

@@ -10,7 +10,7 @@ public class DrawBesizerLine : MonoBehaviour
     public int baseCount = 50;  //两个基础点之间的取点数量   值越大曲线就越平滑  但同时计算量也也越大
     private List<Vector3> lsPoint = new List<Vector3>();
     public Transform sphere;   //目标小球
-    public float speed = 60;   //运动速度
+    public float speed;   //运动速度
     public float length = 0;   //小球当前的运动轨迹长度
     //LineRenderer lineRender;
     public GameObject line;
