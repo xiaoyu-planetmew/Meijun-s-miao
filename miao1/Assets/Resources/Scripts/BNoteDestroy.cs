@@ -11,6 +11,10 @@ public class BNoteDestroy : MonoBehaviour
         
         other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
         other.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
-        BRhythmManager.instance.NoteMissed();
+        if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
+        {
+            BRhythmManager.instance.NoteMissed();
+        }
+        
     }
 }

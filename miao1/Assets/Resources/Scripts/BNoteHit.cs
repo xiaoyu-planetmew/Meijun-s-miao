@@ -54,12 +54,13 @@ public class BNoteHit : MonoBehaviour
         }
         if(Input.GetKeyDown(keyToPress))
         {
-            if(minDistance < 1f)
+            if(minDistance < 1f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
                 minTrans.gameObject.SetActive(false);
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
+                minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
                 BRhythmManager.instance.NoteHit();
             }
         }

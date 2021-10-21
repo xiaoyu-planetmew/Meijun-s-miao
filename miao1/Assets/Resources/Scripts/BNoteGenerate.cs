@@ -20,6 +20,7 @@ public class BNoteGenerate : MonoBehaviour
     public List<int> line = new List<int>();
     public List<bool> usedNote;
     public float startTime;
+    public float endTime;
     //public List<float> noteInterval = new List<float>();
     void Start()
     {
@@ -67,7 +68,8 @@ public class BNoteGenerate : MonoBehaviour
                     {
                         bullet.GetComponent<DrawBesizerLine>().speed = 60f;
                     }
-                    bullet.GetComponent<DrawBesizerLine>().enabled = true; 
+                    bullet.GetComponent<DrawBesizerLine>().enabled = true;
+                    bullet.GetComponent<BNoteCanBeCount>().canBeCount = true; 
                 }
                 usedNote[i] = false;
                 /*
@@ -77,6 +79,10 @@ public class BNoteGenerate : MonoBehaviour
                 Debug.Log(Time.time);
                 */
             }
+        }
+        if(Time.time - startTime > endTime + 1)
+        {
+            
         }
         /*
         if (Time.time > nextFire)               //可以发射子弹时间
@@ -96,9 +102,5 @@ public class BNoteGenerate : MonoBehaviour
             }
         }
         */
-    }
-    void noteEstablish()
-    {
-        
     }
 }

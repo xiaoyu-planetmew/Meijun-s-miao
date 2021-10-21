@@ -10,7 +10,9 @@ using UnityEngine.SceneManagement;
 public class BRhythmManager : MonoBehaviour
 {
     public AudioSource theMusic;
-    public VideoPlayer vPlayer;
+    public float musicMuteTime;
+    //public VideoPlayer vPlayer;
+    public GameObject aniPlayer;
     public bool startPlaying;
     /*
     public BeatScroller theBSq;
@@ -21,9 +23,14 @@ public class BRhythmManager : MonoBehaviour
     public BeatScroller theBSm;
     */
     public static BRhythmManager instance;
-    public int currentScore;
+    public int combo = 0;
+    public int currentScore = 0;
+    public int currentNoteCount = 0;
+    public float accurary;
     public int scorePerNote = 1;
+    public Text comboText;
     public Text scoreText;
+    public Text accuraryText;
     //[Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
     //[EventID]
     //public string eventID;
@@ -47,7 +54,9 @@ public class BRhythmManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        scoreText.text = "Score: 0";
+        comboText.text = "0";
+        scoreText.text = "0";
+        accuraryText.text = "0%";
         pooledObjects = new List<GameObject>();         //初始化链表
         for (int i = 0; i < pooledAmount; ++i)
         {
@@ -68,20 +77,40 @@ public class BRhythmManager : MonoBehaviour
             {
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
-                vPlayer.Play();
-                theMusic.Play();
+                //vPlayer.Play();
+                
+                aniPlayer.SetActive(true);
+                StartCoroutine(audioPlay());
+                
             }
         }
+    }
+    IEnumerator audioPlay()
+    {
+        yield return new WaitForSeconds(4.33f);
+        theMusic.Play();
+        Debug.Log("start");
     }
     public void NoteHit()
     {
         Debug.Log("On Time");
+        combo += scorePerNote;
         currentScore += scorePerNote;
-        scoreText.text = "Score: " + currentScore;
+        currentNoteCount++;
+        comboText.text = combo.ToString();
+        scoreText.text = currentScore.ToString();
+        accurary = (float)currentScore / currentNoteCount;
+        //accuraryText.text = accurary.ToString() + "%";
+        accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");
     }
     public void NoteMissed()
     {
         Debug.Log("Missed");
+        combo = 0;
+        currentNoteCount++;
+        comboText.text = combo.ToString();
+        accurary = (float)currentScore / currentNoteCount;
+        accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");
     }
     public GameObject GetPooledObject()                 //获取对象池中可以使用的子弹。
     {
