@@ -26,6 +26,7 @@ public class BRhythmManager : MonoBehaviour
     public int combo = 0;
     public int currentScore = 0;
     public int currentNoteCount = 0;
+    public int currentHit = 0;
     public float accurary;
     public int scorePerNote = 1;
     public Text comboText;
@@ -55,7 +56,7 @@ public class BRhythmManager : MonoBehaviour
     {
         instance = this;
         comboText.text = "0";
-        scoreText.text = "0";
+        scoreText.text = "score:0";
         accuraryText.text = "0%";
         pooledObjects = new List<GameObject>();         //初始化链表
         for (int i = 0; i < pooledAmount; ++i)
@@ -73,7 +74,7 @@ public class BRhythmManager : MonoBehaviour
     {
         if(!startPlaying)
         {
-            if(Input.anyKeyDown)
+            if (true)
             {
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
@@ -87,7 +88,7 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator audioPlay()
     {
-        yield return new WaitForSeconds(4.33f);
+        yield return new WaitForSeconds(0f);
         theMusic.Play();
         Debug.Log("start");
     }
@@ -95,10 +96,11 @@ public class BRhythmManager : MonoBehaviour
     {
         Debug.Log("On Time");
         combo += scorePerNote;
-        currentScore += scorePerNote;
+        currentScore = currentScore + scorePerNote;
+        currentHit = currentHit + scorePerNote + combo; 
         currentNoteCount++;
         comboText.text = combo.ToString();
-        scoreText.text = currentScore.ToString();
+        scoreText.text ="score:" + currentHit.ToString();
         accurary = (float)currentScore / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");

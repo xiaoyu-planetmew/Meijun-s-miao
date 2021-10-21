@@ -37,7 +37,7 @@ public class BNoteGenerate : MonoBehaviour
         for(int i = 0; i < trackTime.Count; i++)
         {
             usedNote.Add(true);
-            trackTime[i] = trackTime[i] - 4.33f;
+           trackTime[i] = trackTime[i] - 4.33f;
         }
         /*
         noteInterval[0] = trackTime[0];

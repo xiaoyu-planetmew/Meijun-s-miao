@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6064e553f9d254983ad3c8c1c7ab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 122
+  keyToPress: 102
   notes: {fileID: 580141425}
   notelist: []
   key: {fileID: 0}
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6064e553f9d254983ad3c8c1c7ab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 97
+  keyToPress: 100
   notes: {fileID: 580141425}
   notelist: []
   key: {fileID: 0}
@@ -1362,15 +1362,17 @@ PolygonCollider2D:
       - {x: -9.702562, y: -0.9481218}
       - {x: -10.223063, y: -2.1245806}
       - {x: -3.0213828, y: -6.016916}
-      - {x: 2.5833359, y: -5.919572}
+      - {x: 0.80937386, y: -6.146383}
+      - {x: 3.0024614, y: -6.1801095}
       - {x: 10.780118, y: -1.889678}
       - {x: 9.589331, y: -0.6600256}
       - {x: 8.627747, y: -2.2011945}
       - {x: 6.0425186, y: -4.081629}
-      - {x: 2.1573923, y: -5.3497834}
-      - {x: -0.10202646, y: -5.330056}
-      - {x: -2.3263814, y: -5.4375095}
-      - {x: -3.3383698, y: -5.2810984}
+      - {x: 3.6056962, y: -5.327402}
+      - {x: 0.10534477, y: -5.369791}
+      - {x: -0.03406024, y: -5.3527117}
+      - {x: -2.7681623, y: -5.2789216}
+      - {x: -3.6555457, y: -5.213132}
 --- !u!114 &476551539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,6 +1529,7 @@ MonoBehaviour:
   line: 010000000200000003000000040000000500000006000000
   usedNote: 
   startTime: 0
+  endTime: 0
 --- !u!114 &520787103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,11 +1543,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMusic: {fileID: 520787104}
+  musicMuteTime: 0
   aniPlayer: {fileID: 1993278360}
   startPlaying: 0
   combo: 0
   currentScore: 0
   currentNoteCount: 0
+  currentHit: 0
   accurary: 0
   scorePerNote: 1
   comboText: {fileID: 1709859858}
@@ -1565,7 +1570,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4704fd7e976738741b0718cdc55a3c4b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1729,8 +1734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 467, y: 354}
-  m_SizeDelta: {x: 317.27, y: 279.48}
+  m_AnchoredPosition: {x: 1.4552e-11, y: 255.76}
+  m_SizeDelta: {x: 317.27, y: 83.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540600161
 MonoBehaviour:
@@ -1754,18 +1759,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 176a59cb4ffefca478be9f5e42849840, type: 3}
-    m_FontSize: 90
+    m_FontSize: 54
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 211
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 0%
 --- !u!222 &540600162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2066,7 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6064e553f9d254983ad3c8c1c7ab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 109
+  keyToPress: 106
   notes: {fileID: 580141425}
   notelist: []
   key: {fileID: 0}
@@ -2351,7 +2356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6064e553f9d254983ad3c8c1c7ab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 113
+  keyToPress: 115
   notes: {fileID: 580141425}
   notelist: []
   key: {fileID: 0}
@@ -2489,7 +2494,7 @@ Transform:
   - {fileID: 2039901189}
   - {fileID: 774112912}
   m_Father: {fileID: 1955256771}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745129907
 GameObject:
@@ -2698,7 +2703,7 @@ GameObject:
   m_Layer: 0
   m_Name: p6
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4842,7 +4847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6064e553f9d254983ad3c8c1c7ab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 111
+  keyToPress: 108
   notes: {fileID: 580141425}
   notelist: []
   key: {fileID: 0}
@@ -4911,8 +4916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -514, y: 354}
-  m_SizeDelta: {x: 317.27, y: 279.48}
+  m_AnchoredPosition: {x: -568, y: 409}
+  m_SizeDelta: {x: 588.37, y: 89.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510808276
 MonoBehaviour:
@@ -4936,18 +4941,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 176a59cb4ffefca478be9f5e42849840, type: 3}
-    m_FontSize: 90
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 211
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: "score\uFF1A0"
 --- !u!222 &1510808277
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5089,7 +5094,7 @@ Transform:
   - {fileID: 1275592208}
   - {fileID: 134033232}
   m_Father: {fileID: 1955256771}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634618550
 GameObject:
@@ -5439,9 +5444,9 @@ Transform:
   - {fileID: 2081693367}
   - {fileID: 1210934780}
   - {fileID: 398554090}
-  - {fileID: 736811254}
-  - {fileID: 622368762}
   - {fileID: 1556397102}
+  - {fileID: 622368762}
+  - {fileID: 736811254}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5462,7 +5467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1993278361
 Animator:
   serializedVersion: 3
@@ -5541,8 +5546,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993278360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.52, z: 0}
+  m_LocalScale: {x: 0.955, y: 0.89, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
