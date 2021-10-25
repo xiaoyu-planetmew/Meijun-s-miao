@@ -55,7 +55,7 @@ public class BNoteHit : MonoBehaviour
         }
         if(Input.GetKeyDown(keyToPress))
         {
-            if(minDistance < 1f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
+            if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
                 minTrans.gameObject.SetActive(false);
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
