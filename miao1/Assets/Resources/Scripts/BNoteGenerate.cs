@@ -12,9 +12,12 @@ public class BNoteGenerate : MonoBehaviour
     //public float fireRate = 0.2f;               //每次发射子弹事件间隔
 
     //private float nextFire;                     //下一次发射子弹的时间
+    
     public GameObject lines;
     
     public List<Transform> lineList;
+    public TextAsset saveDate;
+    public List<string> saveList = new List<string>();
     public List<float> trackTime = new List<float>();
     
     public List<int> line = new List<int>();
@@ -34,10 +37,11 @@ public class BNoteGenerate : MonoBehaviour
             lineList.Add(child);
             //basePoint[i] = line.transform.GetChild(i).gameObject;
         }
+        readFromTXT();
         for(int i = 0; i < trackTime.Count; i++)
         {
             usedNote.Add(true);
-           trackTime[i] = trackTime[i] - 4.33f;
+            trackTime[i] = trackTime[i];
         }
         /*
         noteInterval[0] = trackTime[0];
@@ -47,6 +51,45 @@ public class BNoteGenerate : MonoBehaviour
         }
         */
     }
+    void readFromTXT()
+    {
+        saveList.Clear();
+        var lineData = saveDate.text.Split('\n');
+        foreach(var line in lineData)
+        {
+            saveList.Add(line);
+        }
+        for(int i = 0; i < lineData.Length - 1; i++)
+        {
+            var noteData = lineData[i].Split(',');
+            trackTime.Add(float.Parse(noteData[1]));
+            if(noteData[2] == "S")
+            {
+                line.Add(1);
+            }
+            if(noteData[2] == "D")
+            {
+                line.Add(2);
+            }
+            if(noteData[2] == "F")
+            {
+                line.Add(3);
+            }
+            if(noteData[2] == "J")
+            {
+                line.Add(4);
+            }
+            if(noteData[2] == "K")
+            {
+                line.Add(5);
+            }
+            if(noteData[2] == "L")
+            {
+                line.Add(6);
+            }
+
+        }
+    }
     void FixedUpdate()
     {
         for(int i = 0; i < trackTime.Count; i++)
@@ -54,10 +97,13 @@ public class BNoteGenerate : MonoBehaviour
             if(Time.time - startTime > trackTime[i] && usedNote[i] == true)
             {
                 GameObject bullet = BRhythmManager.instance.GetPooledObject();
+                
                 Transform startLocation = lineList[line[i] - 1].GetChild(0);
                 if(bullet != null)                  //不为空时执行
                 {
                     bullet.SetActive(true);        //激活子弹并初始化子弹的位置
+                    Debug.Log(bullet);
+                    Debug.Log(i);
                     bullet.transform.position = startLocation.position;
                     bullet.GetComponent<DrawBesizerLine>().line = lineList[line[i] - 1].gameObject;
                     if(line[i] == 1 || line[i] == 4)
@@ -69,7 +115,8 @@ public class BNoteGenerate : MonoBehaviour
                         bullet.GetComponent<DrawBesizerLine>().speed = 60f;
                     }
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
-                    bullet.GetComponent<BNoteCanBeCount>().canBeCount = true; 
+                    bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
+                    bullet.GetComponent<DrawBesizerLine>().num = i; 
                 }
                 usedNote[i] = false;
                 /*
@@ -80,10 +127,10 @@ public class BNoteGenerate : MonoBehaviour
                 */
             }
         }
-        if(Time.time - startTime > endTime + 1)
-        {
+        //if(Time.time - startTime > endTime + 1)
+        //{
             
-        }
+        //}
         /*
         if (Time.time > nextFire)               //可以发射子弹时间
         {

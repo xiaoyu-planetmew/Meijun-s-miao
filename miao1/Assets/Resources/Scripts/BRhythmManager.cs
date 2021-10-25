@@ -26,7 +26,6 @@ public class BRhythmManager : MonoBehaviour
     public int combo = 0;
     public int currentScore = 0;
     public int currentNoteCount = 0;
-    public int currentHit = 0;
     public float accurary;
     public int scorePerNote = 1;
     public Text comboText;
@@ -44,7 +43,7 @@ public class BRhythmManager : MonoBehaviour
     
     //public static BNotesPool BNotesPoolInstance;      //子弹池单例
     public GameObject bulletObj;                        //子弹perfabs
-    public int pooledAmount = 5;                        //子弹池初始大小
+    public int pooledAmount = 6;                        //子弹池初始大小
     public bool lockPoolSize = false;                   //是否锁定子弹池大小
 
     public List<GameObject> pooledObjects;             //子弹池链表
@@ -56,7 +55,7 @@ public class BRhythmManager : MonoBehaviour
     {
         instance = this;
         comboText.text = "0";
-        scoreText.text = "score:0";
+        scoreText.text = "0";
         accuraryText.text = "0%";
         pooledObjects = new List<GameObject>();         //初始化链表
         for (int i = 0; i < pooledAmount; ++i)
@@ -74,7 +73,7 @@ public class BRhythmManager : MonoBehaviour
     {
         if(!startPlaying)
         {
-            if (true)
+            if(true)
             {
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
@@ -94,20 +93,19 @@ public class BRhythmManager : MonoBehaviour
     }
     public void NoteHit()
     {
-        Debug.Log("On Time");
+        //Debug.Log("On Time");
         combo += scorePerNote;
-        currentScore = currentScore + scorePerNote;
-        currentHit = currentHit + scorePerNote + combo; 
+        currentScore += scorePerNote;
         currentNoteCount++;
         comboText.text = combo.ToString();
-        scoreText.text ="score:" + currentHit.ToString();
+        scoreText.text = currentScore.ToString();
         accurary = (float)currentScore / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");
     }
     public void NoteMissed()
     {
-        Debug.Log("Missed");
+        //Debug.Log("Missed");
         combo = 0;
         currentNoteCount++;
         comboText.text = combo.ToString();

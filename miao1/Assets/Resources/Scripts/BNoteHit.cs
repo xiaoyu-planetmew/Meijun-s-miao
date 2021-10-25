@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BNoteHit : MonoBehaviour
 {
     public KeyCode keyToPress;
@@ -9,6 +9,7 @@ public class BNoteHit : MonoBehaviour
     public List<GameObject> notelist = new List<GameObject>();
     public GameObject key;
     public GameObject clickDown;
+    public GameObject num;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +62,7 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+                num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 BRhythmManager.instance.NoteHit();
             }
         }
