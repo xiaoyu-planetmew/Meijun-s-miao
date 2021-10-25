@@ -87,7 +87,7 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator audioPlay()
     {
-        yield return new WaitForSeconds(4.52f);
+        yield return new WaitForSeconds(6.63f);
         theMusic.Play();
         Debug.Log("start");
     }
