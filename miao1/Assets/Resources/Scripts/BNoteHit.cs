@@ -62,7 +62,8 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
-                num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
+                //num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
+                num.GetComponent<Text>().text = Time.time.ToString();
                 BRhythmManager.instance.NoteHit();
             }
         }
