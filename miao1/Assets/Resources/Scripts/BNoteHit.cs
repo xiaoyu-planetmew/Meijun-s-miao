@@ -53,6 +53,22 @@ public class BNoteHit : MonoBehaviour
                 minTrans = notelist[i];
             }
         }
+        /*
+        if(true)
+        {
+            if(minDistance < 0.2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
+            {
+                minTrans.gameObject.SetActive(false);
+                minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
+                minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+                minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
+                minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+                num.GetComponent<Text>().text = Time.time.ToString();
+                Debug.Log(Time.time);
+                BRhythmManager.instance.NoteHit();
+            }
+        }
+        */
         if(Input.GetKeyDown(keyToPress))
         {
             if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
