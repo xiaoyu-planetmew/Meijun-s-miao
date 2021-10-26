@@ -31,7 +31,7 @@ public class BRhythmManager : MonoBehaviour
     public Text comboText;
     public Text scoreText;
     public Text accuraryText;
-    public float dealyTime;
+    public float delayTime;
     //[Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
     //[EventID]
     //public string eventID;
@@ -88,7 +88,7 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator audioPlay()
     {
-        yield return new WaitForSeconds(dealyTime);
+        yield return new WaitForSeconds(delayTime);
         theMusic.Play();
         Debug.Log("start");
     }

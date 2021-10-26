@@ -18,7 +18,7 @@ public class BNoteHit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         notelist = BRhythmManager.instance.pooledObjects;
         noteOnTime();
@@ -69,7 +69,7 @@ public class BNoteHit : MonoBehaviour
             }
         }
         */
-        if(Input.GetKeyDown(keyToPress))
+        if(Input.GetKey(keyToPress))
         {
             if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
             {

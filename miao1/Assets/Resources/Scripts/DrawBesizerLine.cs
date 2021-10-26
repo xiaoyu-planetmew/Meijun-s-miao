@@ -15,8 +15,10 @@ public class DrawBesizerLine : MonoBehaviour
     //LineRenderer lineRender;
     public GameObject line;
     public int num;
-    void Start()
+    void OnEnable()
     {
+        basePoint.Clear();
+        lsPoint.Clear();
         //basePoint = line.GetComponentsInChildren<GameObject>();
         foreach(Transform child in line.transform)
         {
@@ -44,6 +46,7 @@ public class DrawBesizerLine : MonoBehaviour
     //初始化算出所有的点的信息
     void InitPoint()
     {
+        
         //获取指定的点的信息
         Vector3[] pointPos = new Vector3[basePoint.Count];
         for (int i = 0; i < pointPos.Length; i++)
