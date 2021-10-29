@@ -10,13 +10,16 @@ public class BNoteHit : MonoBehaviour
     public GameObject key;
     public GameObject clickDown;
     public GameObject num;
+    private Animator ani;
+    private string animatorTriggerHit = "Hit";
+    //private bool canHit;
     // Start is called before the first frame update
     void Start()
     {
         key = this.transform.GetChild(0).gameObject;
         clickDown = this.transform.GetChild(1).gameObject;
+        ani = this.transform.GetChild(2).GetComponent<Animator>();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -81,9 +84,11 @@ public class BNoteHit : MonoBehaviour
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 Debug.Log(Time.time);
                 BRhythmManager.instance.NoteHit();
+                ani.SetTrigger(animatorTriggerHit);
             }
         }
     }
+    
     /*
     void OnTriggerEnter2D(Collider2D other)
     {
