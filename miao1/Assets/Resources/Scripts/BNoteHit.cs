@@ -11,6 +11,8 @@ public class BNoteHit : MonoBehaviour
     public GameObject clickDown;
     public GameObject num;
     private Animator ani;
+    public GameObject mask;
+    
     private string animatorTriggerHit = "Hit";
     //private bool canHit;
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class BNoteHit : MonoBehaviour
         key = this.transform.GetChild(0).gameObject;
         clickDown = this.transform.GetChild(1).gameObject;
         ani = this.transform.GetChild(2).GetComponent<Animator>();
+        
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -74,6 +77,7 @@ public class BNoteHit : MonoBehaviour
         */
         if(Input.GetKey(keyToPress))
         {
+            mask.SetActive(true);
             if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
                 minTrans.gameObject.SetActive(false);
@@ -81,11 +85,16 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+                minTrans.gameObject.GetComponent<TrailRenderer>().time = -1;
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 Debug.Log(Time.time);
                 BRhythmManager.instance.NoteHit();
                 ani.SetTrigger(animatorTriggerHit);
             }
+        }
+        else
+        {
+            mask.SetActive(false);
         }
     }
     

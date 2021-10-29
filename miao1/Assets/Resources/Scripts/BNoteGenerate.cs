@@ -117,6 +117,8 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
                     bullet.GetComponent<DrawBesizerLine>().num = i; 
+                    bullet.GetComponent<TrailRenderer>().time = -1;
+                    StartCoroutine(trailReset(bullet));
                 }
                 usedNote[i] = false;
                 /*
@@ -149,5 +151,10 @@ public class BNoteGenerate : MonoBehaviour
             }
         }
         */
+    }
+    IEnumerator trailReset(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.1f);
+        obj.GetComponent<TrailRenderer>().time = 1;
     }
 }
