@@ -49,8 +49,14 @@ public class BRhythmManager : MonoBehaviour
 
     public List<GameObject> pooledObjects;             //子弹池链表
     public GameObject notes;
-
+    
+    public int longPooledAmount = 6;                        //子弹池初始大小
+    
+    public List<GameObject> longPooledObjects;             //子弹池链表
+    public GameObject longNotes;
+    
     private int currentIndex = 0; 
+    private int longCurrentIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,10 +69,20 @@ public class BRhythmManager : MonoBehaviour
         {
             GameObject obj = Instantiate(bulletObj);    //创建子弹对象
             obj.transform.parent = notes.transform;
+            obj.tag = "note";
+            obj.transform.GetChild(0).GetComponent<TrailRenderer>().enabled = false;
             obj.SetActive(false);                       //设置子弹无效
             pooledObjects.Add(obj);                     //把子弹添加到链表（对象池）中
         }
-        
+        for (int i = 0; i < longPooledAmount; ++i)
+        {
+            GameObject longobj = Instantiate(bulletObj);    //创建子弹对象
+            longobj.transform.parent = longNotes.transform;
+            longobj.tag = "longNote";
+            longobj.transform.GetChild(0).GetComponent<TrailRenderer>().enabled = true;
+            longobj.SetActive(false);                       //设置子弹无效
+            longPooledObjects.Add(longobj);                     //把子弹添加到链表（对象池）中
+        }
     }
 
     // Update is called once per frame
@@ -104,6 +120,10 @@ public class BRhythmManager : MonoBehaviour
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");
     }
+    public void longNoteHit()
+    {
+        
+    }
     public void NoteMissed()
     {
         //Debug.Log("Missed");
@@ -140,5 +160,33 @@ public class BRhythmManager : MonoBehaviour
         //如果遍历完没有而且锁定了对象池大小，返回空。
         return null;
     }
+    public GameObject GetLongPooledObject()                 //获取对象池中可以使用的子弹。
+    {
+        for (int i = 0; i < longPooledObjects.Count; ++i)   //把对象池遍历一遍
+        {
+            //这里简单优化了一下，每一次遍历都是从上一次被使用的子弹的下一个，而不是每次遍历从0开始。
+            //例如上一次获取了第4个子弹，currentIndex就为5，这里从索引5开始遍历，这是一种贪心算法。
+            int temI = (longCurrentIndex + i) % longPooledObjects.Count;
+            if (!longPooledObjects[temI].activeInHierarchy) //判断该子弹是否在场景中激活。
+            {
+                longCurrentIndex = (temI + 1) % longPooledObjects.Count;
+                return longPooledObjects[temI];             //找到没有被激活的子弹并返回
+            }
+        }
 
+
+        //如果遍历完一遍子弹库发现没有可以用的，执行下面
+        if(!lockPoolSize)                               //如果没有锁定对象池大小，创建子弹并添加到对象池中。
+        {
+            GameObject obj = Instantiate(bulletObj);
+            obj.transform.parent = longNotes.transform;
+            obj.tag = "longNote";
+            obj.GetComponent<TrailRenderer>().enabled = true;
+            longPooledObjects.Add(obj);
+            return obj;
+        }
+
+        //如果遍历完没有而且锁定了对象池大小，返回空。
+        return null;
+    }
 }

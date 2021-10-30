@@ -10,6 +10,8 @@ TagManager:
   - ActivatorZ
   - ActivatorX
   - item
+  - note
+  - longNote
   layers:
   - Default
   - TransparentFX

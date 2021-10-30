@@ -22,6 +22,11 @@ public class BNoteGenerate : MonoBehaviour
     
     public List<int> line = new List<int>();
     public List<bool> usedNote;
+   
+    public List<float> longStartList = new List<float>();
+    public List<float> longEndList = new List<float>();
+    public List<int> longLineList = new List<int>();
+    public List<bool> usedLongNote;
     public float startTime;
     public float endTime;
     //public List<float> noteInterval = new List<float>();
@@ -102,8 +107,8 @@ public class BNoteGenerate : MonoBehaviour
                 if(bullet != null)                  //不为空时执行
                 {
                     bullet.SetActive(true);        //激活子弹并初始化子弹的位置
-                    Debug.Log(bullet);
-                    Debug.Log(i);
+                    //Debug.Log(bullet);
+                    //Debug.Log(i);
                     bullet.transform.position = startLocation.position;
                     bullet.GetComponent<DrawBesizerLine>().line = lineList[line[i] - 1].gameObject;
                     if(line[i] == 1 || line[i] == 4)
@@ -117,16 +122,42 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
                     bullet.GetComponent<DrawBesizerLine>().num = i; 
-                    bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
-                    StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject));
+                    //bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+                    //StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject));
                 }
-                usedNote[i] = false;
-                /*
-                Debug.Log(i);
-                Debug.Log(line[i]);
-                Debug.Log(startLocation);
-                Debug.Log(Time.time);
-                */
+                usedNote[i] = false;                
+            }
+        }
+        for(int i = 0; i < longLineList.Count; i++)
+        {
+            if(Time.time - startTime > longStartList[i] && usedLongNote[i] == true)
+            {
+                GameObject bullet = BRhythmManager.instance.GetLongPooledObject();
+                
+                Transform startLocation = lineList[longLineList[i] - 1].GetChild(0);
+                if(bullet != null)                  //不为空时执行
+                {
+                    bullet.SetActive(true);        //激活子弹并初始化子弹的位置
+                    //Debug.Log(bullet);
+                    //Debug.Log(i);
+                    bullet.transform.position = startLocation.position;
+                    bullet.GetComponent<DrawBesizerLine>().line = lineList[longLineList[i] - 1].gameObject;
+                    if(longLineList[i] == 1 || longLineList[i] == 4)
+                    {
+                        bullet.GetComponent<DrawBesizerLine>().speed = 124.6f;
+                    }
+                    if(!(longLineList[i] == 1 || longLineList[i] == 4))
+                    {
+                        bullet.GetComponent<DrawBesizerLine>().speed = 120f;
+                    }
+                    bullet.GetComponent<DrawBesizerLine>().enabled = true;
+                    bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
+                    bullet.GetComponent<DrawBesizerLine>().num = i; 
+                    bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+                    
+                    StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject, longEndList[i] - longStartList[i]));
+                }
+                usedLongNote[i] = false;                
             }
         }
         //if(Time.time - startTime > endTime + 1)
@@ -152,9 +183,9 @@ public class BNoteGenerate : MonoBehaviour
         }
         */
     }
-    IEnumerator trailReset(GameObject obj)
+    IEnumerator trailReset(GameObject obj, float noteLength)
     {
         yield return new WaitForSeconds(0.1f);
-        obj.GetComponent<TrailRenderer>().time = 1;
+        obj.GetComponent<TrailRenderer>().time = noteLength;
     }
 }
