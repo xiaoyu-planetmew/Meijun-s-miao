@@ -117,8 +117,8 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
                     bullet.GetComponent<DrawBesizerLine>().num = i; 
-                    bullet.GetComponent<TrailRenderer>().time = -1;
-                    StartCoroutine(trailReset(bullet));
+                    bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+                    StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject));
                 }
                 usedNote[i] = false;
                 /*
