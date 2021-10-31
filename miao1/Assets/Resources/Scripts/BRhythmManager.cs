@@ -181,7 +181,7 @@ public class BRhythmManager : MonoBehaviour
             GameObject obj = Instantiate(bulletObj);
             obj.transform.parent = longNotes.transform;
             obj.tag = "longNote";
-            obj.GetComponent<TrailRenderer>().enabled = true;
+            obj.transform.GetChild(0).GetComponent<TrailRenderer>().enabled = true;
             longPooledObjects.Add(obj);
             return obj;
         }

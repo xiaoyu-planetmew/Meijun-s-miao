@@ -8,6 +8,7 @@ public class BNoteHit : MonoBehaviour
     public GameObject notes;
     public List<GameObject> notelist = new List<GameObject>();
     public List<GameObject> longNoteList = new List<GameObject>();
+    public List<GameObject> shortNoteList = new List<GameObject>();
     public GameObject key;
     public GameObject clickDown;
     public GameObject num;
@@ -27,11 +28,20 @@ public class BNoteHit : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        notelist = BRhythmManager.instance.pooledObjects;
-        for(int i = 0; i < BRhythmManager.instance.longPooledObjects.Count; i++)
+        //shortNoteList.Clear();
+        //longNoteList.Clear();
+        shortNoteList = BRhythmManager.instance.pooledObjects;
+        longNoteList = BRhythmManager.instance.longPooledObjects;
+        notelist.Clear();
+        for(int i = 0; i < shortNoteList.Count; i++)
         {
-            notelist.Add(BRhythmManager.instance.longPooledObjects[i]);
+            notelist.Add(shortNoteList[i]);
         }
+        for(int i = 0; i < longNoteList.Count; i++)
+        {
+            notelist.Add(longNoteList[i]);
+        }
+        
         noteOnTime();
         if(Input.GetKeyDown(keyToPress))
         {
@@ -58,7 +68,7 @@ public class BNoteHit : MonoBehaviour
         var minTrans = notelist[0];
         for (int i = 0; i < notelist.Count; i++)
         {
-            if (((this.transform.position - notelist[i].transform.position).magnitude) < minDistance)
+            if (((this.transform.position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
                 minDistance = ((this.transform.position - notelist[i].transform.position).magnitude);
                 minTrans = notelist[i];
@@ -90,7 +100,7 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
-                minTrans.gameObject.GetComponent<TrailRenderer>().time = -1;
+                //minTrans.gameObject.GetComponent<TrailRenderer>().time = -1;
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 Debug.Log(Time.time);
                 BRhythmManager.instance.NoteHit();
@@ -98,12 +108,12 @@ public class BNoteHit : MonoBehaviour
             }
             if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "longNote")
             {
-                minTrans.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                minTrans.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
                 StartCoroutine(longNoteHit(minTrans, minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time));
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 Debug.Log(Time.time);
-                BRhythmManager.instance.NoteHit();
+                
                 ani.SetTrigger(animatorTriggerHit);
             }
         }
@@ -119,7 +129,7 @@ public class BNoteHit : MonoBehaviour
         obj.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         obj.gameObject.GetComponent<DrawBesizerLine>().length = 0;
         obj.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
-       
-        obj.gameObject.GetComponent<TrailRenderer>().time = -1;
+        BRhythmManager.instance.NoteHit();
+        obj.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
     }
 }

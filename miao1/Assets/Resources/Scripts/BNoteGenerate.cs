@@ -144,12 +144,13 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().line = lineList[longLineList[i] - 1].gameObject;
                     if(longLineList[i] == 1 || longLineList[i] == 4)
                     {
-                        bullet.GetComponent<DrawBesizerLine>().speed = 124.6f;
+                        bullet.GetComponent<DrawBesizerLine>().speed = 62.3f;
                     }
                     if(!(longLineList[i] == 1 || longLineList[i] == 4))
                     {
-                        bullet.GetComponent<DrawBesizerLine>().speed = 120f;
+                        bullet.GetComponent<DrawBesizerLine>().speed = 60f;
                     }
+                    bullet.GetComponent<DrawBesizerLine>().baseCount = 25;
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
                     bullet.GetComponent<DrawBesizerLine>().num = i; 
