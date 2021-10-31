@@ -1958,7 +1958,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 590307352}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 1225772462}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!212 &290565668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2116,7 +2119,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 1457700353}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 1143650240}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!1 &314274794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7564,7 +7570,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 1662526089}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 906953878}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!212 &449564185
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7780,6 +7789,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &475753036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401945, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538299832133401958, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: m_Name
+      value: NullBNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915813872729093983, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
+      propertyPath: canBeCount
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
 --- !u!1 &476551537
 GameObject:
   m_ObjectHideFlags: 0
@@ -8104,8 +8174,7 @@ MonoBehaviour:
   - 6
   longLineList: 0100000002000000
   usedLongNote: 0101
-  startTime: 0
-  endTime: 0
+  mat: {fileID: 2100000, guid: 689aa67e00803e445935c14f1b4c2dd6, type: 2}
 --- !u!114 &520787103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9565,7 +9634,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 902710276}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 784127663}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!212 &713616743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10122,7 +10194,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 120281483}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 651411805}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!1 &736811252
 GameObject:
   m_ObjectHideFlags: 0
@@ -29747,7 +29822,10 @@ MonoBehaviour:
   key: {fileID: 0}
   clickDown: {fileID: 0}
   num: {fileID: 1428020216}
+  mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
   mask: {fileID: 1148898146}
+  timerStart: 0
+  nowNote: {fileID: 0}
 --- !u!212 &1477762239
 SpriteRenderer:
   m_ObjectHideFlags: 0

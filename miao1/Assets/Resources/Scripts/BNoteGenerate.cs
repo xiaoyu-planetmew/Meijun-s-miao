@@ -27,8 +27,9 @@ public class BNoteGenerate : MonoBehaviour
     public List<float> longEndList = new List<float>();
     public List<int> longLineList = new List<int>();
     public List<bool> usedLongNote;
-    public float startTime;
-    public float endTime;
+    public Material mat;
+    private float startTime;
+    private float endTime;
     //public List<float> noteInterval = new List<float>();
     void Start()
     {
@@ -155,7 +156,7 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
                     bullet.GetComponent<DrawBesizerLine>().num = i; 
                     bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
-                    
+                    bullet.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat;
                     StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject, longEndList[i] - longStartList[i]));
                 }
                 usedLongNote[i] = false;                

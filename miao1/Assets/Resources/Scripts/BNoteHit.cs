@@ -12,9 +12,13 @@ public class BNoteHit : MonoBehaviour
     public GameObject key;
     public GameObject clickDown;
     public GameObject num;
+    public Material mat;
     private Animator ani;
     public GameObject mask;
-    
+    private float passedTime;
+    private float startTime;
+    public bool timerStart;
+    public GameObject nowNote;
     private string animatorTriggerHit = "Hit";
     //private bool canHit;
     // Start is called before the first frame update
@@ -23,7 +27,7 @@ public class BNoteHit : MonoBehaviour
         key = this.transform.GetChild(0).gameObject;
         clickDown = this.transform.GetChild(1).gameObject;
         ani = this.transform.GetChild(2).GetComponent<Animator>();
-        
+        nowNote = GameObject.Find("NullBNote");
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -66,6 +70,7 @@ public class BNoteHit : MonoBehaviour
     {
         var minDistance = ((this.transform.position - notelist[0].transform.position).magnitude);
         var minTrans = notelist[0];
+        
         for (int i = 0; i < notelist.Count; i++)
         {
             if (((this.transform.position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
@@ -90,9 +95,17 @@ public class BNoteHit : MonoBehaviour
             }
         }
         */
+        if(Input.GetKeyDown(keyToPress) && minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "longNote")
+        {
+            var startTime = Time.time;
+            passedTime = 0f;
+
+            
+        }
         if(Input.GetKey(keyToPress))
         {
             mask.SetActive(true);
+            Debug.Log(Time.time);
             if(minDistance < 2f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "note")
             {
                 minTrans.gameObject.SetActive(false);
@@ -102,7 +115,7 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
                 //minTrans.gameObject.GetComponent<TrailRenderer>().time = -1;
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
-                Debug.Log(Time.time);
+                //Debug.Log(Time.time);
                 BRhythmManager.instance.NoteHit();
                 ani.SetTrigger(animatorTriggerHit);
             }
@@ -110,17 +123,47 @@ public class BNoteHit : MonoBehaviour
             {
                 minTrans.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+                BRhythmManager.instance.NoteHit();
                 StartCoroutine(longNoteHit(minTrans, minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time));
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
-                Debug.Log(Time.time);
-                
+                //Debug.Log(Time.time);
+                startTime = Time.time;
+                passedTime = 0f;
+                timerStart = true;
+                nowNote = minTrans;
                 ani.SetTrigger(animatorTriggerHit);
+                var noteLength = minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time;
             }
+            if(timerStart && !Input.GetKeyUp(keyToPress) && Time.time - startTime < nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time)
+            {
+                if(passedTime > 1f)
+                {
+                    BRhythmManager.instance.NoteHit();
+                    passedTime = 0;
+                }
+                passedTime += Time.deltaTime;
+            }
+            
+            
         }
-        else
+        if(Input.GetKeyUp(keyToPress) && Time.time - startTime < nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time && nowNote.tag == "longNote")
+        {
+            BRhythmManager.instance.NoteMissed();
+            
+        }
+        if(Input.GetKeyUp(keyToPress) || Time.time - startTime > nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time)
+        {
+            timerStart = false;
+            nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat;
+            
+            nowNote = GameObject.Find("NullBNote");
+        }
+        
+        if(Input.GetKeyUp(keyToPress))
         {
             mask.SetActive(false);
         }
+        
     }
     IEnumerator longNoteHit(GameObject obj, float noteLength)
     {
@@ -129,7 +172,8 @@ public class BNoteHit : MonoBehaviour
         obj.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         obj.gameObject.GetComponent<DrawBesizerLine>().length = 0;
         obj.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
-        BRhythmManager.instance.NoteHit();
+        //BRhythmManager.instance.NoteHit();
         obj.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
     }
+    
 }
