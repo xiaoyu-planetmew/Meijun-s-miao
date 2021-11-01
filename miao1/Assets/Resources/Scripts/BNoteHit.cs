@@ -159,7 +159,7 @@ public class BNoteHit : MonoBehaviour
             nowNote = GameObject.Find("NullBNote");
         }
         
-        if(Input.GetKeyUp(keyToPress))
+        if(!Input.GetKey(keyToPress))
         {
             mask.SetActive(false);
         }

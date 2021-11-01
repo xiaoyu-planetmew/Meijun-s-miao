@@ -153,6 +153,8 @@ public class BRhythmManager : MonoBehaviour
         {
             GameObject obj = Instantiate(bulletObj);
             obj.transform.parent = notes.transform;
+            obj.tag = "note";
+            obj.transform.GetChild(0).GetComponent<TrailRenderer>().enabled = false;
             pooledObjects.Add(obj);
             return obj;
         }
