@@ -124,7 +124,7 @@ public class BRhythmManager : MonoBehaviour
         scoreText.text = currentScore.ToString();
         accurary = (float)currentHitEffect / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
-        accuraryText.text = ((float)currentScore / currentNoteCount).ToString("0%");
+        accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
     }
     public void NoteHitExact()
     {
@@ -137,9 +137,9 @@ public class BRhythmManager : MonoBehaviour
         currentHitEffect = currentHitEffect + 1f;
         comboText.text = combo.ToString();
         scoreText.text = currentScore.ToString();
-        accurary = (float)currentScore / currentNoteCount;
+        accurary = (float)currentHitEffect / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
-        accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0%");
+        accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
     }
     public void longNoteHit()
     {
@@ -154,7 +154,7 @@ public class BRhythmManager : MonoBehaviour
         currentNoteCount++;
         comboText.text = combo.ToString();
         accurary = (float)currentScore / currentNoteCount;
-        accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0%");
+        accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
     }
     public GameObject GetPooledObject()                 //获取对象池中可以使用的子弹。
     {
