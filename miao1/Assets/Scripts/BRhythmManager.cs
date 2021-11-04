@@ -57,12 +57,16 @@ public class BRhythmManager : MonoBehaviour
     
     public List<GameObject> longPooledObjects;             //子弹池链表
     public GameObject longNotes;
-    
+    public float lastNote;
+    public List<float> trackNum = new List<float>();
+    public List<bool> trackNumUsed = new List<bool>();
     private int currentIndex = 0; 
     private int longCurrentIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(numImport());
+        lastNote = -1;
         instance = this;
         comboText.text = "0";
         scoreText.text = "0";
@@ -86,6 +90,18 @@ public class BRhythmManager : MonoBehaviour
             longobj.SetActive(false);                       //设置子弹无效
             longPooledObjects.Add(longobj);                     //把子弹添加到链表（对象池）中
         }
+    }
+    IEnumerator numImport()
+    {
+        yield return new WaitForSeconds(0.1f);
+        foreach(var i in this.gameObject.GetComponent<BNoteGenerate>().trackNum)
+        {
+            trackNum.Add(i);
+            trackNumUsed.Add(false);
+        }
+        trackNum.Add(-1);
+        trackNumUsed.Add(true);
+        trackNumUsed[0] = true;
     }
 
     // Update is called once per frame
@@ -111,7 +127,7 @@ public class BRhythmManager : MonoBehaviour
         theMusic.Play();
         Debug.Log("start");
     }
-    public void NoteHitGood()
+    public void NoteHitGood(float last)
     {
         var hitGood = "good";
         hitEffect.GetComponent<Animator>().SetTrigger(hitGood);
@@ -125,8 +141,20 @@ public class BRhythmManager : MonoBehaviour
         accurary = (float)currentHitEffect / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
+        if(!(last == -1))
+        {
+            lastNote = last;
+            for(int i = 0; i < trackNum.Count; i++)
+            {
+                if(trackNum[i] == last)
+                {
+                    trackNumUsed[i] = true;
+                    break;
+                }
+            }
+        }
     }
-    public void NoteHitExact()
+    public void NoteHitExact(float last)
     {
         //Debug.Log("On Time");
         var hitExact = "exact";
@@ -140,12 +168,20 @@ public class BRhythmManager : MonoBehaviour
         accurary = (float)currentHitEffect / currentNoteCount;
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
+        if(!(last == -1))
+        {
+            lastNote = last;
+            for(int i = 0; i < trackNum.Count; i++)
+            {
+                if(trackNum[i] == last)
+                {
+                    trackNumUsed[i] = true;
+                    break;
+                }
+            }
+        }
     }
-    public void longNoteHit()
-    {
-        
-    }
-    public void NoteMissed()
+    public void NoteMissed(float last)
     {
         var hitMiss = "miss";
         hitEffect.GetComponent<Animator>().SetTrigger(hitMiss);
@@ -155,6 +191,19 @@ public class BRhythmManager : MonoBehaviour
         comboText.text = combo.ToString();
         accurary = (float)currentScore / currentNoteCount;
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
+        if(!(last == -1))
+        {
+            lastNote = last;
+            for(int i = 0; i < trackNum.Count; i++)
+            {
+                if(trackNum[i] == last)
+                {
+                    trackNumUsed[i] = true;
+                    break;
+                }
+            }
+        }
+        
     }
     public GameObject GetPooledObject()                 //获取对象池中可以使用的子弹。
     {

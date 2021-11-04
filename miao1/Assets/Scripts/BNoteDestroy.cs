@@ -13,7 +13,7 @@ public class BNoteDestroy : MonoBehaviour
         
         if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && other.tag == "note")
         {
-            BRhythmManager.instance.NoteMissed();
+            BRhythmManager.instance.NoteMissed(other.gameObject.GetComponent<DrawBesizerLine>().num);
             other.gameObject.SetActive(false);          //对象池方法，把子弹失效就好了
             other.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         
@@ -24,7 +24,7 @@ public class BNoteDestroy : MonoBehaviour
         }
         if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && other.tag == "longNote")
         {
-            BRhythmManager.instance.NoteMissed();
+            BRhythmManager.instance.NoteMissed(other.gameObject.GetComponent<DrawBesizerLine>().num);
             other.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
                       //对象池方法，把子弹失效就好了
             
