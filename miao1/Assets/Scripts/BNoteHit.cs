@@ -156,6 +156,7 @@ public class BNoteHit : MonoBehaviour
                 if(passedTime > 1f)
                 {
                     BRhythmManager.instance.NoteHitExact(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    ani.SetTrigger(animatorTriggerHit);
                     passedTime = 0;
                 }
                 passedTime += Time.deltaTime;
