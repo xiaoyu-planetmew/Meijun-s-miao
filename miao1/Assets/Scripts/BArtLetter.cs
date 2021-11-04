@@ -5,53 +5,87 @@ using UnityEngine.UI;
 
 public class BArtLetter : MonoBehaviour
 {
-    public Texture[] letters;
-    public GameObject letter;
-    public int num = 6;
-    [Range(0,1)] public float lettersSize = 1;
-    public float wordSpace;
-    [SerializeField] private int showNumber;
-    private int storedNumber;
-    
-    private RawImage[] images;
-    private float localScaleX = 0.47f;
-    private Animator[] anims;
-    private bool startAddEffect = false;
+    public List<GameObject> letters = new List<GameObject>();
+    public List<Sprite> Numbers = new List<Sprite>();
+    [SerializeField] private int combo;
+    public float interval;
+    private float XInitial;
+    private float YInitial;
+    [SerializeField] private int num;
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(Transform l in this.transform)
+        {
+            letters.Add(l.gameObject);
+        }
+        for(int i = 0; i < letters.Count; i++)
+        {
+            letters[i].transform.localPosition = new Vector3(interval * (-1) * i, 0, 0);
+        }
+        XInitial = this.transform.position.x;
+        YInitial = this.transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        combo = BRhythmManager.instance.combo;
+        UpdateShowLetters();
     }
-    private void InitialNumbers()
-    {
-        
-        images = new RawImage[num];
-        for(int i = 0;i<num;i++)
-        {
-            GameObject obj = Instantiate((letter));
-            images[i] = obj.GetComponent<RawImage>();
-            obj.transform.SetParent(transform);
-            obj.GetComponent<RectTransform>().localPosition = Vector3.left * (wordSpace) * i;
-            obj.GetComponent<RectTransform>().localScale = new Vector3(localScaleX * lettersSize, lettersSize, 1);
-        }
-    }
+    
 
     /// <summary>
     /// 更新显示的数字
     /// </summary>
-    public void UpdateShowLetters()
+    void UpdateShowLetters()
     {
-        var l = showNumber.ToString().ToCharArray();
+        var l = combo.ToString();
         num = l.Length;
-        for (int i = 0; i < num; i++)
+        if(num == 1)
         {
-            images[i].texture = letters[Mathf.FloorToInt((showNumber / Mathf.Pow(10, i))) % 10];
+            letters[0].transform.localPosition = new Vector3(0, 0, 0);
+        }
+        if(num == 2)
+        {
+            letters[0].transform.localPosition = new Vector3((interval) * 0.5f, 0, 0);
+            letters[1].transform.localPosition = new Vector3((interval) * -0.5f, 0, 0);
+        }
+        if(num == 3)
+        {
+            letters[0].transform.localPosition = new Vector3((interval), 0, 0);
+            letters[1].transform.localPosition = new Vector3(0, 0, 0);
+            letters[2].transform.localPosition = new Vector3((interval) * (-1), 0, 0);
+        }
+        if(num == 4)
+        {
+            letters[0].transform.localPosition = new Vector3((interval) * 1.5f, 0, 0);
+            letters[1].transform.localPosition = new Vector3((interval) * 0.5f, 0, 0);
+            letters[2].transform.localPosition = new Vector3((interval) * -0.5f, 0, 0);
+            letters[3].transform.localPosition = new Vector3((interval) * -1.5f, 0, 0);
+        }
+        if(combo <= 4)
+        {
+            for(int i = 0; i < letters.Count; i++)
+            {
+                letters[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
+        if(combo > 4)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                letters[i].GetComponent<SpriteRenderer>().enabled = true;
+                letters[i].GetComponent<SpriteRenderer>().sprite = Numbers[Mathf.FloorToInt((combo / Mathf.Pow(10, i))) % 10];
+            }
+            if(num != 4)
+            {
+                for(int i = 3; i >= num; i--)
+                {
+                    letters[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
         }
     }
 }
