@@ -19,14 +19,12 @@ public class BNoteHit : MonoBehaviour
     private float startTime;
     public bool timerStart;
     public GameObject nowNote;
-    private float lastNote;
     private string animatorTriggerHit = "Hit";
     public int line;
     //private bool canHit;
     // Start is called before the first frame update
     void Start()
     {
-        lastNote = -1;
         key = this.transform.GetChild(0).gameObject;
         clickDown = this.transform.GetChild(1).gameObject;
         ani = this.transform.GetChild(2).GetComponent<Animator>();
