@@ -14,7 +14,8 @@ public class DrawBesizerLine : MonoBehaviour
     public float length = 0;   //小球当前的运动轨迹长度
     //LineRenderer lineRender;
     public GameObject line;
-    public int num;
+    public int numInSequence;
+    public float num;
     void OnEnable()
     {
         basePoint.Clear();

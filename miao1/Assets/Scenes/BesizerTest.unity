@@ -692,7 +692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &120281484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8440,6 +8440,7 @@ MonoBehaviour:
   lineList: []
   saveDate: {fileID: 4900000, guid: 8705eff237c94bf4ba2037d4fa758248, type: 3}
   saveList: []
+  trackNum: []
   trackTime: []
   line: 
   usedNote: 
@@ -8450,11 +8451,11 @@ MonoBehaviour:
   - 13.03467
   - 13.78133
   longEndList:
-  - 9.982
+  - 9.2
   - 11.238
   - 12.393
   - 13.535
-  - 15.782
+  - 16.782
   longLineList: 0200000005000000030000000200000005000000
   usedLongNote: 0101010101
   mat: {fileID: 2100000, guid: 689aa67e00803e445935c14f1b4c2dd6, type: 2}
@@ -8485,7 +8486,7 @@ MonoBehaviour:
   accuraryText: {fileID: 540600161}
   effect: {fileID: 0}
   hitEffect: {fileID: 186370411}
-  delayTime: 2.16
+  delayTime: 1.9
   bulletObj: {fileID: 538299832133401958, guid: 6207cb054188b674eadaee578e01bebf, type: 3}
   pooledAmount: 6
   lockPoolSize: 0
@@ -9006,7 +9007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590307353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26269,7 +26270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &902710277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44723,7 +44724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1428020217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44986,7 +44987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1457700354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56165,7 +56166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1662526090
 RectTransform:
   m_ObjectHideFlags: 0

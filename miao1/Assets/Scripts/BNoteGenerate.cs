@@ -18,6 +18,7 @@ public class BNoteGenerate : MonoBehaviour
     public List<Transform> lineList;
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
+    public List<float> trackNum = new List<float>();
     public List<float> trackTime = new List<float>();
     
     public List<int> line = new List<int>();
@@ -28,6 +29,7 @@ public class BNoteGenerate : MonoBehaviour
     public List<int> longLineList = new List<int>();
     public List<bool> usedLongNote;
     public Material mat;
+    
     private float startTime;
     private float endTime;
     //public List<float> noteInterval = new List<float>();
@@ -64,10 +66,12 @@ public class BNoteGenerate : MonoBehaviour
         foreach(var line in lineData)
         {
             saveList.Add(line);
+            
         }
         for(int i = 0; i < lineData.Length - 1; i++)
         {
             var noteData = lineData[i].Split(',');
+            trackNum.Add(float.Parse(noteData[0]));
             trackTime.Add(float.Parse(noteData[1]));
             if(noteData[2] == "S")
             {
@@ -123,7 +127,12 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().baseCount = 25;
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
-                    bullet.GetComponent<DrawBesizerLine>().num = i;
+                    bullet.GetComponent<DrawBesizerLine>().num = trackNum[i];
+                    bullet.GetComponent<DrawBesizerLine>().numInSequence = i;
+                    if(i == 0)
+                    {
+                        bullet.GetComponent<DrawBesizerLine>().numInSequence++;
+                    }
                     bullet.GetComponent<BNoteCanBeCount>().line = line[i];
                     //bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
                     //StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject));
@@ -157,7 +166,8 @@ public class BNoteGenerate : MonoBehaviour
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().line = longLineList[i];
                     bullet.GetComponent<BNoteCanBeCount>().canBeCount = true;
-                    bullet.GetComponent<DrawBesizerLine>().num = i; 
+                    bullet.GetComponent<DrawBesizerLine>().num = -1; 
+                    bullet.GetComponent<DrawBesizerLine>().numInSequence = 1;
                     bullet.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
                     bullet.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat;
                     StartCoroutine(trailReset(bullet.transform.GetChild(0).gameObject, longEndList[i] - longStartList[i]));
