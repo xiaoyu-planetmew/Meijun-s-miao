@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Spine.Unity;
+using Spine;
+using System.Runtime.CompilerServices;
 
 public class FinalMovement : MonoBehaviour
 {
@@ -18,13 +21,14 @@ public class FinalMovement : MonoBehaviour
 
     bool jumpPressed;
     int jumpCount;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-        anim = GetComponent<Animator>();
+        anim = this.transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,7 +36,7 @@ public class FinalMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
-            jumpPressed = true;
+            //jumpPressed = true;
         }
     }
 
@@ -45,7 +49,8 @@ public class FinalMovement : MonoBehaviour
         Jump();
 
 
-        SwitchAnim();
+        //SwitchAnim();
+        SwitchSpineAnim();
     }
 
     void GroundMovement()
@@ -81,7 +86,7 @@ public class FinalMovement : MonoBehaviour
             jumpPressed = false;
         }
     }
-
+    /*
     void SwitchAnim()//动画切换
     {
         anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
@@ -99,5 +104,22 @@ public class FinalMovement : MonoBehaviour
             anim.SetBool("jumping", false);
             anim.SetBool("falling", true);
         }
+    }
+    */
+    void SwitchSpineAnim()
+    {
+        
+        if(this.transform.position.x < 30 && this.transform.position.x > -30)
+        {
+            anim.SetBool("outside", true);
+        }
+        else{
+            anim.SetBool("outside", false);
+        }
+        anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
+        //bool turning;
+        //var sa = this.transform.GetChild(0).GetComponent<SkeletonAnimation>();
+        
+        
     }
 }
