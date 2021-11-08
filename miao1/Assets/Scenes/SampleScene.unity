@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &45538819
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10686,6 +10686,13 @@ MonoBehaviour:
   - {fileID: 1315984907}
   - {fileID: 97600157}
   player: {fileID: 1397711434}
+  events: 0000000000000000000000000000000000000000
+  eventName:
+  - Moment1
+  - SongHasBeenSung
+  - spider
+  - flintstone
+  - lightTheThorns
   thisButton: {fileID: 0}
   itemButtons: []
 --- !u!4 &1397711436
@@ -14319,6 +14326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: addaf663df0c0c042ab6449bb83ea829, type: 2}
+  eventNum: 1
   player: {fileID: 133832561}
   npc: {fileID: 1535436384}
   textLabelcn: {fileID: 1016122049}
@@ -15636,7 +15644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1945879831
 MonoBehaviour:
   m_ObjectHideFlags: 0

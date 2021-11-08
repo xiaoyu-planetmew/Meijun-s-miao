@@ -13,7 +13,8 @@ public class GameManager: MonoBehaviour
     public List<Item> CharCollections = new List<Item>();
     public GameObject[] slots;
     public GameObject player;
-
+    public List<bool> events = new List<bool>();
+    [SerializeField]private List<string> eventName = new List<string>();
 
     public ItemButton thisButton;//Keep Track of which Item Button We are mouse Hovering
     public ItemButton[] itemButtons;//ALL of ITEM BUTTONS in this game [Used for reset]
@@ -38,6 +39,10 @@ public class GameManager: MonoBehaviour
     private void Start()
     {
         DisplayItems();
+    }
+    void Update()
+    {
+        itemCheck();
     }
 
     private void DisplayItems()
@@ -149,5 +154,23 @@ public class GameManager: MonoBehaviour
     public void CollectionsPickup(Item _item)
     {
         CharCollections.Add(_item);
+    }
+    void itemCheck()
+    {
+        foreach(Item i in items)
+        {
+            if(i.itemName == "Moment1")
+            {
+                events[0] = true;
+            }
+            if(i.itemName == "spider")
+            {
+                events[2] = true;
+            }
+            if(i.itemName == "flintstone")
+            {
+                events[3] = true;
+            }
+        }
     }
 }

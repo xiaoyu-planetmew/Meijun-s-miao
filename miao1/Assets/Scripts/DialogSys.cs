@@ -8,6 +8,8 @@ public class DialogSys : MonoBehaviour
 {
     [Header("targetItem")]
     public Item target;
+    [Header("eventNum")]
+    public int eventNum;
     public GameObject player;
     public GameObject npc;
     public GameObject textLabelcn;
@@ -154,6 +156,7 @@ public class DialogSys : MonoBehaviour
             if(index == textList.Count || index == textList.Count + 1)
             {
                 sceneTransButton.SetActive(true);
+                GameManager.instance.events[eventNum] = true;
                 index++;
             }
             if(index + 1 <= textList.Count)
