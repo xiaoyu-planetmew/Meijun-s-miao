@@ -20,6 +20,7 @@ public class FinalMovement : MonoBehaviour
     public bool isGround, isJump, isDashing;
 
     bool jumpPressed;
+    bool outside;
     int jumpCount;
     
 
@@ -55,6 +56,16 @@ public class FinalMovement : MonoBehaviour
 
     void GroundMovement()
     {
+        if(outside)
+        {
+            speed = 5;
+            transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
+        else
+        {
+            speed = 1.5f;
+            transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        }
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.localScale.y;
@@ -112,9 +123,11 @@ public class FinalMovement : MonoBehaviour
         if(this.transform.position.x < 30 && this.transform.position.x > -30)
         {
             anim.SetBool("outside", true);
+            outside = true;
         }
         else{
             anim.SetBool("outside", false);
+            outside = false;
         }
         anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
         //bool turning;
