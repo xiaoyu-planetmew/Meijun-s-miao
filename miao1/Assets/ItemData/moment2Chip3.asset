@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31d395694a3de34458a0358c543a07bc, type: 3}
-  m_Name: musicMoment1
+  m_Name: moment2Chip3
   m_EditorClassIdentifier: 
-  itemName: Moment1
-  itemDes: a lost moment
-  itemSprite: {fileID: 21300000, guid: f6dc1647a81ddd8449ece2b3fa4d2d9d, type: 3}
+  itemName: moment2Chip2
+  itemDes: A chip of moment2
+  itemSprite: {fileID: 21300000, guid: 170f3b1ca92b83a4897a13b76c439f23, type: 3}
   itemPrice: 0

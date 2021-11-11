@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Text;
+using UnityEngine.UI;
 
 public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -13,6 +14,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Vector2 position;
 
     //HELPER FUNCTION to get the items on this button
+
     private Item GetThisItem()
     {
         for(int i = 0; i < GameManager.instance.items.Count; i++)

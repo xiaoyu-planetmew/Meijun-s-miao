@@ -9,15 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/BesizerTest.unity
+    guid: 3c589de153ccc5942b07a50b7e9f863f
+  - enabled: 0
     path: Assets/Scenes/Rhythm.unity
     guid: 645cf0c81aee8364394256025200e293
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rhythm(easy).unity
     guid: d3a0981f030b5b248a25cf4ffc1b2633
-  - enabled: 1
-    path: Assets/Resources/Scenes/room1.unity
-    guid: 75c24e231368eac4a92ca705c56330b2
-  - enabled: 1
-    path: Assets/Resources/Scenes/room2.unity
-    guid: 7a881face17ab6844a2288446bbb8348
   m_configObjects: {}

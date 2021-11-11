@@ -171,6 +171,10 @@ public class GameManager: MonoBehaviour
             {
                 events[3] = true;
             }
+            if(i.itemName == "Moment2")
+            {
+                events[5] = true;
+            }
         }
     }
 }

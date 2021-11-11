@@ -83,6 +83,22 @@ public class DialogSys : MonoBehaviour
             firstMeet = false;
         }else
         {
+            if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
+            {
+                GetTextFromFile(textfiles[2]);
+                holdTarget = false;
+            }
+            if(GameManager.instance.events[0] && !GameManager.instance.events[6])
+            {
+                GetTextFromFile(textfiles[1]);
+                holdTarget = true;
+            }
+            if(GameManager.instance.events[5] && !GameManager.instance.events[7])
+            {
+                GetTextFromFile(textfiles[1]);
+                holdTarget = true;
+            }
+            /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
             {
                 if(GameManager.instance.items[i] == target)
@@ -96,6 +112,7 @@ public class DialogSys : MonoBehaviour
                     holdTarget = false;
                 }
             }
+            */
         }
         startButton.gameObject.SetActive(false);
         nextPageButton.gameObject.SetActive(true);
