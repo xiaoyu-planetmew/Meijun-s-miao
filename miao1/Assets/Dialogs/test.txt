@@ -1,4 +1,0 @@
-Hello,I am MeiJun.
-This is a DIALOG SYSTEM.
-It is just a DEMO.
-I will finish it later.
