@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager: MonoBehaviour
 {
+    public int targetFrameRate;
     public static GameManager instance;//MARKER SINGLETON PATTERN
     public bool isPaused;
 
@@ -18,6 +19,7 @@ public class GameManager: MonoBehaviour
 
     public ItemButton thisButton;//Keep Track of which Item Button We are mouse Hovering
     public ItemButton[] itemButtons;//ALL of ITEM BUTTONS in this game [Used for reset]
+    public string mail;
 
 
     private void Awake()
@@ -34,6 +36,7 @@ public class GameManager: MonoBehaviour
             }
         }
         DontDestroyOnLoad(gameObject);
+        Application.targetFrameRate = targetFrameRate;
     }
 
     private void Start()
@@ -176,5 +179,9 @@ public class GameManager: MonoBehaviour
                 events[5] = true;
             }
         }
+    }
+    public void NextSceneMail(string s)
+    {
+        mail = s;
     }
 }

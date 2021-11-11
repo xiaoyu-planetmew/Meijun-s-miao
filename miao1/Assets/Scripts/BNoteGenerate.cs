@@ -16,6 +16,7 @@ public class BNoteGenerate : MonoBehaviour
     public GameObject lines;
     
     public List<Transform> lineList;
+    public List<TextAsset> saveDates = new List<TextAsset>();
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
     public List<float> trackNum = new List<float>();
@@ -35,6 +36,16 @@ public class BNoteGenerate : MonoBehaviour
     //public List<float> noteInterval = new List<float>();
     void Start()
     {
+        ///*
+        if(GameManager.instance.mail == "m1easy" || GameManager.instance.mail == "m2easy")
+        {
+            saveDate = saveDates[1];
+        }
+        if(GameManager.instance.mail == "m1hard" || GameManager.instance.mail == "m2hard")
+        {
+            saveDate = saveDates[0];
+        }
+        //*/
         startTime = Time.time;
         lineList = new List<Transform>();
         
