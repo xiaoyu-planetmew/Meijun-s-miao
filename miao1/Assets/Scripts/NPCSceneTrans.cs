@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCSceneTrans : MonoBehaviour
 {
+    public GameObject trans1;
+    public GameObject trans2;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +15,11 @@ public class NPCSceneTrans : MonoBehaviour
     {
         if(GameManager.instance.events[0] && !GameManager.instance.events[6])
         {
-            this.transform.GetChild(0).gameObject.SetActive(true);
+            trans1.SetActive(true);
         }
         if(GameManager.instance.events[5] && !GameManager.instance.events[7])
         {
-            this.transform.GetChild(1).gameObject.SetActive(true);
+            trans2.SetActive(true);
         }
     }
 
