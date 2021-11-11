@@ -1,0 +1,30 @@
+A小苗:老人家,您没事吗?
+AMiao:Hey, are you okay?
+B巫师:孩子,我等你很久了.
+BWizard:Oh, I have been waiting for you for a long time.
+A小苗:你是谁?这里是哪里?你为什么要在这里等我?
+AMiao:Who are you? Where is this place? Why are you waiting for me here?
+B巫师:哦...别着急...慢慢来...
+BWizard:Oh... Don`t be so nasty... Slow down...
+B巫师:我是**,是个巫师,这里是姜央的记忆幻境.
+BWizard:I am ***, a wizard, and this is Jiang Yang's memory illusion.
+A小苗:姜央?是我们的祖先!
+AMiao:Jiang Yang? Are our ancestors!
+B巫师:是的,我们的枫树已经死去,我们的家园失去了守护.
+BWizard:Yes, our maple tree is dead, and our homeland has lost its guardianship.
+B巫师:我们需要寻找新的枫树种子,启动另一个轮回重生.
+BWizard:We need to find a new maple seed and start another rebirth.
+B巫师:姜央告诉我,他选择了了你.他让我在这里等你.但是....唔...
+BWizard: Jiang Yang told me that he chose you. He asked me to wait for you here. But...well....
+A小苗:但是什么?你说姜央祖先选择了我?他让我做什么?我该怎么做可以找到枫树种子?
+AMiao:but what? You said our ancestor Jiang Yang chose me? What does he let me do? What should I do to find the maple seed?
+B巫师:哦...抱歉...我在这里等的真的太久了...我有点儿...不记得了...原谅我是个老人家
+BWizard:Oh...sorry...I have been waiting here for too long...I'm a little bit...Don't remember...Forgive me for being an old man.
+A小苗:啊..这...这该怎么办?这太糟糕了
+AMiao:Ah...this...what should I do? This is terrible.
+B巫师:哼哼....别着急...慢慢来...我们巫师通过歌唱将记忆封存,你只要你为我唱一支苗歌,我也许能想起些什么......
+BWizard:Hum... Don’t worry... Slow down... wizards seal the memory through singing. As long as you sing a AMiao song for me, I might be able to think of something...
+A小苗:唱歌,这有什么难,我们苗家女子的歌声最是动听~
+AMiao:Singing, what's the problem? The singing of our AMiao women is the most beautiful~
+B巫师:这个村子里,应该有一些古老的乐章,你若是找到,便请为我哼唱.
+BWizard:There should be some ancient music in this village. If you find one, please hum for me.

@@ -1,0 +1,6 @@
+B巫师:你找到古老乐章了吗?
+BWizard: Have you found the ancient music?
+A小苗:还没有
+AMiao: Not yet._
+B巫师:哦,那在别处找找吧...
+BWizard: Oh, look elsewhere...
