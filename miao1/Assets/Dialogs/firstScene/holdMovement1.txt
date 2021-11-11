@@ -1,0 +1,4 @@
+B巫师:你找到了古老乐章了吗?
+BWizard: Have you found the ancient music?
+A小苗:我找到了,让我为你唱这支歌~
+AMiao: I found it, let me sing this song for you~ 
