@@ -60,6 +60,7 @@ public class BRhythmManager : MonoBehaviour
     public float lastNote;
     public List<float> trackNum = new List<float>();
     public List<bool> trackNumUsed = new List<bool>();
+    public float songTime;
     private int currentIndex = 0; 
     private int longCurrentIndex = 0;
     // Start is called before the first frame update
@@ -90,6 +91,7 @@ public class BRhythmManager : MonoBehaviour
             longobj.SetActive(false);                       //设置子弹无效
             longPooledObjects.Add(longobj);                     //把子弹添加到链表（对象池）中
         }
+        StartCoroutine(endScene());
     }
     IEnumerator numImport()
     {
@@ -168,7 +170,7 @@ public class BRhythmManager : MonoBehaviour
         combo = 0;
         currentNoteCount++;
         comboText.text = combo.ToString();
-        accurary = (float)currentScore / currentNoteCount;
+        accurary = (float)currentHitEffect / currentNoteCount;
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
         trackNumUsed[last] = true;
     }
@@ -229,5 +231,14 @@ public class BRhythmManager : MonoBehaviour
 
         //如果遍历完没有而且锁定了对象池大小，返回空。
         return null;
+    }
+    IEnumerator endScene()
+    {
+        yield return new WaitForSeconds(songTime + delayTime);
+        if(accurary >= 0.5)
+        {
+            GameManager.instance.events[1] = true;
+        }
+        SceneManager.LoadScene(0);
     }
 }

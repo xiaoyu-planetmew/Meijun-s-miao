@@ -77,10 +77,11 @@ public class DialogSys : MonoBehaviour
     public void fileChoose()
     {
         startButton.SetActive(false);
-        if(firstMeet)
+        if(firstMeet && !GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
             firstMeet = false;
+            GameManager.instance.events[8] = true;
         }else
         {
             if(!GameManager.instance.events[0] && !GameManager.instance.events[5])

@@ -20,6 +20,7 @@ public class BNoteDestroy : MonoBehaviour
             other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
             other.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
             other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+            other.gameObject.SetActive(false);          //对象池方法，把子弹失效就好了
             //other.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
         }
         if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && other.tag == "longNote")

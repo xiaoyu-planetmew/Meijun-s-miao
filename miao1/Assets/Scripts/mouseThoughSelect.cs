@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mouseThoughSelect : MonoBehaviour
 {
@@ -12,17 +13,37 @@ public class mouseThoughSelect : MonoBehaviour
  
     //4.参数layerMask 在指定层上碰撞检测(注意是public，不然在脚本属性那儿找不到指定的层，坑)
     public LayerMask clickableLayer;
-    void Start()
+    void Awake()
     {
+        Scene scene = SceneManager.GetActiveScene ();
+        if(scene.name == "SampleScene")
+        {
+            cams = GameObject.Find("Cameras");
+        }
         foreach(Transform i in cams.transform)
         {
             camList.Add(i);
         }
     }
+    void OnEnable()
+    {
+        Scene scene = SceneManager.GetActiveScene ();
+        if(scene.name == "SampleScene")
+        {
+            cams = GameObject.Find("Cameras");
+        }
+        for(int i = 0; i < camList.Count; i++)
+        {
+            camList[i] = cams.transform.GetChild(i);
+        }
+    }
  
     void Update()
-    { 
-        var cam = Camera.main;
+    {
+        
+        if(cams.activeInHierarchy)
+        {
+            var cam = Camera.main;
         for(int i = 0; i < camList.Count; i++)
         {
             if(camList[i].gameObject.activeInHierarchy)
@@ -38,6 +59,8 @@ public class mouseThoughSelect : MonoBehaviour
            //Debug.Log(hit.collider.gameObject.name);//打印鼠标点击到的物体名称
            GameObject.Find(hit.collider.gameObject.name).GetComponent<PickupItem>().pickUp();
         }
+        }
+        
         
     }
 }
