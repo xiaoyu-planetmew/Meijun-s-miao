@@ -13,7 +13,7 @@ public class NPCSceneTrans : MonoBehaviour
     }
     void OnEnable()
     {
-        if(GameManager.instance.events[0] && !GameManager.instance.events[6])
+        if(GameManager.instance.events[0] && !GameManager.instance.events[1])
         {
             trans1.SetActive(true);
         }

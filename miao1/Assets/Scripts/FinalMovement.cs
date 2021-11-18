@@ -56,12 +56,12 @@ public class FinalMovement : MonoBehaviour
 
     void GroundMovement()
     {
-        if(outside)
+        if(outside && transform.localScale.y != 0.4f)
         {
             speed = 5;
             transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
-        else
+        if(!outside && transform.localScale.y != 0.6f)
         {
             speed = 1.5f;
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
@@ -69,10 +69,15 @@ public class FinalMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.localScale.y;
-        if (horizontalMove != 0)
+        if(horizontalMove == -1)
         {
             transform.localScale = new Vector3(horizontalMove * i, i, i);
         }
+        if(horizontalMove == 1)
+        {
+            transform.localScale = new Vector3(horizontalMove * i, i, i);
+        }
+        
 
     }
 

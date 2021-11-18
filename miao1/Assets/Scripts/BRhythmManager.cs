@@ -239,6 +239,7 @@ public class BRhythmManager : MonoBehaviour
         {
             GameManager.instance.events[1] = true;
         }
+        GameManager.instance.events[6] = true;
         SceneManager.LoadScene(0);
     }
 }

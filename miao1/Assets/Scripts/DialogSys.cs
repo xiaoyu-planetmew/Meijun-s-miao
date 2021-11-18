@@ -12,8 +12,8 @@ public class DialogSys : MonoBehaviour
     public int eventNum;
     public GameObject player;
     public GameObject npc;
-    public GameObject textLabelcn;
-    public GameObject textLabelen;
+    public GameObject textLabelleft;
+    public GameObject textLabelright;
     public GameObject textBackgroundLeft;
     public GameObject textBackgroundRight;
     public GameObject startButton;
@@ -77,11 +77,11 @@ public class DialogSys : MonoBehaviour
     public void fileChoose()
     {
         startButton.SetActive(false);
-        if(firstMeet && !GameManager.instance.events[8])
+        if(!GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
-            firstMeet = false;
-            GameManager.instance.events[8] = true;
+            //firstMeet = false;
+            //GameManager.instance.events[8] = true;
         }else
         {
             if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
@@ -98,6 +98,14 @@ public class DialogSys : MonoBehaviour
             {
                 GetTextFromFile(textfiles[1]);
                 holdTarget = true;
+            }
+            if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6])
+            {
+                GetTextFromFile(textfiles[3]);
+            }
+            if(GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
+            {
+                GetTextFromFile(textfiles[4]);
             }
             /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
@@ -116,27 +124,165 @@ public class DialogSys : MonoBehaviour
             */
         }
         startButton.gameObject.SetActive(false);
-        nextPageButton.gameObject.SetActive(true);
-        textLabelcn.gameObject.SetActive(true);
-        textLabelen.gameObject.SetActive(true);
+        //nextPageButton.gameObject.SetActive(true);
+        //textLabelcn.gameObject.SetActive(true);
+        //textLabelen.gameObject.SetActive(true);
+        index = 0;
         if(textTalker[0] == "left")
         {
             textBackgroundLeft.gameObject.SetActive(true);
+            textLabelleft.GetComponent<Text>().text = textList[index];
         }
         if(textTalker[0] == "right")
         {
             textBackgroundRight.gameObject.SetActive(true);
+            textLabelright.GetComponent<Text>().text = textList[index];
         }
         isTalking = true;
         Time.timeScale = 0.0f;
         GameManager.instance.isPaused = true;
-        index = 0;
-        textLabelcn.GetComponent<TMP_Text>().text = textList[index];
-        textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-        index = index + 2;
+        
+        //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
+        //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+        index = index + 1;
     }
+    void dialogWithoutTrans()
+    {
+        if(index == textList.Count)
+            {
+                index = 0;
+                textBackgroundLeft.gameObject.SetActive(false);
+                textBackgroundRight.gameObject.SetActive(false);
+                //nextPageButton.gameObject.SetActive(false);
+            
+                //textLabelcn.gameObject.SetActive(false);
+                //textLabelen.gameObject.SetActive(false);
+                isTalking = false;
+                Time.timeScale = 1.0f;
+                GameManager.instance.isPaused = false;
+            }
+        if(index < textList.Count && isTalking)
+            {
+                if(textTalker[index] == "left")
+                {
+                    textBackgroundLeft.gameObject.SetActive(true);
+                    textBackgroundRight.gameObject.SetActive(false);
+                    
+                    textLabelleft.GetComponent<Text>().text = textList[index];
+                }
+                if(textTalker[index] == "right")
+                {
+                    textBackgroundLeft.gameObject.SetActive(false);
+                    textBackgroundRight.gameObject.SetActive(true);
+                    
+                    textLabelright.GetComponent<Text>().text = textList[index];
+                }
+                //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
+                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+                index = index + 1;
+            }
+            
+    }
+    void dialogWithTrans()
+    {            
+        if(index == textList.Count + 1)
+        {
+            index = 0;
+            textBackgroundLeft.gameObject.SetActive(false);
+            textBackgroundRight.gameObject.SetActive(false);
+            //nextPageButton.gameObject.SetActive(false);
+            //textLabelcn.gameObject.SetActive(false);
+            //textLabelen.gameObject.SetActive(false);
+            isTalking = false;
+            Time.timeScale = 1.0f;
+            GameManager.instance.isPaused = false;
+            sceneTransButton.SetActive(false);
+        }
+        if(index == textList.Count && isTalking)
+        {
+            sceneTransButton.SetActive(true);
+            index++;
+        }
+        if(index < textList.Count && isTalking)
+        {
+            if(textTalker[index] == "left")
+            {
+                textBackgroundLeft.gameObject.SetActive(true);
+                textBackgroundRight.gameObject.SetActive(false);
+                
+                textLabelleft.GetComponent<Text>().text = textList[index];
+            }
+            if(textTalker[index] == "right")
+            {
+                textBackgroundLeft.gameObject.SetActive(false);
+                textBackgroundRight.gameObject.SetActive(true);
+                
+                textLabelright.GetComponent<Text>().text = textList[index];
+            }
+                //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
+                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+                index = index + 1;
+        }
+    }
+    
     public void dialogBox()
     {
+        if(!GameManager.instance.events[8])
+        {
+            if(index == textList.Count)
+            {
+                index = 0;
+                textBackgroundLeft.gameObject.SetActive(false);
+                textBackgroundRight.gameObject.SetActive(false);
+                //nextPageButton.gameObject.SetActive(false);
+            
+                //textLabelcn.gameObject.SetActive(false);
+                //textLabelen.gameObject.SetActive(false);
+                isTalking = false;
+                Time.timeScale = 1.0f;
+                GameManager.instance.isPaused = false;
+                GameManager.instance.events[8] = true;
+            }
+            if(index < textList.Count && isTalking)
+            {
+                if(textTalker[index] == "left")
+                {
+                    textBackgroundLeft.gameObject.SetActive(true);
+                    textBackgroundRight.gameObject.SetActive(false);
+                    
+                    textLabelleft.GetComponent<Text>().text = textList[index];
+                }
+                if(textTalker[index] == "right")
+                {
+                    textBackgroundLeft.gameObject.SetActive(false);
+                    textBackgroundRight.gameObject.SetActive(true);
+                    
+                    textLabelright.GetComponent<Text>().text = textList[index];
+                }
+                //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
+                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+                index = index + 1;
+            }
+            
+        }
+        if(GameManager.instance.events[8])
+        {
+            if((!GameManager.instance.events[0] && !GameManager.instance.events[5]) || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]))
+            {
+                dialogWithoutTrans();
+            }
+            if(GameManager.instance.events[0] && !GameManager.instance.events[1])
+            {
+                dialogWithTrans();
+            }
+            /*
+            if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
+            {
+                dialogWithTrans();
+            }
+            */
+        }
+        /*
         if(!holdTarget)
         {
             if(index + 1 <= textList.Count)
@@ -152,7 +298,7 @@ public class DialogSys : MonoBehaviour
                     textBackgroundRight.gameObject.SetActive(true);
                 }
                 textLabelcn.GetComponent<TMP_Text>().text = textList[index];
-                textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
                 index = index + 2;
             }
             else
@@ -163,7 +309,7 @@ public class DialogSys : MonoBehaviour
                 nextPageButton.gameObject.SetActive(false);
             
                 textLabelcn.gameObject.SetActive(false);
-                textLabelen.gameObject.SetActive(false);
+                //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
                 Time.timeScale = 1.0f;
                 GameManager.instance.isPaused = false;
@@ -190,7 +336,7 @@ public class DialogSys : MonoBehaviour
                     textBackgroundRight.gameObject.SetActive(true);
                 }
                 textLabelcn.GetComponent<TMP_Text>().text = textList[index];
-                textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
+                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
                 index = index + 2;
             }            
             if(index == textList.Count + 2)
@@ -200,12 +346,13 @@ public class DialogSys : MonoBehaviour
                 textBackgroundRight.gameObject.SetActive(false);
                 nextPageButton.gameObject.SetActive(false);
                 textLabelcn.gameObject.SetActive(false);
-                textLabelen.gameObject.SetActive(false);
+                //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
                 Time.timeScale = 1.0f;
                 GameManager.instance.isPaused = false;
                 sceneTransButton.SetActive(false);
             }
         }
+        */
     }
 }
