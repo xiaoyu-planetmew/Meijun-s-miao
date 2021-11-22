@@ -12,6 +12,7 @@ TagManager:
   - item
   - note
   - longNote
+  - ground
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: heroine_Material
+  m_Name: SkeletonAnimation
   m_Shader: {fileID: 4800000, guid: 28b5cf4804845fe4b868531fd0bb81d5, type: 3}
   m_ShaderKeywords: OUTTEX_ON _OUTLINETEXTOGGLE_ON _TIMESETTINGS_LINEAR_DEFAULT _USE8NEIGHBOURHOOD_ON
   m_LightmapFlags: 4

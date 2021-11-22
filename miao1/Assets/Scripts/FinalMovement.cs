@@ -44,6 +44,7 @@ public class FinalMovement : MonoBehaviour
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
+        this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
 
         GroundMovement();
 
@@ -67,15 +68,18 @@ public class FinalMovement : MonoBehaviour
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
+        
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.localScale.y;
         if(horizontalMove == -1)
         {
             transform.localScale = new Vector3(horizontalMove * i, i, i);
+            this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         if(horizontalMove == 1)
         {
             transform.localScale = new Vector3(horizontalMove * i, i, i);
+            this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         
 
