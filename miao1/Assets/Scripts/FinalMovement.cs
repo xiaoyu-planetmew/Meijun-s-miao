@@ -125,7 +125,7 @@ public class FinalMovement : MonoBehaviour
     void SwitchSpineAnim()
     {
         
-        if(this.transform.position.x < 30 && this.transform.position.x > -30)
+        if(this.transform.position.x < 70 && this.transform.position.x > -70)
         {
             anim.SetBool("outside", true);
             outside = true;
