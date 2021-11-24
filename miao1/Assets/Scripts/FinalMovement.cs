@@ -18,10 +18,16 @@ public class FinalMovement : MonoBehaviour
     public LayerMask ground;
     
     public bool isGround, isJump, isDashing;
+    public AudioSource walk;
+    public AudioSource run;
 
     bool jumpPressed;
     bool outside;
     int jumpCount;
+    public bool running;
+    public bool walking;
+    public bool moving;
+    
     
 
     // Start is called before the first frame update
@@ -39,6 +45,32 @@ public class FinalMovement : MonoBehaviour
         {
             //jumpPressed = true;
         }
+        if(!moving)
+        {
+            if(running)
+            {
+                run.Play();
+                moving = true;
+            }
+            if(walking)
+            {
+                walk.Play();
+                moving = true;
+            }
+            if(!running)
+            {
+                run.Stop();
+            }
+            if(!walking)
+            {
+                walk.Stop();
+            }
+            
+        }
+        if(!running && !walking)
+            {
+                moving = false;
+            }
     }
 
     private void FixedUpdate()
@@ -57,6 +89,7 @@ public class FinalMovement : MonoBehaviour
 
     void GroundMovement()
     {
+        var playing = false;
         if(outside && transform.localScale.y != 0.4f)
         {
             speed = 5;
@@ -75,13 +108,37 @@ public class FinalMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(horizontalMove * i, i, i);
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(outside)
+            {
+                running = true;
+                walking = false;
+            }
+            if(!outside)
+            {
+                walking = true;
+                running = false;
+            }
         }
         if(horizontalMove == 1)
         {
             transform.localScale = new Vector3(horizontalMove * i, i, i);
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(outside)
+            {
+                running = true;
+                walking = false;
+            }
+            if(!outside)
+            {
+                walking = true;
+                running = false;
+            }
         }
-        
+        if(horizontalMove == 0)
+        {
+            running = false;
+            walking = false;
+        }
 
     }
 
