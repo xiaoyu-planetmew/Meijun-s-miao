@@ -89,7 +89,7 @@ public class FinalMovement : MonoBehaviour
 
     void GroundMovement()
     {
-        var playing = false;
+        //var playing = false;
         if(outside && transform.localScale.y != 0.4f)
         {
             speed = 5;
