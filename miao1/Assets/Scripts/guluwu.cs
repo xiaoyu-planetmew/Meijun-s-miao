@@ -8,12 +8,15 @@ public class guluwu : MonoBehaviour
     public float burnAniTime;
     private GameObject teleport;
     private GameObject thorn;
+    private GameObject burn;
     private bool burnt;
     // Start is called before the first frame update
     void Start()
     {
         teleport = this.transform.GetChild(1).transform.GetChild(0).gameObject;
-        thorn = this.transform.GetChild(1).transform.GetChild(1).gameObject;
+        burn = this.transform.GetChild(1).transform.GetChild(1).gameObject;
+        thorn = this.transform.GetChild(2).gameObject;
+        burnt = false;
     }
 
     // Update is called once per frame
@@ -21,12 +24,13 @@ public class guluwu : MonoBehaviour
     {
         if(GameManager.instance.events[3] && !burnt)
         {
-            thorn.GetComponent<Button>().enabled = true;
+            burn.GetComponent<Button>().enabled = true;
         }
     }
     public void thornBurn()
     {
         StartCoroutine(burnAni());
+        
     }
     IEnumerator burnAni()
     {
@@ -35,5 +39,6 @@ public class guluwu : MonoBehaviour
         teleport.SetActive(true);
         thorn.SetActive(false);
         this.gameObject.GetComponent<teleportButtonActive>().enabled = true;
+        burnt = true;
     }
 }
