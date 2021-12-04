@@ -26,13 +26,14 @@ public class DialogSys : MonoBehaviour
     public int index;
     public List<string> textList = new List<string>();
     public List<string> textTalker = new List<string>(); 
+    public float textSpeed;
+    public List<AudioClip> leftAudio = new List<AudioClip>();
+    public List<AudioClip> rightAudio = new List<AudioClip>();
+    bool textFinished;
     // Start is called before the first frame update
     void Start()
     {
         firstMeet = true;        
-    }
-    private void OnEnable()
-    {        
     }
     // Update is called once per frame
     void Update()
@@ -54,10 +55,10 @@ public class DialogSys : MonoBehaviour
         var lineData = file.text.Split('\n');        
         foreach(var line in lineData)
         {
-            Debug.Log(line);
+            //Debug.Log(line);
             textList.Add(line);
         }
-        Debug.Log(textList.Count);
+        //Debug.Log(textList.Count);
         textList.RemoveAt(textList.Count - 1);
         //textList.RemoveAt(textList.Count);
         for(int j = 0; j < textList.Count; j++)
@@ -76,7 +77,7 @@ public class DialogSys : MonoBehaviour
     }
     public void fileChoose()
     {
-        startButton.SetActive(false);
+        startButton.GetComponent<Image>().enabled = false;
         if(!GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
@@ -123,7 +124,7 @@ public class DialogSys : MonoBehaviour
             }
             */
         }
-        startButton.gameObject.SetActive(false);
+        //startButton.gameObject.SetActive(false);
         //nextPageButton.gameObject.SetActive(true);
         //textLabelcn.gameObject.SetActive(true);
         //textLabelen.gameObject.SetActive(true);
@@ -131,20 +132,26 @@ public class DialogSys : MonoBehaviour
         if(textTalker[0] == "left")
         {
             textBackgroundLeft.gameObject.SetActive(true);
-            textLabelleft.GetComponent<Text>().text = textList[index];
+            //textLabelleft.GetComponent<Text>().text = textList[index];
+            StartCoroutine(SetTextLeft());
+            leftAudioRandom();
         }
         if(textTalker[0] == "right")
         {
             textBackgroundRight.gameObject.SetActive(true);
-            textLabelright.GetComponent<Text>().text = textList[index];
+            //textLabelright.GetComponent<Text>().text = textList[index];
+            
+            StartCoroutine(SetTextRight());
+            rightAudioRandom();
         }
         isTalking = true;
-        Time.timeScale = 0.0f;
-        GameManager.instance.isPaused = true;
+        //Time.timeScale = 0.0f;
+        //GameManager.instance.isPaused = true;
         
         //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
         //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-        index = index + 1;
+        
+        startButton.SetActive(false);
     }
     void dialogWithoutTrans()
     {
@@ -165,21 +172,23 @@ public class DialogSys : MonoBehaviour
             {
                 if(textTalker[index] == "left")
                 {
+                    StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
                     textBackgroundRight.gameObject.SetActive(false);
                     
-                    textLabelleft.GetComponent<Text>().text = textList[index];
+                    //textLabelleft.GetComponent<Text>().text = textList[index];
                 }
                 if(textTalker[index] == "right")
                 {
+                    StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
                     
-                    textLabelright.GetComponent<Text>().text = textList[index];
+                    //textLabelright.GetComponent<Text>().text = textList[index];
                 }
                 //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
                 //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-                index = index + 1;
+                //index = index + 1;
             }
             
     }
@@ -211,6 +220,7 @@ public class DialogSys : MonoBehaviour
                 textBackgroundRight.gameObject.SetActive(false);
                 
                 textLabelleft.GetComponent<Text>().text = textList[index];
+                leftAudioRandom();
             }
             if(textTalker[index] == "right")
             {
@@ -218,16 +228,17 @@ public class DialogSys : MonoBehaviour
                 textBackgroundRight.gameObject.SetActive(true);
                 
                 textLabelright.GetComponent<Text>().text = textList[index];
+                rightAudioRandom();
             }
                 //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
                 //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-                index = index + 1;
+                //index = index + 1;
         }
     }
     
     public void dialogBox()
     {
-        if(!GameManager.instance.events[8])
+        if(!GameManager.instance.events[8] && textFinished)
         {
             if(index == textList.Count)
             {
@@ -247,25 +258,30 @@ public class DialogSys : MonoBehaviour
             {
                 if(textTalker[index] == "left")
                 {
+                    StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
                     textBackgroundRight.gameObject.SetActive(false);
                     
-                    textLabelleft.GetComponent<Text>().text = textList[index];
+                    //textLabelleft.GetComponent<Text>().text = textList[index];
+                    
+                    leftAudioRandom();
                 }
                 if(textTalker[index] == "right")
                 {
+                    StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
                     
-                    textLabelright.GetComponent<Text>().text = textList[index];
+                    //textLabelright.GetComponent<Text>().text = textList[index];
+                    rightAudioRandom();
                 }
                 //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
                 //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-                index = index + 1;
+                //index = index + 1;
             }
             
         }
-        if(GameManager.instance.events[8])
+        if(GameManager.instance.events[8] && textFinished)
         {
             if((!GameManager.instance.events[0] && !GameManager.instance.events[5]) || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]))
             {
@@ -282,77 +298,103 @@ public class DialogSys : MonoBehaviour
             }
             */
         }
-        /*
-        if(!holdTarget)
+    }
+    
+    void leftAudioRandom()
+    {
+        this.GetComponent<AudioSource>().enabled = false;
+        this.GetComponent<AudioSource>().enabled = true;
+        
+        StopCoroutine("audioChangeLeft");
+        StopCoroutine("audioChangeRight");
+        StartCoroutine(audioStop());
+        
+        //Debug.Log(i);
+        if(!this.GetComponent<AudioSource>().isPlaying && this.GetComponent<AudioSource>().enabled == true)
         {
-            if(index + 1 <= textList.Count)
-            {
-                if(textTalker[index] == "left")
-                {
-                    textBackgroundLeft.gameObject.SetActive(true);
-                    textBackgroundRight.gameObject.SetActive(false);
-                }
-                if(textTalker[index] == "right")
-                {
-                    textBackgroundLeft.gameObject.SetActive(false);
-                    textBackgroundRight.gameObject.SetActive(true);
-                }
-                textLabelcn.GetComponent<TMP_Text>().text = textList[index];
-                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-                index = index + 2;
-            }
-            else
-            {
-                index = 0;
-                textBackgroundLeft.gameObject.SetActive(false);
-                textBackgroundRight.gameObject.SetActive(false);
-                nextPageButton.gameObject.SetActive(false);
-            
-                textLabelcn.gameObject.SetActive(false);
-                //textLabelen.gameObject.SetActive(false);
-                isTalking = false;
-                Time.timeScale = 1.0f;
-                GameManager.instance.isPaused = false;
-            }
+            StartCoroutine(audioChangeLeft());
         }
-        if(holdTarget)
+        
+    }
+    void rightAudioRandom()
+    {
+        
+        this.GetComponent<AudioSource>().enabled = false;
+        this.GetComponent<AudioSource>().enabled = true;
+        
+        StopCoroutine("audioChangeLeft");
+        StopCoroutine("audioChangeRight");
+        StartCoroutine(audioStop());
+        
+        //Debug.Log(i);
+        if(!this.GetComponent<AudioSource>().isPlaying && this.GetComponent<AudioSource>().enabled == true)
         {
-            if(index == textList.Count || index == textList.Count + 1)
-            {
-                sceneTransButton.SetActive(true);
-                GameManager.instance.events[eventNum] = true;
-                index++;
-            }
-            if(index + 1 <= textList.Count)
-            {
-                if(textTalker[index] == "left")
-                {
-                    textBackgroundLeft.gameObject.SetActive(true);
-                    textBackgroundRight.gameObject.SetActive(false);
-                }
-                if(textTalker[index] == "right")
-                {
-                    textBackgroundLeft.gameObject.SetActive(false);
-                    textBackgroundRight.gameObject.SetActive(true);
-                }
-                textLabelcn.GetComponent<TMP_Text>().text = textList[index];
-                //textLabelen.GetComponent<TMP_Text>().text = textList[index + 1];
-                index = index + 2;
-            }            
-            if(index == textList.Count + 2)
-            {
-                index = 0;
-                textBackgroundLeft.gameObject.SetActive(false);
-                textBackgroundRight.gameObject.SetActive(false);
-                nextPageButton.gameObject.SetActive(false);
-                textLabelcn.gameObject.SetActive(false);
-                //textLabelen.gameObject.SetActive(false);
-                isTalking = false;
-                Time.timeScale = 1.0f;
-                GameManager.instance.isPaused = false;
-                sceneTransButton.SetActive(false);
-            }
+            StartCoroutine(audioChangeRight());
         }
-        */
+    }
+    
+    IEnumerator SetTextLeft()
+    {
+        //Debug.Log(textList[index].Length);
+        textFinished = false;
+        textLabelleft.GetComponent<Text>().text = "";
+        for(int i = 0; i < textList[index].Length; i++)
+        {
+            //Debug.Log(i);
+            textLabelleft.GetComponent<Text>().text += textList[index][i];
+            yield return new WaitForSeconds(textSpeed);
+        }
+        index = index + 1;
+        textFinished = true;
+    }
+    IEnumerator SetTextRight()
+    {
+        textFinished = false;
+        textLabelright.GetComponent<Text>().text = "";
+        //Debug.Log(textList[index].Length);
+        for(int i = 0; i < textList[index].Length; i++)
+        {
+            //Debug.Log(i);
+            textLabelright.GetComponent<Text>().text += textList[index][i];
+            yield return new WaitForSeconds(textSpeed);
+        }
+        index = index + 1;
+        textFinished = true;
+    }
+    IEnumerator audioStop()
+    {
+        yield return new WaitForSeconds(((textList[index].Length) * textSpeed));
+        this.GetComponent<AudioSource>().Stop();
+        this.GetComponent<AudioSource>().enabled = false;
+        StopCoroutine("audioChangeLeft");
+        StopCoroutine("audioChangeRight");
+    }
+    IEnumerator audioChangeLeft()
+    {
+        int i = Random.Range(0, leftAudio.Count);
+        while(this.GetComponent<AudioSource>().enabled == true && textTalker[index] == "left")
+        {        
+            i = Random.Range(0, leftAudio.Count);
+            this.GetComponent<AudioSource>().clip = leftAudio[i];
+            this.GetComponent<AudioSource>().Play();
+            //Debug.Log("left");
+            yield return new WaitForSeconds(leftAudio[i].length);
+        }
+        
+        //StartCoroutine(audioChangeLeft());
+    }
+    IEnumerator audioChangeRight()
+    {
+        int i = Random.Range(0, rightAudio.Count);
+        while(this.GetComponent<AudioSource>().enabled == true && textTalker[index] == "right")
+        {        
+            i = Random.Range(0, rightAudio.Count);
+            this.GetComponent<AudioSource>().clip = rightAudio[i];
+            this.GetComponent<AudioSource>().Play();
+            //Debug.Log("right");
+            yield return new WaitForSeconds(rightAudio[i].length);
+        }
+        
+        //StartCoroutine(audioChangeRight());
     }
 }

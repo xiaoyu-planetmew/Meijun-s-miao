@@ -6798,35 +6798,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.7
-  m_Color: {r: 0.5, g: 0.45780924, b: 0.12028301, a: 1}
-  m_Intensity: 0.73
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000d50a2d15cd12770c
+  m_LightType: 1213832864
+  m_BlendStyleIndex: 435
+  m_FalloffIntensity: 222841.75
+  m_Color: {r: 6.1e-43, g: 222841, b: 6.1e-43, a: 222839.5}
+  m_Intensity: 6.1e-43
+  m_LightVolumeOpacity: 222838
+  m_ApplyToSortingLayers: 
   m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 4.39
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  m_UseNormalMap: 179
+  m_LightOrder: 1213832432
+  m_AlphaBlendOnOverlap: 179
+  m_ShadowIntensity: 222832.75
+  m_ShadowVolumeIntensity: 6.1e-43
+  m_PointLightInnerAngle: 6.1e-43
+  m_PointLightOuterAngle: 222827.5
+  m_PointLightInnerRadius: 6.1e-43
+  m_PointLightOuterRadius: 222826.75
+  m_PointLightDistance: 6.1e-43
+  m_PointLightQuality: 1213831808
+  m_ShapeLightParametricSides: 435
+  m_ShapeLightParametricAngleOffset: 222825.25
+  m_ShapeLightParametricRadius: 6.1e-43
+  m_ShapeLightFalloffSize: 222823.75
+  m_ShapeLightFalloffOffset: {x: 6.1e-43, y: 222822.25}
+  m_ShapePath: []
 --- !u!1 &388742271
 GameObject:
   m_ObjectHideFlags: 0
@@ -9845,15 +9841,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_ReferencePixelsPerUnit: 0
+  m_ScaleFactor: 15615.375
+  m_ReferenceResolution: {x: 9.42e-43, y: 15615.328}
+  m_ScreenMatchMode: 672
+  m_MatchWidthOrHeight: -0.0000019573636
+  m_PhysicalUnit: 672
+  m_FallbackScreenDPI: 0
+  m_DefaultSpriteDPI: 1
+  m_DynamicPixelsPerUnit: NaN
   m_PresetInfoIsWorld: 1
 --- !u!223 &597466401
 Canvas:
@@ -19227,7 +19223,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.8901098, y: 1}
+    m_SensorSize: {x: 1.9142857, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -30459,7 +30455,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.5
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -32815,6 +32811,20 @@ MonoBehaviour:
   index: 0
   textList: []
   textTalker: []
+  textSpeed: 0.05
+  leftAudio:
+  - {fileID: 8300000, guid: 90612988518c22f46936535ffa407534, type: 3}
+  - {fileID: 8300000, guid: cb66139848e9518449bad1f63a936dce, type: 3}
+  - {fileID: 8300000, guid: aa12bedbbf85171438d02c82f6ebd081, type: 3}
+  - {fileID: 8300000, guid: f5b4943e123b36643ab36d85da6ec81e, type: 3}
+  - {fileID: 8300000, guid: cab87fc756015d9449d6dbe44e3060d8, type: 3}
+  rightAudio:
+  - {fileID: 8300000, guid: 30ef7796e4d00234a958e00942ad0029, type: 3}
+  - {fileID: 8300000, guid: 01f6497e8e6b399478bd88b2283492e8, type: 3}
+  - {fileID: 8300000, guid: aef844b1bc16ded44bcae0731e0ca451, type: 3}
+  - {fileID: 8300000, guid: 45b09fa464dbb354ea46b520ab18b750, type: 3}
+  - {fileID: 8300000, guid: 8c75b45503d54d2419c64e2271751223, type: 3}
+  - {fileID: 8300000, guid: a08145d3511c6a745b320b9dc49d1c4e, type: 3}
 --- !u!82 &1840119454
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32822,11 +32832,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840119451}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
