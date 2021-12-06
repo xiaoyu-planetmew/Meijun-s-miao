@@ -107,6 +107,7 @@ MonoBehaviour:
   speed: 60
   length: 0
   line: {fileID: 0}
+  numInSequence: 0
   num: 0
 --- !u!58 &7202256689652300117
 CircleCollider2D:
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeCount: 1
+  line: 0
 --- !u!1 &1303183826060401653
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303183826060401653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 538299832133401945}

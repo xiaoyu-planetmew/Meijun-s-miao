@@ -175,6 +175,7 @@ public class DialogSys : MonoBehaviour
                     StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
                     textBackgroundRight.gameObject.SetActive(false);
+                    leftAudioRandom();
                     
                     //textLabelleft.GetComponent<Text>().text = textList[index];
                 }
@@ -183,6 +184,7 @@ public class DialogSys : MonoBehaviour
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
+                    rightAudioRandom();
                     
                     //textLabelright.GetComponent<Text>().text = textList[index];
                 }
