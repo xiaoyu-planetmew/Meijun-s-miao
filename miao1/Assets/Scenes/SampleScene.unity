@@ -11930,7 +11930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15.9, y: -2.2}
+  m_AnchoredPosition: {x: 21.56, y: -2.2}
   m_SizeDelta: {x: 755, y: 393.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653227190
@@ -21013,7 +21013,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.911858, y: 1}
+    m_SensorSize: {x: 1.7792792, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32879,7 +32879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: -54.5}
+  m_AnchoredPosition: {x: 43.3, y: -54.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699041591
@@ -43181,10 +43181,6 @@ PrefabInstance:
       propertyPath: m_TextStyleHashCode
       value: 97690656
       objectReference: {fileID: 0}
-    - target: {fileID: 809024812626811194, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.41
-      objectReference: {fileID: 0}
     - target: {fileID: 1096534325098955975, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -43279,7 +43275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4633223629773115497, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.66
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 4633223629773115497, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
       propertyPath: m_LocalPosition.y
