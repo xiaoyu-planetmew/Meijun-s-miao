@@ -77,7 +77,7 @@ public class DialogSys : MonoBehaviour
     }
     public void fileChoose()
     {
-        startButton.GetComponent<Image>().enabled = false;
+        //startButton.GetComponent<Image>().enabled = false;
         if(!GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
@@ -216,18 +216,20 @@ public class DialogSys : MonoBehaviour
         {
             if(textTalker[index] == "left")
             {
+                StartCoroutine(SetTextLeft());
                 textBackgroundLeft.gameObject.SetActive(true);
                 textBackgroundRight.gameObject.SetActive(false);
                 
-                textLabelleft.GetComponent<Text>().text = textList[index];
+                //textLabelleft.GetComponent<Text>().text = textList[index];
                 leftAudioRandom();
             }
             if(textTalker[index] == "right")
             {
+                StartCoroutine(SetTextRight());
                 textBackgroundLeft.gameObject.SetActive(false);
                 textBackgroundRight.gameObject.SetActive(true);
                 
-                textLabelright.GetComponent<Text>().text = textList[index];
+                //textLabelright.GetComponent<Text>().text = textList[index];
                 rightAudioRandom();
             }
                 //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
