@@ -38,11 +38,11 @@ public class DialogSys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Mathf.Abs(npc.transform.position.x - player.transform.position.x) < 2) && !isTalking)
+        if((Mathf.Abs(npc.transform.position.x - player.transform.position.x) <= 5) && !isTalking)
         {
             startButton.SetActive(true);
         }
-        if((Mathf.Abs(npc.transform.position.x - player.transform.position.x) > 2))
+        if((Mathf.Abs(npc.transform.position.x - player.transform.position.x) > 5))
         {
             startButton.SetActive(false);
         }
@@ -77,7 +77,7 @@ public class DialogSys : MonoBehaviour
     }
     public void fileChoose()
     {
-        startButton.GetComponent<Image>().enabled = false;
+        //startButton.GetComponent<Image>().enabled = false;
         if(!GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
@@ -205,29 +205,33 @@ public class DialogSys : MonoBehaviour
             isTalking = false;
             Time.timeScale = 1.0f;
             GameManager.instance.isPaused = false;
-            sceneTransButton.SetActive(false);
+            //sceneTransButton.SetActive(false);
+            sceneTransButton.GetComponent<NPCSceneTrans>().turnOff();
         }
         if(index == textList.Count && isTalking)
         {
-            sceneTransButton.SetActive(true);
+            //sceneTransButton.SetActive(true);
+            sceneTransButton.GetComponent<NPCSceneTrans>().turnOn();
             index++;
         }
         if(index < textList.Count && isTalking)
         {
             if(textTalker[index] == "left")
             {
+                StartCoroutine(SetTextLeft());
                 textBackgroundLeft.gameObject.SetActive(true);
                 textBackgroundRight.gameObject.SetActive(false);
                 
-                textLabelleft.GetComponent<Text>().text = textList[index];
+                //textLabelleft.GetComponent<Text>().text = textList[index];
                 leftAudioRandom();
             }
             if(textTalker[index] == "right")
             {
+                StartCoroutine(SetTextRight());
                 textBackgroundLeft.gameObject.SetActive(false);
                 textBackgroundRight.gameObject.SetActive(true);
                 
-                textLabelright.GetComponent<Text>().text = textList[index];
+                //textLabelright.GetComponent<Text>().text = textList[index];
                 rightAudioRandom();
             }
                 //textLabelcn.GetComponent<TMP_Text>().text = textList[index];
