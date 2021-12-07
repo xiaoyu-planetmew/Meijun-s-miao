@@ -8,7 +8,7 @@ public class UIManager: MonoBehaviour
 
     private void Start()
     {
-        inventoryMenu.gameObject.SetActive(false);
+        inventoryMenu.gameObject.SetActive(true);
     }
 
     private void Update()

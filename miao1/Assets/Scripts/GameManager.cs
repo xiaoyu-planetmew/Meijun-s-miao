@@ -12,7 +12,9 @@ public class GameManager: MonoBehaviour
     public List<Item> items = new List<Item>();//WHAT KIND OF ITEMS WE HAVE 
     public List<int> itemNumbers = new List<int>();//HOW MANY ITEMS WE HAVE
     public List<Item> CharCollections = new List<Item>();
-    public GameObject[] slots;
+    public GameObject slotList;
+    public List<GameObject> slots;
+    //public GameObject[] slots;
     public GameObject player;
     public List<bool> events = new List<bool>();
     [SerializeField]private List<string> eventName = new List<string>();
@@ -41,17 +43,23 @@ public class GameManager: MonoBehaviour
 
     private void Start()
     {
+        slots = new List<GameObject>();
+        foreach(Transform child in slotList.transform)
+        {
+            slots.Add(child.gameObject);
+        }
         DisplayItems();
     }
     void Update()
     {
         itemCheck();
+        DisplayItems();
     }
 
     private void DisplayItems()
     {
         //We IGNORE the fact
-        for(int i = 0; i < slots.Length; i++)
+        for(int i = 0; i < slots.Count; i++)
         {
             if(i < items.Count)
             {
@@ -60,11 +68,11 @@ public class GameManager: MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].itemSprite;
 
                 //UPDATE slots Count Text
-                slots[i].transform.GetChild(1).GetComponent<Text>().color = new Color(0, 0, 0, 1);
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = itemNumbers[i].ToString();
+                //slots[i].transform.GetChild(1).GetComponent<Text>().color = new Color(0, 0, 0, 1);
+                //slots[i].transform.GetChild(1).GetComponent<Text>().text = itemNumbers[i].ToString();
 
                 //UPDATE CLOSE/THROW button
-                slots[i].transform.GetChild(2).gameObject.SetActive(true);
+                //slots[i].transform.GetChild(2).gameObject.SetActive(true);
             }
             else//Some Remove Items
             {
@@ -73,11 +81,11 @@ public class GameManager: MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
 
                 //UPDATE slots Count Text
-                slots[i].transform.GetChild(1).GetComponent<Text>().color = new Color(1, 1, 1, 0);
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = null;
+                //slots[i].transform.GetChild(1).GetComponent<Text>().color = new Color(1, 1, 1, 0);
+                //slots[i].transform.GetChild(1).GetComponent<Text>().text = null;
 
                 //UPDATE CLOSE/THROW button
-                slots[i].transform.GetChild(2).gameObject.SetActive(false);
+                //slots[i].transform.GetChild(2).gameObject.SetActive(false);
             }
         }
     }
