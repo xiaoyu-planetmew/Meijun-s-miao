@@ -35,14 +35,14 @@ public class UIManager: MonoBehaviour
 
     private void Resume()
     {
-        inventoryMenu.gameObject.SetActive(false);
+        //inventoryMenu.gameObject.SetActive(false);
         Time.timeScale = 1.0f;//Real time is 1.0f
         GameManager.instance.isPaused = false;
     }
 
     private void Pause()
     {
-        inventoryMenu.gameObject.SetActive(true);
+        //inventoryMenu.gameObject.SetActive(true);
         Time.timeScale = 0.0f;//STOP THE TIME
         GameManager.instance.isPaused = true;
     }

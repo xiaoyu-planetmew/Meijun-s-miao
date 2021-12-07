@@ -27,6 +27,7 @@ public class FinalMovement : MonoBehaviour
     public bool running;
     public bool walking;
     public bool moving;
+    //public Canvas playerCanvas;
     
     
 
@@ -103,11 +104,12 @@ public class FinalMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
         
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
-        var i = transform.localScale.y;
+        var i = transform.GetChild(0).localScale.y;
         if(horizontalMove == -1)
         {
-            transform.localScale = new Vector3(horizontalMove * i, i, i);
+            transform.GetChild(0).localScale = new Vector3(horizontalMove * i, i, i);
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            //playerCanvas.scale
             if(outside)
             {
                 running = true;
@@ -121,7 +123,7 @@ public class FinalMovement : MonoBehaviour
         }
         if(horizontalMove == 1)
         {
-            transform.localScale = new Vector3(horizontalMove * i, i, i);
+            transform.GetChild(0).localScale = new Vector3(horizontalMove * i, i, i);
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             if(outside)
             {
