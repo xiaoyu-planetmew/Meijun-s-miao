@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: moment2Chip1
   itemDes: A chip of moment2
-  itemSprite: {fileID: 21300000, guid: 170f3b1ca92b83a4897a13b76c439f23, type: 3}
+  itemSprite: {fileID: 21300000, guid: f7609db009cdac44baecf42ebc5ba89c, type: 3}
   itemPrice: 0
