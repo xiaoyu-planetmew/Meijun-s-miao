@@ -63,10 +63,11 @@ public class BRhythmManager : MonoBehaviour
     public float songTime;
     private int currentIndex = 0; 
     private int longCurrentIndex = 0;
+    public GameObject main;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(numImport());
+        
         lastNote = -1;
         instance = this;
         comboText.text = "0";
@@ -91,7 +92,7 @@ public class BRhythmManager : MonoBehaviour
             longobj.SetActive(false);                       //设置子弹无效
             longPooledObjects.Add(longobj);                     //把子弹添加到链表（对象池）中
         }
-        StartCoroutine(endScene());
+        
     }
     IEnumerator numImport()
     {
@@ -109,17 +110,23 @@ public class BRhythmManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+    public void gameStart()
+    {
         if(!startPlaying)
         {
             if(true)
             {
+                main.SetActive(true);
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
                 //vPlayer.Play();
                 
                 aniPlayer.SetActive(true);
                 StartCoroutine(audioPlay());
-                
+                StartCoroutine(numImport());
+                StartCoroutine(endScene());
             }
         }
     }

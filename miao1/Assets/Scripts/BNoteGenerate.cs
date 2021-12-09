@@ -36,7 +36,7 @@ public class BNoteGenerate : MonoBehaviour
     //public List<float> noteInterval = new List<float>();
     void Start()
     {
-        ///*
+        /*
         if(GameManager.instance.mail == "m1easy" || GameManager.instance.mail == "m2easy")
         {
             saveDate = saveDates[1];
@@ -45,7 +45,8 @@ public class BNoteGenerate : MonoBehaviour
         {
             saveDate = saveDates[0];
         }
-        //*/
+        */
+        saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         startTime = Time.time;
         lineList = new List<Transform>();
         
