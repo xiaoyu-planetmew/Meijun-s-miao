@@ -242,6 +242,11 @@ public class BRhythmManager : MonoBehaviour
     IEnumerator endScene()
     {
         yield return new WaitForSeconds(songTime + delayTime);
+        if(accurary >= this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter])
+        {
+            this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter] = accurary;
+        }
+        
         if(accurary >= 0.5)
         {
             GameManager.instance.events[1] = true;

@@ -19,6 +19,7 @@ public class GameManager: MonoBehaviour
     public GameObject player;
     public List<bool> events = new List<bool>();
     [SerializeField]private List<string> eventName = new List<string>();
+    public List<float> chapterRecord = new List<float>();
 
     public ItemButton thisButton;//Keep Track of which Item Button We are mouse Hovering
     public ItemButton[] itemButtons;//ALL of ITEM BUTTONS in this game [Used for reset]
