@@ -48,6 +48,25 @@ public class birdDialog : MonoBehaviour
     }
     public void helpBird()
     {
+        inventoryResponse.instance.becomeUseful(upload, this.gameObject);
+    }
+    void getMessage()
+    {
+        
+            GameManager.instance.TradeItem(upload, download);
+            isTalk = false;
+            Time.timeScale = 1.0f;
+            dialogBox.gameObject.SetActive(false);
+            buttonLocation.gameObject.SetActive(false);
+            //inventoryMenu.gameObject.SetActive(false);
+            Debug.Log("You have got a flint");
+            tradeFinish = true;
+            inventoryResponse.instance.becomeUseless(upload);
+        
+    }
+    /*
+    public void helpBird()
+    {
         GameManager.instance.TradeItem(upload, download);
         isTalk = false;
         Time.timeScale = 1.0f;
@@ -57,8 +76,10 @@ public class birdDialog : MonoBehaviour
         Debug.Log("You have got a flint");
         tradeFinish = true;
     }
+    */
     public void dontHelpBird()
     {
+        inventoryResponse.instance.becomeUseless(upload);
         dialogBox.gameObject.SetActive(false);
         buttonLocation.gameObject.SetActive(false);
         //inventoryMenu.gameObject.SetActive(false);

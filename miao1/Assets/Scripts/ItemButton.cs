@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System.Text;
 using UnityEngine.UI;
 
-public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public int buttonID;
     public Item thisItem;
@@ -65,6 +65,16 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             //tooltip.UpdateTooltip(GetDetailText(thisItem));
             //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
             tooltip.SetPosition(position);
+            
+        }
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        GetThisItem();
+        if(thisItem != null)
+        {
+            Debug.Log(thisItem.itemName);
+            inventoryResponse.instance.importMessage(thisItem);
         }
     }
 
