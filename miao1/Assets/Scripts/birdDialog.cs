@@ -11,7 +11,7 @@ public class birdDialog : MonoBehaviour
     public GameObject dialogBox;
     public GameObject finalPoint;
     public GameObject buttonLocation;
-    public GameObject inventoryMenu;
+    //public GameObject inventoryMenu;
     private bool isTalk = false;
     private bool tradeFinish = false;
     public Item upload;
@@ -35,8 +35,8 @@ public class birdDialog : MonoBehaviour
     {
         startButton.SetActive(false);
         isTalk = true;
-        Time.timeScale = 0.0f;
-        GameManager.instance.isPaused = true;
+        //Time.timeScale = 0.0f;
+        //GameManager.instance.isPaused = true;
         dialogBox.gameObject.SetActive(true);
         nextPageButton.SetActive(true);
     }
@@ -44,7 +44,7 @@ public class birdDialog : MonoBehaviour
     {
         nextPageButton.SetActive(false);
         buttonLocation.gameObject.SetActive(true);
-        inventoryMenu.gameObject.SetActive(true);
+        //inventoryMenu.gameObject.SetActive(true);
     }
     public void helpBird()
     {
@@ -53,7 +53,7 @@ public class birdDialog : MonoBehaviour
         Time.timeScale = 1.0f;
         dialogBox.gameObject.SetActive(false);
         buttonLocation.gameObject.SetActive(false);
-        inventoryMenu.gameObject.SetActive(false);
+        //inventoryMenu.gameObject.SetActive(false);
         Debug.Log("You have got a flint");
         tradeFinish = true;
     }
@@ -61,7 +61,7 @@ public class birdDialog : MonoBehaviour
     {
         dialogBox.gameObject.SetActive(false);
         buttonLocation.gameObject.SetActive(false);
-        inventoryMenu.gameObject.SetActive(false);
+        //inventoryMenu.gameObject.SetActive(false);
         isTalk = false;
         Time.timeScale = 1.0f;
     }
