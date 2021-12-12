@@ -25557,7 +25557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89507683ad86afc42bd62491053eca24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
+  _camera: {fileID: 0}
   target: {fileID: 133832561}
   alwaysFollow: 1
   canvas: {fileID: 1535436388}
@@ -49932,7 +49932,7 @@ MonoBehaviour:
   m_margin: {x: -34.973267, y: -4.663084, z: -68.39208, w: -0.93594545}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1929566122

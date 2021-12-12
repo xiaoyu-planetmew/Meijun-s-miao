@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIFollow : MonoBehaviour
 {
-    public Camera camera;
+    public Camera _camera;
     public GameObject target;
     public bool alwaysFollow = true;
 
@@ -14,7 +14,7 @@ public class UIFollow : MonoBehaviour
 
     public void Init()
     {
-        if(camera.gameObject.activeInHierarchy)
+        if(_camera.gameObject.activeInHierarchy)
         {
             FollowObject();
         }
@@ -23,7 +23,7 @@ public class UIFollow : MonoBehaviour
 
     public void Update()
     {
-        if(camera.gameObject.activeInHierarchy)
+        if(_camera.gameObject.activeInHierarchy)
         {
             FollowObject();
         }
@@ -34,9 +34,9 @@ public class UIFollow : MonoBehaviour
         if (!alwaysFollow && hasFollowed)
             return;
 
-        if (camera != null && target != null)
+        if (_camera != null && target != null)
         {
-            Vector2 pos = camera.WorldToScreenPoint(target.transform.position);
+            Vector2 pos = _camera.WorldToScreenPoint(target.transform.position);
             Vector2 point;
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent as RectTransform, pos, canvas.worldCamera, out point))
             {

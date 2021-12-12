@@ -22,7 +22,7 @@ public class DialogSys : MonoBehaviour
     public List<TextAsset> textfiles = new List<TextAsset>();
     public bool firstMeet;
     public bool isTalking;
-    private bool holdTarget;
+    //private bool holdTarget;
     public int index;
     public List<string> textList = new List<string>();
     public List<string> textTalker = new List<string>(); 
@@ -88,17 +88,17 @@ public class DialogSys : MonoBehaviour
             if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
             {
                 GetTextFromFile(textfiles[2]);
-                holdTarget = false;
+                //holdTarget = false;
             }
             if(GameManager.instance.events[0] && !GameManager.instance.events[6])
             {
                 GetTextFromFile(textfiles[1]);
-                holdTarget = true;
+                //holdTarget = true;
             }
             if(GameManager.instance.events[5] && !GameManager.instance.events[7])
             {
                 GetTextFromFile(textfiles[1]);
-                holdTarget = true;
+                //holdTarget = true;
             }
             if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6])
             {
