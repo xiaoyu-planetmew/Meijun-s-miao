@@ -30,7 +30,7 @@ public class guluwu : MonoBehaviour
     public void thornBurn()
     {
         StartCoroutine(burnAni());
-        
+        thorn.GetComponent<Animator>().SetTrigger("burn");
     }
     IEnumerator burnAni()
     {
