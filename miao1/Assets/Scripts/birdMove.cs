@@ -81,14 +81,27 @@ public class birdMove : MonoBehaviour {
                 }
             Vector2 temp = Vector2.MoveTowards(transform.position, finalPoint.position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(temp);
+            //isFlying = true;
             if(transform.position == finalPoint.position)
             {
-                transform.localScale = new Vector3(scale, scale, scale);
-                this.GetComponent<Animator>().SetTrigger("land");
-                StopAllCoroutines();
                 isFlying = false;
                 isFlyingAni = false;
+                transform.localScale = new Vector3(scale, scale, scale);
+                StopAllCoroutines();
+                this.GetComponent<Animator>().ResetTrigger("lift");
+                this.GetComponent<Animator>().ResetTrigger("fly");  
+                this.GetComponent<Animator>().SetTrigger("land");            
+                //this.GetComponent<Animator>().enabled = false;
             }
+            if(isFlying)
+            {
+                this.GetComponent<Animator>().SetTrigger("fly");
+            }
+            if(!isFlying && !isFlyingAni && !(transform.position == finalPoint.position))
+            {
+                StartCoroutine("fly");
+            }
+            
         }
     }
     void MoveToThePoints()

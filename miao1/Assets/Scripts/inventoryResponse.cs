@@ -11,6 +11,8 @@ public class inventoryResponse : MonoBehaviour
     public List<GameObject> itemSource = new List<GameObject>();
     public GameObject tipUI;
     public GameObject usefulItemUI;
+    public GameObject slots;
+    public GameObject inventoryTip;
     Item thisItem;
     GameObject thisObj;
     // Start is called before the first frame update
@@ -39,11 +41,13 @@ public class inventoryResponse : MonoBehaviour
         {
             if(_item == usefulItem[i])
             {
-                tipUI.transform.GetChild(0).GetComponent<Text>().text = "Do I need to use " + _item.itemName;
-                tipUI.SetActive(true);
-                usefulItemUI.SetActive(true);
+                //tipUI.transform.GetChild(0).GetComponent<Text>().text = "Do I need to use " + _item.itemName;
+                //tipUI.SetActive(true);
+                //usefulItemUI.SetActive(true);
                 thisItem = usefulItem[i];
                 thisObj = itemSource[i];
+                exportMessage();
+                //finishDialog();
             }
         }
     }
@@ -72,5 +76,12 @@ public class inventoryResponse : MonoBehaviour
         thisObj.SendMessage("getMessage", thisObj, SendMessageOptions.RequireReceiver);
         thisItem = null;
         thisObj = null;
+    }
+    public void finishDialog()
+    {
+        slots.GetComponent<slotsState>().turnOnInventory();
+        inventoryTip.SetActive(false);
+        tipUI.SetActive(false);
+        usefulItemUI.SetActive(false);
     }
 }

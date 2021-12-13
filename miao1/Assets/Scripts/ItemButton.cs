@@ -71,7 +71,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         GetThisItem();
-        if(thisItem != null)
+        if(thisItem != null && this.transform.parent.GetComponent<slotsState>().slotCanBeClick)
         {
             Debug.Log(thisItem.itemName);
             inventoryResponse.instance.importMessage(thisItem);

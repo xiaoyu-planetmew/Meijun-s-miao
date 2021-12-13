@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class birdDialog : MonoBehaviour
 {
     public GameObject player;
+    public GameObject playerTip;
+    public GameObject playerChooseBox;
+    public string playerRespond;
     public GameObject bird;
     public GameObject startButton;
     public GameObject nextPageButton;
     public GameObject dialogBox;
+    public GameObject dialog2Box;
     public GameObject finalPoint;
     public GameObject buttonLocation;
     //public GameObject inventoryMenu;
-    private bool isTalk = false;
-    private bool tradeFinish = false;
+    public bool isTalk = false;
+    public bool tradeFinish = false;
     public Item upload;
     public Item download;
 
@@ -42,17 +47,28 @@ public class birdDialog : MonoBehaviour
     }
     public void nextDialog()
     {
-        nextPageButton.SetActive(false);
-        buttonLocation.gameObject.SetActive(true);
-        //inventoryMenu.gameObject.SetActive(true);
+        if(isTalk && !tradeFinish)
+        {
+            Debug.Log("1");
+            dialog2Box.SetActive(true);
+        }
+        
     }
     public void helpBird()
     {
         inventoryResponse.instance.becomeUseful(upload, this.gameObject);
     }
+    
     void getMessage()
     {
-        
+        playerChooseBox.SetActive(false);
+        playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespond;
+        playerTip.SetActive(true);
+    }
+    public void finishDialog()
+    {
+        if(isTalk && !tradeFinish)
+        {
             GameManager.instance.TradeItem(upload, download);
             isTalk = false;
             Time.timeScale = 1.0f;
@@ -62,7 +78,7 @@ public class birdDialog : MonoBehaviour
             Debug.Log("You have got a flint");
             tradeFinish = true;
             inventoryResponse.instance.becomeUseless(upload);
-        
+        }
     }
     /*
     public void helpBird()
