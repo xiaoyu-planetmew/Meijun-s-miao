@@ -10931,6 +10931,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1899568832}
     m_Modifications:
+    - target: {fileID: 1127253390369301940, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
+      propertyPath: m_Color.b
+      value: 0.88554645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127253390369301940, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.92608875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127253390369301940, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9433962
+      objectReference: {fileID: 0}
     - target: {fileID: 1521177240920631132, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
       propertyPath: tooltip
       value: 
@@ -38067,7 +38079,7 @@ MonoBehaviour:
   CharCollections: []
   slotList: {fileID: 1899568831}
   slots: []
-  player: {fileID: 1397711434}
+  player: {fileID: 133832561}
   events: 0000000000000000000000000000000000000000
   eventName:
   - Moment1
