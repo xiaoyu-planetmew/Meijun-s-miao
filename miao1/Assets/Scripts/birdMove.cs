@@ -11,11 +11,13 @@ public class birdMove : MonoBehaviour {
     public bool isFlying;
     public bool isFlyingAni;
     public Item target;
+    float scale;
     private bool hungry = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.transform.position = new Vector3(theWayPoints[0].position.x, theWayPoints[0].position.y, theWayPoints[0].position.z);
+        scale = this.transform.localScale.x;
     }
     // Update is called once per frame
     void Update()
@@ -35,11 +37,11 @@ public class birdMove : MonoBehaviour {
             
                 if(transform.position.x < theWayPoints[index].position.x)
                 {
-                    transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+                    transform.localScale = new Vector3(-1 * scale, scale, scale);
                 }
                 if(transform.position.x > theWayPoints[index].position.x)
                 {
-                    transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    transform.localScale = new Vector3(scale, scale, scale);
                 }
                 MoveToThePoints();
                 isFlying = true;
@@ -71,17 +73,17 @@ public class birdMove : MonoBehaviour {
         {
             if(transform.position.x < finalPoint.position.x)
                 {
-                    transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+                    transform.localScale = new Vector3(-1 * scale, scale, scale);
                 }
                 if(transform.position.x > finalPoint.position.x)
                 {
-                    transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    transform.localScale = new Vector3(scale, scale, scale);
                 }
             Vector2 temp = Vector2.MoveTowards(transform.position, finalPoint.position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(temp);
             if(transform.position == finalPoint.position)
             {
-                transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                transform.localScale = new Vector3(scale, scale, scale);
                 this.GetComponent<Animator>().SetTrigger("land");
                 StopAllCoroutines();
                 isFlying = false;
