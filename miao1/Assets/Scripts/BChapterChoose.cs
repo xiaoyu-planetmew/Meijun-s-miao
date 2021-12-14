@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class BChapterChoose : MonoBehaviour
 {
     public int chapterQuantity;
-    public int previous;
     public int pprevious;
+    public int previous;
+    
     public int chapter = 0;
     public int next;
     public int nnext;
@@ -53,7 +54,7 @@ public class BChapterChoose : MonoBehaviour
         {
             previous = chapterQuantity - 1;
         }
-        pprevious = pprevious -1;
+        pprevious = previous -1;
         if(previous == 0)
         {
             pprevious = chapterQuantity - 1;

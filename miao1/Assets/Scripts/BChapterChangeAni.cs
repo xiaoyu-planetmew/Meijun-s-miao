@@ -32,11 +32,11 @@ public class BChapterChangeAni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(changeDirection == -1)
+        if(changeDirection == 1)
         {
             toLeft();
         }
-        if(changeDirection == 1)
+        if(changeDirection == -1)
         {
             toRight();
         }
