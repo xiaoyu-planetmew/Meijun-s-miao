@@ -18,7 +18,7 @@ public class moment2chipCompound : MonoBehaviour
         c = 0;
         for(int i = 0; i < GameManager.instance.items.Count; i++)
         {
-            if(GameManager.instance.items[i].itemDes == "A chip of moment2")
+            if(GameManager.instance.items[i].itemPrice == 2)
             {
                 c++;
             }
