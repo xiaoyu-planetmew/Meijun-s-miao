@@ -1853,6 +1853,7 @@ GameObject:
   - component: {fileID: 89898377}
   - component: {fileID: 89898376}
   - component: {fileID: 89898375}
+  - component: {fileID: 89898378}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -1974,6 +1975,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89898373}
   m_CullTransparentMesh: 1
+--- !u!114 &89898378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89898373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
 --- !u!1 &97342688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6498,6 +6512,7 @@ GameObject:
   - component: {fileID: 327354015}
   - component: {fileID: 327354014}
   - component: {fileID: 327354013}
+  - component: {fileID: 327354016}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -6643,6 +6658,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327354011}
   m_CullTransparentMesh: 1
+--- !u!114 &327354016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327354011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
 --- !u!1 &330677044
 GameObject:
   m_ObjectHideFlags: 0
@@ -41221,6 +41249,7 @@ GameObject:
   - component: {fileID: 1525352779}
   - component: {fileID: 1525352778}
   - component: {fileID: 1525352777}
+  - component: {fileID: 1525352780}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -41342,6 +41371,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525352775}
   m_CullTransparentMesh: 1
+--- !u!114 &1525352780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525352775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
 --- !u!1 &1535436384
 GameObject:
   m_ObjectHideFlags: 0
@@ -43351,6 +43393,7 @@ GameObject:
   - component: {fileID: 1606555588}
   - component: {fileID: 1606555587}
   - component: {fileID: 1606555586}
+  - component: {fileID: 1606555589}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -43544,6 +43587,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606555584}
   m_CullTransparentMesh: 1
+--- !u!114 &1606555589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606555584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
 --- !u!1 &1613690912
 GameObject:
   m_ObjectHideFlags: 0
@@ -53429,6 +53485,7 @@ GameObject:
   - component: {fileID: 2036639486}
   - component: {fileID: 2036639485}
   - component: {fileID: 2036639484}
+  - component: {fileID: 2036639487}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -53550,6 +53607,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036639482}
   m_CullTransparentMesh: 1
+--- !u!114 &2036639487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036639482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
 --- !u!1 &2036781628
 GameObject:
   m_ObjectHideFlags: 0
@@ -56189,6 +56259,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6085210273794991140, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: key
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 7526711116437040746, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_RootOrder
       value: 7

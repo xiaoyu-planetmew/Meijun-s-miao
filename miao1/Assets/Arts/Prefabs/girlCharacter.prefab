@@ -2096,6 +2096,7 @@ GameObject:
   - component: {fileID: 6087104116283381033}
   - component: {fileID: 6213571290213868499}
   - component: {fileID: 8846430236619001282}
+  - component: {fileID: 6085210273794991140}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -2241,6 +2242,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6085210273794991140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523680140530635995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc392fdaa3741f47b132fc3e2690ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
 --- !u!1 &2759248518679294821
 GameObject:
   m_ObjectHideFlags: 0
