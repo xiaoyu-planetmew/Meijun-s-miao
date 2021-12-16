@@ -181,10 +181,25 @@ public class DialogSys : MonoBehaviour
                 }
                 if(textTalker[index] == "right")
                 {
+                    if(textList[index][0] == 'C')
+                    {
+                        npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
+                        textList[index] = textList[index].Substring(1);
+                    }
+                    if(textList[index][0] == 'D')
+                    {
+                        npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+                        textList[index] = textList[index].Substring(1);
+                    }
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
-                    rightAudioRandom();
+                    if(textList[index][0] != 'D' && textList[index][0] != 'C')
+                    {
+                        rightAudioRandom();
+                    }
+                    
+                    
                     
                     //textLabelright.GetComponent<Text>().text = textList[index];
                 }

@@ -34,6 +34,8 @@ public class BRhythmManager : MonoBehaviour
     public Text accuraryText;
     public Text effect;
     public GameObject hitEffect;
+    public GameObject blueBorderAni;
+    public GameObject artLetterAni;
     public float delayTime;
     //[Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
     //[EventID]
@@ -151,7 +153,8 @@ public class BRhythmManager : MonoBehaviour
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
         trackNumUsed[last] = true;
-        
+        blueBorderAni.GetComponent<Animator>().SetTrigger("hit");
+        artLetterAni.GetComponent<Animator>().SetTrigger("hit");
     }
     public void NoteHitExact(int last)
     {
@@ -168,6 +171,8 @@ public class BRhythmManager : MonoBehaviour
         //accuraryText.text = accurary.ToString() + "%";
         accuraryText.text = ((float)currentHitEffect / currentNoteCount).ToString("0.00%");
         trackNumUsed[last] = true;
+        blueBorderAni.GetComponent<Animator>().SetTrigger("hit");
+        artLetterAni.GetComponent<Animator>().SetTrigger("hit");
     }
     public void NoteMissed(int last)
     {
