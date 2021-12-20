@@ -6,6 +6,7 @@ public class birdMove : MonoBehaviour {
     public float speed = 0.05f;                 //移动速度
     public Transform[] theWayPoints;          //移动目标点组
     public Transform finalPoint;
+    public Transform endPoint;
     private float passedTime; // default 0
     public float intervalTime;  // set time interval
     public bool isFlying;
@@ -13,6 +14,7 @@ public class birdMove : MonoBehaviour {
     public Item target;
     float scale;
     private bool hungry = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -118,5 +120,16 @@ public class birdMove : MonoBehaviour {
         isFlyingAni = true;
         yield return new WaitForSeconds(0.5f);
         this.GetComponent<Animator>().SetTrigger("fly");
+    }
+    public void flyToTheEnd()
+    {
+        finalPoint.position = new Vector3(endPoint.position.x, endPoint.position.y, endPoint.position.z);
+        this.GetComponent<Animator>().ResetTrigger("land"); 
+        isFlying = true;
+        if(isFlying && !isFlyingAni)
+        {
+            StartCoroutine("fly");
+        }
+        //StartCoroutine("fly");
     }
 }

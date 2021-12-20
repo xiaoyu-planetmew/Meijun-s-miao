@@ -50,6 +50,7 @@ public class birdDialog : MonoBehaviour
         if(isTalk && !tradeFinish)
         {
             Debug.Log("1");
+            GameManager.instance.RemoveItem(upload);
             dialog2Box.SetActive(true);
         }
         
@@ -69,7 +70,8 @@ public class birdDialog : MonoBehaviour
     {
         if(isTalk && !tradeFinish)
         {
-            GameManager.instance.TradeItem(upload, download);
+            //GameManager.instance.TradeItem(upload, download);
+            GameManager.instance.AddItem(download);
             isTalk = false;
             Time.timeScale = 1.0f;
             dialogBox.gameObject.SetActive(false);
