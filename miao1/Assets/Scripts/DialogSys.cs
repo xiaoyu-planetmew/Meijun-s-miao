@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Spine.Unity;
 
 public class DialogSys : MonoBehaviour
 {
@@ -185,11 +186,13 @@ public class DialogSys : MonoBehaviour
                     {
                         npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
                         textList[index] = textList[index].Substring(1);
+                        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
                     }
                     if(textList[index][0] == 'D')
                     {
                         npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
                         textList[index] = textList[index].Substring(1);
+                        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
                     }
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
