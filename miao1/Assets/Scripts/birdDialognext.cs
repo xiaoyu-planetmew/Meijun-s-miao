@@ -17,12 +17,18 @@ public class birdDialognext : MonoBehaviour
     {
         
     }
-    public void click()
+    public void click1()
     {
         GameManager.instance.player.transform.Find("Canvas").GetChild(0).gameObject.SetActive(false);
         GameManager.instance.player.transform.Find("Canvas").GetChild(0).GetChild(2).gameObject.SetActive(false);
         GameManager.instance.player.transform.Find("Canvas").GetChild(1).gameObject.SetActive(true);
         GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = s1;
         GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = s2;
+    }
+    public void click2()
+    {
+        //GameManager.instance.player.transform.Find("Canvas").GetChild(0).gameObject.SetActive(false);
+        //GameManager.instance.player.transform.Find("Canvas").GetChild(0).GetChild(2).gameObject.SetActive(false);
+        GameObject.Find("birdDialogBox").GetComponent<birdDialog>().nextDialog();
     }
 }

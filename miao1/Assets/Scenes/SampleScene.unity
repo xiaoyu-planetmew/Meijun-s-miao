@@ -2703,6 +2703,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105392927}
   m_CullTransparentMesh: 1
+--- !u!1 &108140577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7610881479420713127, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1547472741298562293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &108140578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108140577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s1: 
+  s2: 
 --- !u!1 &117677078
 GameObject:
   m_ObjectHideFlags: 0
@@ -45639,9 +45658,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1606555590}
+      - m_Target: {fileID: 1934446314}
         m_TargetAssemblyTypeName: birdDialognext, Assembly-CSharp
-        m_MethodName: click
+        m_MethodName: click1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53396,6 +53415,7 @@ GameObject:
   - component: {fileID: 1934446313}
   - component: {fileID: 1934446312}
   - component: {fileID: 1934446311}
+  - component: {fileID: 1934446314}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -53488,6 +53508,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 50
   m_TargetDisplay: 0
+--- !u!114 &1934446314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934446309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s1: "\u98DF\u3079\u7269\u304C\u3042\u308A\u307E\u3059\u3002"
+  s2: "\u308F\u305F\u3057\u3082\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u3002"
 --- !u!1 &1935444859
 GameObject:
   m_ObjectHideFlags: 0
@@ -58553,9 +58587,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1489576865}
     - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1310090192}
+      objectReference: {fileID: 108140578}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: click2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: click2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: birdDialognext, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: birdDialognext, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846430236619001282, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
 --- !u!1001 &2790612841484438542
