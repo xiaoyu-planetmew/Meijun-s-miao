@@ -9228,8 +9228,8 @@ MonoBehaviour:
   lines: {fileID: 1955256770}
   lineList: []
   saveDates:
-  - {fileID: 4900000, guid: 47a83475fe54aa348a309b57608d93f8, type: 3}
-  - {fileID: 4900000, guid: 8c60bbb3dea98d249b1358dd75553ce0, type: 3}
+  - {fileID: 4900000, guid: c692bd42894f7a24998e40496ea00eb1, type: 3}
+  - {fileID: 4900000, guid: 8705eff237c94bf4ba2037d4fa758248, type: 3}
   saveDate: {fileID: 0}
   saveList: []
   trackNum: []
@@ -34797,7 +34797,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 30.7}
-  m_SizeDelta: {x: 169, y: 133}
+  m_SizeDelta: {x: 286, y: 139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102067833
 MonoBehaviour:
