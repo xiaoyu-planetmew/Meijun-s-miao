@@ -39,6 +39,7 @@ public class DialogSys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameManager.instance.player;
         if((Mathf.Abs(npc.transform.position.x - player.transform.position.x) <= 5) && !isTalking)
         {
             startButton.SetActive(true);
