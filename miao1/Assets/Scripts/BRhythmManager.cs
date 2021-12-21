@@ -257,6 +257,14 @@ public class BRhythmManager : MonoBehaviour
             GameManager.instance.events[1] = true;
         }
         GameManager.instance.events[6] = true;
+        //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
         SceneManager.LoadScene(0);
+        //StartCoroutine(loadDelay());
+    }
+    IEnumerator loadDelay()
+    {
+        GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = true;
     }
 }
