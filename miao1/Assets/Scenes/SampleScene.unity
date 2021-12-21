@@ -17399,11 +17399,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &834988285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8685357142813218416, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
-  m_PrefabInstance: {fileID: 1547472741298562293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &848368607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17663,17 +17658,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851262980}
   m_CullTransparentMesh: 1
---- !u!114 &854804362 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 854804362, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
-  m_PrefabInstance: {fileID: 1547472741298562293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &858222869
 GameObject:
   m_ObjectHideFlags: 0
@@ -18811,17 +18795,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &895411164 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 895411164, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
-  m_PrefabInstance: {fileID: 1547472741298562293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &896638870
 GameObject:
   m_ObjectHideFlags: 0
@@ -45568,6 +45541,7 @@ GameObject:
   - component: {fileID: 1606555587}
   - component: {fileID: 1606555586}
   - component: {fileID: 1606555589}
+  - component: {fileID: 1606555590}
   m_Layer: 5
   m_Name: nextPageButton
   m_TagString: Untagged
@@ -45639,66 +45613,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429342258}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: OnClick
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 834988285}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1190268325}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 895411164}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u98DF\u3079\u7269\u304C\u3042\u308A\u307E\u3059\u3002"
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 854804362}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u308F\u305F\u3057\u3082\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u3002"
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1606555584}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -45715,6 +45629,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1606555590}
+        m_TargetAssemblyTypeName: birdDialognext, Assembly-CSharp
+        m_MethodName: click
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45774,6 +45700,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 32
+--- !u!114 &1606555590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606555584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s1: "\u98DF\u3079\u7269\u304C\u3042\u308A\u307E\u3059\u3002"
+  s2: "\u308F\u305F\u3057\u3082\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u3002"
 --- !u!1 &1613690912
 GameObject:
   m_ObjectHideFlags: 0

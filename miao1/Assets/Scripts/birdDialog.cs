@@ -31,6 +31,9 @@ public class birdDialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameManager.instance.player;
+        playerTip = player.transform.Find("Canvas").GetChild(0).gameObject;
+        playerChooseBox = player.transform.Find("Canvas").GetChild(1).gameObject;
         if((bird.transform.position == finalPoint.transform.position) && !isTalk && !tradeFinish)
         {
             startButton.SetActive(true);
