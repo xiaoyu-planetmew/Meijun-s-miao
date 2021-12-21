@@ -11,7 +11,7 @@ public class girlFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         this.transform.position = GameManager.instance.player.transform.position;
     }
