@@ -10709,6 +10709,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10817,6 +10818,20 @@ Transform:
   m_Father: {fileID: 752095438}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be39a24bbb24e45458ec7705f799a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusLocation: {fileID: 1360127074}
+  speed: 2
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39215,6 +39230,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1360127073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360127074}
+  m_Layer: 0
+  m_Name: npcCameraFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1360127074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360127073}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1800003, y: 3.1399999, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2138128132}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365120981
 GameObject:
   m_ObjectHideFlags: 0
@@ -50651,6 +50696,7 @@ MonoBehaviour:
   eventNum: 1
   player: {fileID: 133832561}
   npc: {fileID: 2138128129}
+  cam: {fileID: 519420028}
   textLabelleft: {fileID: 661651304}
   textLabelright: {fileID: 1465495430}
   textBackgroundLeft: {fileID: 1016265829}
@@ -58286,6 +58332,11 @@ Transform:
 --- !u!1 &2138128129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2349055113251026424, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
+  m_PrefabInstance: {fileID: 7368984463652279245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2138128132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4633223629773115497, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
   m_PrefabInstance: {fileID: 7368984463652279245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2142063334

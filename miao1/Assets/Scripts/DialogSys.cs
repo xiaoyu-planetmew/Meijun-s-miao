@@ -13,6 +13,7 @@ public class DialogSys : MonoBehaviour
     public int eventNum;
     public GameObject player;
     public GameObject npc;
+    public GameObject cam;
     public GameObject textLabelleft;
     public GameObject textLabelright;
     public GameObject textBackgroundLeft;
@@ -188,12 +189,20 @@ public class DialogSys : MonoBehaviour
                         npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
                         textList[index] = textList[index].Substring(1);
                         npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
+                        if(cam.activeInHierarchy)
+                        {
+                            cam.GetComponent<cameraFocus>().focus();
+                        }
                     }
                     if(textList[index][0] == 'D')
                     {
                         npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
                         textList[index] = textList[index].Substring(1);
                         npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
+                        if(cam.activeInHierarchy)
+                        {
+                            cam.GetComponent<cameraFocus>().cancelFocus();
+                        }
                     }
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
