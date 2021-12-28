@@ -186,9 +186,9 @@ public class DialogSys : MonoBehaviour
                 {
                     if(textList[index][0] == 'C')
                     {
-                        npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
+                        //npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
                         textList[index] = textList[index].Substring(1);
-                        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
+                        //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
                         if(cam.activeInHierarchy)
                         {
                             cam.GetComponent<cameraFocus>().focus();
@@ -196,9 +196,9 @@ public class DialogSys : MonoBehaviour
                     }
                     if(textList[index][0] == 'D')
                     {
-                        npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+                        //npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
                         textList[index] = textList[index].Substring(1);
-                        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
+                        //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
                         if(cam.activeInHierarchy)
                         {
                             cam.GetComponent<cameraFocus>().cancelFocus();
