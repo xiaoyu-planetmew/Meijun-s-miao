@@ -6,7 +6,7 @@ public class teleportButtonActive : MonoBehaviour
 {
     public GameObject buttonLocation;
     public GameObject button;
-    public GameObject player;
+    GameObject player;
     public float jumpDistance;
     // Start is called before the first frame update
     void Start()

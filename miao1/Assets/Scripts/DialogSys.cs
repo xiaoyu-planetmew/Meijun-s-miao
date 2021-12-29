@@ -32,6 +32,7 @@ public class DialogSys : MonoBehaviour
     public List<AudioClip> leftAudio = new List<AudioClip>();
     public List<AudioClip> rightAudio = new List<AudioClip>();
     bool textFinished;
+    public string output;
     // Start is called before the first frame update
     void Start()
     {
@@ -188,6 +189,7 @@ public class DialogSys : MonoBehaviour
                     {
                         //npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
                         textList[index] = textList[index].Substring(1);
+                        output = textList[index];
                         //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
                         if(cam.activeInHierarchy)
                         {
@@ -198,12 +200,14 @@ public class DialogSys : MonoBehaviour
                     {
                         //npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
                         textList[index] = textList[index].Substring(1);
+                        output = textList[index];
                         //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
                         if(cam.activeInHierarchy)
                         {
                             cam.GetComponent<cameraFocus>().cancelFocus();
                         }
                     }
+                    output = textList[index];
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
