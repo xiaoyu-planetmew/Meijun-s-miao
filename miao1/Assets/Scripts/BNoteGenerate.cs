@@ -24,7 +24,7 @@ public class BNoteGenerate : MonoBehaviour
     
     public List<int> line = new List<int>();
     public List<bool> usedNote;
-   
+    public List<TextAsset> saveDatesLong = new List<TextAsset>();
     public List<float> longStartList = new List<float>();
     public List<float> longEndList = new List<float>();
     public List<int> longLineList = new List<int>();
