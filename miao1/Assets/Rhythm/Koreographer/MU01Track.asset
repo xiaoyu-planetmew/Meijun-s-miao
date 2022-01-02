@@ -16,8 +16,8 @@ MonoBehaviour:
   mEventList:
   - mStartSample: 414000
     mEndSample: 414000
-  - mStartSample: 444000
-    mEndSample: 444000
+  - mStartSample: 432000
+    mEndSample: 432000
   - mStartSample: 552000
     mEndSample: 552000
   - mStartSample: 624000
@@ -34,6 +34,8 @@ MonoBehaviour:
     mEndSample: 906000
   - mStartSample: 918000
     mEndSample: 918000
+  - mStartSample: 936000
+    mEndSample: 936000
   - mStartSample: 936000
     mEndSample: 936000
   - mStartSample: 966000
@@ -56,8 +58,6 @@ MonoBehaviour:
     mEndSample: 1104000
   - mStartSample: 1122000
     mEndSample: 1122000
-  - mStartSample: 1182000
-    mEndSample: 1182000
   - mStartSample: 1194000
     mEndSample: 1194000
   - mStartSample: 1206000

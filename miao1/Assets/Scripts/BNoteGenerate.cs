@@ -25,6 +25,9 @@ public class BNoteGenerate : MonoBehaviour
     public List<int> line = new List<int>();
     public List<bool> usedNote;
     public List<TextAsset> saveDatesLong = new List<TextAsset>();
+    public TextAsset saveDateLong;
+    public List<string> saveListLong = new List<string>();
+    public List<float> longTrackNum = new List<float>();
     public List<float> longStartList = new List<float>();
     public List<float> longEndList = new List<float>();
     public List<int> longLineList = new List<int>();
@@ -47,6 +50,7 @@ public class BNoteGenerate : MonoBehaviour
         }
         */
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         startTime = Time.time;
         lineList = new List<Transform>();
         
@@ -58,6 +62,7 @@ public class BNoteGenerate : MonoBehaviour
             //basePoint[i] = line.transform.GetChild(i).gameObject;
         }
         readFromTXT();
+        readFormTXTLong();
         for(int i = 0; i < trackTime.Count; i++)
         {
             usedNote.Add(true);
@@ -73,6 +78,9 @@ public class BNoteGenerate : MonoBehaviour
     }
     void readFromTXT()
     {
+        trackNum.Clear();
+        trackTime.Clear();
+        line.Clear();
         saveList.Clear();
         var lineData = saveDate.text.Split('\n');
         foreach(var line in lineData)
@@ -110,6 +118,56 @@ public class BNoteGenerate : MonoBehaviour
                 line.Add(6);
             }
 
+        }
+    }
+    void readFormTXTLong()
+    {
+        longTrackNum.Clear();
+        longStartList.Clear();
+        longEndList.Clear();
+        longLineList.Clear();
+        saveListLong.Clear();
+        usedLongNote.Clear();
+        var lineData = saveDateLong.text.Split('\n');
+        foreach(var line in lineData)
+        {
+            saveListLong.Add(line);
+            
+        }
+        for(int i = 0; i < lineData.Length - 1; i++)
+        {
+            var noteData = lineData[i].Split(',');
+            longTrackNum.Add(float.Parse(noteData[0]));
+            longStartList.Add(float.Parse(noteData[1]));
+            longEndList.Add(float.Parse(noteData[2]));
+            //longLineList.Add(int.Parse(noteData[3]));
+            usedLongNote.Add(true);
+            
+            if(noteData[3] == "S")
+            {
+                longLineList.Add(1);
+            }
+            if(noteData[3] == "D")
+            {
+                longLineList.Add(2);
+            }
+            if(noteData[3] == "F")
+            {
+                longLineList.Add(3);
+            }
+            if(noteData[3] == "J")
+            {
+                longLineList.Add(4);
+            }
+            if(noteData[3] == "K")
+            {
+                longLineList.Add(5);
+            }
+            if(noteData[3] == "L")
+            {
+                longLineList.Add(6);
+            }
+            
         }
     }
     void FixedUpdate()

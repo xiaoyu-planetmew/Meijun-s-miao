@@ -9228,28 +9228,24 @@ MonoBehaviour:
   lines: {fileID: 1955256770}
   lineList: []
   saveDates:
-  - {fileID: 4900000, guid: c692bd42894f7a24998e40496ea00eb1, type: 3}
-  - {fileID: 4900000, guid: 8705eff237c94bf4ba2037d4fa758248, type: 3}
+  - {fileID: 4900000, guid: 47a83475fe54aa348a309b57608d93f8, type: 3}
+  - {fileID: 4900000, guid: 8c60bbb3dea98d249b1358dd75553ce0, type: 3}
   saveDate: {fileID: 0}
   saveList: []
   trackNum: []
   trackTime: []
   line: 
   usedNote: 
-  longStartList:
-  - 8.981334
-  - 9.237333
-  - 11.392
-  - 13.03467
-  - 13.78133
-  longEndList:
-  - 9.2
-  - 11.238
-  - 12.393
-  - 13.535
-  - 16.782
-  longLineList: 0200000005000000030000000200000005000000
-  usedLongNote: 0101010101
+  saveDatesLong:
+  - {fileID: 4900000, guid: 04322ae68cffef04d9f04267d9cdc9ab, type: 3}
+  - {fileID: 4900000, guid: 199b145d809448f49a410c39ae67b4f4, type: 3}
+  saveDateLong: {fileID: 0}
+  saveListLong: []
+  longTrackNum: []
+  longStartList: []
+  longEndList: []
+  longLineList: 
+  usedLongNote: 
   mat: {fileID: 2100000, guid: 689aa67e00803e445935c14f1b4c2dd6, type: 2}
 --- !u!114 &520787103
 MonoBehaviour:
