@@ -31,7 +31,7 @@ public class BNoteHit : MonoBehaviour
         nowNote = GameObject.Find("NullBNote");
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //shortNoteList.Clear();
         //longNoteList.Clear();
