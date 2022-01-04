@@ -103,7 +103,7 @@ public class BNoteHit : MonoBehaviour
 
             
         }
-        if(Input.GetKey(keyToPress))
+        if(Input.GetKeyDown(keyToPress))
         {
             mask.SetActive(true);
             Debug.Log(Time.time);
