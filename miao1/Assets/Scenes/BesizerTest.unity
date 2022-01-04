@@ -9227,9 +9227,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines: {fileID: 1955256770}
   lineList: []
+  musicList:
+  - {fileID: 8300000, guid: 4704fd7e976738741b0718cdc55a3c4b, type: 3}
+  - {fileID: 8300000, guid: 002a69e96ff819c41aa72890c8832ce0, type: 3}
+  delayTimeList:
+  - 1.9
+  - 2
   saveDates:
   - {fileID: 4900000, guid: 47a83475fe54aa348a309b57608d93f8, type: 3}
   - {fileID: 4900000, guid: 8c60bbb3dea98d249b1358dd75553ce0, type: 3}
+  - {fileID: 4900000, guid: 8d9108d3395ff3a4297df3857421693f, type: 3}
+  - {fileID: 4900000, guid: 8d9108d3395ff3a4297df3857421693f, type: 3}
   saveDate: {fileID: 0}
   saveList: []
   trackNum: []
@@ -9239,6 +9247,8 @@ MonoBehaviour:
   saveDatesLong:
   - {fileID: 4900000, guid: 04322ae68cffef04d9f04267d9cdc9ab, type: 3}
   - {fileID: 4900000, guid: 199b145d809448f49a410c39ae67b4f4, type: 3}
+  - {fileID: 4900000, guid: 5d379d7181f9a8d4e85ed2cd35520bcc, type: 3}
+  - {fileID: 4900000, guid: 5d379d7181f9a8d4e85ed2cd35520bcc, type: 3}
   saveDateLong: {fileID: 0}
   saveListLong: []
   longTrackNum: []

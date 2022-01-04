@@ -20,7 +20,7 @@ MonoBehaviour:
   - sectionName: New Section
     startSample: 0
     samplesPerBeat: 22050
-    beatsPerMeasure: 4
+    beatsPerMeasure: 8
     bStartNewMeasure: 1
   mTracks:
   - {fileID: 11400000, guid: be8805d2a7b2f3549aa46679757a9c46, type: 2}

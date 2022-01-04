@@ -16,6 +16,8 @@ public class BNoteGenerate : MonoBehaviour
     public GameObject lines;
     
     public List<Transform> lineList;
+    public List<AudioClip> musicList = new List<AudioClip>();
+    public List<float> delayTimeList = new List<float>();
     public List<TextAsset> saveDates = new List<TextAsset>();
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
@@ -51,6 +53,8 @@ public class BNoteGenerate : MonoBehaviour
         */
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         startTime = Time.time;
         lineList = new List<Transform>();
         
@@ -232,6 +236,7 @@ public class BNoteGenerate : MonoBehaviour
                     {
                         bullet.GetComponent<DrawBesizerLine>().speed = 60f;
                     }
+                    bullet.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
                     bullet.GetComponent<DrawBesizerLine>().baseCount = 25;
                     bullet.GetComponent<DrawBesizerLine>().enabled = true;
                     bullet.GetComponent<BNoteCanBeCount>().line = longLineList[i];
