@@ -252,14 +252,24 @@ public class BRhythmManager : MonoBehaviour
             this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter] = accurary;
         }
         
-        if(accurary >= 0.5)
+        if(GameObject.Find("GameManager"))
         {
-            GameManager.instance.events[1] = true;
+            if(accurary >= 0.5)
+            {
+                GameManager.instance.events[1] = true;
+            }
+            GameManager.instance.events[6] = true;
+            //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
+            SceneManager.LoadScene(0);
+            //StartCoroutine(loadDelay());
+        }else
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
-        GameManager.instance.events[6] = true;
-        //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
-        SceneManager.LoadScene(0);
-        //StartCoroutine(loadDelay());
     }
     IEnumerator loadDelay()
     {

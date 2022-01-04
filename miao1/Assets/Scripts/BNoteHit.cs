@@ -69,14 +69,14 @@ public class BNoteHit : MonoBehaviour
     }
     void noteOnTime()
     {
-        var minDistance = ((this.transform.position - notelist[0].transform.position).magnitude);
+        var minDistance = ((this.transform.GetChild(0).position - notelist[0].transform.position).magnitude);
         var minTrans = notelist[0];
         
         for (int i = 0; i < notelist.Count; i++)
         {
-            if (((this.transform.position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
+            if (((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
-                minDistance = ((this.transform.position - notelist[i].transform.position).magnitude);
+                minDistance = ((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude);
                 minTrans = notelist[i];
             }
         }
@@ -129,6 +129,9 @@ public class BNoteHit : MonoBehaviour
                 
                 ani.SetTrigger(animatorTriggerHit);
             }
+        }
+        if(Input.GetKey(keyToPress))
+        {
             if(minDistance < 3f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "longNote" && minTrans.gameObject.GetComponent<BNoteCanBeCount>().line == line)
             {
                 minTrans.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
