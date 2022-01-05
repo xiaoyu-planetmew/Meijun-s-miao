@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,6 +20,12 @@ public class BNoteGenerate : MonoBehaviour
     public List<AudioClip> musicList = new List<AudioClip>();
     public List<float> delayTimeList = new List<float>();
     public List<float> songTimeList = new List<float>();
+    
+    public List<Sprite> titleList = new List<Sprite>();
+    public GameObject title;
+    public List<Sprite> bgList = new List<Sprite>();
+    public GameObject bg;
+    public List<GameObject> aniList = new List<GameObject>();
     public List<TextAsset> saveDates = new List<TextAsset>();
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
@@ -55,6 +62,10 @@ public class BNoteGenerate : MonoBehaviour
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
+        aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
+        title.gameObject.GetComponent<Image>().sprite = titleList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        bg.gameObject.GetComponent<SpriteRenderer>().sprite = bgList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         //this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         //this.GetComponent<BRhythmManager>().songTime = songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         startTime = Time.time;
