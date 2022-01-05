@@ -21,6 +21,8 @@ public class BNoteHit : MonoBehaviour
     public GameObject nowNote;
     private string animatorTriggerHit = "Hit";
     public int line;
+    [SerializeReference] bool b1;
+    [SerializeReference] bool b2;
     //private bool canHit;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,8 @@ public class BNoteHit : MonoBehaviour
         clickDown = this.transform.GetChild(1).gameObject;
         ani = this.transform.GetChild(2).GetComponent<Animator>();
         nowNote = GameObject.Find("NullBNote");
+        b1 = true;
+        b2 = false;
     }
     // Update is called once per frame
     void Update()
@@ -74,7 +78,7 @@ public class BNoteHit : MonoBehaviour
         
         for (int i = 0; i < notelist.Count; i++)
         {
-            if (((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true && notelist[i].GetComponent<BNoteCanBeCount>().line == line)
+            if (((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
             {
                 minDistance = ((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude);
                 minTrans = notelist[i];
@@ -103,12 +107,23 @@ public class BNoteHit : MonoBehaviour
 
             
         }
-        if(Input.GetKey(keyToPress))
+        if(Input.GetKey(keyToPress) && b1)
+        {
+            b2 = true;
+        }else{
+            b2 = false;
+        }
+        if(Input.GetKeyUp(keyToPress))
+        {
+            b1 = true;
+        }
+        if(b2)
         {
             mask.SetActive(true);
             Debug.Log(Time.time);
             if(minDistance < 3f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "note" && minTrans.gameObject.GetComponent<BNoteCanBeCount>().line == line && BRhythmManager.instance.trackNumUsed[minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence - 1])
             {
+                b1 = false;
                 minTrans.gameObject.SetActive(false);
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
                 minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
@@ -172,7 +187,7 @@ public class BNoteHit : MonoBehaviour
             BRhythmManager.instance.NoteMissed(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
             
         }
-        if(Input.GetKeyUp(keyToPress) || Time.time - startTime > nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time)
+        if(Input.GetKeyUp(keyToPress) || Time.time - startTime > (nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time + 0.5f))
         {
             timerStart = false;
             nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat;
@@ -188,7 +203,7 @@ public class BNoteHit : MonoBehaviour
     }
     IEnumerator longNoteHit(GameObject obj, float noteLength)
     {
-        yield return new WaitForSeconds(noteLength);
+        yield return new WaitForSeconds(noteLength + 0.5f);
         obj.gameObject.SetActive(false);
         obj.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         obj.gameObject.GetComponent<DrawBesizerLine>().length = 0;
