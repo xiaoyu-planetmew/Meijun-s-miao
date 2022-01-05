@@ -74,7 +74,7 @@ public class BNoteHit : MonoBehaviour
         
         for (int i = 0; i < notelist.Count; i++)
         {
-            if (((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true)
+            if (((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude) < minDistance && notelist[i].GetComponent<BNoteCanBeCount>().canBeCount == true && notelist[i].GetComponent<BNoteCanBeCount>().line == line)
             {
                 minDistance = ((this.transform.GetChild(0).position - notelist[i].transform.position).magnitude);
                 minTrans = notelist[i];
@@ -103,7 +103,7 @@ public class BNoteHit : MonoBehaviour
 
             
         }
-        if(Input.GetKeyDown(keyToPress))
+        if(Input.GetKey(keyToPress))
         {
             mask.SetActive(true);
             Debug.Log(Time.time);

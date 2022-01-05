@@ -124,7 +124,8 @@ public class BRhythmManager : MonoBehaviour
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
                 //vPlayer.Play();
-                
+                delayTime = this.gameObject.GetComponent<BNoteGenerate>().delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+                songTime = this.gameObject.GetComponent<BNoteGenerate>().songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
                 aniPlayer.SetActive(true);
                 StartCoroutine(audioPlay());
                 StartCoroutine(numImport());
@@ -246,6 +247,7 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator endScene()
     {
+        Debug.Log(songTime+delayTime);
         yield return new WaitForSeconds(songTime + delayTime);
         if(accurary >= this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter])
         {

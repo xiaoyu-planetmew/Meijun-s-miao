@@ -18,6 +18,7 @@ public class BNoteGenerate : MonoBehaviour
     public List<Transform> lineList;
     public List<AudioClip> musicList = new List<AudioClip>();
     public List<float> delayTimeList = new List<float>();
+    public List<float> songTimeList = new List<float>();
     public List<TextAsset> saveDates = new List<TextAsset>();
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
@@ -54,7 +55,8 @@ public class BNoteGenerate : MonoBehaviour
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
-        this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        //this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        //this.GetComponent<BRhythmManager>().songTime = songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         startTime = Time.time;
         lineList = new List<Transform>();
         
