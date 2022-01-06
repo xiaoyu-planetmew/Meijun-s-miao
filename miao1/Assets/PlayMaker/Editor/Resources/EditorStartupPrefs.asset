@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   welcomeScreenVersion: '1.9.3 '
   playmakerVersion: 
-  showWelcomeScreen: 0
+  showWelcomeScreen: 1
   showUpgradeGuide: 0
-  lastAutoUpdateSignature: 2020.3.14f1__E:/meijun/Objects/Meijun-s-miao/miao1/Assets__0.0.0.0
+  lastAutoUpdateSignature: 2020.3.14f1__E:/Objects/Meijun-s-miao/miao1/Assets__0.0.0.0
   useLegacyNetworking: 0
