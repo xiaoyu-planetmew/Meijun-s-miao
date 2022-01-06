@@ -64,7 +64,7 @@ public class cameraFocus : MonoBehaviour
         StartCoroutine(ani());
         StartCoroutine(MoveToPosition());
         NPCDialogBox.transform.GetChild(2).gameObject.GetComponent<Image>().enabled = false;
-        
+        NPCDialogBox.transform.GetChild(2).gameObject.SetActive(false);
     }
     public void cancelFocus()
     {
@@ -81,6 +81,7 @@ public class cameraFocus : MonoBehaviour
        panel.SetActive(false);
        NPCDialogBox.transform.localScale = new Vector3(NPCDialogBoxScale, NPCDialogBoxScale, NPCDialogBoxScale);
        index = 0;
+       NPCDialogBox.transform.GetChild(2).gameObject.SetActive(true);
     }
     public void next()
     {
@@ -121,13 +122,18 @@ public class cameraFocus : MonoBehaviour
         npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
         NPCDialogBox.transform.GetChild(2).gameObject.GetComponent<Button>().onClick.Invoke();
         NPCDialogBox.transform.GetChild(2).gameObject.GetComponent<Image>().enabled = true;
+        StartCoroutine(nextHide());
     }
     IEnumerator nextHide()
     {
         panel.transform.GetChild(2).gameObject.SetActive(false);
         panel.transform.GetChild(3).gameObject.SetActive(false);
+        panel.transform.GetChild(3).gameObject.GetComponent<buttonMinor>().enabled = false;
+        //NPCDialogBox.transform.GetChild(2).gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
         panel.transform.GetChild(2).gameObject.SetActive(true);
         panel.transform.GetChild(3).gameObject.SetActive(true);
+        panel.transform.GetChild(3).gameObject.GetComponent<buttonMinor>().enabled = true;
+        //NPCDialogBox.transform.GetChild(2).gameObject.SetActive(true);
     }
 }
