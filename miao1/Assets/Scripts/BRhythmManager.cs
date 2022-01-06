@@ -136,6 +136,8 @@ public class BRhythmManager : MonoBehaviour
     IEnumerator audioPlay()
     {
         yield return new WaitForSeconds(delayTime);
+        this.GetComponent<BNoteGenerate>().aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
+        this.GetComponent<BNoteGenerate>().aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
         theMusic.Play();
         Debug.Log("start");
     }

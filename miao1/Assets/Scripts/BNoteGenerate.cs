@@ -62,8 +62,8 @@ public class BNoteGenerate : MonoBehaviour
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
-        aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
-        aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
+        //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
+        //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
         title.gameObject.GetComponent<Image>().sprite = titleList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         bg.gameObject.GetComponent<SpriteRenderer>().sprite = bgList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         //this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
