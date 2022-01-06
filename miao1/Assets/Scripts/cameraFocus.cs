@@ -19,6 +19,10 @@ public class cameraFocus : MonoBehaviour
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<string> textList = new List<string>();
     int index;
+    float loX;
+    float loY;
+    float loZ;
+    //public Transform homeLocation;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +58,10 @@ public class cameraFocus : MonoBehaviour
     }
     public void focus()
     {
+        loX = this.transform.position.x;
+        loY = this.transform.position.y;
+        loZ = this.transform.position.z;
+        //homeLocation.transform.position = new Vector3(loX, loY, loZ);
         this.GetComponent<CinemachineBrain>().enabled = false;
         focusCanvas.transform.GetChild(0).gameObject.SetActive(true);
         GameManager.instance.player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("disappear");
@@ -68,6 +76,14 @@ public class cameraFocus : MonoBehaviour
     }
     public void cancelFocus()
     {
+
+        panel.transform.GetChild(3).gameObject.GetComponent<buttonMinor>().enabled = false;
+        panel.SetActive(false);
+        npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
+        StartCoroutine(stopBack());
+        StartCoroutine(colorChangeBack());
+        /*
        this.GetComponent<CinemachineBrain>().enabled = true;
        focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, 0);
        focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, 0);
@@ -82,13 +98,17 @@ public class cameraFocus : MonoBehaviour
        NPCDialogBox.transform.localScale = new Vector3(NPCDialogBoxScale, NPCDialogBoxScale, NPCDialogBoxScale);
        index = 0;
        NPCDialogBox.transform.GetChild(2).gameObject.SetActive(true);
+       */
     }
     public void next()
     {
         //Debug.Log("1");
         NPCDialogBox.transform.GetChild(2).gameObject.GetComponent<Button>().onClick.Invoke();
         index++;
+        if(index <= textList.Count - 1)
+        {
         text1.GetComponent<Text>().text = textList[index];
+        }
         StartCoroutine(nextHide());
     }
     IEnumerator MoveToPosition()
@@ -99,6 +119,15 @@ public class cameraFocus : MonoBehaviour
             yield return 0;
         }
         StartCoroutine(colorChange());
+    }
+    IEnumerator MoveBackToPosition()
+    {     
+        while (gameObject.transform.position != new Vector3(loX, loY, loZ))
+        {
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(loX, loY, loZ), speed * Time.deltaTime);
+            yield return 0;
+        }
+        //StartCoroutine(colorChangeBack());
     }
     IEnumerator colorChange()
     {
@@ -112,6 +141,37 @@ public class cameraFocus : MonoBehaviour
             //GameObject.Find("")
             yield return 0;
         }
+    }
+    IEnumerator colorChangeBack()
+    {
+        while(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a > 0)
+        {
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a-0.01f);
+            focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.a-0.01f);
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.a-0.01f);
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.r, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.g, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.b, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.a-0.01f);
+            //Debug.Log(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a);
+            //GameObject.Find("")
+            yield return 0;
+        }
+        StartCoroutine(MoveBackToPosition());
+    }
+    IEnumerator stopBack()
+    {
+        yield return new WaitUntil(() => gameObject.transform.position == new Vector3(loX, loY, loZ));
+        this.GetComponent<CinemachineBrain>().enabled = true;
+        focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, 0);
+        focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, 0);
+        focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.b, 0);
+        focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.r, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.g, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.b, 0);     
+        focusCanvas.transform.GetChild(0).gameObject.SetActive(false);
+        GameManager.instance.player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("appear");
+        GameObject.Find("InventoryCanvas").gameObject.GetComponent<Canvas>().enabled = true;
+        
+        panel.SetActive(false);
+        NPCDialogBox.transform.localScale = new Vector3(NPCDialogBoxScale, NPCDialogBoxScale, NPCDialogBoxScale);
+        index = 0;
+        NPCDialogBox.transform.GetChild(2).gameObject.SetActive(true);
     }
     IEnumerator ani()
     {
