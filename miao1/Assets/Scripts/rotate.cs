@@ -2,18 +2,20 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using Spine;
-using Spine.Unity;
+
 using UnityEngine.EventSystems;
 
-namespace Kernal
-{
+//namespace Kernal
+//{
    public class rotate : MonoBehaviour, IDragHandler
     {
+        public bool canBeDrag = true;
         public void OnDrag(PointerEventData eventData)
         {
-           
-            SetDraggedRotation(eventData);
+           if(canBeDrag)
+           {
+                SetDraggedRotation(eventData);
+           }
         }
 
         private void SetDraggedRotation(PointerEventData eventData)
@@ -26,4 +28,4 @@ namespace Kernal
 
 
     }
-}
+//}
