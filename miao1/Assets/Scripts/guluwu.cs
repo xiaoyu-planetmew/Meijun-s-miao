@@ -9,6 +9,7 @@ public class guluwu : MonoBehaviour
     private GameObject teleport;
     private GameObject thorn;
     private GameObject burn;
+    public GameObject box;
     private bool burnt;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,10 @@ public class guluwu : MonoBehaviour
         {
             burn.GetComponent<Button>().enabled = true;
         }
+    }
+    public void dialog()
+    {
+
     }
     public void thornBurn()
     {
