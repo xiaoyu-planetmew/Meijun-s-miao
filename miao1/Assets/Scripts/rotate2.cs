@@ -18,17 +18,16 @@ public class rotate2 : MonoBehaviour
     {
         
     }
-    /*
     IEnumerator autoRotate()
     {
         for(int i=0; i<angles.Count; i++)
         {
             if(Mathf.Abs(this.transform.localEulerAngles.z - angles[i]) <= f)
             {
-
+                var z = this.transform.localEulerAngles.z;
+                //this.transform.Rotate(new Vector3(0, 0, (angles[i] - z)), )
             }
         }
-        
+        yield return new WaitForSeconds(0.2f);
     }
-    */
 }

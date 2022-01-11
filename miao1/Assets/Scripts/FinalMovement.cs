@@ -98,7 +98,7 @@ public class FinalMovement : MonoBehaviour
         }
         if(!outside && transform.localScale.y != 0.6f)
         {
-            speed = 1.5f;
+            speed = 3f;
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
         horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
