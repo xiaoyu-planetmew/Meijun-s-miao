@@ -7,10 +7,7 @@ void Start ()
 {
     Cursor.visible = false;
 }
-void FixedUpdate()
-{
-    //Cursor.visible = false;
-}
+
 void OnGUI ()
 {
     Vector3 mousePos = Input.mousePosition;
