@@ -7,6 +7,7 @@ public class rotate2 : MonoBehaviour
     //public GameObject obj;
     public List<float> angles = new List<float>();
     public float f;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +17,19 @@ public class rotate2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(this.transform.eulerAngles);
         
-    }
-    IEnumerator autoRotate()
-    {
         for(int i=0; i<angles.Count; i++)
         {
-            if(Mathf.Abs(this.transform.localEulerAngles.z - angles[i]) <= f)
+            //Debug.Log(i);
+            //Debug.Log((Mathf.Abs(this.transform.localEulerAngles.z - angles[i])));
+            if(Mathf.Abs(this.transform.localEulerAngles.z - angles[i]) < f && !this.GetComponent<rotate>().draging)
             {
                 var z = this.transform.localEulerAngles.z;
-                //this.transform.Rotate(new Vector3(0, 0, (angles[i] - z)), )
+                //Debug.Log(angles[i]);
+                this.transform.eulerAngles = Vector3.MoveTowards(this.transform.eulerAngles, new Vector3(0, 0, angles[i]), Time.deltaTime * speed);
             }
         }
-        yield return new WaitForSeconds(0.2f);
     }
+    
 }
