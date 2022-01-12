@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDrag: 1
+  draging: 0
 --- !u!114 &744790654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDrag: 1
+  draging: 0
 --- !u!114 &1086755539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +503,7 @@ MonoBehaviour:
   - 90
   - 180
   - 270
+  - 360
   f: 45
   speed: 50
 --- !u!1 &1166025170
@@ -554,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDrag: 1
+  draging: 0
 --- !u!114 &1166025173
 MonoBehaviour:
   m_ObjectHideFlags: 0
