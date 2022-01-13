@@ -1323,7 +1323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 27
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 13abc702e76815e4682daf6cd1039c84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -35943,7 +35943,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 28
+  m_SortingOrder: 29
   m_Sprite: {fileID: 21300000, guid: c17fd85e49515d84f80df383bcf623f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -49102,7 +49102,7 @@ MonoBehaviour:
   player: {fileID: 133832561}
   playerTip: {fileID: 1429342258}
   playerChooseBox: {fileID: 1190268325}
-  playerRespond: "\u3053\u308C\u3092\u3042\u3052\u307E\u3059\u3002"
+  playerRespond: "\u3069\u3046\u305E\u3002\u3042\u3052\u308B\u308F\u3002"
   bird: {fileID: 1600929128}
   startButton: {fileID: 15299770}
   nextPageButton: {fileID: 1606555584}
@@ -67553,7 +67553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.16, y: 0.65}
+  m_AnchoredPosition: {x: 0.46, y: 0.65}
   m_SizeDelta: {x: 523, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791595699
@@ -67589,7 +67589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\u3042\u3042\u3001\u3053\u306E\u68EE\u306B\u306F\u4F55\u3082\u3042\u308A\u307E\u305B\u3093\u3001\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u2026...\u4F55\u304B\u98DF\u3079\u308B\u3082\u306E\u304C\u3042\u308A\u307E\u3059\u304B\uFF1F\u6069\u8FD4\u3057\u307E\u3059\uFF01\u304B\u30FC\u304B\u30FC"
+  m_Text: "\u3042\u3042\u3001\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u2026\r\n\r\n\u4F55\u304B\u98DF\u3079\u7269\u6301\u3063\u3066\u308B\uFF1F\r\n\u304F\u308C\u305F\u3089\u6069\u8FD4\u3057\u3059\u308B\u3088\u3002"
 --- !u!222 &1791595700
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68465,7 +68465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.16, y: 0.65}
+  m_AnchoredPosition: {x: 0.46, y: 0.65}
   m_SizeDelta: {x: 523, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814959823
@@ -68501,7 +68501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\u3046\u308F\u30FC\u3001\u7F8E\u5473\u3057\u305D\u3046\u3067\u3059\u306D\u3001\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002\u305D\u308C\u306A\u3089\u3053\u306E\u5909\u306A\u77F3\u3092\u53D7\u3051\u5165\u308C\u3066\u304F\u3060\u3055\u3044\uFF01\u304B\u30FC\u304B\u30FC"
+  m_Text: "\u304A\u3044\u3057\u305D\u3046\uFF01\r\n\u3042\u308A\u304C\u3068\u3046\uFF01\r\n\r\n\u304A\u793C\u306B\u3001\r\n\u3053\u306E\u30D8\u30F3\u306A\u77F3\u3092\u3082\u3089\u3063\u3066\uFF01"
 --- !u!222 &1814959824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -72537,8 +72537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s1: "\u98DF\u3079\u7269\u304C\u3042\u308A\u307E\u3059\u3002"
-  s2: "\u308F\u305F\u3057\u3082\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u3002"
+  s1: "\u79C1\u304C\u6301\u3063\u3066\u308B\u3082\u306E\u3092\u898B\u308B\uFF1F"
+  s2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
 --- !u!1 &1936583312
 GameObject:
   m_ObjectHideFlags: 0
@@ -78335,6 +78335,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1310090192}
+    - target: {fileID: 854804361, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 854804362, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Text
       value: "\u308F\u305F\u3057\u3082\u304A\u8179\u304C\u7A7A\u304D\u307E\u3057\u305F\u3002"
@@ -78342,6 +78346,10 @@ PrefabInstance:
     - target: {fileID: 854804362, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Color.a
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 895411162, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.49000016
       objectReference: {fileID: 0}
     - target: {fileID: 895411164, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Text
@@ -78363,6 +78371,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.27058825
       objectReference: {fileID: 0}
+    - target: {fileID: 1055330642, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055330643, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -284
+      objectReference: {fileID: 0}
     - target: {fileID: 1190268325, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -78375,6 +78391,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1899568835}
+    - target: {fileID: 1728213697, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728213698, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -284
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767848859, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1903944245, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -56,7 +56,7 @@ public class DialogSys : MonoBehaviour
     {
         textList.Clear();
         textTalker.Clear();
-        var lineData = file.text.Split('\n');        
+        var lineData = file.text.Split('#');        
         foreach(var line in lineData)
         {
             //Debug.Log(line);
