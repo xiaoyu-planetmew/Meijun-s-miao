@@ -53,7 +53,7 @@ public class birdDialog : MonoBehaviour
         if(isTalk && !tradeFinish)
         {
             Debug.Log("1");
-            GameManager.instance.RemoveItem(upload);
+            //GameManager.instance.RemoveItem(upload);
             dialog2Box.SetActive(true);
         }
         
@@ -68,6 +68,7 @@ public class birdDialog : MonoBehaviour
         playerChooseBox.SetActive(false);
         playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespond;
         playerTip.SetActive(true);
+        GameManager.instance.RemoveItem(upload);
     }
     public void finishDialog()
     {
