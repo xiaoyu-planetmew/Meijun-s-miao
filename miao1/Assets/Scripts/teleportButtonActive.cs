@@ -6,8 +6,10 @@ public class teleportButtonActive : MonoBehaviour
 {
     public GameObject buttonLocation;
     public GameObject button;
+    public Item _item;
     GameObject player;
     public float jumpDistance;
+    bool holdItem = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,25 @@ public class teleportButtonActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_item != null)
+        {
+            if(!GameManager.instance.items.Contains(_item))
+            {
+                holdItem = false;
+            }else{
+                holdItem = true;
+            }
+        }else{
+            holdItem = true;
+        }
         player = GameManager.instance.player;
-        if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) < jumpDistance) && (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) < 10))
+        if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) < jumpDistance) 
+        && (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) < 10) && holdItem)
         {
             button.SetActive(true);
         }
-        if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) > jumpDistance) || (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) > 10))
+        if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) > jumpDistance) 
+        || (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) > 10)&& holdItem)
         {
             button.SetActive(false);
         }

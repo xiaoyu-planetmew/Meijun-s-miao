@@ -101,7 +101,19 @@ public class FinalMovement : MonoBehaviour
             speed = 3f;
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
-        horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
+        //horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
+        if(Input.GetKey("a"))
+        {
+            horizontalMove = -1;
+        }
+        if(Input.GetKey("d"))
+        {
+            horizontalMove = 1;
+        }
+        if(!(Input.GetKey("a")) && !(Input.GetKey("d")))
+        {
+            horizontalMove = 0;
+        }
         
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.GetChild(0).localScale.y;
@@ -197,7 +209,8 @@ public class FinalMovement : MonoBehaviour
             anim.SetBool("outside", false);
             outside = false;
         }
-        anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("moving", Mathf.Abs(horizontalMove));
+        //anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
         //bool turning;
         //var sa = this.transform.GetChild(0).GetComponent<SkeletonAnimation>();
         

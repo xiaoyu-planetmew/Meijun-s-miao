@@ -36,6 +36,7 @@ public class inventoryResponse : MonoBehaviour
         {
             tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
             tipUI.SetActive(true);
+            StartCoroutine(stopTip("I Can`t use " + _item.name));
         }
         for(int i = 0;i < usefulItem.Count; i++)
         {
@@ -84,5 +85,13 @@ public class inventoryResponse : MonoBehaviour
         inventoryTip.SetActive(false);
         tipUI.SetActive(false);
         usefulItemUI.SetActive(false);
+    }
+    IEnumerator stopTip(string _str)
+    {
+        yield return new WaitForSeconds(2f);
+        if((tipUI.transform.GetChild(0).GetComponent<Text>().text == _str) && tipUI.gameObject.activeInHierarchy)
+        {
+            tipUI.SetActive(false);
+        }
     }
 }
