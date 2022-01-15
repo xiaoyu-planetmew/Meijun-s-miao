@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moment2chipCompound : MonoBehaviour
+public class moment3chipCompound : MonoBehaviour
 {
     int c;
     public Item item1Change;
@@ -27,12 +27,12 @@ public class moment2chipCompound : MonoBehaviour
         {
             for(int i = 0; i < GameManager.instance.items.Count; i++)
             {
-                if(GameManager.instance.items[i].itemName == "moment2Chip1")
+                if(GameManager.instance.items[i].itemName == "moment3Chip1")
                 {
                     GameManager.instance.TradeItem(GameManager.instance.items[i], item1Change);
                     GameManager.instance.events[5] = true;
                 }
-                if(GameManager.instance.items[i].itemName == "moment2Chip2" || GameManager.instance.items[i].itemName == "moment2Chip3")
+                if(GameManager.instance.items[i].itemName == "moment3Chip2" || GameManager.instance.items[i].itemName == "moment3Chip3")
                 {
                     GameManager.instance.RemoveItem(GameManager.instance.items[i]);
                 }
