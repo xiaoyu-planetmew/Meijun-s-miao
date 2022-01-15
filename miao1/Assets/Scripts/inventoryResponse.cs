@@ -76,6 +76,7 @@ public class inventoryResponse : MonoBehaviour
         thisObj.SendMessage("getMessage", thisObj, SendMessageOptions.RequireReceiver);
         thisItem = null;
         thisObj = null;
+        inventoryTip.SetActive(false);
     }
     public void finishDialog()
     {

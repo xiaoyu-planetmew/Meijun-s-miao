@@ -8,8 +8,9 @@ public class guluwu : MonoBehaviour
     public float burnAniTime;
     private GameObject teleport;
     private GameObject thorn;
+    public Item _item;
     private GameObject burn;
-    public GameObject box;
+    //public GameObject box;
     private bool burnt;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,13 @@ public class guluwu : MonoBehaviour
     }
     public void dialog()
     {
-
+        inventoryResponse.instance.becomeUseful(_item, this.gameObject);
+        inventoryResponse.instance.inventoryTip.SetActive(true);
+    }
+    public void getMessage()
+    {
+        thornBurn();
+        GameManager.instance.RemoveItem(_item);
     }
     public void thornBurn()
     {

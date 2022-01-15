@@ -50302,7 +50302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 126, y: -51.3}
-  m_SizeDelta: {x: 268, y: 30}
+  m_SizeDelta: {x: 269, y: 91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351049192
 MonoBehaviour:
@@ -54660,7 +54660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.45856723, b: 0.3155927, a: 1}
+  m_Color: {r: 0.8490566, g: 0.45856723, b: 0.3155927, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -69912,15 +69912,15 @@ RectTransform:
   m_GameObject: {fileID: 1843852085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.080272, y: 4.080272, z: 9.817051}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2122283528}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31, y: -14.2}
-  m_SizeDelta: {x: 402.62, y: 51.321}
+  m_AnchoredPosition: {x: -83.76, y: -22.71}
+  m_SizeDelta: {x: 1227.68, y: 552.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1843852087
 Animator:
@@ -70011,23 +70011,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1862200912}
         m_TargetAssemblyTypeName: guluwu, Assembly-CSharp
-        m_MethodName: thornBurn
+        m_MethodName: dialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1397711435}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RemoveItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -70800,7 +70788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnAniTime: 1
-  box: {fileID: 0}
+  _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
 --- !u!212 &1862200914
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77711,7 +77699,7 @@ RectTransform:
   m_GameObject: {fileID: 2122283527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.015118312, y: 0.04042936, z: 0.05039437}
+  m_LocalScale: {x: 0.015118312, y: 0.01511831, z: 0.01511831}
   m_Children:
   - {fileID: 1351049191}
   - {fileID: 1843852086}
@@ -78795,6 +78783,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 397126184}
@@ -78802,6 +78798,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1899568835}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1190268325}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1728213697, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_IsActive
       value: 0
