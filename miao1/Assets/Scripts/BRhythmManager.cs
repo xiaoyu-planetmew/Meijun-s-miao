@@ -258,11 +258,22 @@ public class BRhythmManager : MonoBehaviour
         
         if(GameObject.Find("GameManager"))
         {
+            if(this.gameObject.GetComponent<BChapterChoose>().chapter == 0)
+            {
             if(accurary >= 0.5)
             {
                 GameManager.instance.events[1] = true;
             }
             GameManager.instance.events[6] = true;
+            }
+            if(this.gameObject.GetComponent<BChapterChoose>().chapter == 1)
+            {
+            if(accurary >= 0.5)
+            {
+                GameManager.instance.events[10] = true;
+            }
+            GameManager.instance.events[7] = true;
+            }
             //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
             SceneManager.LoadScene(0);
             //StartCoroutine(loadDelay());

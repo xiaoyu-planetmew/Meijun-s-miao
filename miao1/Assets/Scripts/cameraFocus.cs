@@ -18,10 +18,14 @@ public class cameraFocus : MonoBehaviour
     public GameObject text2;
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<string> textList = new List<string>();
+    public List<Sprite> BGList = new List<Sprite>();
+    public List<Sprite> titleList = new List<Sprite>();
+    public List<string> nameList = new List<string>();
     int index;
     float loX;
     float loY;
     float loZ;
+    int nowPlaying;
     //public Transform homeLocation;
     // Start is called before the first frame update
     void Start()
@@ -49,9 +53,21 @@ public class cameraFocus : MonoBehaviour
     }
     void fileChoose()
     {
-        if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && GameManager.instance.events[8])
+        if((GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && GameManager.instance.events[8]) && !(GameManager.instance.events[9]))
         {
             GetTextFromFile(textfiles[0]);
+            nowPlaying = 1;
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[0];
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[0];
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[0];
+        }
+        if((GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && GameManager.instance.events[8]) && !(GameManager.instance.events[11]))
+        {
+            GetTextFromFile(textfiles[1]);
+            nowPlaying = 2;
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[1];
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[1];
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[1];
         }
         index = 0;
         text1.GetComponent<Text>().text = textList[index];
@@ -172,6 +188,14 @@ public class cameraFocus : MonoBehaviour
         NPCDialogBox.transform.localScale = new Vector3(NPCDialogBoxScale, NPCDialogBoxScale, NPCDialogBoxScale);
         index = 0;
         NPCDialogBox.transform.GetChild(2).gameObject.SetActive(true);
+        if(nowPlaying == 1)
+        {
+            GameManager.instance.events[9] = true;
+        }
+        if(nowPlaying == 2)
+        {
+            GameManager.instance.events[11] = true;
+        }
     }
     IEnumerator ani()
     {

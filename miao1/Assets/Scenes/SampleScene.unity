@@ -17509,7 +17509,26 @@ MonoBehaviour:
   text2: {fileID: 1408426910}
   textfiles:
   - {fileID: 4900000, guid: e4d561d04ffe3de488436ab0186bd444, type: 3}
+  - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
   textList: []
+  BGList:
+  - {fileID: 21300000, guid: 8f5072e6056a81742aa7f1c2742fca50, type: 3}
+  - {fileID: 21300000, guid: 62c2b02730db3654c9bb4d7460bb155a, type: 3}
+  - {fileID: 21300000, guid: 82bdd403e86dc664a9398156b38eb301, type: 3}
+  - {fileID: 21300000, guid: 718c9e300e5fddc4c909d3e56388099f, type: 3}
+  - {fileID: 21300000, guid: 3c6fa15e601180641bf91e974a98d90d, type: 3}
+  titleList:
+  - {fileID: 21300000, guid: 4c03143886fe9d2438a57164810c351b, type: 3}
+  - {fileID: 21300000, guid: 7e3386f8f6bb3ac438bf811cccb16b2f, type: 3}
+  - {fileID: 21300000, guid: 773324ab7a70c0e4ebfe98bd790b0569, type: 3}
+  - {fileID: 21300000, guid: abae0d48ec9cecf46afae088fdc1c2c7, type: 3}
+  - {fileID: 21300000, guid: 29750711d29a426418174ffe19de7719, type: 3}
+  nameList:
+  - "\u53E4\u4EE3\u306E\u697D\u8B5C\u4E00"
+  - "\u53E4\u4EE3\u306E\u697D\u8B5C\u4E8C"
+  - "\u53E4\u4EE3\u306E\u697D\u8B5C\u4E09"
+  - "\u53E4\u4EE3\u306E\u697D\u8B5C\u56DB"
+  - "\u53E4\u4EE3\u306E\u697D\u8B5C\u4E94"
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52118,7 +52137,7 @@ MonoBehaviour:
   slotList: {fileID: 1899568831}
   slots: []
   player: {fileID: 133832561}
-  events: 0000000100000000000000000000000000000000
+  events: 0000000000010001010001000000000000000000
   eventName:
   - Moment1
   - Song1HasBeenSung(success)
@@ -52129,6 +52148,9 @@ MonoBehaviour:
   - Moment1Finished
   - Moment2Finished
   - firstMeetNPC
+  - Moment1ListenFinished
+  - Song2HasBeenSung(success)
+  - Moment2ListenFinished
   chapterRecord: []
   thisButton: {fileID: 0}
   itemButtons: []
@@ -70117,6 +70139,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: f64ec11abe03ea343a2ed06f0308ae8b, type: 3}
   - {fileID: 4900000, guid: e18aaaca725f8a340a536bd3645d21f6, type: 3}
   - {fileID: 4900000, guid: 6da53f5ca75895842a260ab7f0393c96, type: 3}
+  - {fileID: 4900000, guid: d6557781ac53a3e4180030b0cbf43659, type: 3}
   firstMeet: 1
   isTalking: 0
   index: 0
@@ -75007,7 +75030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2012032751
 MonoBehaviour:
   m_ObjectHideFlags: 0

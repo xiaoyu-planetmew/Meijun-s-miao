@@ -112,6 +112,10 @@ public class DialogSys : MonoBehaviour
             {
                 GetTextFromFile(textfiles[4]);
             }
+            if(GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7])
+            {
+                GetTextFromFile(textfiles[5]);
+            }
             /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
             {
@@ -194,6 +198,7 @@ public class DialogSys : MonoBehaviour
                         if(cam.activeInHierarchy)
                         {
                             cam.GetComponent<cameraFocus>().focus();
+                            Debug.Log("focus");
                         }
                     }
                     if(textList[index][0] == 'D')
@@ -321,7 +326,7 @@ public class DialogSys : MonoBehaviour
         }
         if(GameManager.instance.events[8] && textFinished)
         {
-            if((!GameManager.instance.events[0] && !GameManager.instance.events[5]) || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]))
+            if((!GameManager.instance.events[0] && !GameManager.instance.events[5]) || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]) || (GameManager.instance.events[5] && GameManager.instance.events[7] && GameManager.instance.events[10]))
             {
                 dialogWithoutTrans();
             }
