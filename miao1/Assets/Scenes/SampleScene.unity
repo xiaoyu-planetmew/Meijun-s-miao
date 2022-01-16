@@ -52151,6 +52151,9 @@ MonoBehaviour:
   - Moment1ListenFinished
   - Song2HasBeenSung(success)
   - Moment2ListenFinished
+  - Moment3
+  - Moment3Finished
+  - Moment3ListenFinished
   chapterRecord: []
   thisButton: {fileID: 0}
   itemButtons: []
