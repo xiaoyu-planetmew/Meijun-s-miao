@@ -194,6 +194,18 @@ public class GameManager: MonoBehaviour
             {
                 events[5] = true;
             }
+            if(i.itemName == "Moment3")
+            {
+                events[12] = true;
+            }
+            if(i.itemName == "Moment4")
+            {
+                events[16] = true;
+            }
+            if(i.itemName == "Moment5")
+            {
+                events[20] = true;
+            }
         }
     }
     public void NextSceneMail(string s)

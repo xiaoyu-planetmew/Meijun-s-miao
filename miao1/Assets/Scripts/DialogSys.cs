@@ -89,32 +89,49 @@ public class DialogSys : MonoBehaviour
             //GameManager.instance.events[8] = true;
         }else
         {
-            if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
+            if(!GameManager.instance.events[0] && !GameManager.instance.events[5] && !GameManager.instance.events[12] && !GameManager.instance.events[16] && !GameManager.instance.events[20])
             {
                 GetTextFromFile(textfiles[2]);
                 //holdTarget = false;
             }
-            if(GameManager.instance.events[0] && !GameManager.instance.events[6])
+            else
+            if((GameManager.instance.events[0] && !GameManager.instance.events[6])
+            || (GameManager.instance.events[5] && !GameManager.instance.events[7])
+            || (GameManager.instance.events[12] && !GameManager.instance.events[13])
+            || (GameManager.instance.events[16] && !GameManager.instance.events[17])
+            || (GameManager.instance.events[20] && !GameManager.instance.events[21])
+            )
             {
                 GetTextFromFile(textfiles[1]);
                 //holdTarget = true;
-            }
-            if(GameManager.instance.events[5] && !GameManager.instance.events[7])
-            {
-                GetTextFromFile(textfiles[1]);
-                //holdTarget = true;
-            }
+            }else
             if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6])
             {
                 GetTextFromFile(textfiles[3]);
-            }
-            if(GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
-            {
-                GetTextFromFile(textfiles[4]);
-            }
+            }else
             if(GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7])
             {
                 GetTextFromFile(textfiles[5]);
+            }else
+            if(GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13])
+            {
+                GetTextFromFile(textfiles[6]);
+            }else
+            if(GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17])
+            {
+                GetTextFromFile(textfiles[7]);
+            }else
+            if(GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21])
+            {
+                GetTextFromFile(textfiles[8]);
+            }else
+            if((GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
+            || (GameManager.instance.events[5] && !GameManager.instance.events[10] && GameManager.instance.events[7])
+            || (GameManager.instance.events[12] && !GameManager.instance.events[14] && GameManager.instance.events[13])
+            || (GameManager.instance.events[16] && !GameManager.instance.events[18] && GameManager.instance.events[17])
+            || (GameManager.instance.events[20] && !GameManager.instance.events[22] && GameManager.instance.events[21]))
+            {
+                GetTextFromFile(textfiles[4]);
             }
             /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
@@ -232,7 +249,8 @@ public class DialogSys : MonoBehaviour
             
     }
     void dialogWithTrans()
-    {            
+    {
+        Debug.Log("dialogWithTrans");            
         if(index == textList.Count + 1)
         {
             index = 0;
@@ -326,11 +344,21 @@ public class DialogSys : MonoBehaviour
         }
         if(GameManager.instance.events[8] && textFinished)
         {
-            if((!GameManager.instance.events[0] && !GameManager.instance.events[5]) || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]) || (GameManager.instance.events[5] && GameManager.instance.events[7] && GameManager.instance.events[10]))
+            if((!GameManager.instance.events[0] && !GameManager.instance.events[5] && !GameManager.instance.events[12] && !GameManager.instance.events[16] && !GameManager.instance.events[20]) 
+            || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]) 
+            || (GameManager.instance.events[5] && GameManager.instance.events[7] && GameManager.instance.events[10])
+            || (GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13])
+            || (GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17])
+            || (GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21]))
             {
                 dialogWithoutTrans();
-            }
-            if(GameManager.instance.events[0] && !GameManager.instance.events[1])
+            }else
+            if((GameManager.instance.events[0] && !GameManager.instance.events[1])
+            || (GameManager.instance.events[5] && !GameManager.instance.events[10])
+            || (GameManager.instance.events[12] && !GameManager.instance.events[14])
+            || (GameManager.instance.events[16] && !GameManager.instance.events[18])
+            || (GameManager.instance.events[20] && !GameManager.instance.events[22]))
+            
             {
                 dialogWithTrans();
             }

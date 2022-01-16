@@ -23,6 +23,8 @@ public class NPCSceneTrans : MonoBehaviour
             trans2.SetActive(true);
             trans2.transform.Find("Button").gameObject.SetActive(true);
         }
+        trans1.SetActive(true);
+        trans2.transform.Find("Button").gameObject.SetActive(true);
     }
     public void turnOff()
     {

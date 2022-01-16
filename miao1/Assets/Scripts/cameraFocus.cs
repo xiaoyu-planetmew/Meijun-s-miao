@@ -53,21 +53,50 @@ public class cameraFocus : MonoBehaviour
     }
     void fileChoose()
     {
-        if((GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && GameManager.instance.events[8]) && !(GameManager.instance.events[9]))
+        if((GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && GameManager.instance.events[8]) 
+        && !(GameManager.instance.events[9]))
         {
             GetTextFromFile(textfiles[0]);
             nowPlaying = 1;
             focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[0];
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[0];
             focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[0];
-        }
-        if((GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && GameManager.instance.events[8]) && !(GameManager.instance.events[11]))
+        }else
+        if((GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && GameManager.instance.events[8]) 
+        && !(GameManager.instance.events[11]))
         {
             GetTextFromFile(textfiles[1]);
             nowPlaying = 2;
             focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[1];
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[1];
             focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[1];
+        }else
+        if((GameManager.instance.events[12] && GameManager.instance.events[13] && GameManager.instance.events[14] && GameManager.instance.events[8]) 
+        && !(GameManager.instance.events[15]))
+        {
+            GetTextFromFile(textfiles[2]);
+            nowPlaying = 3;
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[2];
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[2];
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[2];
+        }else
+        if((GameManager.instance.events[16] && GameManager.instance.events[17] && GameManager.instance.events[18] && GameManager.instance.events[8]) 
+        && !(GameManager.instance.events[19]))
+        {
+            GetTextFromFile(textfiles[3]);
+            nowPlaying = 4;
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[3];
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[3];
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[3];
+        }
+        if((GameManager.instance.events[20] && GameManager.instance.events[21] && GameManager.instance.events[22] && GameManager.instance.events[8]) 
+        && !(GameManager.instance.events[23]))
+        {
+            GetTextFromFile(textfiles[4]);
+            nowPlaying = 5;
+            focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[4];
+            focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[4];
+            focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameList[4];
         }
         index = 0;
         text1.GetComponent<Text>().text = textList[index];
@@ -196,6 +225,19 @@ public class cameraFocus : MonoBehaviour
         {
             GameManager.instance.events[11] = true;
         }
+        if(nowPlaying == 3)
+        {
+            GameManager.instance.events[14] = true;
+        }
+        if(nowPlaying == 4)
+        {
+            GameManager.instance.events[19] = true;
+        }
+        if(nowPlaying == 5)
+        {
+            GameManager.instance.events[23] = true;
+        }
+        
     }
     IEnumerator ani()
     {

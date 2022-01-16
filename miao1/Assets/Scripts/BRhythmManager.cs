@@ -274,6 +274,30 @@ public class BRhythmManager : MonoBehaviour
             }
             GameManager.instance.events[7] = true;
             }
+            if(this.gameObject.GetComponent<BChapterChoose>().chapter == 2)
+            {
+            if(accurary >= 0.5)
+            {
+                GameManager.instance.events[14] = true;
+            }
+            GameManager.instance.events[13] = true;
+            }
+            if(this.gameObject.GetComponent<BChapterChoose>().chapter == 3)
+            {
+            if(accurary >= 0.5)
+            {
+                GameManager.instance.events[18] = true;
+            }
+            GameManager.instance.events[17] = true;
+            }
+            if(this.gameObject.GetComponent<BChapterChoose>().chapter == 4)
+            {
+            if(accurary >= 0.5)
+            {
+                GameManager.instance.events[22] = true;
+            }
+            GameManager.instance.events[21] = true;
+            }
             //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
             SceneManager.LoadScene(0);
             //StartCoroutine(loadDelay());
