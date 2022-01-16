@@ -8,6 +8,9 @@ public class inventoryResponse : MonoBehaviour
     public static inventoryResponse instance;
     public Text itemName;
     public List<Item> usefulItem = new List<Item>();
+    public List<Item> wrongItem = new List<Item>();
+    public string wrongTip;
+    //public string nullTip;
     public List<GameObject> itemSource = new List<GameObject>();
     public GameObject tipUI;
     public GameObject usefulItemUI;
@@ -32,11 +35,20 @@ public class inventoryResponse : MonoBehaviour
     }
     public void importMessage(Item _item)
     {
-        if(!usefulItem.Contains(_item))
+
+        if((!usefulItem.Contains(_item)) && (wrongItem.Count == 0))
         {
             tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
             tipUI.SetActive(true);
             StartCoroutine(stopTip("I Can`t use " + _item.name));
+        }
+        if(wrongItem.Contains(_item))
+        {
+            tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
+            tipUI.SetActive(true);
+            StartCoroutine(stopTip(wrongTip));
+            inventoryTip.SetActive(false);
+            becomeUseless(_item);
         }
         for(int i = 0;i < usefulItem.Count; i++)
         {
@@ -52,13 +64,29 @@ public class inventoryResponse : MonoBehaviour
             }
         }
     }
-    public void becomeUseful(Item _item, GameObject obj)
+    public void emptyItems(string str)
+    {
+        tipUI.transform.GetChild(0).GetComponent<Text>().text = str; 
+        tipUI.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(stopTip(str));
+    }
+    public void becomeUseful(Item _item, GameObject obj, string str)
     {
         if(!usefulItem.Contains(_item))
         {
             usefulItem.Add(_item);
             itemSource.Add(obj);
         }
+        
+        foreach(var i in GameManager.instance.items)
+        {
+            if(i != _item)
+            {
+                wrongItem.Add(i);
+            }
+        }
+        wrongTip = str;
     }
     public void becomeUseless(Item _item)
     {
@@ -70,6 +98,8 @@ public class inventoryResponse : MonoBehaviour
                 itemSource.RemoveAt(i);
             }
         }
+        wrongItem.Clear();
+        wrongTip = "";
     }
     
     public void exportMessage()
@@ -86,12 +116,17 @@ public class inventoryResponse : MonoBehaviour
         tipUI.SetActive(false);
         usefulItemUI.SetActive(false);
     }
+    public void resetTip()
+    {
+        StopAllCoroutines();
+    }
     IEnumerator stopTip(string _str)
     {
         yield return new WaitForSeconds(2f);
         if((tipUI.transform.GetChild(0).GetComponent<Text>().text == _str) && tipUI.gameObject.activeInHierarchy)
         {
             tipUI.SetActive(false);
+            StopAllCoroutines();
         }
     }
 }

@@ -46,6 +46,16 @@ public class FinalMovement : MonoBehaviour
         {
             //jumpPressed = true;
         }
+        /*
+        if(running)
+        {
+            run.Play();
+        }
+        if(walking)
+        {
+            walk.Play();
+        }
+        */
         if(!moving)
         {
             if(running)
@@ -102,6 +112,7 @@ public class FinalMovement : MonoBehaviour
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
         //horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
+        
         if(Input.GetKey("a"))
         {
             horizontalMove = -1;

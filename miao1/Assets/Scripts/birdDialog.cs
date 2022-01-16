@@ -21,6 +21,8 @@ public class birdDialog : MonoBehaviour
     public bool tradeFinish = false;
     public Item upload;
     public Item download;
+    public string wrongTip;
+    public string emptyTip;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +62,12 @@ public class birdDialog : MonoBehaviour
     }
     public void helpBird()
     {
-        inventoryResponse.instance.becomeUseful(upload, this.gameObject);
+        if(GameManager.instance.items.Count == 0)
+        {
+            inventoryResponse.instance.emptyItems(emptyTip);
+        }else{       
+            inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTip);
+        }
     }
     
     void getMessage()
@@ -69,6 +76,7 @@ public class birdDialog : MonoBehaviour
         playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespond;
         playerTip.SetActive(true);
         GameManager.instance.RemoveItem(upload);
+        inventoryResponse.instance.becomeUseless(upload);
     }
     public void finishDialog()
     {
@@ -83,7 +91,7 @@ public class birdDialog : MonoBehaviour
             //inventoryMenu.gameObject.SetActive(false);
             Debug.Log("You have got a flint");
             tradeFinish = true;
-            inventoryResponse.instance.becomeUseless(upload);
+            //inventoryResponse.instance.becomeUseless(upload);
         }
     }
     /*

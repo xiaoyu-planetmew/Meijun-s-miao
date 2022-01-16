@@ -12,6 +12,8 @@ public class room2Box : MonoBehaviour
     public Item _item;
     public List<Item> fakeKeys = new List<Item>();
     public List<GameObject> on = new List<GameObject>();
+    public string wrongTip;
+    public string emptyTip;
     bool holdKeys;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class room2Box : MonoBehaviour
     }
     public void dialog()
     {
+        /*
         if(!(GameManager.instance.items.Contains(_item)) && holdKeys)
         {
             GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text = holdFakeKeysStr;
@@ -49,15 +52,19 @@ public class room2Box : MonoBehaviour
             GameManager.instance.player.transform.GetChild(5).GetChild(0).gameObject.SetActive(true);
             StartCoroutine(close());
         }
-        if(GameManager.instance.items.Contains(_item))
+        */
+        if(GameManager.instance.items.Count == 0)
         {
-            inventoryResponse.instance.becomeUseful(_item, this.gameObject);
+            inventoryResponse.instance.emptyItems(emptyTip);
+        }else{
+            inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTip);
             inventoryResponse.instance.inventoryTip.SetActive(true);
         }
     }
     public void getMessage()
     {
         GameManager.instance.RemoveItem(_item);
+        inventoryResponse.instance.becomeUseless(_item);
         foreach(var obj in on)
         {
             obj.SetActive(true);
