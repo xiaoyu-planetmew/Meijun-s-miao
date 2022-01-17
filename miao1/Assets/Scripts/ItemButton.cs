@@ -9,11 +9,16 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     public int buttonID;
     public Item thisItem;
+    public GameObject tip;
 
     public Tooltips tooltip;
     private Vector2 position;
 
     //HELPER FUNCTION to get the items on this button
+    void Start()
+    {
+        tip = this.transform.GetChild(1).gameObject;
+    }
 
     private Item GetThisItem()
     {
@@ -66,6 +71,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
             tooltip.SetPosition(position);
             
+            tip.SetActive(true);
         }
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -86,6 +92,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
             tooltip.HideTooltip();
             tooltip.UpdateTooltip("");//CLEAR
+            tip.SetActive(false);
         //}
     }
 
