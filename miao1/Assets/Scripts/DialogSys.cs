@@ -180,6 +180,7 @@ public class DialogSys : MonoBehaviour
     }
     void dialogWithoutTrans()
     {
+        Debug.Log("dialogWithoutTrans"); 
         if(index == textList.Count)
             {
                 index = 0;

@@ -13,6 +13,7 @@ public class NPCSceneTrans : MonoBehaviour
     }
     public void turnOn()
     {
+        /*
         if(GameManager.instance.events[0] && !GameManager.instance.events[1])
         {
             trans1.SetActive(true);
@@ -23,11 +24,15 @@ public class NPCSceneTrans : MonoBehaviour
             trans2.SetActive(true);
             trans2.transform.Find("Button").gameObject.SetActive(true);
         }
+        */
         trans1.SetActive(true);
         trans2.transform.Find("Button").gameObject.SetActive(true);
     }
     public void turnOff()
     {
+        trans1.SetActive(false);
+        trans2.transform.Find("Button").gameObject.SetActive(false);
+        /*
         trans1.SetActive(false);
         foreach(Transform child in trans1.transform)
         {
@@ -38,6 +43,7 @@ public class NPCSceneTrans : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
+        */
     }
     // Update is called once per frame
     
