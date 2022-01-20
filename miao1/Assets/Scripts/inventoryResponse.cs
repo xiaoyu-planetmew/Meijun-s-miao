@@ -31,7 +31,12 @@ public class inventoryResponse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(inventoryTip.activeInHierarchy)
+        {
+            GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
+        }else{
+            GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
+        }
     }
     public void importMessage(Item _item)
     {
@@ -40,15 +45,25 @@ public class inventoryResponse : MonoBehaviour
         {
             tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
             tipUI.SetActive(true);
+            StopAllCoroutines();
             StartCoroutine(stopTip("I Can`t use " + _item.name));
         }
         if(wrongItem.Contains(_item))
         {
-            tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
-            tipUI.SetActive(true);
-            StartCoroutine(stopTip(wrongTip));
-            inventoryTip.SetActive(false);
+            if(itemSource.Contains(GameObject.Find("birdDialogBox")))
+            {
+                GameObject.Find("birdDialogBox").transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+            }else{
+                tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
+                tipUI.SetActive(true);
+                StopAllCoroutines();
+                StartCoroutine(stopTip(wrongTip));
+                inventoryTip.SetActive(false);
+            }
+            
+            
             becomeUseless(_item);
+            finishDialog();
         }
         for(int i = 0;i < usefulItem.Count; i++)
         {

@@ -27,6 +27,7 @@ public class FinalMovement : MonoBehaviour
     public bool running;
     public bool walking;
     public bool moving;
+    bool canMove;
     //public Canvas playerCanvas;
     
     
@@ -83,6 +84,16 @@ public class FinalMovement : MonoBehaviour
                 moving = false;
             }
     }
+    public void stopMoving()
+    {
+        horizontalMove = 0;
+        canMove = false;
+    }
+    public void continueMoving()
+    {
+        horizontalMove = 0;
+        canMove = true;
+    }
 
     private void FixedUpdate()
     {
@@ -112,7 +123,9 @@ public class FinalMovement : MonoBehaviour
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
         //horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
-        
+
+        if(canMove)
+        {
         if(Input.GetKey("a"))
         {
             horizontalMove = -1;
@@ -125,7 +138,7 @@ public class FinalMovement : MonoBehaviour
         {
             horizontalMove = 0;
         }
-        
+        }
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.GetChild(0).localScale.y;
         if(horizontalMove == -1)

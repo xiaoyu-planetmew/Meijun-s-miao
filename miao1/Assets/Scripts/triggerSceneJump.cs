@@ -10,7 +10,7 @@ public class triggerSceneJump : MonoBehaviour
     public int currentSceneNum;
     //public float jumpDistance;
     public List<GameObject> cameras = new List<GameObject>();
-    public GameObject player;
+    //public GameObject player;
     //public GameObject button;
    
     public List<GameObject> locations = new List<GameObject>();
@@ -23,16 +23,16 @@ public class triggerSceneJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Mathf.Abs(transform.position.x - player.transform.position.x) < jumpDistance)
+        /*if(Mathf.Abs(transform.position.x - GameManager.instance.player.transform.position.x) < jumpDistance)
         {
             button.SetActive(true);
         }
-        if(Mathf.Abs(transform.position.x - player.transform.position.x) > jumpDistance)
+        if(Mathf.Abs(transform.position.x - GameManager.instance.player.transform.position.x) > jumpDistance)
         {
             button.SetActive(false);
         }*/
-        //SceneManager.MoveGameObjectToScene(player, sceneNum);
-        player = GameManager.instance.player;
+        //SceneManager.MoveGameObjectToScene(GameManager.instance.player, sceneNum);
+        
     }
     public void teleport()
     {
@@ -40,7 +40,7 @@ public class triggerSceneJump : MonoBehaviour
         {
             if(jumpToSceneNum == 1)
             {
-                player.transform.position = locations[1].transform.position;
+                GameManager.instance.player.transform.position = locations[1].transform.position;
                 cameras[0].SetActive(false);
                 cameras[1].SetActive(true);
             }
@@ -49,26 +49,26 @@ public class triggerSceneJump : MonoBehaviour
         {
             if(jumpToSceneNum == 0)
             {
-                player.transform.position = locations[0].transform.position;
+                GameManager.instance.player.transform.position = locations[0].transform.position;
                 cameras[0].SetActive(true);
                 cameras[1].SetActive(false);
             }
             if(jumpToSceneNum == 2)
             {
-                player.transform.position = locations[3].transform.position;
+                GameManager.instance.player.transform.position = locations[3].transform.position;
                 cameras[2].SetActive(true);
                 cameras[1].SetActive(false);
             }
             if(jumpToSceneNum == 3)
             {
-                player.transform.position = locations[5].transform.position;
+                GameManager.instance.player.transform.position = locations[5].transform.position;
                 cameras[3].SetActive(true);
                 cameras[1].SetActive(false);
             }
         }
         if(currentSceneNum == 2)
         {
-            player.transform.position = locations[2].transform.position;
+            GameManager.instance.player.transform.position = locations[2].transform.position;
             cameras[1].SetActive(true);
             cameras[2].SetActive(false);
         }
@@ -76,13 +76,13 @@ public class triggerSceneJump : MonoBehaviour
         {
             if(jumpToSceneNum == 1)
             {
-                player.transform.position = locations[2].transform.position;
+                GameManager.instance.player.transform.position = locations[2].transform.position;
                 cameras[1].SetActive(true);
                 cameras[3].SetActive(false);
             }
             if(jumpToSceneNum == 4)
             {
-                player.transform.position = locations[6].transform.position;
+                GameManager.instance.player.transform.position = locations[6].transform.position;
                 cameras[4].SetActive(true);
                 cameras[3].SetActive(false);
             }
@@ -90,7 +90,7 @@ public class triggerSceneJump : MonoBehaviour
         if(currentSceneNum == 4)
         {
             Debug.Log(currentSceneNum);
-            player.transform.position = locations[4].transform.position;
+            GameManager.instance.player.transform.position = locations[4].transform.position;
             cameras[3].SetActive(true);
             cameras[4].SetActive(false);
 

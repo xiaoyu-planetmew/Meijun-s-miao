@@ -9,6 +9,7 @@ public class chooseBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     public Text option;
     public GameObject pointer;
+    bool isIn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +20,33 @@ public class chooseBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     void Update()
     {
         
+        if(!isIn)
+        {
+            pointer.SetActive(false);
+            option.color = new Color32(69, 69, 69, 153);
+        }
+    }
+    void onEnable()
+    {
+        
+    }
+    public void beOut()
+    {
+        isIn = false;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         pointer.SetActive(true);
-        this.gameObject.GetComponent<Text>().color = new Color32(69, 69, 69, 255);
+        option.color = new Color32(69, 69, 69, 255);
+        isIn = true;
+        //this.transform.parent.gameObject.GetComponent<Text>().color = new Color32(69, 69, 69, 255);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         pointer.SetActive(false);
-        this.gameObject.GetComponent<Text>().color = new Color32(69, 69, 69, 153);
+        option.color = new Color32(69, 69, 69, 153);
+        isIn = false;
+        //this.transform.parent.gameObject.GetComponent<Text>().color = new Color32(69, 69, 69, 153);
     }
    
 }
