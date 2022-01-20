@@ -18,19 +18,19 @@ public class moment3chipCompound : MonoBehaviour
         c = 0;
         for(int i = 0; i < GameManager.instance.items.Count; i++)
         {
-            if(GameManager.instance.items[i].itemPrice == 2)
+            if(GameManager.instance.items[i].itemPrice == 3)
             {
                 c++;
             }
         }
-        if(c == 3 || GameManager.instance.events[5])
+        if(c == 3 || GameManager.instance.events[12])
         {
             for(int i = 0; i < GameManager.instance.items.Count; i++)
             {
                 if(GameManager.instance.items[i].itemName == "moment3Chip1")
                 {
                     GameManager.instance.TradeItem(GameManager.instance.items[i], item1Change);
-                    GameManager.instance.events[5] = true;
+                    GameManager.instance.events[12] = true;
                 }
                 if(GameManager.instance.items[i].itemName == "moment3Chip2" || GameManager.instance.items[i].itemName == "moment3Chip3")
                 {
@@ -45,6 +45,6 @@ public class moment3chipCompound : MonoBehaviour
     IEnumerator jobFinish()
     {
         yield return new WaitForSeconds(0.1f);
-        this.gameObject.GetComponent<moment2chipCompound>().enabled = false;
+        this.gameObject.GetComponent<moment3chipCompound>().enabled = false;
     }
 }

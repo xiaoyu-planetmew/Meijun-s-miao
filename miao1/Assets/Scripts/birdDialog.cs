@@ -113,6 +113,7 @@ public class birdDialog : MonoBehaviour
         dialogBox.gameObject.SetActive(false);
         buttonLocation.gameObject.SetActive(false);
         startButton.gameObject.SetActive(true);
+        inventoryResponse.instance.finishDialog();
         //inventoryMenu.gameObject.SetActive(false);
         isTalk = false;
         Time.timeScale = 1.0f;

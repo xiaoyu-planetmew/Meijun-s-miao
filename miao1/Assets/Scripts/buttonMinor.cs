@@ -7,6 +7,7 @@ public class buttonMinor : MonoBehaviour
 {
     [Header("次要按钮")]
     public KeyCode key;
+    public GameObject b;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class buttonMinor : MonoBehaviour
     {
         if(Input.GetKeyDown(key))
         {
-            this.gameObject.GetComponent<Button>().onClick.Invoke();
+            b.gameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
 }

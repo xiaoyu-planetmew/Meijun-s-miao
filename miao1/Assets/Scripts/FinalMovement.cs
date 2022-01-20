@@ -27,7 +27,7 @@ public class FinalMovement : MonoBehaviour
     public bool running;
     public bool walking;
     public bool moving;
-    bool canMove;
+    public bool canMove = true;
     //public Canvas playerCanvas;
     
     

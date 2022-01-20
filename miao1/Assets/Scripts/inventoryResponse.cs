@@ -53,17 +53,23 @@ public class inventoryResponse : MonoBehaviour
             if(itemSource.Contains(GameObject.Find("birdDialogBox")))
             {
                 GameObject.Find("birdDialogBox").transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                slots.GetComponent<slotsState>().turnOffInventory();
             }else{
                 tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
                 tipUI.SetActive(true);
                 StopAllCoroutines();
                 StartCoroutine(stopTip(wrongTip));
+                slots.GetComponent<slotsState>().turnOnInventory();
                 inventoryTip.SetActive(false);
+                usefulItemUI.SetActive(false);
+                //finishDialog();
             }
+            for(int i = 0; i < usefulItem.Count; i++)
+            {
+                becomeUseless(usefulItem[0]);
+            }       
             
             
-            becomeUseless(_item);
-            finishDialog();
         }
         for(int i = 0;i < usefulItem.Count; i++)
         {
