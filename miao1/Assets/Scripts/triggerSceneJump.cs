@@ -32,7 +32,7 @@ public class triggerSceneJump : MonoBehaviour
             button.SetActive(false);
         }*/
         //SceneManager.MoveGameObjectToScene(player, sceneNum);
-        
+        player = GameManager.instance.player;
     }
     public void teleport()
     {
