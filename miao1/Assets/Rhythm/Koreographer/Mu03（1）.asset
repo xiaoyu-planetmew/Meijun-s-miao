@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
-  m_Name: New Koreography 1
+  m_Name: "Mu03\uFF081\uFF09"
   m_EditorClassIdentifier: 
   mSourceClip: {fileID: 8300000, guid: c481fa10d6fe17f4e831ad5cc5dbd2e2, type: 3}
   mAudioFilePath: 
