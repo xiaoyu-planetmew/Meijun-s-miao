@@ -31,7 +31,10 @@ public class cameraShake : MonoBehaviour
                 shakeTime -= Time.deltaTime;
                 if(shakeTime <= 0)
                 {
-                    cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                    if(cam.name == "Main Camera")
+                    {
+                        cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                    }
                     isShakingCamera = false;
                     shakeTime = 2f;
                     fps = 20f;
@@ -44,7 +47,10 @@ public class cameraShake : MonoBehaviour
                     if(frameTime > 1 / fps)
                     {
                         frameTime = 0;
-                        cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
+                        if(cam.name == "Main Camera")
+                        {
+                            cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
+                        }
                         cam.rect = new Rect(shakeDelta * (-1f + 2f * Random.value), shakeDelta * (-1f + 2f * Random.value), 1f, 1f);                     
                     }
                 }

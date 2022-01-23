@@ -212,4 +212,11 @@ public class GameManager: MonoBehaviour
     {
         mail = s;
     }
+    public void openDoor(Item _item)
+    {
+        if(items.Contains(_item))
+        {
+            RemoveItem(_item);
+        }
+    }
 }
