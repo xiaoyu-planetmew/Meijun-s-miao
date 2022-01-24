@@ -42,4 +42,9 @@ public class teleportButtonActive : MonoBehaviour
             button.SetActive(false);
         }
     }
+    public void turn()
+    {
+        _item = null;
+        //GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
+    }
 }
