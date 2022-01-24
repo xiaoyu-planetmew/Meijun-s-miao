@@ -108,22 +108,27 @@ public class DialogSys : MonoBehaviour
             if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6])
             {
                 GetTextFromFile(textfiles[3]);
+                //GameManager.instance.events[9] = true;
             }else
             if(GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7])
             {
                 GetTextFromFile(textfiles[5]);
+                //GameManager.instance.events[11] = true;
             }else
             if(GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13])
             {
                 GetTextFromFile(textfiles[6]);
+               //GameManager.instance.events[15] = true;
             }else
             if(GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17])
             {
                 GetTextFromFile(textfiles[7]);
+                //GameManager.instance.events[19] = true;
             }else
             if(GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21])
             {
                 GetTextFromFile(textfiles[8]);
+                //GameManager.instance.events[23] = true;
             }else
             if((GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
             || (GameManager.instance.events[5] && !GameManager.instance.events[10] && GameManager.instance.events[7])
@@ -198,10 +203,16 @@ public class DialogSys : MonoBehaviour
             {
                 if(textTalker[index] == "left")
                 {
+                    if(textList[index][0] == 'E')
+                    {
+                        textList[index] = textList[index].Substring(1);
+                        this.GetComponent<dialogAfterShake>().shake();
+                    }
                     StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
                     textBackgroundRight.gameObject.SetActive(false);
                     leftAudioRandom();
+                    
                     
                     //textLabelleft.GetComponent<Text>().text = textList[index];
                 }

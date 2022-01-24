@@ -227,7 +227,7 @@ public class cameraFocus : MonoBehaviour
         }
         if(nowPlaying == 3)
         {
-            GameManager.instance.events[14] = true;
+            GameManager.instance.events[15] = true;
         }
         if(nowPlaying == 4)
         {

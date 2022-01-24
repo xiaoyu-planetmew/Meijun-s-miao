@@ -15,7 +15,7 @@ public class bambooAni : MonoBehaviour
     {
         growTime = bamaoAni[0].GetComponent<SkeletonAnimation>().skeletonDataAsset.GetAnimationStateData().SkeletonData.FindAnimation("grow").Duration;
         growTime = growTime / 0.2f;
-        getStart();
+        //getStart();
         
     }
 
@@ -28,6 +28,7 @@ public class bambooAni : MonoBehaviour
     {
         foreach(var obj in bamaoAni)
         {
+            obj.SetActive(true);
             obj.gameObject.GetComponent<SkeletonAnimation>().state.SetAnimation(0, "grow", false);
             obj.gameObject.GetComponent<SkeletonAnimation>().timeScale = 0.2f;
             

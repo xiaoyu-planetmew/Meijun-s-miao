@@ -150,4 +150,11 @@ public class inventoryResponse : MonoBehaviour
             StopAllCoroutines();
         }
     }
+    public void girlTip(string str)
+    {
+        tipUI.SetActive(true);
+        tipUI.transform.GetChild(0).GetComponent<Text>().text = str;
+        StopAllCoroutines();
+        StartCoroutine(stopTip(str));
+    }
 }
