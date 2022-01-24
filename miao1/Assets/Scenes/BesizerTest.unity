@@ -9503,7 +9503,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4704fd7e976738741b0718cdc55a3c4b, type: 3}
   - {fileID: 8300000, guid: 002a69e96ff819c41aa72890c8832ce0, type: 3}
   - {fileID: 8300000, guid: c481fa10d6fe17f4e831ad5cc5dbd2e2, type: 3}
-  - {fileID: 8300000, guid: 4704fd7e976738741b0718cdc55a3c4b, type: 3}
+  - {fileID: 8300000, guid: 683fe864814d208478950210665f4d42, type: 3}
   - {fileID: 8300000, guid: 4704fd7e976738741b0718cdc55a3c4b, type: 3}
   delayTimeList:
   - 1.9
@@ -9515,6 +9515,7 @@ MonoBehaviour:
   - 77
   - 133
   - 109
+  - 154
   titleList:
   - {fileID: 21300000, guid: 45a9f51c6b51bcd46ab879c17c6027a0, type: 3}
   - {fileID: 21300000, guid: f7391547875baec42ad6560cc828dbdd, type: 3}
@@ -9547,8 +9548,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 8d9108d3395ff3a4297df3857421693f, type: 3}
   - {fileID: 4900000, guid: 71b7cc6a1cee59643b7a811b02826a62, type: 3}
   - {fileID: 4900000, guid: 71b7cc6a1cee59643b7a811b02826a62, type: 3}
-  - {fileID: 4900000, guid: 47a83475fe54aa348a309b57608d93f8, type: 3}
-  - {fileID: 4900000, guid: 8c60bbb3dea98d249b1358dd75553ce0, type: 3}
+  - {fileID: 4900000, guid: 71a21e67feb137346829700c40389f2f, type: 3}
+  - {fileID: 4900000, guid: 71a21e67feb137346829700c40389f2f, type: 3}
   - {fileID: 4900000, guid: 47a83475fe54aa348a309b57608d93f8, type: 3}
   - {fileID: 4900000, guid: 8c60bbb3dea98d249b1358dd75553ce0, type: 3}
   saveDate: {fileID: 0}
@@ -9564,8 +9565,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 5d379d7181f9a8d4e85ed2cd35520bcc, type: 3}
   - {fileID: 4900000, guid: 601e8de882ede5b49b1b3087b12ef8b8, type: 3}
   - {fileID: 4900000, guid: 601e8de882ede5b49b1b3087b12ef8b8, type: 3}
-  - {fileID: 4900000, guid: 04322ae68cffef04d9f04267d9cdc9ab, type: 3}
-  - {fileID: 4900000, guid: 199b145d809448f49a410c39ae67b4f4, type: 3}
+  - {fileID: 4900000, guid: 6d71a07992ad5c84c83f189d30327f47, type: 3}
+  - {fileID: 4900000, guid: 6d71a07992ad5c84c83f189d30327f47, type: 3}
   - {fileID: 4900000, guid: 04322ae68cffef04d9f04267d9cdc9ab, type: 3}
   - {fileID: 4900000, guid: 199b145d809448f49a410c39ae67b4f4, type: 3}
   saveDateLong: {fileID: 0}
