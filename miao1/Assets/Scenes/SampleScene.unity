@@ -19863,7 +19863,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
   - {fileID: 4900000, guid: 187828e4ca176db418e2970e5f10660b, type: 3}
   - {fileID: 4900000, guid: 309ea76c6b1db354badfc6dcf6877bb2, type: 3}
-  - {fileID: 4900000, guid: 309ea76c6b1db354badfc6dcf6877bb2, type: 3}
+  - {fileID: 4900000, guid: 8897c60d5ec95f040b141db992d067ef, type: 3}
   textList: []
   BGList:
   - {fileID: 21300000, guid: 8f5072e6056a81742aa7f1c2742fca50, type: 3}
@@ -78333,7 +78333,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: d6557781ac53a3e4180030b0cbf43659, type: 3}
   - {fileID: 4900000, guid: 069e24219fdfcae42a00c66df65c5268, type: 3}
   - {fileID: 4900000, guid: e46ec370f5a89584687a00429ffa38a2, type: 3}
-  - {fileID: 4900000, guid: e46ec370f5a89584687a00429ffa38a2, type: 3}
+  - {fileID: 4900000, guid: d81e55b954a6d5d43bbb31b3fba58343, type: 3}
   firstMeet: 1
   isTalking: 0
   index: 0
