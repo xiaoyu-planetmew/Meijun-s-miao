@@ -9508,8 +9508,8 @@ MonoBehaviour:
   delayTimeList:
   - 1.9
   - 1.8
-  - 1.9
-  - 1.9
+  - 1.8
+  - 1.8
   - 1.9
   songTimeList:
   - 77
@@ -10479,7 +10479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590307353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28648,7 +28648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &902710277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63601,7 +63601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1428020217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64014,7 +64014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1457700354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75452,7 +75452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1662526090
 RectTransform:
   m_ObjectHideFlags: 0
