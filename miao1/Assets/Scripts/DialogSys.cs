@@ -264,6 +264,12 @@ public class DialogSys : MonoBehaviour
                             cam.GetComponent<cameraFocus>().cancelFocus();
                         }
                     }
+                    if(textList[index][0] == 'G')
+                    {
+                        textList[index] = textList[index].Substring(1);
+                        GameObject.Find("darkMask").gameObject.GetComponent<darkMask>().darkStart();
+                        this.GetComponent<DialogSys>().enabled = false;
+                    }
                     output = textList[index];
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
@@ -379,7 +385,7 @@ public class DialogSys : MonoBehaviour
         }
         if(GameManager.instance.events[8] && textFinished)
         {
-            if(textNum == 1)
+            if(textNum == 1 || textNum == 4)
             {
                 dialogWithTrans();
             }else{

@@ -40,7 +40,12 @@ public class inventoryResponse : MonoBehaviour
     }
     public void importMessage(Item _item)
     {
-
+        if(itemSource.Contains(GameObject.Find("darkMask")))
+        {
+            GameObject.Find("darkMask").GetComponent<darkMask>().get = _item;
+            GameObject.Find("darkMask").SendMessage("getMessage", GameObject.Find("darkMask"), SendMessageOptions.RequireReceiver);
+        }else
+        {
         if((!usefulItem.Contains(_item)) && (wrongItem.Count == 0))
         {
             tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
@@ -50,6 +55,10 @@ public class inventoryResponse : MonoBehaviour
         }
         if(wrongItem.Contains(_item))
         {
+            if(itemSource.Contains(GameObject.Find("darkMask")))
+            {
+                GameObject.Find("darkMask").GetComponent<darkMask>().wrong();
+            }else
             if(itemSource.Contains(GameObject.Find("birdDialogBox")))
             {
                 GameObject.Find("birdDialogBox").transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
@@ -84,6 +93,7 @@ public class inventoryResponse : MonoBehaviour
                 //finishDialog();
             }
         }
+        }
     }
     public void emptyItems(string str)
     {
@@ -102,7 +112,7 @@ public class inventoryResponse : MonoBehaviour
         
         foreach(var i in GameManager.instance.items)
         {
-            if(i != _item)
+            if(!usefulItem.Contains(i))
             {
                 wrongItem.Add(i);
             }
@@ -125,7 +135,12 @@ public class inventoryResponse : MonoBehaviour
     
     public void exportMessage()
     {
+        if(thisObj == GameObject.Find("darkMask"))
+        {
+            GameObject.Find("darkMask").gameObject.GetComponent<darkMask>().thisSeed = thisItem;
+        }
         thisObj.SendMessage("getMessage", thisObj, SendMessageOptions.RequireReceiver);
+        
         thisItem = null;
         thisObj = null;
         inventoryTip.SetActive(false);

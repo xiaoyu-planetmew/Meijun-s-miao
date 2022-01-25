@@ -18,7 +18,7 @@ public class moment4Compound : MonoBehaviour
     {
         if(GameManager.instance.items.Contains(seed) && GameManager.instance.items.Contains(moment))
         {
-            GameManager.instance.RemoveItem(seed);
+            //GameManager.instance.RemoveItem(seed);
             GameManager.instance.RemoveItem(moment);
             GameManager.instance.AddItem(target);
             GameManager.instance.events[16] = true;
