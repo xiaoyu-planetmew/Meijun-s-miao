@@ -17,11 +17,22 @@ public class inventoryResponse : MonoBehaviour
     public GameObject slots;
     public GameObject inventoryTip;
     Item thisItem;
-    GameObject thisObj;
+    [SerializeField] GameObject thisObj;
     // Start is called before the first frame update
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {

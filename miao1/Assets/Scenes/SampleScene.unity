@@ -82642,6 +82642,7 @@ GameObject:
   - component: {fileID: 1862200914}
   - component: {fileID: 1862200911}
   - component: {fileID: 1862200912}
+  - component: {fileID: 1862200913}
   m_Layer: 0
   m_Name: guluwu
   m_TagString: Untagged
@@ -82679,10 +82680,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnAniTime: 1
+  teleport: {fileID: 1351049190}
+  thorn: {fileID: 1843852085}
   _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
   wrongTip: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   emptyTip: "\u304A\u305D\u3089\u304F\u3067\u304D\u307E\u305B\u3093\u3002 "
   wall: {fileID: 878043478}
+--- !u!114 &1862200913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862200910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79184165b550cd94891906851fe83203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1862200914
 SpriteRenderer:
   m_ObjectHideFlags: 0

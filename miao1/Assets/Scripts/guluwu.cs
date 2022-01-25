@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class guluwu : MonoBehaviour
 {
     public float burnAniTime;
-    private GameObject teleport;
-    private GameObject thorn;
+    public GameObject teleport;
+    public GameObject thorn;
     public Item _item;
     public string wrongTip;
     public string emptyTip;
