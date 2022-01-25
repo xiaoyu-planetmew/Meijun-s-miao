@@ -7,6 +7,7 @@ public class teleportButtonActive : MonoBehaviour
     public GameObject buttonLocation;
     public GameObject button;
     public Item _item;
+    public int e;
     GameObject player;
     public float jumpDistance;
     bool holdItem = true;
@@ -19,7 +20,7 @@ public class teleportButtonActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_item != null)
+        if(_item != null && !GameManager.instance.events[e])
         {
             if(!GameManager.instance.items.Contains(_item))
             {

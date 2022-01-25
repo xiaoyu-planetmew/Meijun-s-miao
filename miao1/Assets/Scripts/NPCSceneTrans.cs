@@ -26,12 +26,20 @@ public class NPCSceneTrans : MonoBehaviour
         }
         */
         trans1.SetActive(true);
-        trans2.transform.Find("Button").gameObject.SetActive(true);
+        if(GameManager.instance.events[16] && !GameManager.instance.events[18])
+        {
+            trans2.transform.Find("Button1").gameObject.SetActive(true);
+        }else{
+            trans2.transform.Find("Button").gameObject.SetActive(true);
+        }
+        
+        
     }
     public void turnOff()
     {
         trans1.SetActive(false);
         trans2.transform.Find("Button").gameObject.SetActive(false);
+        trans2.transform.Find("Button1").gameObject.SetActive(false);
         /*
         trans1.SetActive(false);
         foreach(Transform child in trans1.transform)

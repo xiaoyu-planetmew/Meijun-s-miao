@@ -33,6 +33,9 @@ public class DialogSys : MonoBehaviour
     public List<AudioClip> rightAudio = new List<AudioClip>();
     bool textFinished;
     public string output;
+    public Item bamao;
+    public Item dongcao;
+    int textNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,14 +88,60 @@ public class DialogSys : MonoBehaviour
         if(!GameManager.instance.events[8])
         {
             GetTextFromFile(textfiles[0]);
+            textNum = 0;
             //firstMeet = false;
             //GameManager.instance.events[8] = true;
         }else
         {
-            if(!GameManager.instance.events[0] && !GameManager.instance.events[5] && !GameManager.instance.events[12] && !GameManager.instance.events[16] && !GameManager.instance.events[20])
+            if(!(GameManager.instance.events[0] || GameManager.instance.events[9]) 
+            && !(GameManager.instance.events[5] || GameManager.instance.events[11]) 
+            && !(GameManager.instance.events[12] || GameManager.instance.events[15])
+            && !(GameManager.instance.events[16] || GameManager.instance.events[19])
+            && !(GameManager.instance.events[20] || GameManager.instance.events[23]))
             {
                 GetTextFromFile(textfiles[2]);
+                textNum = 2;
                 //holdTarget = false;
+            }
+            else
+            if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && !GameManager.instance.events[9])
+            {
+                GetTextFromFile(textfiles[3]);
+                textNum = 3;
+                //GameManager.instance.events[9] = true;
+            }else
+            if(GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && !GameManager.instance.events[11])
+            {
+                GetTextFromFile(textfiles[5]);
+                textNum = 5;
+                //GameManager.instance.events[11] = true;
+            }else
+            if(GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13] && !GameManager.instance.events[15])
+            {
+                GetTextFromFile(textfiles[6]);
+                textNum = 6;
+               //GameManager.instance.events[15] = true;
+            }else
+            if(GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17] && !GameManager.instance.events[19])
+            {
+                GetTextFromFile(textfiles[7]);
+                textNum = 7;
+                //GameManager.instance.events[19] = true;
+            }else
+            if(GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21] && !GameManager.instance.events[23])
+            {
+                GetTextFromFile(textfiles[8]);
+                textNum = 8;
+                //GameManager.instance.events[23] = true;
+            }else
+            if((GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
+            || (GameManager.instance.events[5] && !GameManager.instance.events[10] && GameManager.instance.events[7])
+            || (GameManager.instance.events[12] && !GameManager.instance.events[14] && GameManager.instance.events[13])
+            || (GameManager.instance.events[16] && !GameManager.instance.events[18] && GameManager.instance.events[17])
+            || (GameManager.instance.events[20] && !GameManager.instance.events[22] && GameManager.instance.events[21]))
+            {
+                GetTextFromFile(textfiles[4]);
+                textNum = 4;
             }
             else
             if((GameManager.instance.events[0] && !GameManager.instance.events[6])
@@ -103,40 +152,8 @@ public class DialogSys : MonoBehaviour
             )
             {
                 GetTextFromFile(textfiles[1]);
+                textNum = 1;
                 //holdTarget = true;
-            }else
-            if(GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6])
-            {
-                GetTextFromFile(textfiles[3]);
-                //GameManager.instance.events[9] = true;
-            }else
-            if(GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7])
-            {
-                GetTextFromFile(textfiles[5]);
-                //GameManager.instance.events[11] = true;
-            }else
-            if(GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13])
-            {
-                GetTextFromFile(textfiles[6]);
-               //GameManager.instance.events[15] = true;
-            }else
-            if(GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17])
-            {
-                GetTextFromFile(textfiles[7]);
-                //GameManager.instance.events[19] = true;
-            }else
-            if(GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21])
-            {
-                GetTextFromFile(textfiles[8]);
-                //GameManager.instance.events[23] = true;
-            }else
-            if((GameManager.instance.events[0] && !GameManager.instance.events[1] && GameManager.instance.events[6])
-            || (GameManager.instance.events[5] && !GameManager.instance.events[10] && GameManager.instance.events[7])
-            || (GameManager.instance.events[12] && !GameManager.instance.events[14] && GameManager.instance.events[13])
-            || (GameManager.instance.events[16] && !GameManager.instance.events[18] && GameManager.instance.events[17])
-            || (GameManager.instance.events[20] && !GameManager.instance.events[22] && GameManager.instance.events[21]))
-            {
-                GetTextFromFile(textfiles[4]);
             }
             /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
@@ -207,6 +224,12 @@ public class DialogSys : MonoBehaviour
                     {
                         textList[index] = textList[index].Substring(1);
                         this.GetComponent<dialogAfterShake>().shake();
+                    }
+                    if(textList[index][0] == 'F')
+                    {
+                        textList[index] = textList[index].Substring(1);
+                        GameManager.instance.AddItem(bamao);
+                        GameManager.instance.AddItem(dongcao);
                     }
                     StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
@@ -356,12 +379,20 @@ public class DialogSys : MonoBehaviour
         }
         if(GameManager.instance.events[8] && textFinished)
         {
+            if(textNum == 1)
+            {
+                dialogWithTrans();
+            }else{
+                dialogWithoutTrans();
+            }
+            /*
             if((!GameManager.instance.events[0] && !GameManager.instance.events[5] && !GameManager.instance.events[12] && !GameManager.instance.events[16] && !GameManager.instance.events[20]) 
             || (GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6]) 
             || (GameManager.instance.events[5] && GameManager.instance.events[7] && GameManager.instance.events[10])
             || (GameManager.instance.events[12] && GameManager.instance.events[14] && GameManager.instance.events[13])
             || (GameManager.instance.events[16] && GameManager.instance.events[18] && GameManager.instance.events[17])
             || (GameManager.instance.events[20] && GameManager.instance.events[22] && GameManager.instance.events[21]))
+            if(textNum == 0 || textNum == )
             {
                 dialogWithoutTrans();
             }else
@@ -374,6 +405,7 @@ public class DialogSys : MonoBehaviour
             {
                 dialogWithTrans();
             }
+            */
             /*
             if(!GameManager.instance.events[0] && !GameManager.instance.events[5])
             {
