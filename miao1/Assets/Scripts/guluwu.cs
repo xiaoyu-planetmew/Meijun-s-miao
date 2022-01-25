@@ -14,6 +14,7 @@ public class guluwu : MonoBehaviour
     private GameObject burn;
     //public GameObject box;
     private bool burnt;
+    public GameObject wall;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +27,13 @@ public class guluwu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.events[3] && !burnt)
+        if(!burnt)
         {
             burn.GetComponent<Button>().enabled = true;
+        }
+        if(GameManager.instance.events[6])
+        {
+            wall.SetActive(false);
         }
     }
     public void dialog()

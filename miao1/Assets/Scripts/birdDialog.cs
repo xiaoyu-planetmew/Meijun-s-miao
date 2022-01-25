@@ -88,6 +88,7 @@ public class birdDialog : MonoBehaviour
             Time.timeScale = 1.0f;
             dialogBox.gameObject.SetActive(false);
             buttonLocation.gameObject.SetActive(false);
+            inventoryResponse.instance.finishDialog();
             //inventoryMenu.gameObject.SetActive(false);
             Debug.Log("You have got a flint");
             tradeFinish = true;
