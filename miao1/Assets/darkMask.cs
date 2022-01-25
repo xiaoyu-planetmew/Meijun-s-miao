@@ -26,7 +26,14 @@ public class darkMask : MonoBehaviour
     public Item get;
     public GameObject thisobj;
     public GameObject wrongTipBox;
+    public GameObject camPosition;
+    public TextAsset textFile;
+    public TextAsset textFile1;
+    public List<string> textList = new List<string>();
+    public List<string> textList1 = new List<string>();
+    public GameObject panel;
     bool c = false;
+    [SerializeField] int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -192,6 +199,9 @@ public class darkMask : MonoBehaviour
             seed1.transform.GetChild(0).transform.localScale = new Vector3(seed1.transform.GetChild(0).transform.localScale.x-0.01f, seed1.transform.GetChild(0).transform.localScale.y-0.01f, seed1.transform.GetChild(0).transform.localScale.z-0.01f);
             seed2.transform.GetChild(0).transform.localScale = new Vector3(seed2.transform.GetChild(0).transform.localScale.x-0.01f, seed2.transform.GetChild(0).transform.localScale.y-0.01f, seed2.transform.GetChild(0).transform.localScale.z-0.01f);
             seed3.transform.GetChild(0).transform.localScale = new Vector3(seed3.transform.GetChild(0).transform.localScale.x-0.01f, seed3.transform.GetChild(0).transform.localScale.y-0.01f, seed3.transform.GetChild(0).transform.localScale.z-0.01f);
+            seed1.SetActive(false);
+            seed2.SetActive(false);
+            seed3.SetActive(false);
             yield return 0;
         }
         finish();
@@ -199,9 +209,74 @@ public class darkMask : MonoBehaviour
     void finish()
     {
         StopAllCoroutines();
+        StartCoroutine(camMove());
         girl.GetComponent<SkeletonAnimation>().state.SetAnimation(0, "jump", true);
         npc.GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wdance", true);
         this.transform.parent.gameObject.GetComponent<bambooAni>().getStart();
         GameObject.Find("water2").GetComponent<AudioSource>().enabled = true;
+        GetTextFromFile(textFile);
+        GetTextFromFile1(textFile1);
+        panel.SetActive(true);
+        GameObject.Find("InventoryCanvas").SetActive(false);
+    }
+    IEnumerator camMove()
+    {
+        while(cam.transform.position != camPosition.transform.position)
+        {
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, camPosition.transform.position, 4 * Time.deltaTime);
+            yield return 0;
+        }
+    }
+    void GetTextFromFile(TextAsset file)
+    {
+        textList.Clear();
+        var lineData = file.text.Split('\n');        
+        foreach(var line in lineData)
+        {
+            
+            textList.Add(line);
+        }
+        
+        textList.RemoveAt(textList.Count - 1);
+        
+    }
+    void GetTextFromFile1(TextAsset file)
+    {
+        textList1.Clear();
+        var lineData = file.text.Split('\n');        
+        foreach(var line in lineData)
+        {
+            
+            textList1.Add(line);
+        }
+        
+        textList1.RemoveAt(textList.Count - 1);
+        
+    }
+    public void next()
+    {
+        index++;
+        if(index < textList.Count)
+        {
+            panel.transform.GetChild(1).GetComponent<Text>().text = textList[index];
+            panel.transform.GetChild(2).GetComponent<Text>().text = textList1[index];
+        }else
+        if(index == textList.Count)
+        {
+            _image.SetActive(true);
+            StartCoroutine(dark4());
+        }
+        
+
+        //StartCoroutine(nextHide());
+    }
+    IEnumerator dark4()
+    {
+        panel.SetActive(false);
+        while(_image.GetComponent<Image>().color.a < 1)
+        {
+            _image.GetComponent<Image>().color = new Color(_image.GetComponent<Image>().color.r, _image.GetComponent<Image>().color.g, _image.GetComponent<Image>().color.b, _image.GetComponent<Image>().color.a+0.01f);
+            yield return 0;
+        }
     }
 }
