@@ -27,13 +27,21 @@ public class guluwu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!burnt)
+        if(!GameManager.instance.events[26])
         {
             burn.GetComponent<Button>().enabled = true;
         }
         if(GameManager.instance.events[6])
         {
             wall.SetActive(false);
+        }
+        if(GameManager.instance.events[26])
+        {
+            burnt = true;
+            teleport.SetActive(true);
+            burn.SetActive(false);
+            thorn.SetActive(false);
+            this.gameObject.GetComponent<teleportButtonActive>().enabled = true;
         }
     }
     public void dialog()
@@ -50,6 +58,7 @@ public class guluwu : MonoBehaviour
     {
         thornBurn();
         burn.SetActive(false);
+        GameManager.instance.events[26] = true;
         GameManager.instance.RemoveItem(_item);
         inventoryResponse.instance.becomeUseless(_item);
     }

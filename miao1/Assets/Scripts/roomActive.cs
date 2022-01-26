@@ -19,8 +19,10 @@ public class roomActive : MonoBehaviour
         if((Mathf.Abs(room.transform.position.x - GameManager.instance.player.transform.position.x) < 50) && (Mathf.Abs(room.transform.position.y - GameManager.instance.player.transform.position.y) < 10))
         {
             this.GetComponent<GraphicRaycaster>().enabled = true;
+            this.GetComponent<roomCamera>().enabled = true;
         }else{
             this.GetComponent<GraphicRaycaster>().enabled = false;
+            this.GetComponent<roomCamera>().enabled = false;
         }
     }
 }

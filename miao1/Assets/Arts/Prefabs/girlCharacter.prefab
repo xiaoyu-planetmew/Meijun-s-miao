@@ -2087,6 +2087,7 @@ MonoBehaviour:
   running: 0
   walking: 0
   moving: 0
+  canMove: 1
 --- !u!251 &133832562
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2334,6 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 32
+  b: {fileID: 0}
 --- !u!1 &2568619071006188208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,6 +3427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 32
+  b: {fileID: 0}
 --- !u!1 &6996795684933713973
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,47 +4,28 @@ using UnityEngine;
 
 public class moment3chipCompound : MonoBehaviour
 {
-    int c;
-    public Item item1Change;
+    public Item chip1;
+    public Item chip2;
+    public Item chip3;
+    public Item target;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        c = 0;
-        for(int i = 0; i < GameManager.instance.items.Count; i++)
+        if ((GameManager.instance.items.Contains(chip1)) && (GameManager.instance.items.Contains(chip2)) && (GameManager.instance.items.Contains(chip3)))
         {
-            if(GameManager.instance.items[i].itemPrice == 3)
-            {
-                c++;
-            }
+            //GameManager.instance.RemoveItem(seed);
+            GameManager.instance.RemoveItem(chip1);
+            GameManager.instance.RemoveItem(chip2);
+            GameManager.instance.RemoveItem(chip3);
+            GameManager.instance.AddItem(target);
+            //GameManager.instance.events[16] = true;
+            this.GetComponent<moment4Compound>().enabled = false;
         }
-        if(c == 3 || GameManager.instance.events[12])
-        {
-            for(int i = 0; i < GameManager.instance.items.Count; i++)
-            {
-                if(GameManager.instance.items[i].itemName == "moment3Chip1")
-                {
-                    GameManager.instance.TradeItem(GameManager.instance.items[i], item1Change);
-                    GameManager.instance.events[12] = true;
-                }
-                if(GameManager.instance.items[i].itemName == "moment3Chip2" || GameManager.instance.items[i].itemName == "moment3Chip3")
-                {
-                    GameManager.instance.RemoveItem(GameManager.instance.items[i]);
-                }
-            }
-            StartCoroutine(jobFinish());
-            //this.gameObject.GetComponent<moment2chipCompound>().enabled = false;
-        }
-        
-    }
-    IEnumerator jobFinish()
-    {
-        yield return new WaitForSeconds(0.1f);
-        this.gameObject.GetComponent<moment3chipCompound>().enabled = false;
     }
 }
