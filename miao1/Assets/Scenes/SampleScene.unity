@@ -4155,8 +4155,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109858261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 4.14, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1764810913}
   m_RootOrder: 37
@@ -61478,6 +61478,7 @@ MonoBehaviour:
   - {fileID: 1716592647}
   - {fileID: 378264484}
   - {fileID: 133832561}
+  final: 0
 --- !u!114 &1397711439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80192,8 +80193,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626121900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 4.15, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1764810913}
   m_RootOrder: 38
@@ -84375,7 +84376,11 @@ MonoBehaviour:
   bamaoAni:
   - {fileID: 573548597}
   - {fileID: 2144206011}
-  dongcaoAni: []
+  dongcaoAni:
+  - {fileID: 423248173}
+  - {fileID: 498958983}
+  - {fileID: 1728809190}
+  - {fileID: 716757733}
   growTime: 0
   fengshuGrow: {fileID: 109858261}
   fengshuUp: {fileID: 1626121900}

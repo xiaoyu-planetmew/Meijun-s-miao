@@ -49,6 +49,11 @@ public class darkMask : MonoBehaviour
             c = true;
             StopAllCoroutines();
             StartCoroutine(seedDisappear());
+            if(GameObject.Find("InventoryCanvas").activeInHierarchy)
+            {
+                GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
+                GameObject.Find("InventoryCanvas").SetActive(false);
+            }
         }
     }
     public void darkStart()
@@ -217,7 +222,12 @@ public class darkMask : MonoBehaviour
         GetTextFromFile(textFile);
         GetTextFromFile1(textFile1);
         panel.SetActive(true);
-        GameObject.Find("InventoryCanvas").SetActive(false);
+        if(GameObject.Find("InventoryCanvas").activeInHierarchy)
+        {
+            GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
+            GameObject.Find("InventoryCanvas").SetActive(false);
+        }
+        
     }
     IEnumerator camMove()
     {
