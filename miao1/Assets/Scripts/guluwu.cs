@@ -58,7 +58,7 @@ public class guluwu : MonoBehaviour
     {
         thornBurn();
         burn.SetActive(false);
-        GameManager.instance.events[26] = true;
+        
         GameManager.instance.RemoveItem(_item);
         inventoryResponse.instance.becomeUseless(_item);
     }
@@ -74,6 +74,7 @@ public class guluwu : MonoBehaviour
         teleport.SetActive(true);
         thorn.SetActive(false);
         this.gameObject.GetComponent<teleportButtonActive>().enabled = true;
+        GameManager.instance.events[26] = true;
         burnt = true;
     }
 }

@@ -17,6 +17,10 @@ public class basement1Suc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.GetComponent<roomCamera>().cam != null)
+        {
+            cam = this.GetComponent<roomCamera>().cam.GetComponent<Camera>();
+        }
         if(inventoryResponse.instance.usefulItem.Count== 0)
         {
             this.transform.GetChild(3).gameObject.SetActive(true);
