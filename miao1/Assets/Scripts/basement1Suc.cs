@@ -6,6 +6,7 @@ public class basement1Suc : MonoBehaviour
 {
     //public GameObject basement1Door;
     public GameObject keyStone;
+    public GameObject key;
     public Camera cam;
     bool shaked= false;
     // Start is called before the first frame update
@@ -40,6 +41,7 @@ public class basement1Suc : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         keyStone.SetActive(true);
+        key.SetActive(true);
         cam.gameObject.GetComponent<cameraShake>().isShakingCamera = false;
         //basement1Door.SetActive(true);
     }
