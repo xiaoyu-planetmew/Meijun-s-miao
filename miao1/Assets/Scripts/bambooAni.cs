@@ -7,6 +7,7 @@ using Spine.Unity;
 public class bambooAni : MonoBehaviour
 {
     public List<GameObject> bamaoAni = new List<GameObject>();
+    public List<GameObject> dongcaoAni = new List<GameObject>();
     [SerializeField] float growTime;
     public GameObject fengshuGrow;
     public GameObject fengshuUp;
@@ -33,6 +34,10 @@ public class bambooAni : MonoBehaviour
             obj.gameObject.GetComponent<SkeletonAnimation>().timeScale = 0.2f;
             
             StartCoroutine(shakeStart(obj));
+        }
+        foreach(var obj in dongcaoAni)
+        {
+            obj.SetActive(true);
         }
         StartCoroutine(fengshu());
     }

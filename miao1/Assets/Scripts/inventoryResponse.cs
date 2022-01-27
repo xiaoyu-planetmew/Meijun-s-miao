@@ -62,7 +62,7 @@ public class inventoryResponse : MonoBehaviour
             tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
             tipUI.SetActive(true);
             StopAllCoroutines();
-            StartCoroutine(stopTip("I Can`t use " + _item.name));
+            StartCoroutine(stopTip("I Can`t use " + _item.name, 4f));
         }
         if(wrongItem.Contains(_item))
         {
@@ -78,7 +78,7 @@ public class inventoryResponse : MonoBehaviour
                 tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
                 tipUI.SetActive(true);
                 StopAllCoroutines();
-                StartCoroutine(stopTip(wrongTip));
+                StartCoroutine(stopTip(wrongTip, 2f));
                 slots.GetComponent<slotsState>().turnOnInventory();
                 inventoryTip.SetActive(false);
                 usefulItemUI.SetActive(false);
@@ -111,7 +111,7 @@ public class inventoryResponse : MonoBehaviour
         tipUI.transform.GetChild(0).GetComponent<Text>().text = str; 
         tipUI.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(stopTip(str));
+        StartCoroutine(stopTip(str, 2f));
     }
     public void becomeUseful(Item _item, GameObject obj, string str)
     {
@@ -167,20 +167,20 @@ public class inventoryResponse : MonoBehaviour
     {
         StopAllCoroutines();
     }
-    IEnumerator stopTip(string _str)
+    IEnumerator stopTip(string _str, float t)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(t);
         if((tipUI.transform.GetChild(0).GetComponent<Text>().text == _str) && tipUI.gameObject.activeInHierarchy)
         {
             tipUI.SetActive(false);
             StopAllCoroutines();
         }
     }
-    public void girlTip(string str)
+    public void girlTip(string str, float t)
     {
         tipUI.SetActive(true);
         tipUI.transform.GetChild(0).GetComponent<Text>().text = str;
         StopAllCoroutines();
-        StartCoroutine(stopTip(str));
+        StartCoroutine(stopTip(str, t));
     }
 }

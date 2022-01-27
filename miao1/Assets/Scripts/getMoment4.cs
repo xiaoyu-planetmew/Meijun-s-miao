@@ -18,7 +18,7 @@ public class getMoment4 : MonoBehaviour
     {
         if(GameManager.instance.items.Contains(obj) && !finish)
         {
-            inventoryResponse.instance.girlTip(str);
+            inventoryResponse.instance.girlTip(str, 2f);
             finish = true;
             this.GetComponent<getMoment4>().enabled = false;
         }
