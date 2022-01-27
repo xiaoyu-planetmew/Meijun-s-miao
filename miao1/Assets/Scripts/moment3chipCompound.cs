@@ -25,7 +25,7 @@ public class moment3chipCompound : MonoBehaviour
             GameManager.instance.RemoveItem(chip3);
             GameManager.instance.AddItem(target);
             //GameManager.instance.events[16] = true;
-            this.GetComponent<moment4Compound>().enabled = false;
+            this.GetComponent<moment3chipCompound>().enabled = false;
         }
     }
 }
