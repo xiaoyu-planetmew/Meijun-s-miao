@@ -61544,6 +61544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFrameRate: 120
   isPaused: 0
+  cursorNormal: {fileID: 2800000, guid: 2747c4fd9ce8c3944bc8424ac4da56cf, type: 3}
   items: []
   itemNumbers: 
   CharCollections: []

@@ -9478,6 +9478,7 @@ GameObject:
   - component: {fileID: 520787104}
   - component: {fileID: 520787106}
   - component: {fileID: 520787107}
+  - component: {fileID: 520787108}
   m_Layer: 0
   m_Name: RhythmManager
   m_TagString: Untagged
@@ -9810,6 +9811,21 @@ MonoBehaviour:
   speed: 0
   colorSpeed: 0
   scaleSpeed: 0
+--- !u!114 &520787108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520787101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f124b14e9c9a7b48b8b28b3d8c0b225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rhythmMa: {fileID: 520787101}
+  mainObj: {fileID: 1107357990}
+  chooseObj: {fileID: 667255376}
 --- !u!1 &527125407
 GameObject:
   m_ObjectHideFlags: 0

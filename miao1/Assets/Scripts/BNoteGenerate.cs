@@ -59,6 +59,7 @@ public class BNoteGenerate : MonoBehaviour
             saveDate = saveDates[0];
         }
         */
+        /*
         saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
@@ -85,6 +86,7 @@ public class BNoteGenerate : MonoBehaviour
             usedNote.Add(true);
             trackTime[i] = trackTime[i];
         }
+        */
         /*
         noteInterval[0] = trackTime[0];
         for(int i = 0; i < trackTime.Count - 1; i++)
@@ -92,6 +94,35 @@ public class BNoteGenerate : MonoBehaviour
             noteInterval[i + 1] = trackTime[i + 1] - trackTime[i];
         }
         */
+    }
+    public void GenerateStart()
+    {
+        saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
+        //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
+        title.gameObject.GetComponent<Image>().sprite = titleList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        bg.gameObject.GetComponent<SpriteRenderer>().sprite = bgList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        //this.GetComponent<BRhythmManager>().delayTime = delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        //this.GetComponent<BRhythmManager>().songTime = songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        startTime = Time.time;
+        lineList = new List<Transform>();
+        
+        usedNote = new List<bool>();
+        foreach(Transform child in lines.transform)
+        {
+            //Debug.Log(child.gameObject.name);
+            lineList.Add(child);
+            //basePoint[i] = line.transform.GetChild(i).gameObject;
+        }
+        readFromTXT();
+        readFormTXTLong();
+        for(int i = 0; i < trackTime.Count; i++)
+        {
+            usedNote.Add(true);
+            trackTime[i] = trackTime[i];
+        }
     }
     void readFromTXT()
     {

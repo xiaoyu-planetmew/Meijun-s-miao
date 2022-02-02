@@ -123,6 +123,7 @@ public class BRhythmManager : MonoBehaviour
                 main.SetActive(true);
                 startPlaying = true;
                 this.GetComponent<BNoteGenerate>().enabled = true;
+                this.GetComponent<BNoteGenerate>().GenerateStart();
                 //vPlayer.Play();
                 delayTime = this.gameObject.GetComponent<BNoteGenerate>().delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
                 songTime = this.gameObject.GetComponent<BNoteGenerate>().songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
@@ -304,11 +305,14 @@ public class BRhythmManager : MonoBehaviour
             //StartCoroutine(loadDelay());
         }else
         {
+            this.gameObject.GetComponent<besizerSceneReset>().resetScene();
+            /*
             #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
             #else
                 Application.Quit();
             #endif
+            */
         }
     }
     IEnumerator loadDelay()

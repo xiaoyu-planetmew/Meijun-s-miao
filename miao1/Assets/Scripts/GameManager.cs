@@ -9,6 +9,7 @@ public class GameManager: MonoBehaviour
     public int targetFrameRate;
     public static GameManager instance;//MARKER SINGLETON PATTERN
     public bool isPaused;
+    public Texture2D cursorNormal;
 
     public List<Item> items = new List<Item>();//WHAT KIND OF ITEMS WE HAVE 
     public List<int> itemNumbers = new List<int>();//HOW MANY ITEMS WE HAVE
@@ -51,6 +52,8 @@ public class GameManager: MonoBehaviour
             slots.Add(child.gameObject);
         }
         DisplayItems();
+        //Cursor.visible = false;
+        //Cursor.SetCursor(cursorNormal, new Vector2(40, 13), CursorMode.Auto);
     }
     void Update()
     {
