@@ -22,6 +22,7 @@ public class besizerSceneReset : MonoBehaviour
     public void resetScene()
     {
         rhythmMa.GetComponent<BNoteGenerate>().enabled = false;
+        rhythmMa.GetComponent<BRhythmManager>().startPlaying = false;
         rhythmMa.GetComponent<BRhythmManager>().combo = 0;
         rhythmMa.GetComponent<BRhythmManager>().currentScore = 0;
         rhythmMa.GetComponent<BRhythmManager>().currentNoteCount = 0;
