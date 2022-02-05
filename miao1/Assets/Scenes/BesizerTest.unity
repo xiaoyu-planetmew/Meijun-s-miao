@@ -33875,7 +33875,7 @@ GameObject:
   - component: {fileID: 937755443}
   - component: {fileID: 937755442}
   m_Layer: 5
-  m_Name: continue
+  m_Name: playAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33947,7 +33947,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520787109}
         m_TargetAssemblyTypeName: besizerPause, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: playAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35121,7 +35121,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Back To Menu
 --- !u!222 &1080182182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -63625,7 +63625,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Play Again
 --- !u!222 &1384589773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65485,7 +65485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Exit
 --- !u!222 &1535811221
 CanvasRenderer:
   m_ObjectHideFlags: 0

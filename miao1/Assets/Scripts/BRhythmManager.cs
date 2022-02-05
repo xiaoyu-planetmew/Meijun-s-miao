@@ -69,7 +69,26 @@ public class BRhythmManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setPool();
         
+        
+    }
+    public void resetPool()
+    {
+        pooledObjects.Clear();
+        longPooledObjects.Clear();
+        for(int i = 0; i<notes.transform.childCount; i++)
+        {
+            Destroy(notes.transform.GetChild(i).gameObject);
+        }
+        for(int i = 0; i<longNotes.transform.childCount; i++)
+        {
+            Destroy(longNotes.transform.GetChild(i).gameObject);
+        }
+    }
+    public void setPool()
+    {
+        resetPool();
         lastNote = -1;
         instance = this;
         comboText.text = "0";
@@ -94,7 +113,6 @@ public class BRhythmManager : MonoBehaviour
             longobj.SetActive(false);                       //设置子弹无效
             longPooledObjects.Add(longobj);                     //把子弹添加到链表（对象池）中
         }
-        
     }
     IEnumerator numImport()
     {

@@ -50,8 +50,10 @@ public class BNoteHit : MonoBehaviour
         {
             notelist.Add(longNoteList[i]);
         }
-        
-        noteOnTime();
+        if((shortNoteList.Count > 0 || longNoteList.Count > 0) && BRhythmManager.instance.startPlaying)
+        {
+            noteOnTime();
+        }
         if(Input.GetKeyDown(keyToPress))
         {
             key.SetActive(false);

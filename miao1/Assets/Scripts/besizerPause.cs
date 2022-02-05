@@ -61,4 +61,13 @@ public class besizerPause : MonoBehaviour
             Application.Quit();
         #endif
     }
+    public void playAgain()
+    {
+        
+        backToMenu();
+        BRhythmManager.instance.resetPool();
+        this.GetComponent<besizerSceneReset>().chooseObj.SetActive(false);
+        BRhythmManager.instance.gameStart();
+
+    }
 }
