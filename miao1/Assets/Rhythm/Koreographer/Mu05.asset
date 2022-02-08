@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
   m_Name: Mu05
   m_EditorClassIdentifier: 
-  mSourceClip: {fileID: 0}
+  mSourceClip: {fileID: 8300000, guid: a4f70436fdc9ee74dbf3b4d8c069359a, type: 3}
   mAudioFilePath: 
   mSampleRate: -1
   mIgnoreLatencyOffset: 0
@@ -24,4 +24,3 @@ MonoBehaviour:
     bStartNewMeasure: 1
   mTracks:
   - {fileID: 11400000, guid: da98065b862d39c4db2af57876dd61a8, type: 2}
-  - {fileID: 11400000, guid: 2c29e13934ddb654bb961341678941c2, type: 2}
