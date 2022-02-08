@@ -51,6 +51,7 @@ public class besizerPause : MonoBehaviour
     {
         this.GetComponent<BChapterChoose>().chapterRecord[this.GetComponent<BChapterChoose>().chapter] = 0;
         this.GetComponent<besizerSceneReset>().resetScene();
+        BRhythmManager.instance.resetPool();
         Resume();
     }
     public void exit()

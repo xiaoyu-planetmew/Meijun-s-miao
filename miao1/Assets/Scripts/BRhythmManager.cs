@@ -152,6 +152,10 @@ public class BRhythmManager : MonoBehaviour
             }
         }
     }
+    public void backToMenu()
+    {
+        StopAllCoroutines();
+    }
     IEnumerator audioPlay()
     {
         yield return new WaitForSeconds(delayTime);

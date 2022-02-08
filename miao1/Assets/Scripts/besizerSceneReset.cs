@@ -45,6 +45,7 @@ public class besizerSceneReset : MonoBehaviour
         rhythmMa.GetComponent<BNoteGenerate>().longEndList.Clear();
         rhythmMa.GetComponent<BNoteGenerate>().usedLongNote.Clear();
         rhythmMa.GetComponent<AudioSource>().Stop();
+        rhythmMa.GetComponent<BRhythmManager>().backToMenu();
         rhythmMa.GetComponent<BChapterChoose>().nowChapter.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = ((float)rhythmMa.GetComponent<BChapterChoose>().chapterRecord[rhythmMa.GetComponent<BChapterChoose>().chapter]).ToString("0.00%");
         foreach(GameObject obj in rhythmMa.GetComponent<BNoteGenerate>().aniList)
         {
