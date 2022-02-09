@@ -66,6 +66,7 @@ public class BRhythmManager : MonoBehaviour
     private int currentIndex = 0; 
     private int longCurrentIndex = 0;
     public GameObject main;
+    public GameObject trackTips;
     // Start is called before the first frame update
     void Start()
     {
@@ -158,7 +159,9 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator audioPlay()
     {
+        trackTips.SetActive(true);
         yield return new WaitForSeconds(delayTime);
+        trackTips.SetActive(false);
         this.GetComponent<BNoteGenerate>().aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
         this.GetComponent<BNoteGenerate>().aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
         theMusic.Play();
