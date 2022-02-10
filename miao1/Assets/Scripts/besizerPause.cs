@@ -7,6 +7,7 @@ public class besizerPause : MonoBehaviour
 {
     public GameObject pauseUI;
     public bool isPaused = false;
+    public GameObject caozuoshuoming;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,9 @@ public class besizerPause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && BRhythmManager.instance.startPlaying)
         {
             //if Game is Paused, press Escape, Resume the Game
-            if (isPaused)
+            if(!isPaused)
             {
-                Resume();
-            }
-            else
-            {
-                Pause();//if Game is Reusme, Press Escape, Pasue the Game 
+                Pause();
             }
 
         }
@@ -37,6 +34,7 @@ public class besizerPause : MonoBehaviour
         this.GetComponent<AudioSource>().UnPause();
         isPaused = false;
         pauseUI.SetActive(false);
+        caozuoshuoming.SetActive(false);
     }
 
     public void Pause()
