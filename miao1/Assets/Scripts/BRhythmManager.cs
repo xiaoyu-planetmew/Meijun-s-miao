@@ -150,6 +150,7 @@ public class BRhythmManager : MonoBehaviour
                 StartCoroutine(audioPlay());
                 StartCoroutine(numImport());
                 StartCoroutine(endScene());
+                this.GetComponent<besizerPause>().showTip();
             }
         }
     }

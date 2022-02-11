@@ -52,6 +52,11 @@ public class besizerPause : MonoBehaviour
         BRhythmManager.instance.resetPool();
         Resume();
     }
+    public void showTip()
+    {
+        Pause();
+        caozuoshuoming.SetActive(true);
+    }
     public void exit()
     {
         #if UNITY_EDITOR
@@ -67,6 +72,6 @@ public class besizerPause : MonoBehaviour
         BRhythmManager.instance.resetPool();
         this.GetComponent<besizerSceneReset>().chooseObj.SetActive(false);
         BRhythmManager.instance.gameStart();
-
+        Resume();
     }
 }
