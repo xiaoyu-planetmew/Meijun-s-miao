@@ -73,7 +73,7 @@ public class BChapterChoose : MonoBehaviour
         {
             
             child.GetComponent<Button>().enabled = false;
-            
+            child.GetComponent<buttonMinor>().enabled = false;
         }
         ppreviousChapter.transform.GetChild(0).GetComponent<Image>().sprite = chapterFigure[pprevious];
         ppreviousChapter.transform.GetChild(0).GetComponent<Image>().color = new Color32(255, 255, 255, 125);
@@ -159,7 +159,7 @@ public class BChapterChoose : MonoBehaviour
         {
             
             child.GetComponent<Button>().enabled = true;
-            
+            child.GetComponent<buttonMinor>().enabled = true;
         }
         this.GetComponent<BChapterChangeAni>().enabled = false;
     }

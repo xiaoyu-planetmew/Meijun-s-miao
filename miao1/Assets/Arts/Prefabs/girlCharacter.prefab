@@ -2335,6 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 32
+  anyKey: 0
   b: {fileID: 0}
 --- !u!1 &2568619071006188208
 GameObject:
@@ -3427,6 +3428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 32
+  anyKey: 0
   b: {fileID: 0}
 --- !u!1 &6996795684933713973
 GameObject:
