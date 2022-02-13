@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 18bffce5d086c2b498d45ce5e0984d84
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Box03
+  - first:
+      1: 100002
+    second: Building04
+  - first:
+      1: 100004
+    second: Building05
+  - first:
+      1: 100006
+    second: Building06
+  - first:
+      1: 100008
+    second: building06
+  - first:
+      1: 100010
+    second: Building3
+  - first:
+      1: 100012
+    second: building5
+  - first:
+      1: 100014
+    second: bulding05
+  - first:
+      1: 100016
+    second: bulding4
+  - first:
+      1: 100018
+    second: //RootNode
+  - first:
+      1: 100020
+    second: OfficeBuilding
+  - first:
+      1: 100022
+    second: OfficeBuilding_MeshPart0
+  - first:
+      1: 100024
+    second: OfficeBuilding_MeshPart1
+  - first:
+      1: 100026
+    second: OfficeBuilding_MeshPart2
+  - first:
+      1: 100028
+    second: OfficeBuilding_MeshPart3
+  - first:
+      1: 100030
+    second: OfficeBuilding_MeshPart4
+  - first:
+      1: 100032
+    second: OfficeBuilding_MeshPart5
+  - first:
+      1: 100034
+    second: Sign
+  - first:
+      1: 100036
+    second: Sign01
+  - first:
+      1: 100038
+    second: Sign02
+  - first:
+      1: 100040
+    second: sign1_pole
+  - first:
+      1: 100042
+    second: sign1_pole01
+  - first:
+      1: 100044
+    second: sign1_pole02
+  - first:
+      1: 100046
+    second: SlidingDoor01
+  - first:
+      1: 100048
+    second: SlidingDoor02
+  - first:
+      1: 100050
+    second: Text02
+  - first:
+      1: 100052
+    second: Text03
+  - first:
+      4: 400000
+    second: Box03
+  - first:
+      4: 400002
+    second: Building04
+  - first:
+      4: 400004
+    second: Building05
+  - first:
+      4: 400006
+    second: Building06
+  - first:
+      4: 400008
+    second: building06
+  - first:
+      4: 400010
+    second: Building3
+  - first:
+      4: 400012
+    second: building5
+  - first:
+      4: 400014
+    second: bulding05
+  - first:
+      4: 400016
+    second: bulding4
+  - first:
+      4: 400018
+    second: //RootNode
+  - first:
+      4: 400020
+    second: OfficeBuilding
+  - first:
+      4: 400022
+    second: OfficeBuilding_MeshPart0
+  - first:
+      4: 400024
+    second: OfficeBuilding_MeshPart1
+  - first:
+      4: 400026
+    second: OfficeBuilding_MeshPart2
+  - first:
+      4: 400028
+    second: OfficeBuilding_MeshPart3
+  - first:
+      4: 400030
+    second: OfficeBuilding_MeshPart4
+  - first:
+      4: 400032
+    second: OfficeBuilding_MeshPart5
+  - first:
+      4: 400034
+    second: Sign
+  - first:
+      4: 400036
+    second: Sign01
+  - first:
+      4: 400038
+    second: Sign02
+  - first:
+      4: 400040
+    second: sign1_pole
+  - first:
+      4: 400042
+    second: sign1_pole01
+  - first:
+      4: 400044
+    second: sign1_pole02
+  - first:
+      4: 400046
+    second: SlidingDoor01
+  - first:
+      4: 400048
+    second: SlidingDoor02
+  - first:
+      4: 400050
+    second: Text02
+  - first:
+      4: 400052
+    second: Text03
+  - first:
+      23: 2300000
+    second: Box03
+  - first:
+      23: 2300002
+    second: Building04
+  - first:
+      23: 2300004
+    second: Building05
+  - first:
+      23: 2300006
+    second: Building06
+  - first:
+      23: 2300008
+    second: building06
+  - first:
+      23: 2300010
+    second: Building3
+  - first:
+      23: 2300012
+    second: building5
+  - first:
+      23: 2300014
+    second: bulding05
+  - first:
+      23: 2300016
+    second: bulding4
+  - first:
+      23: 2300018
+    second: //RootNode
+  - first:
+      23: 2300020
+    second: OfficeBuilding_MeshPart0
+  - first:
+      23: 2300022
+    second: OfficeBuilding_MeshPart1
+  - first:
+      23: 2300024
+    second: OfficeBuilding_MeshPart2
+  - first:
+      23: 2300026
+    second: OfficeBuilding_MeshPart3
+  - first:
+      23: 2300028
+    second: OfficeBuilding_MeshPart4
+  - first:
+      23: 2300030
+    second: OfficeBuilding_MeshPart5
+  - first:
+      23: 2300032
+    second: Sign
+  - first:
+      23: 2300034
+    second: Sign01
+  - first:
+      23: 2300036
+    second: Sign02
+  - first:
+      23: 2300038
+    second: sign1_pole
+  - first:
+      23: 2300040
+    second: sign1_pole01
+  - first:
+      23: 2300042
+    second: sign1_pole02
+  - first:
+      23: 2300044
+    second: SlidingDoor01
+  - first:
+      23: 2300046
+    second: SlidingDoor02
+  - first:
+      23: 2300048
+    second: Text02
+  - first:
+      23: 2300050
+    second: Text03
+  - first:
+      33: 3300000
+    second: Box03
+  - first:
+      33: 3300002
+    second: Building04
+  - first:
+      33: 3300004
+    second: Building05
+  - first:
+      33: 3300006
+    second: Building06
+  - first:
+      33: 3300008
+    second: building06
+  - first:
+      33: 3300010
+    second: Building3
+  - first:
+      33: 3300012
+    second: building5
+  - first:
+      33: 3300014
+    second: bulding05
+  - first:
+      33: 3300016
+    second: bulding4
+  - first:
+      33: 3300018
+    second: //RootNode
+  - first:
+      33: 3300020
+    second: OfficeBuilding_MeshPart0
+  - first:
+      33: 3300022
+    second: OfficeBuilding_MeshPart1
+  - first:
+      33: 3300024
+    second: OfficeBuilding_MeshPart2
+  - first:
+      33: 3300026
+    second: OfficeBuilding_MeshPart3
+  - first:
+      33: 3300028
+    second: OfficeBuilding_MeshPart4
+  - first:
+      33: 3300030
+    second: OfficeBuilding_MeshPart5
+  - first:
+      33: 3300032
+    second: Sign
+  - first:
+      33: 3300034
+    second: Sign01
+  - first:
+      33: 3300036
+    second: Sign02
+  - first:
+      33: 3300038
+    second: sign1_pole
+  - first:
+      33: 3300040
+    second: sign1_pole01
+  - first:
+      33: 3300042
+    second: sign1_pole02
+  - first:
+      33: 3300044
+    second: SlidingDoor01
+  - first:
+      33: 3300046
+    second: SlidingDoor02
+  - first:
+      33: 3300048
+    second: Text02
+  - first:
+      33: 3300050
+    second: Text03
+  - first:
+      43: 4300000
+    second: ground
+  - first:
+      43: 4300002
+    second: building06
+  - first:
+      43: 4300004
+    second: SlidingDoor01
+  - first:
+      43: 4300006
+    second: SlidingDoor02
+  - first:
+      43: 4300008
+    second: Text02
+  - first:
+      43: 4300010
+    second: Box03
+  - first:
+      43: 4300012
+    second: Building3
+  - first:
+      43: 4300014
+    second: bulding4
+  - first:
+      43: 4300016
+    second: building5
+  - first:
+      43: 4300018
+    second: Building06
+  - first:
+      43: 4300020
+    second: bulding05
+  - first:
+      43: 4300022
+    second: Text03
+  - first:
+      43: 4300024
+    second: sign1_pole
+  - first:
+      43: 4300026
+    second: Sign
+  - first:
+      43: 4300028
+    second: sign1_pole01
+  - first:
+      43: 4300030
+    second: Sign01
+  - first:
+      43: 4300032
+    second: sign1_pole02
+  - first:
+      43: 4300034
+    second: Sign02
+  - first:
+      43: 4300036
+    second: Building05
+  - first:
+      43: 4300038
+    second: OfficeBuilding_MeshPart0
+  - first:
+      43: 4300040
+    second: OfficeBuilding_MeshPart1
+  - first:
+      43: 4300042
+    second: OfficeBuilding_MeshPart2
+  - first:
+      43: 4300044
+    second: OfficeBuilding_MeshPart3
+  - first:
+      43: 4300046
+    second: OfficeBuilding_MeshPart4
+  - first:
+      43: 4300048
+    second: OfficeBuilding_MeshPart5
+  - first:
+      43: 4300050
+    second: Building04
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: cef3e238240d3484bac6e49b305f09cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 2f91d075e23667f4da9fee5b3ad1b123, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 04 - Default Slot #2
+    second: {fileID: 2100000, guid: 53818a43f070a1c49864d7099e30b02f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: f7b9a90f788110c4dbf3e7da51cc5cc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10 - Default
+    second: {fileID: 2100000, guid: 1ea7ee2f8e049b54e89ce1a5321cea50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 11 - Default
+    second: {fileID: 2100000, guid: 4ab3ebc42fd420e42b70c64342dc0ed2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default
+    second: {fileID: 2100000, guid: 14b55c20c2ba16b41b352fe0de3edc6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GLASS-ARCH-JCA-01
+    second: {fileID: 2100000, guid: 08e164811357043409c12f80c71f5d3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #0
+    second: {fileID: 2100000, guid: 26cf17646cb1a0a49a7e5da0c6d4af44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #12
+    second: {fileID: 2100000, guid: d46aa00efadb9214e9f2d03b36259298, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #13
+    second: {fileID: 2100000, guid: 7e32d57a2862a2a4f96ec43fa74cc280, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #14
+    second: {fileID: 2100000, guid: 66f9260e10c6a9e47ba446d531a2c83c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #207
+    second: {fileID: 2100000, guid: 5096c0dafe6d6ef4f94ce42cbed202a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #256
+    second: {fileID: 2100000, guid: 09d0d3c5608d0a748a5d407a9e663f92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #257
+    second: {fileID: 2100000, guid: 2b6b3484185745843b499d53e8353068, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #258
+    second: {fileID: 2100000, guid: ada2b91b77d8c5d44aad034217a82976, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #259
+    second: {fileID: 2100000, guid: 76a10a832b847864eb2f27aaeee79a67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #3
+    second: {fileID: 2100000, guid: 4028691f41b76ad42b8d828b5e3aa8e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #4
+    second: {fileID: 2100000, guid: 07da637d2f1597d4da0246effca229e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #57
+    second: {fileID: 2100000, guid: 6aa2be252e1ed0843becd3d7613f9381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Office_building
+    second: {fileID: 2100000, guid: b01d76b90e8aac849b7c1d84eac5c8c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bg_buildings
+    second: {fileID: 2100000, guid: ae0c69c8812fd7445bac46f29d5f6a72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bg_buildings-windows
+    second: {fileID: 2100000, guid: c534a8b1a9c3fbf4dad9de9685168e3c, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: ClipVersion=1,
+  assetBundleName: 
+  assetBundleVariant: 
