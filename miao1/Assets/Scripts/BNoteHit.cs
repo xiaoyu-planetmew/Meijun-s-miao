@@ -171,9 +171,10 @@ public class BNoteHit : MonoBehaviour
                 ani.SetTrigger(animatorTriggerHit);
                 var noteLength = minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time;
             }
-            if(timerStart && !Input.GetKeyUp(keyToPress) && Time.time - startTime < nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time)
+            if(timerStart && !Input.GetKeyUp(keyToPress) 
+            && Time.time - startTime < nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time)
             {
-                if(passedTime > 1f)
+                if(passedTime > 0.25f)
                 {
                     BRhythmManager.instance.NoteHitExact(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
                     ani.SetTrigger(animatorTriggerHit);
