@@ -138,10 +138,12 @@ public class BNoteHit : MonoBehaviour
                 if(minDistance <= 2f)
                 {
                     BRhythmManager.instance.NoteHitExact(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().hitScale();
                 }
                 if(minDistance > 2f)
                 {
                     BRhythmManager.instance.NoteHitGood(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().hitScale();
                 }
                 
                 ani.SetTrigger(animatorTriggerHit);
@@ -156,10 +158,12 @@ public class BNoteHit : MonoBehaviour
                 if(minDistance <= 2f)
                 {
                     BRhythmManager.instance.NoteHitExact(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holdScale();
                 }
                 if(minDistance > 2f)
                 {
                     BRhythmManager.instance.NoteHitGood(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holdScale();
                 }
                 StartCoroutine(longNoteHit(minTrans, minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time));
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
@@ -177,6 +181,7 @@ public class BNoteHit : MonoBehaviour
                 if(passedTime > 0.25f)
                 {
                     BRhythmManager.instance.NoteHitExact(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+                    GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holdScale();
                     ani.SetTrigger(animatorTriggerHit);
                     passedTime = 0;
                 }

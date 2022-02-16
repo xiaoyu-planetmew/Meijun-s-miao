@@ -10053,6 +10053,7 @@ GameObject:
   - component: {fileID: 520787107}
   - component: {fileID: 520787108}
   - component: {fileID: 520787109}
+  - component: {fileID: 520787110}
   m_Layer: 0
   m_Name: RhythmManager
   m_TagString: Untagged
@@ -10416,6 +10417,25 @@ MonoBehaviour:
   pauseUI: {fileID: 2006006858}
   isPaused: 0
   caozuoshuoming: {fileID: 1561087211}
+--- !u!114 &520787110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520787101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4aef2ed9ba1fa4cabe7ed6e3da83b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BG: {fileID: 1336907915}
+  hitting: 0
+  holding: 0
+  shrinking: 0
+  hitEnlargeSpeed: 0.2
+  holdEnlargeSpeed: 0.01
+  shrinkSpeed: 0.1
 --- !u!1 &527125407
 GameObject:
   m_ObjectHideFlags: 0

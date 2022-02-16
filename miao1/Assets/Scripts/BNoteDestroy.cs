@@ -45,5 +45,6 @@ public class BNoteDestroy : MonoBehaviour
         obj.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
         obj.transform.GetChild(0).GetComponent<TrailRenderer>().material = mat1;
         obj.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+        GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holding = false;
     } 
 }
