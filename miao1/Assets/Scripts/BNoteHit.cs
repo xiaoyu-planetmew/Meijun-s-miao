@@ -58,7 +58,7 @@ public class BNoteHit : MonoBehaviour
         {
             key.SetActive(false);
             clickDown.SetActive(true);
-            ;
+            GameObject.Find("pressSound").GetComponent<AudioSource>().Play();
         }
         if (Input.GetKey(keyToPress))
         {
