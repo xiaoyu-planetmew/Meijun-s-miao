@@ -14,6 +14,7 @@ public class BNoteHit : MonoBehaviour
     public GameObject num;
     public Material mat;
     private Animator ani;
+    public GameObject hitAni;
     public GameObject mask;
     private float passedTime;
     private float startTime;
@@ -30,6 +31,7 @@ public class BNoteHit : MonoBehaviour
         key = this.transform.GetChild(0).gameObject;
         clickDown = this.transform.GetChild(1).gameObject;
         ani = this.transform.GetChild(2).GetComponent<Animator>();
+        //hitAni = this.transform.GetChild(3).gameObject;
         nowNote = GameObject.Find("NullBNote");
         b1 = true;
         b2 = false;
@@ -133,7 +135,8 @@ public class BNoteHit : MonoBehaviour
                 minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
                 //minTrans.gameObject.GetComponent<TrailRenderer>().time = -1;
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
-                
+                var x = minTrans.transform.position.x;
+                var y = minTrans.transform.position.y;
                 //Debug.Log(Time.time);
                 if(minDistance <= 2f)
                 {
@@ -146,6 +149,15 @@ public class BNoteHit : MonoBehaviour
                     GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().hitScale();
                 }
                 
+                hitAni.transform.position = new Vector3(x, y, 0);
+                if(!hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("hit0"))
+                {
+                    hitAni.GetComponent<Animator>().Play("hit0", 0);
+                }else
+                if(!hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+                {
+                    hitAni.GetComponent<Animator>().Play("hit1", 0);
+                }
                 ani.SetTrigger(animatorTriggerHit);
             }
         }

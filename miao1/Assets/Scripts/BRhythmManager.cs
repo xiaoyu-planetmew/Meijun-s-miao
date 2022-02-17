@@ -67,6 +67,7 @@ public class BRhythmManager : MonoBehaviour
     private int longCurrentIndex = 0;
     public GameObject main;
     public GameObject trackTips;
+    public List<GameObject> targets = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -141,6 +142,12 @@ public class BRhythmManager : MonoBehaviour
             {
                 main.SetActive(true);
                 startPlaying = true;
+                foreach(var i in targets)
+                {
+                    i.transform.GetChild(2).GetComponent<resetSequenceAni>().resetAni();
+                    i.transform.GetChild(3).GetComponent<resetSequenceAni>().resetAni();
+                    Debug.Log("reset");
+                }
                 this.GetComponent<BNoteGenerate>().enabled = true;
                 this.GetComponent<BNoteGenerate>().GenerateStart();
                 //vPlayer.Play();
