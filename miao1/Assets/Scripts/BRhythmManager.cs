@@ -142,12 +142,15 @@ public class BRhythmManager : MonoBehaviour
             {
                 main.SetActive(true);
                 startPlaying = true;
+                /*
+                hitEffect.gameObject.GetComponent<resetSequenceAni>().resetAni();
                 foreach(var i in targets)
                 {
                     i.transform.GetChild(2).GetComponent<resetSequenceAni>().resetAni();
                     i.transform.GetChild(3).GetComponent<resetSequenceAni>().resetAni();
-                    Debug.Log("reset");
+                    //Debug.Log("reset");
                 }
+                */
                 this.GetComponent<BNoteGenerate>().enabled = true;
                 this.GetComponent<BNoteGenerate>().GenerateStart();
                 //vPlayer.Play();

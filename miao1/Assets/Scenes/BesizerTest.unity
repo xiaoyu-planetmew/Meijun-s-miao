@@ -930,7 +930,6 @@ GameObject:
   - component: {fileID: 116721142}
   - component: {fileID: 116721144}
   - component: {fileID: 116721143}
-  - component: {fileID: 116721145}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -1022,19 +1021,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &116721145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116721141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &117102787
 GameObject:
   m_ObjectHideFlags: 0
@@ -10231,7 +10217,6 @@ GameObject:
   - component: {fileID: 484465485}
   - component: {fileID: 484465487}
   - component: {fileID: 484465486}
-  - component: {fileID: 484465488}
   m_Layer: 0
   m_Name: BHit5
   m_TagString: Untagged
@@ -10323,19 +10308,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &484465488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484465484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &515339161
 GameObject:
   m_ObjectHideFlags: 0
@@ -11562,7 +11534,6 @@ GameObject:
   - component: {fileID: 611202824}
   - component: {fileID: 611202826}
   - component: {fileID: 611202825}
-  - component: {fileID: 611202827}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -11654,19 +11625,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &611202827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611202823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &614335132
 GameObject:
   m_ObjectHideFlags: 0
@@ -28576,7 +28534,6 @@ GameObject:
   - component: {fileID: 784127664}
   - component: {fileID: 784127666}
   - component: {fileID: 784127665}
-  - component: {fileID: 784127667}
   m_Layer: 0
   m_Name: BHit4
   m_TagString: Untagged
@@ -28668,19 +28625,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &784127667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784127663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &792423680
 GameObject:
   m_ObjectHideFlags: 0
@@ -47362,7 +47306,6 @@ GameObject:
   - component: {fileID: 1139575001}
   - component: {fileID: 1139575003}
   - component: {fileID: 1139575002}
-  - component: {fileID: 1139575004}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -47454,19 +47397,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1139575004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139575000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &1143650240
 GameObject:
   m_ObjectHideFlags: 0
@@ -59317,7 +59247,6 @@ GameObject:
   - component: {fileID: 1289788764}
   - component: {fileID: 1289788766}
   - component: {fileID: 1289788765}
-  - component: {fileID: 1289788767}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -59409,19 +59338,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1289788767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289788763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &1293810215
 GameObject:
   m_ObjectHideFlags: 0
@@ -59617,7 +59533,6 @@ GameObject:
   - component: {fileID: 1306764881}
   - component: {fileID: 1306764883}
   - component: {fileID: 1306764882}
-  - component: {fileID: 1306764884}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -59709,19 +59624,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1306764884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306764880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &1311760184
 GameObject:
   m_ObjectHideFlags: 0
@@ -75094,7 +74996,6 @@ GameObject:
   - component: {fileID: 1415454783}
   - component: {fileID: 1415454785}
   - component: {fileID: 1415454784}
-  - component: {fileID: 1415454786}
   m_Layer: 0
   m_Name: img_dot_hit
   m_TagString: Untagged
@@ -75186,19 +75087,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1415454786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415454782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 80c306245d472f4469d6f2bf67766e90, type: 3}
 --- !u!1 &1415660582
 GameObject:
   m_ObjectHideFlags: 0
@@ -93496,7 +93384,6 @@ GameObject:
   - component: {fileID: 1816275547}
   - component: {fileID: 1816275549}
   - component: {fileID: 1816275548}
-  - component: {fileID: 1816275550}
   m_Layer: 0
   m_Name: BHit6
   m_TagString: Untagged
@@ -93588,19 +93475,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1816275550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816275546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &1824266597
 GameObject:
   m_ObjectHideFlags: 0
@@ -93707,7 +93581,6 @@ GameObject:
   - component: {fileID: 1828006605}
   - component: {fileID: 1828006607}
   - component: {fileID: 1828006606}
-  - component: {fileID: 1828006608}
   m_Layer: 0
   m_Name: BHit3
   m_TagString: Untagged
@@ -93799,19 +93672,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1828006608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828006604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &1840540206
 GameObject:
   m_ObjectHideFlags: 0
@@ -94069,7 +93929,6 @@ GameObject:
   - component: {fileID: 1883654597}
   - component: {fileID: 1883654596}
   - component: {fileID: 1883654595}
-  - component: {fileID: 1883654598}
   m_Layer: 0
   m_Name: BHit1
   m_TagString: Untagged
@@ -94161,19 +94020,6 @@ Transform:
   m_Father: {fileID: 735932781}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1883654598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883654594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &1884429938
 GameObject:
   m_ObjectHideFlags: 0
@@ -101115,7 +100961,6 @@ GameObject:
   - component: {fileID: 2114775778}
   - component: {fileID: 2114775780}
   - component: {fileID: 2114775779}
-  - component: {fileID: 2114775781}
   m_Layer: 0
   m_Name: BHit2
   m_TagString: Untagged
@@ -101207,19 +101052,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2114775781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114775777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2031822baab340848a4208905594c293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 21300000, guid: 0c47e5f6c1197044b81f03bd055336dc, type: 3}
 --- !u!1 &2120872535
 GameObject:
   m_ObjectHideFlags: 0
