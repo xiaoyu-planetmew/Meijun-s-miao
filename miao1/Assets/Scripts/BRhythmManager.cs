@@ -68,6 +68,13 @@ public class BRhythmManager : MonoBehaviour
     public GameObject main;
     public GameObject trackTips;
     public List<GameObject> targets = new List<GameObject>();
+    public GameObject comboAni;
+    private bool comboReset;
+        bool comboReset25;
+        bool comboReset50;
+        bool comboReset100;
+        bool comboReset150;
+        bool comboReset200;
     // Start is called before the first frame update
     void Start()
     {
@@ -132,7 +139,10 @@ public class BRhythmManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(startPlaying)
+        {
+            comboAniControl();
+        }
     }
     public void gameStart()
     {
@@ -356,5 +366,67 @@ public class BRhythmManager : MonoBehaviour
         GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
         yield return new WaitForSeconds(0.1f);
         GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = true;
+    }
+    public void comboAniControl()
+    {
+        //bool comboReset25;
+        
+        if(combo == 0)
+        {
+            comboReset = true;
+            comboReset25 = true;
+            comboReset50 = true;
+            comboReset100 = true;
+            comboReset150 = true;
+            comboReset200 = true;
+        }
+        if(combo >= 25 && combo < 50 && comboReset25)
+        {
+            comboAni.GetComponent<Animator>().SetTrigger("25");
+            comboReset25 = false;
+        }
+        if(combo >= 50 && combo < 100 && comboReset50)
+        {
+            comboAni.GetComponent<Animator>().SetTrigger("50");
+            comboReset50 = false;
+        }
+        if(combo >= 100 && combo < 150 && comboReset100)
+        {
+            comboAni.GetComponent<Animator>().SetTrigger("100");
+            comboReset100 = false;
+        }
+        if(combo >= 150 && combo < 200 && comboReset150)
+        {
+            comboAni.GetComponent<Animator>().SetTrigger("150");
+            comboReset150 = false;
+        }
+        if(combo >= 200 && comboReset200)
+        {
+            comboAni.GetComponent<Animator>().SetTrigger("200");
+            comboReset200 = false;
+        }
+        /*
+        if(combo < 25 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("0"))
+        {
+            comboAni.GetComponent<Animator>().Play("0", 0);
+
+        }
+        if(combo >= 25 && combo < 50 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("25"))
+        {
+            comboAni.GetComponent<Animator>().Play("25", 0);
+        }
+        if(combo >= 50 && combo < 75 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("50"))
+        {
+            comboAni.GetComponent<Animator>().Play("50", 0);
+        }
+        if(combo >= 75 && combo < 100 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("75"))
+        {
+            comboAni.GetComponent<Animator>().Play("75", 0);
+        }
+        if(combo >= 100 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("100"))
+        {
+            comboAni.GetComponent<Animator>().Play("100", 0);
+        }
+        */
     }
 }
