@@ -11160,6 +11160,12 @@ MonoBehaviour:
   aniPlayer: {fileID: 1993278360}
   startPlaying: 0
   combo: 0
+  maxCombo: 0
+  perfectNum: 0
+  goodNum: 0
+  missNum: 0
+  fullCombo: 0
+  newBest: 0
   currentScore: 0
   currentHitEffect: 0
   currentNoteCount: 0
@@ -11195,6 +11201,7 @@ MonoBehaviour:
   - {fileID: 449564182}
   - {fileID: 1477762236}
   comboAni: {fileID: 1205831125}
+  endUI: {fileID: 0}
 --- !u!82 &520787104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -100363,6 +100370,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05fec685c4d4154eb81f28e9950a346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 48485914}
+  fullCombo: {fileID: 247859757}
+  newBest: {fileID: 234461756}
+  rank1: {fileID: 557492003}
+  rank2: {fileID: 15433555}
+  rank3: {fileID: 466183806}
+  num1: {fileID: 160366425}
+  num2: {fileID: 356871959}
+  num3: {fileID: 1038929387}
+  num4: {fileID: 31233249}
+  dot: {fileID: 461159886}
+  percent: {fileID: 1243512503}
+  maxCombo: {fileID: 2143854323}
+  perfect: {fileID: 582538980}
+  good: {fileID: 2134976313}
+  miss: {fileID: 1365158556}
+  combo: 0
+  perfectNum: 0
+  goodNum: 0
+  missNum: 0
+  accurary: 0
+  newBestBool: 0
+  fullComboBool: 0
   titleList:
   - {fileID: 21300000, guid: 832bcf953b345aa4c8e55f0f2e6ed0ce, type: 3}
   - {fileID: 21300000, guid: 573f92e307fd1414f9d86847b39ee02e, type: 3}

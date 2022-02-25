@@ -28,6 +28,12 @@ public class besizerSceneReset : MonoBehaviour
         rhythmMa.GetComponent<BRhythmManager>().currentNoteCount = 0;
         rhythmMa.GetComponent<BRhythmManager>().currentHitEffect = 0;
         rhythmMa.GetComponent<BRhythmManager>().accurary = 0;
+        rhythmMa.GetComponent<BRhythmManager>().maxCombo = 0;
+        rhythmMa.GetComponent<BRhythmManager>().perfectNum = 0;
+        rhythmMa.GetComponent<BRhythmManager>().goodNum = 0;
+        rhythmMa.GetComponent<BRhythmManager>().missNum = 0;
+        rhythmMa.GetComponent<BRhythmManager>().fullCombo = true;
+        rhythmMa.GetComponent<BRhythmManager>().newBest = false;
         rhythmMa.GetComponent<BRhythmManager>().startPlaying = false;
         rhythmMa.GetComponent<BRhythmManager>().comboText.text = "0";
         //rhythmMa.GetComponent<BRhythmManager>().comboText.gameObject.SetActive(false);

@@ -24,6 +24,12 @@ public class BRhythmManager : MonoBehaviour
     */
     public static BRhythmManager instance;
     public int combo = 0;
+    public int maxCombo;
+    public int perfectNum;
+    public int goodNum;
+    public int missNum;
+    public bool fullCombo;
+    public bool newBest;
     public int currentScore = 0;
     public float currentHitEffect = 0;
     public int currentNoteCount = 0;
@@ -69,6 +75,7 @@ public class BRhythmManager : MonoBehaviour
     public GameObject trackTips;
     public List<GameObject> targets = new List<GameObject>();
     public GameObject comboAni;
+    public GameObject endUI;
     private bool comboReset;
         bool comboReset25;
         bool comboReset50;
@@ -194,6 +201,11 @@ public class BRhythmManager : MonoBehaviour
         hitEffect.GetComponent<Animator>().SetTrigger(hitGood);
         //Debug.Log("On Time");
         combo += scorePerNote;
+        if(combo >= maxCombo)
+        {
+            maxCombo = combo;
+        }
+        goodNum++;
         currentScore += scorePerNote;
         currentNoteCount++;
         currentHitEffect = currentHitEffect + 0.5f;
@@ -212,6 +224,11 @@ public class BRhythmManager : MonoBehaviour
         var hitExact = "exact";
         hitEffect.GetComponent<Animator>().SetTrigger(hitExact);
         combo += scorePerNote;
+        if(combo >= maxCombo)
+        {
+            maxCombo = combo;
+        }
+        perfectNum++;
         currentScore += scorePerNote;
         currentNoteCount++;
         currentHitEffect = currentHitEffect + 1f;
@@ -230,6 +247,8 @@ public class BRhythmManager : MonoBehaviour
         hitEffect.GetComponent<Animator>().SetTrigger(hitMiss);
         //Debug.Log("Missed");
         combo = 0;
+        fullCombo = false;
+        missNum++;
         currentNoteCount++;
         comboText.text = combo.ToString();
         accurary = (float)currentHitEffect / currentNoteCount;
@@ -301,6 +320,7 @@ public class BRhythmManager : MonoBehaviour
         if(accurary >= this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter])
         {
             this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter] = accurary;
+            newBest = true;
         }
         
         if(GameObject.Find("GameManager"))
@@ -428,5 +448,10 @@ public class BRhythmManager : MonoBehaviour
             comboAni.GetComponent<Animator>().Play("100", 0);
         }
         */
+    }
+    public void activeEnd()
+    {
+        endUI.GetComponent<BEndUI>().fullComboBool = fullCombo;
+        endUI.GetComponent<BEndUI>().newBestBool = newBest;
     }
 }
