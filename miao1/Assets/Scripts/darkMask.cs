@@ -34,6 +34,7 @@ public class darkMask : MonoBehaviour
     public GameObject panel;
     bool c = false;
     [SerializeField] int index = 0;
+    public GameObject dialog2;
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +50,11 @@ public class darkMask : MonoBehaviour
             c = true;
             StopAllCoroutines();
             StartCoroutine(seedDisappear());
-            if(GameObject.Find("InventoryCanvas").activeInHierarchy)
-            {
-                GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
-                GameObject.Find("InventoryCanvas").SetActive(false);
-            }
+            //if(GameObject.Find("InventoryCanvas").activeInHierarchy)
+            //{
+            //    GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
+            //    GameObject.Find("InventoryCanvas").SetActive(false);
+            //}
         }
     }
     public void darkStart()
@@ -209,9 +210,16 @@ public class darkMask : MonoBehaviour
             seed3.SetActive(false);
             yield return 0;
         }
-        finish();
+        dialog2.SetActive(true);
+        dialog2.transform.GetChild(0).gameObject.GetComponent<dialogLetters>().playStart();
+        if(GameObject.Find("InventoryCanvas").activeInHierarchy)
+        {
+            GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
+            GameObject.Find("InventoryCanvas").SetActive(false);
+        }
+        //finish();
     }
-    void finish()
+    public void finish()
     {
         StopAllCoroutines();
         StartCoroutine(camMove());
@@ -222,11 +230,7 @@ public class darkMask : MonoBehaviour
         GetTextFromFile(textFile);
         GetTextFromFile1(textFile1);
         panel.SetActive(true);
-        if(GameObject.Find("InventoryCanvas").activeInHierarchy)
-        {
-            GameObject.Find("GameManager").GetComponent<sceneCheck>().enabled = false;
-            GameObject.Find("InventoryCanvas").SetActive(false);
-        }
+        
         
     }
     IEnumerator camMove()
