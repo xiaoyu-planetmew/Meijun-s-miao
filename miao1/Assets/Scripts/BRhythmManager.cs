@@ -453,5 +453,12 @@ public class BRhythmManager : MonoBehaviour
     {
         endUI.GetComponent<BEndUI>().fullComboBool = fullCombo;
         endUI.GetComponent<BEndUI>().newBestBool = newBest;
+        endUI.GetComponent<BEndUI>().accurary = accurary;
+        endUI.GetComponent<BEndUI>().perfectNum = perfectNum;
+        endUI.GetComponent<BEndUI>().goodNum = goodNum;
+        endUI.GetComponent<BEndUI>().missNum = missNum;
+        endUI.GetComponent<BEndUI>().combo = maxCombo;
+        endUI.GetComponent<BEndUI>().titleNum = this.gameObject.GetComponent<BChapterChoose>().chapter;
+        endUI.GetComponent<BEndUI>().BEnd();
     }
 }

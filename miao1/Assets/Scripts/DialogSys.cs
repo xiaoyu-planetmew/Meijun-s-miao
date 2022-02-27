@@ -35,6 +35,7 @@ public class DialogSys : MonoBehaviour
     public string output;
     public Item bamao;
     public Item dongcao;
+    public Item maple;
     int textNum;
     // Start is called before the first frame update
     void Start()
@@ -230,6 +231,7 @@ public class DialogSys : MonoBehaviour
                         textList[index] = textList[index].Substring(1);
                         GameManager.instance.AddItem(bamao);
                         GameManager.instance.AddItem(dongcao);
+                        //GameManager.instance.AddItem(maple);
                     }
                     StartCoroutine(SetTextLeft());
                     textBackgroundLeft.gameObject.SetActive(true);
