@@ -327,7 +327,7 @@ public class BRhythmManager : MonoBehaviour
         {
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 0)
             {
-            if(accurary >= 0.5)
+            if(accurary >= 0.5 && GameManager.instance.events[0])
             {
                 GameManager.instance.events[1] = true;
             }
@@ -335,7 +335,7 @@ public class BRhythmManager : MonoBehaviour
             }
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 1)
             {
-            if(accurary >= 0.5)
+            if(accurary >= 0.5 && GameManager.instance.events[5])
             {
                 GameManager.instance.events[10] = true;
             }
@@ -343,7 +343,7 @@ public class BRhythmManager : MonoBehaviour
             }
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 2)
             {
-            if(accurary >= 0.5)
+            if(accurary >= 0.5 && GameManager.instance.events[12])
             {
                 GameManager.instance.events[14] = true;
             }
@@ -351,7 +351,7 @@ public class BRhythmManager : MonoBehaviour
             }
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 3)
             {
-            if(accurary >= 0.5)
+            if(accurary >= 0.5 && GameManager.instance.events[16])
             {
                 GameManager.instance.events[18] = true;
             }
@@ -359,7 +359,7 @@ public class BRhythmManager : MonoBehaviour
             }
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 4)
             {
-            if(accurary >= 0.5)
+            if(accurary >= 0.5 && GameManager.instance.events[20])
             {
                 GameManager.instance.events[22] = true;
             }
@@ -425,29 +425,6 @@ public class BRhythmManager : MonoBehaviour
             comboAni.GetComponent<Animator>().SetTrigger("200");
             comboReset200 = false;
         }
-        /*
-        if(combo < 25 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("0"))
-        {
-            comboAni.GetComponent<Animator>().Play("0", 0);
-
-        }
-        if(combo >= 25 && combo < 50 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("25"))
-        {
-            comboAni.GetComponent<Animator>().Play("25", 0);
-        }
-        if(combo >= 50 && combo < 75 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("50"))
-        {
-            comboAni.GetComponent<Animator>().Play("50", 0);
-        }
-        if(combo >= 75 && combo < 100 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("75"))
-        {
-            comboAni.GetComponent<Animator>().Play("75", 0);
-        }
-        if(combo >= 100 && !comboAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("100"))
-        {
-            comboAni.GetComponent<Animator>().Play("100", 0);
-        }
-        */
     }
     public void activeEnd()
     {

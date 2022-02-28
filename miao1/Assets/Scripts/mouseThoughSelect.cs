@@ -46,6 +46,9 @@ public class mouseThoughSelect : MonoBehaviour
  
     void Update()
     {
+        if(cams != null)
+        {
+
         
         if(cams.activeInHierarchy)
         {
@@ -77,7 +80,7 @@ public class mouseThoughSelect : MonoBehaviour
            }
         }
         }
-        
+        }
         
     }
     IEnumerator warningClose()
