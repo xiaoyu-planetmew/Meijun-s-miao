@@ -11276,7 +11276,7 @@ MonoBehaviour:
   - {fileID: 449564182}
   - {fileID: 1477762236}
   comboAni: {fileID: 1205831125}
-  endUI: {fileID: 0}
+  endUI: {fileID: 1930152520}
 --- !u!82 &520787104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50233,9 +50233,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 520787101}
-        m_TargetAssemblyTypeName: BEndUI, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 520787103}
+        m_TargetAssemblyTypeName: BRhythmManager, Assembly-CSharp
+        m_MethodName: endGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -100657,6 +100657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05fec685c4d4154eb81f28e9950a346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 1262699090}
   title: {fileID: 48485914}
   fullCombo: {fileID: 247859757}
   newBest: {fileID: 234461756}
@@ -100674,14 +100675,24 @@ MonoBehaviour:
   perfect: {fileID: 582538980}
   good: {fileID: 2134976313}
   miss: {fileID: 1365158556}
-  titleNum: 0
-  combo: 0
-  perfectNum: 0
-  goodNum: 0
-  missNum: 0
-  accurary: 0
-  newBestBool: 0
-  fullComboBool: 0
+  maxComboText: {fileID: 1897761947}
+  perfectText: {fileID: 2108586879}
+  goodText: {fileID: 1956459081}
+  missText: {fileID: 284538005}
+  titleNum: 4
+  combo: 25
+  perfectNum: 45
+  goodNum: 231
+  missNum: 5
+  accurary: 0.9655
+  newBestBool: 1
+  fullComboBool: 1
+  bgList:
+  - {fileID: 21300000, guid: 3428551b1f274c84e92a4f8088f06025, type: 3}
+  - {fileID: 21300000, guid: 52447c62d6732984c95e989d0750a1e2, type: 3}
+  - {fileID: 21300000, guid: c8eab37fa15b33c449475e3eb4165869, type: 3}
+  - {fileID: 21300000, guid: 55cde5102e6108e488ccb555e9e8d6b2, type: 3}
+  - {fileID: 21300000, guid: 70bfa4fed033e7246aeada3e10802f13, type: 3}
   titleList:
   - {fileID: 21300000, guid: 832bcf953b345aa4c8e55f0f2e6ed0ce, type: 3}
   - {fileID: 21300000, guid: 573f92e307fd1414f9d86847b39ee02e, type: 3}

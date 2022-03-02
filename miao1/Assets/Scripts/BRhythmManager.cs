@@ -174,6 +174,7 @@ public class BRhythmManager : MonoBehaviour
                 delayTime = this.gameObject.GetComponent<BNoteGenerate>().delayTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
                 songTime = this.gameObject.GetComponent<BNoteGenerate>().songTimeList[this.gameObject.GetComponent<BChapterChoose>().chapter];
                 aniPlayer.SetActive(true);
+                fullCombo = true;
                 StartCoroutine(audioPlay());
                 StartCoroutine(numImport());
                 StartCoroutine(endScene());
@@ -322,7 +323,11 @@ public class BRhythmManager : MonoBehaviour
             this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter] = accurary;
             newBest = true;
         }
+        activeEnd();
         
+    }
+    public void endGame()
+    {
         if(GameObject.Find("GameManager"))
         {
             if(this.gameObject.GetComponent<BChapterChoose>().chapter == 0)
@@ -380,6 +385,7 @@ public class BRhythmManager : MonoBehaviour
             #endif
             */
         }
+        endUI.SetActive(false);
     }
     IEnumerator loadDelay()
     {
@@ -428,6 +434,7 @@ public class BRhythmManager : MonoBehaviour
     }
     public void activeEnd()
     {
+        endUI.SetActive(true);
         endUI.GetComponent<BEndUI>().fullComboBool = fullCombo;
         endUI.GetComponent<BEndUI>().newBestBool = newBest;
         endUI.GetComponent<BEndUI>().accurary = accurary;
