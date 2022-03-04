@@ -39,6 +39,7 @@ public class BEndUI : MonoBehaviour
     public List<Sprite> titleList = new List<Sprite>();
     public List<Sprite> rankList = new List<Sprite>();
     public List<Sprite> numberList = new List<Sprite>();
+    public GameObject endButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class BEndUI : MonoBehaviour
     }
     public void BEnd()
     {
+        endButton.SetActive(false);
         title.GetComponent<Image>().sprite = titleList[titleNum];
         bg.GetComponent<Image>().sprite = bgList[titleNum];
         if(newBestBool)
@@ -138,6 +140,7 @@ public class BEndUI : MonoBehaviour
     //}
     public void letters(float a)
     {
+        
         fullPercent.SetActive(false);
         num1.SetActive(true);
         num2.SetActive(true);
@@ -201,6 +204,7 @@ public class BEndUI : MonoBehaviour
     public void ani()
     {
         Sequence quence = DOTween.Sequence();
+        StartCoroutine(endGameButton(quence));
         quence.Append(title.GetComponent<Image>().DOFade(1, 0.5f));
         if(fullComboBool)
         {
@@ -233,5 +237,10 @@ public class BEndUI : MonoBehaviour
         quence.Join(goodText.GetComponent<Text>().DOFade(1, 0.5f));
         quence.Append(miss.GetComponent<Text>().DOFade(1, 0.5f));
         quence.Join(missText.GetComponent<Text>().DOFade(1, 0.5f));
+    }
+    IEnumerator endGameButton(Sequence quence)
+    {
+        yield return quence.WaitForCompletion();
+        endButton.SetActive(true);
     }
 }

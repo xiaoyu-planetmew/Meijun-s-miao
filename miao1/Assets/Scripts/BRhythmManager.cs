@@ -182,6 +182,33 @@ public class BRhythmManager : MonoBehaviour
             }
         }
     }
+    public void mainStart()
+    {
+        if(GameObject.Find("GameManager"))
+        {
+            if(GameManager.instance.events[0] && !GameManager.instance.events[1])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 0;
+            }else
+            if(GameManager.instance.events[5] && !GameManager.instance.events[10])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 1;
+            }
+            if(GameManager.instance.events[12] && !GameManager.instance.events[14])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 2;
+            }
+            if(GameManager.instance.events[16] && !GameManager.instance.events[18])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 3;
+            }
+            if(GameManager.instance.events[20] && !GameManager.instance.events[22])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 4;
+            }
+        }
+        //if(GameObject.Find())
+    }
     public void backToMenu()
     {
         StopAllCoroutines();
