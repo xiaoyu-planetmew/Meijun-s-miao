@@ -63036,6 +63036,12 @@ MonoBehaviour:
   thisButton: {fileID: 0}
   itemButtons: []
   mail: 
+  songRecord:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!4 &1397711436
 Transform:
   m_ObjectHideFlags: 0

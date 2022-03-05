@@ -76,6 +76,8 @@ public class BRhythmManager : MonoBehaviour
     public List<GameObject> targets = new List<GameObject>();
     public GameObject comboAni;
     public GameObject endUI;
+    public GameObject mainChooseCanvas;
+    public List<GameObject> chooseCanvas = new List<GameObject>();
     private bool comboReset;
         bool comboReset25;
         bool comboReset50;
@@ -83,6 +85,10 @@ public class BRhythmManager : MonoBehaviour
         bool comboReset150;
         bool comboReset200;
     // Start is called before the first frame update
+    private void OnEnable() 
+    {
+        mainStart();    
+    }
     void Start()
     {
         setPool();
@@ -186,28 +192,45 @@ public class BRhythmManager : MonoBehaviour
     {
         if(GameObject.Find("GameManager"))
         {
+            mainChooseCanvas.SetActive(false);
             if(GameManager.instance.events[0] && !GameManager.instance.events[1])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 0;
+                chooseCanvas[0].SetActive(true);
+                chooseCanvas[0].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[0].ToString("0.00%");
             }else
             if(GameManager.instance.events[5] && !GameManager.instance.events[10])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 1;
-            }
+                chooseCanvas[1].SetActive(true);
+                chooseCanvas[1].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[1].ToString("0.00%");
+            }else
             if(GameManager.instance.events[12] && !GameManager.instance.events[14])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 2;
-            }
+                chooseCanvas[2].SetActive(true);
+                chooseCanvas[2].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[2].ToString("0.00%");
+            }else
             if(GameManager.instance.events[16] && !GameManager.instance.events[18])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 3;
-            }
+                chooseCanvas[3].SetActive(true);
+                chooseCanvas[3].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[3].ToString("0.00%");
+            }else
             if(GameManager.instance.events[20] && !GameManager.instance.events[22])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 4;
+                chooseCanvas[4].SetActive(true);
+                chooseCanvas[4].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[4].ToString("0.00%");
+            }
+        }else
+        {
+            mainChooseCanvas.SetActive(true);
+            for(int i = 0; i < chooseCanvas.Count; i++)
+            {
+                chooseCanvas[i].SetActive(false);
             }
         }
-        //if(GameObject.Find())
     }
     public void backToMenu()
     {
@@ -362,6 +385,10 @@ public class BRhythmManager : MonoBehaviour
             if(accurary >= 0.5 && GameManager.instance.events[0])
             {
                 GameManager.instance.events[1] = true;
+                if(newBest)
+                {
+                    GameManager.instance.songRecord[0] = accurary;
+                }
             }
             GameManager.instance.events[6] = true;
             }
@@ -369,7 +396,11 @@ public class BRhythmManager : MonoBehaviour
             {
             if(accurary >= 0.5 && GameManager.instance.events[5])
             {
-                GameManager.instance.events[10] = true;
+                GameManager.instance.events[10] = true;                
+                if(newBest)
+                {
+                    GameManager.instance.songRecord[1] = accurary;
+                }
             }
             GameManager.instance.events[7] = true;
             }
@@ -378,6 +409,10 @@ public class BRhythmManager : MonoBehaviour
             if(accurary >= 0.5 && GameManager.instance.events[12])
             {
                 GameManager.instance.events[14] = true;
+                if(newBest)
+                {
+                    GameManager.instance.songRecord[2] = accurary;
+                }
             }
             GameManager.instance.events[13] = true;
             }
@@ -386,6 +421,10 @@ public class BRhythmManager : MonoBehaviour
             if(accurary >= 0.5 && GameManager.instance.events[16])
             {
                 GameManager.instance.events[18] = true;
+                if(newBest)
+                {
+                    GameManager.instance.songRecord[3] = accurary;
+                }
             }
             GameManager.instance.events[17] = true;
             }
@@ -394,6 +433,10 @@ public class BRhythmManager : MonoBehaviour
             if(accurary >= 0.5 && GameManager.instance.events[20])
             {
                 GameManager.instance.events[22] = true;
+                if(newBest)
+                {
+                    GameManager.instance.songRecord[4] = accurary;
+                }
             }
             GameManager.instance.events[21] = true;
             }
@@ -403,6 +446,11 @@ public class BRhythmManager : MonoBehaviour
             //StartCoroutine(loadDelay());
         }else
         {
+            if(newBest)
+            {
+                this.GetComponent<BChapterChoose>().chapterRecord[this.GetComponent<BChapterChoose>().chapter] = accurary;
+                mainChooseCanvas.transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = accurary.ToString("0.00%");
+            }
             this.gameObject.GetComponent<besizerSceneReset>().resetScene();
             /*
             #if UNITY_EDITOR

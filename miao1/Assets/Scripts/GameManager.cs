@@ -25,6 +25,7 @@ public class GameManager: MonoBehaviour
     public ItemButton thisButton;//Keep Track of which Item Button We are mouse Hovering
     public ItemButton[] itemButtons;//ALL of ITEM BUTTONS in this game [Used for reset]
     public string mail;
+    public List<float> songRecord = new List<float>();
 
 
     private void Awake()
