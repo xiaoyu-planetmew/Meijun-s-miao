@@ -255,5 +255,8 @@ public class BNoteHit : MonoBehaviour
         hitAni.GetComponent<Animator>().SetTrigger("release");
         }
     }
-    
+    public void buttonActive()
+    {
+        
+    }
 }

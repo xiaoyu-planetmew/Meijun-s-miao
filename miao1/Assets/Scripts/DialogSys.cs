@@ -22,6 +22,8 @@ public class DialogSys : MonoBehaviour
     public GameObject nextPageButton;
     public GameObject sceneTransButton;
     public List<TextAsset> textfiles = new List<TextAsset>();
+    public List<TextAsset> textfilesE = new List<TextAsset>();
+    public List<TextAsset> textfilesJ = new List<TextAsset>();
     public bool firstMeet;
     public bool isTalking;
     //private bool holdTarget;
@@ -71,12 +73,12 @@ public class DialogSys : MonoBehaviour
         //textList.RemoveAt(textList.Count);
         for(int j = 0; j < textList.Count; j++)
         {
-            if(textList[j][0] == 'A')
+            if(textList[j][0] == '1')
             {
                 textList[j] = textList[j].Substring(1);
                 textTalker.Add("left");
             }
-            if(textList[j][0] == 'B')
+            if(textList[j][0] == '2')
             {
                 textList[j] = textList[j].Substring(1);
                 textTalker.Add("right");
@@ -221,12 +223,12 @@ public class DialogSys : MonoBehaviour
             {
                 if(textTalker[index] == "left")
                 {
-                    if(textList[index][0] == 'E')
+                    if(textList[index][0] == '5')
                     {
                         textList[index] = textList[index].Substring(1);
                         this.GetComponent<dialogAfterShake>().shake();
                     }
-                    if(textList[index][0] == 'F')
+                    if(textList[index][0] == '6')
                     {
                         textList[index] = textList[index].Substring(1);
                         GameManager.instance.AddItem(bamao);
@@ -243,7 +245,7 @@ public class DialogSys : MonoBehaviour
                 }
                 if(textTalker[index] == "right")
                 {
-                    if(textList[index][0] == 'C')
+                    if(textList[index][0] == '3')
                     {
                         //npc.transform.GetChild(1).GetComponent<AudioSource>().Play();
                         textList[index] = textList[index].Substring(1);
@@ -255,7 +257,7 @@ public class DialogSys : MonoBehaviour
                             Debug.Log("focus");
                         }
                     }
-                    if(textList[index][0] == 'D')
+                    if(textList[index][0] == '4')
                     {
                         //npc.transform.GetChild(1).GetComponent<AudioSource>().Stop();
                         textList[index] = textList[index].Substring(1);
@@ -266,7 +268,7 @@ public class DialogSys : MonoBehaviour
                             cam.GetComponent<cameraFocus>().cancelFocus();
                         }
                     }
-                    if(textList[index][0] == 'G')
+                    if(textList[index][0] == '7')
                     {
                         textList[index] = textList[index].Substring(1);
                         GameObject.Find("darkMask").gameObject.GetComponent<darkMask>().darkStart();
@@ -276,7 +278,7 @@ public class DialogSys : MonoBehaviour
                     StartCoroutine(SetTextRight());
                     textBackgroundLeft.gameObject.SetActive(false);
                     textBackgroundRight.gameObject.SetActive(true);
-                    if(textList[index][0] != 'D' && textList[index][0] != 'C')
+                    if(textList[index][0] != '4' && textList[index][0] != '3')
                     {
                         rightAudioRandom();
                     }
