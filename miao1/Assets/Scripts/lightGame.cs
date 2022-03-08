@@ -39,6 +39,10 @@ public class lightGame : MonoBehaviour
                 this.GetComponent<lightGame>().enabled = false;
             }
         }
+        if(((GameManager.instance.player.transform.position - this.transform.position).magnitude >= 50) && !finish)
+        {
+            resetLights();
+        }
     }
     public void hit(int l)
     {
@@ -111,5 +115,13 @@ public class lightGame : MonoBehaviour
         }else{
             obj.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
         }
+    }
+    public async void resetLights()
+    {
+        for(int i = 0; i<lights.Count; i++)
+        {
+            lights[i].GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+        }
+        lights[8].GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
     }
 }

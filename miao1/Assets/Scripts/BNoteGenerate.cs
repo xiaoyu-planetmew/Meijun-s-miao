@@ -26,7 +26,9 @@ public class BNoteGenerate : MonoBehaviour
     public List<Sprite> bgList = new List<Sprite>();
     public GameObject bg;
     public List<GameObject> aniList = new List<GameObject>();
-    public List<TextAsset> saveDates = new List<TextAsset>();
+    public List<TextAsset> saveDatesEasy = new List<TextAsset>();
+    public List<TextAsset> saveDatesNormal = new List<TextAsset>();
+    public List<TextAsset> saveDatesHard = new List<TextAsset>();
     public TextAsset saveDate;
     public List<string> saveList = new List<string>();
     public List<float> trackNum = new List<float>();
@@ -34,7 +36,9 @@ public class BNoteGenerate : MonoBehaviour
     
     public List<int> line = new List<int>();
     public List<bool> usedNote;
-    public List<TextAsset> saveDatesLong = new List<TextAsset>();
+    public List<TextAsset> saveDatesLongEasy = new List<TextAsset>();
+    public List<TextAsset> saveDatesLongNormal = new List<TextAsset>();
+    public List<TextAsset> saveDatesLongHard = new List<TextAsset>();
     public TextAsset saveDateLong;
     public List<string> saveListLong = new List<string>();
     public List<float> longTrackNum = new List<float>();
@@ -97,8 +101,23 @@ public class BNoteGenerate : MonoBehaviour
     }
     public void GenerateStart()
     {
-        saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
-        saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        if(this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty == 0)
+        {
+            saveDate = saveDatesEasy[this.gameObject.GetComponent<BChapterChoose>().chapter];
+            saveDateLong = saveDatesLongEasy[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        }
+        if(this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty == 1)
+        {
+            saveDate = saveDatesNormal[this.gameObject.GetComponent<BChapterChoose>().chapter];
+            saveDateLong = saveDatesLongNormal[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        }
+        if(this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty == 2)
+        {
+            saveDate = saveDatesHard[this.gameObject.GetComponent<BChapterChoose>().chapter];
+            saveDateLong = saveDatesLongHard[this.gameObject.GetComponent<BChapterChoose>().chapter];
+        }
+        //saveDate = saveDates[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
+        //saveDateLong = saveDatesLong[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + this.gameObject.GetComponent<BChapterChoose>().chapterDiffculty];
         this.GetComponent<AudioSource>().clip = musicList[this.gameObject.GetComponent<BChapterChoose>().chapter];
         //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2].SetActive(true);
         //aniList[this.gameObject.GetComponent<BChapterChoose>().chapter * 2 + 1].SetActive(true);
