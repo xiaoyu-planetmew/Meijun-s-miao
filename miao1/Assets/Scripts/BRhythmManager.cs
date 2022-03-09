@@ -78,6 +78,7 @@ public class BRhythmManager : MonoBehaviour
     public GameObject endUI;
     public GameObject mainChooseCanvas;
     public List<GameObject> chooseCanvas = new List<GameObject>();
+    public GameObject fullComboAni;
     private bool comboReset;
         bool comboReset25;
         bool comboReset50;
@@ -373,7 +374,8 @@ public class BRhythmManager : MonoBehaviour
             this.gameObject.GetComponent<BChapterChoose>().chapterRecord[this.gameObject.GetComponent<BChapterChoose>().chapter] = accurary;
             newBest = true;
         }
-        activeEnd();
+        StartCoroutine(endAni());
+        //activeEnd();
         
     }
     public void endGame()
@@ -519,5 +521,14 @@ public class BRhythmManager : MonoBehaviour
         endUI.GetComponent<BEndUI>().combo = maxCombo;
         endUI.GetComponent<BEndUI>().titleNum = this.gameObject.GetComponent<BChapterChoose>().chapter;
         endUI.GetComponent<BEndUI>().BEnd();
+    }
+    IEnumerator endAni()
+    {
+        if(fullCombo)
+        {
+            fullComboAni.GetComponent<Animator>().SetTrigger("fullCombo");
+        }
+        yield return new WaitForSeconds(1.1f);
+        activeEnd();
     }
 }
