@@ -126,7 +126,7 @@ MonoBehaviour:
   _SpectrumPayloadIdxs: 
   _TextPayloads:
   - mTextVal: F
-  - mTextVal: 'D '
+  - mTextVal: D
   - mTextVal: J
   - mTextVal: K
   - mTextVal: L
@@ -151,8 +151,8 @@ MonoBehaviour:
   - mTextVal: D
   - mTextVal: J
   - mTextVal: D
-  - mTextVal: 'J '
-  - mTextVal: 'K '
+  - mTextVal: J
+  - mTextVal: K
   - mTextVal: F
   - mTextVal: J
   - mTextVal: K
@@ -165,9 +165,9 @@ MonoBehaviour:
   - mTextVal: D
   - mTextVal: F
   - mTextVal: K
-  - mTextVal: 'J '
+  - mTextVal: J
   - mTextVal: F
-  - mTextVal: 'D '
+  - mTextVal: D
   - mTextVal: D
   - mTextVal: K
   - mTextVal: J
