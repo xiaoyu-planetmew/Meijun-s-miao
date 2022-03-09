@@ -171,12 +171,12 @@ MonoBehaviour:
   _TextPayloads:
   - mTextVal: S
   - mTextVal: L
-  - mTextVal: 'S '
+  - mTextVal: S
   - mTextVal: F
   - mTextVal: D
   - mTextVal: D
   - mTextVal: K
-  - mTextVal: 'D '
+  - mTextVal: D
   - mTextVal: K
   - mTextVal: D
   - mTextVal: K
@@ -218,23 +218,23 @@ MonoBehaviour:
   - mTextVal: K
   - mTextVal: F
   - mTextVal: S
-  - mTextVal: L-
-  - mTextVal: K-
-  - mTextVal: D-
+  - mTextVal: L
+  - mTextVal: K
+  - mTextVal: D
   - mTextVal: L
   - mTextVal: K
   - mTextVal: J
-  - mTextVal: K-
-  - mTextVal: D-
-  - mTextVal: 0
-  - mTextVal: K-
+  - mTextVal: K
+  - mTextVal: D
+  - mTextVal: S
+  - mTextVal: K
   - mTextVal: D
   - mTextVal: L
   - mTextVal: J
-  - mTextVal: K-
-  - mTextVal: 0
+  - mTextVal: K
+  - mTextVal: S
   - mTextVal: D
-  - mTextVal: 0
+  - mTextVal: S
   - mTextVal: D
   - mTextVal: F
   - mTextVal: D

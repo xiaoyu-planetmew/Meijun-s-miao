@@ -175,7 +175,7 @@ MonoBehaviour:
   - mTextVal: K
   - mTextVal: J
   - mTextVal: J
-  - mTextVal: 'F '
+  - mTextVal: F
   - mTextVal: J
   - mTextVal: F
   - mTextVal: J
@@ -190,9 +190,9 @@ MonoBehaviour:
   - mTextVal: K
   - mTextVal: J
   - mTextVal: F
-  - mTextVal: 'K '
+  - mTextVal: K
   - mTextVal: J
-  - mTextVal: ' D'
+  - mTextVal: D
   - mTextVal: F
   - mTextVal: K
   - mTextVal: J
@@ -206,11 +206,11 @@ MonoBehaviour:
   - mTextVal: L
   - mTextVal: J
   - mTextVal: S
-  - mTextVal: 'F '
+  - mTextVal: F
   - mTextVal: D
   - mTextVal: K
-  - mTextVal: K-
-  - mTextVal: J-
+  - mTextVal: K
+  - mTextVal: J
   - mTextVal: F
   - mTextVal: S
   - mTextVal: L

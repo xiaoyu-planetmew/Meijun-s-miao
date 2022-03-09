@@ -157,15 +157,15 @@ MonoBehaviour:
   - mTextVal: k
   - mTextVal: s
   - mTextVal: l
-  - mTextVal: f-
-  - mTextVal: f-
+  - mTextVal: f
+  - mTextVal: f
   - mTextVal: d
   - mTextVal: j
   - mTextVal: s
   - mTextVal: k
   - mTextVal: j
   - mTextVal: s
-  - mTextVal: f-
+  - mTextVal: f
   - mTextVal: d
   - mTextVal: k
   - mTextVal: s
@@ -174,7 +174,7 @@ MonoBehaviour:
   - mTextVal: f
   - mTextVal: k
   - mTextVal: F
-  - mTextVal: 
+  - mTextVal: D
   - mTextVal: j
   - mTextVal: k
   - mTextVal: k
@@ -189,8 +189,8 @@ MonoBehaviour:
   - mTextVal: k
   - mTextVal: l
   - mTextVal: l
-  - mTextVal: f-
-  - mTextVal: j-
+  - mTextVal: f
+  - mTextVal: j
   - mTextVal: k
   - mTextVal: f
   - mTextVal: j
@@ -201,7 +201,7 @@ MonoBehaviour:
   - mTextVal: j
   - mTextVal: f
   - mTextVal: d
-  - mTextVal: f-
+  - mTextVal: f
   - mTextVal: s
   - mTextVal: k
   - mTextVal: f
@@ -209,7 +209,7 @@ MonoBehaviour:
   - mTextVal: d
   - mTextVal: k
   - mTextVal: s
-  - mTextVal: k-
+  - mTextVal: k
   - mTextVal: j
   - mTextVal: f
   - mTextVal: s
