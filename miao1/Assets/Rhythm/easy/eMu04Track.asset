@@ -22,8 +22,6 @@ MonoBehaviour:
     mEndSample: 1088718
   - mStartSample: 1196212
     mEndSample: 1196212
-  - mStartSample: 1237556
-    mEndSample: 1237556
   - mStartSample: 1306462
     mEndSample: 1306462
   - mStartSample: 1411200
@@ -32,64 +30,40 @@ MonoBehaviour:
     mEndSample: 1521450
   - mStartSample: 1631700
     mEndSample: 1631700
-  - mStartSample: 1673043
-    mEndSample: 1673043
   - mStartSample: 1739193
     mEndSample: 1739193
-  - mStartSample: 1821881
-    mEndSample: 1821881
-  - mStartSample: 1849443
-    mEndSample: 1849443
+  - mStartSample: 1918350
+    mEndSample: 1918350
   - mStartSample: 1962450
     mEndSample: 1962450
-  - mStartSample: 2042381
-    mEndSample: 2042381
-  - mStartSample: 2105775
-    mEndSample: 2105775
-  - mStartSample: 2138850
-    mEndSample: 2138850
-  - mStartSample: 2147118
-    mEndSample: 2147118
-  - mStartSample: 2254612
-    mEndSample: 2254612
-  - mStartSample: 2284931
-    mEndSample: 2284931
+  - mStartSample: 2072700
+    mEndSample: 2072700
+  - mStartSample: 2182950
+    mEndSample: 2182950
+  - mStartSample: 2359350
+    mEndSample: 2359350
   - mStartSample: 2397937
     mEndSample: 2397937
   - mStartSample: 2472356
     mEndSample: 2472356
-  - mStartSample: 2502675
-    mEndSample: 2502675
   - mStartSample: 2544018
     mEndSample: 2544018
   - mStartSample: 2612925
     mEndSample: 2612925
-  - mStartSample: 2690100
-    mEndSample: 2690100
+  - mStartSample: 2734200
+    mEndSample: 2734200
   - mStartSample: 2830668
     mEndSample: 2830668
-  - mStartSample: 2907843
-    mEndSample: 2907843
-  - mStartSample: 2938162
-    mEndSample: 2938162
-  - mStartSample: 2968481
-    mEndSample: 2968481
-  - mStartSample: 2979506
-    mEndSample: 2979506
+  - mStartSample: 2943675
+    mEndSample: 2943675
   - mStartSample: 3045656
     mEndSample: 3045656
-  - mStartSample: 3125587
-    mEndSample: 3125587
+  - mStartSample: 3153150
+    mEndSample: 3153150
   - mStartSample: 3263400
     mEndSample: 3263400
-  - mStartSample: 3343331
-    mEndSample: 3343331
   - mStartSample: 3368137
     mEndSample: 3368137
-  - mStartSample: 3409481
-    mEndSample: 3409481
-  - mStartSample: 3439800
-    mEndSample: 3439800
   - mStartSample: 3478387
     mEndSample: 3478387
   - mStartSample: 3566587
@@ -102,10 +76,6 @@ MonoBehaviour:
     mEndSample: 3776062
   - mStartSample: 3803625
     mEndSample: 3803625
-  - mStartSample: 3844968
-    mEndSample: 3844968
-  - mStartSample: 3886312
-    mEndSample: 3886312
   - mStartSample: 3913875
     mEndSample: 3913875
   - mStartSample: 3996562
@@ -118,10 +88,6 @@ MonoBehaviour:
     mEndSample: 4211550
   - mStartSample: 4239112
     mEndSample: 4239112
-  - mStartSample: 4280456
-    mEndSample: 4280456
-  - mStartSample: 4321800
-    mEndSample: 4321800
   - mStartSample: 4352118
     mEndSample: 4352118
   - mStartSample: 4432050
@@ -134,10 +100,6 @@ MonoBehaviour:
     mEndSample: 4647037
   - mStartSample: 4674600
     mEndSample: 4674600
-  - mStartSample: 4713187
-    mEndSample: 4713187
-  - mStartSample: 4746262
-    mEndSample: 4746262
   - mStartSample: 4784850
     mEndSample: 4784850
   - mStartSample: 4864781
@@ -150,72 +112,44 @@ MonoBehaviour:
     mEndSample: 5079768
   - mStartSample: 5107331
     mEndSample: 5107331
-  - mStartSample: 5148675
-    mEndSample: 5148675
-  - mStartSample: 5190018
-    mEndSample: 5190018
   - mStartSample: 5225850
     mEndSample: 5225850
-  - mStartSample: 5396737
-    mEndSample: 5396737
-  - mStartSample: 5413275
-    mEndSample: 5413275
-  - mStartSample: 5429812
-    mEndSample: 5429812
+  - mStartSample: 5330587
+    mEndSample: 5330587
   - mStartSample: 5446350
     mEndSample: 5446350
-  - mStartSample: 5504231
-    mEndSample: 5504231
   - mStartSample: 5542818
     mEndSample: 5542818
   - mStartSample: 5658581
     mEndSample: 5658581
-  - mStartSample: 5666850
-    mEndSample: 5666850
   - mStartSample: 5785368
     mEndSample: 5785368
   - mStartSample: 5821200
     mEndSample: 5821200
-  - mStartSample: 5851518
-    mEndSample: 5851518
   - mStartSample: 5870812
     mEndSample: 5870812
   - mStartSample: 6000356
     mEndSample: 6000356
-  - mStartSample: 6060993
-    mEndSample: 6060993
-  - mStartSample: 6096825
-    mEndSample: 6096825
-  - mStartSample: 6267712
-    mEndSample: 6267712
-  - mStartSample: 6284250
-    mEndSample: 6284250
+  - mStartSample: 6085800
+    mEndSample: 6085800
   - mStartSample: 6306300
     mEndSample: 6306300
-  - mStartSample: 6314568
-    mEndSample: 6314568
   - mStartSample: 6416550
     mEndSample: 6416550
+  - mStartSample: 6499237
+    mEndSample: 6499237
   - mStartSample: 6526800
     mEndSample: 6526800
-  - mStartSample: 6535068
-    mEndSample: 6535068
   - mStartSample: 6598462
     mEndSample: 6598462
   - mStartSample: 6637050
     mEndSample: 6637050
-  - mStartSample: 6645318
-    mEndSample: 6645318
   - mStartSample: 6708712
     mEndSample: 6708712
   - mStartSample: 6741787
     mEndSample: 6741787
-  - mStartSample: 6750056
-    mEndSample: 6750056
-  - mStartSample: 6929212
-    mEndSample: 6929212
-  - mStartSample: 6937481
-    mEndSample: 6937481
+  - mStartSample: 6846525
+    mEndSample: 6846525
   - mStartSample: 6956775
     mEndSample: 6956775
   _SerializedPayloadTypes:
@@ -235,106 +169,73 @@ MonoBehaviour:
   _SpectrumPayloads: []
   _SpectrumPayloadIdxs: 
   _TextPayloads:
-  - mTextVal: S+L
-  - mTextVal: S+L
-  - mTextVal: S+L
+  - mTextVal: S
+  - mTextVal: L
+  - mTextVal: 'S '
   - mTextVal: F
   - mTextVal: D
   - mTextVal: D
-  - mTextVal: D+K
-  - mTextVal: D+K
-  - mTextVal: D+K
   - mTextVal: K
-  - mTextVal: K
-  - mTextVal: F
-  - mTextVal: D
-  - mTextVal: K
-  - mTextVal: F
+  - mTextVal: 'D '
   - mTextVal: K
   - mTextVal: D
+  - mTextVal: K
   - mTextVal: F
   - mTextVal: L
   - mTextVal: J
   - mTextVal: D
-  - mTextVal: J
   - mTextVal: J
   - mTextVal: S
   - mTextVal: F
   - mTextVal: S
   - mTextVal: F
   - mTextVal: J
-  - mTextVal: J
-  - mTextVal: D
-  - mTextVal: F
   - mTextVal: D
   - mTextVal: L
   - mTextVal: F
-  - mTextVal: J
   - mTextVal: K
-  - mTextVal: K
-  - mTextVal: J
   - mTextVal: L
   - mTextVal: F
   - mTextVal: D
   - mTextVal: K
   - mTextVal: S
   - mTextVal: D
-  - mTextVal: F
-  - mTextVal: K
   - mTextVal: D
   - mTextVal: J
   - mTextVal: L
   - mTextVal: D
   - mTextVal: J
   - mTextVal: L
-  - mTextVal: F
-  - mTextVal: D
   - mTextVal: D
   - mTextVal: L
   - mTextVal: J
   - mTextVal: D
   - mTextVal: J
   - mTextVal: L
-  - mTextVal: D
-  - mTextVal: J
   - mTextVal: D
   - mTextVal: S
   - mTextVal: D
   - mTextVal: K
   - mTextVal: F
   - mTextVal: S
-  - mTextVal: K
-  - mTextVal: D
   - mTextVal: L-
-  - mTextVal: 0
   - mTextVal: K-
-  - mTextVal: 0
+  - mTextVal: D-
+  - mTextVal: L
+  - mTextVal: K
+  - mTextVal: J
+  - mTextVal: K-
   - mTextVal: D-
   - mTextVal: 0
-  - mTextVal: L
-  - mTextVal: K
-  - mTextVal: L-
-  - mTextVal: 0
   - mTextVal: K-
-  - mTextVal: 0
-  - mTextVal: D-
-  - mTextVal: 0
-  - mTextVal: L
-  - mTextVal: K-
-  - mTextVal: 0
-  - mTextVal: F
   - mTextVal: D
-  - mTextVal: S-
   - mTextVal: L
   - mTextVal: J
   - mTextVal: K-
   - mTextVal: 0
   - mTextVal: D
-  - mTextVal: L-
   - mTextVal: 0
   - mTextVal: D
-  - mTextVal: S-
-  - mTextVal: 0
   - mTextVal: F
   - mTextVal: D
-  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f0000004000000041000000420000004300000044000000

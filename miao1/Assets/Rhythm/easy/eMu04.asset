@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
-  m_Name: eMu05
+  m_Name: eMu04
   m_EditorClassIdentifier: 
-  mSourceClip: {fileID: 8300000, guid: a4f70436fdc9ee74dbf3b4d8c069359a, type: 3}
+  mSourceClip: {fileID: 8300000, guid: 683fe864814d208478950210665f4d42, type: 3}
   mAudioFilePath: 
   mSampleRate: -1
   mIgnoreLatencyOffset: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
     beatsPerMeasure: 4
     bStartNewMeasure: 1
   mTracks:
-  - {fileID: 11400000, guid: da98065b862d39c4db2af57876dd61a8, type: 2}
+  - {fileID: 11400000, guid: aa3c0023e25b78a4a86745d3167d11b9, type: 2}
