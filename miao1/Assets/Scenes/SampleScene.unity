@@ -5624,7 +5624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "I know a song that\r\nwill help the plants\r\ngrow.\r"
+  m_Text: "\u7A2E\u306E\u6210\u9577\u3092\u52A9\u3051\u308B\u6B4C\u304C\u3042\u308B\u3002"
 --- !u!222 &139742495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14602,8 +14602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445f0aaf185452b498452da8d3f54c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdFakeKeysStr: This isn't it.
-  notHoldStr: It's locked.
+  holdFakeKeysStr: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
+  notHoldStr: "\u9375\u304C\u304B\u304B\u3063\u3066\u3044\u307E\u3059\u3002"
   _item: {fileID: 11400000, guid: e62b4a05171e793468ffc73c0df1268d, type: 2}
   fakeKeys:
   - {fileID: 11400000, guid: 62805b61dc1b7f648ba7e508ec1b8cdc, type: 2}
@@ -14611,7 +14611,7 @@ MonoBehaviour:
   - {fileID: 31509282}
   - {fileID: 1739431242}
   - {fileID: 1786997732}
-  wrongTip: This isn't it.
+  wrongTip: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   emptyTip: "\u304A\u305D\u3089\u304F\u3067\u304D\u307E\u305B\u3093\u3002 "
 --- !u!114 &290104217
 MonoBehaviour:
@@ -18520,7 +18520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choose an item.
+  m_Text: "\u30A2\u30A4\u30C6\u30E0\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044"
 --- !u!222 &397126186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21621,7 +21621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plant the seeds here.
+  m_Text: "\u3053\u3053\u306B\u7A2E\u3092\u690D\u3048\u3066\u304F\u308C\u3002"
 --- !u!222 &487605077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40738,7 +40738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "My child, it seems\r\nwe are ready.\r"
+  m_Text: "\u3055\u3042\u3001\u3059\u3079\u3066\u305D\u308D\u3063\u305F\u3088\u3046\u3060\u3002\r"
 --- !u!222 &918689781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47043,7 +47043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Okay!
+  m_Text: "\u306F\u3044\uFF01"
 --- !u!222 &1049601468
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60003,7 +60003,7 @@ MonoBehaviour:
   player: {fileID: 133832561}
   playerTip: {fileID: 1429342258}
   playerChooseBox: {fileID: 1190268325}
-  playerRespond: Here.
+  playerRespond: "\u3069\u3046\u305E\u3002\u3042\u3052\u308B\u308F\u3002"
   bird: {fileID: 1600929128}
   startButton: {fileID: 15299770}
   nextPageButton: {fileID: 1606555584}
@@ -60015,7 +60015,7 @@ MonoBehaviour:
   tradeFinish: 0
   upload: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
   download: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
-  wrongTip: I can't eat this.
+  wrongTip: "\u3053\u308C\u306F\u98DF\u3079\u3089\u308C\u306A\u3044\u3088\u3002"
   emptyTip: 
 --- !u!4 &1310090193
 Transform:
@@ -60163,9 +60163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'That will give energy
-
-    to the seeds.'
+  m_Text: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
 --- !u!222 &1315682518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66484,11 +66482,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You must sing and
-
-    dance like me.
-
-'
+  m_Text: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002\n"
 --- !u!222 &1479358359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69275,7 +69269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sing with me.
+  m_Text: "\u4E00\u7DD2\u306B\u6B4C\u304A\u3046\u3002"
 --- !u!222 &1530743968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -71431,7 +71425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: I can't eat this.
+  m_Text: "\u3053\u308C\u306F\u98DF\u3079\u3089\u308C\u306A\u3044\u3088\u3002"
 --- !u!222 &1579781485
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -84463,6 +84457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659035536}
+  - component: {fileID: 1659035537}
   m_Layer: 5
   m_Name: languageChange
   m_TagString: Untagged
@@ -84491,6 +84486,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1659035537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659035535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1666726332
 GameObject:
   m_ObjectHideFlags: 0
@@ -87903,7 +87910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes!
+  m_Text: "\u306F\u3044\uFF01"
 --- !u!222 &1774729723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88544,7 +88551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "I'm so hungry...\r\n\rDo you have\r\nany food?"
+  m_Text: "\u3042\u3042\u3001\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u2026\r\n\r\n\u4F55\u304B\u98DF\u3079\u7269\u6301\u3063\u3066\u308B\uFF1F"
 --- !u!222 &1791595700
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -89780,9 +89787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: 'It looks delicious.
-
-    Thank you!'
+  m_Text: "\u304A\u3044\u3057\u305D\u3046\uFF01\r\n\u3042\u308A\u304C\u3068\u3046\uFF01"
 --- !u!222 &1814959824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92099,7 +92104,7 @@ MonoBehaviour:
   teleport: {fileID: 1351049190}
   thorn: {fileID: 1843852085}
   _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
-  wrongTip: This isn't it.
+  wrongTip: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   emptyTip: "\u304A\u305D\u3089\u304F\u3067\u304D\u307E\u305B\u3093\u3002 "
   wall: {fileID: 878043478}
 --- !u!212 &1862200914
@@ -93617,9 +93622,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: 'You can have
-
-    this strange stone.'
+  m_Text: "\u304A\u793C\u306B\u3001\r\n\u3053\u306E\u30D8\u30F3\u306A\u77F3\u3092\u3082\u3089\u3063\u3066\uFF01"
 --- !u!222 &1900044244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94936,8 +94939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s1: This is what I have.
-  s2: I'm hungry too.
+  s1: "\u79C1\u304C\u6301\u3063\u3066\u308B\u3082\u306E\u3092\u898B\u308B\uFF1F"
+  s2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
 --- !u!1 &1935996397
 GameObject:
   m_ObjectHideFlags: 0
@@ -107091,7 +107094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 854804362, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Text
-      value: I'm hungry too.
+      value: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 854804364, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Enabled
@@ -107103,7 +107106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 895411164, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Text
-      value: This is what I have.
+      value: "\u79C1\u304C\u6301\u3063\u3066\u308B\u3082\u306E\u3092\u898B\u308B\uFF1F"
       objectReference: {fileID: 0}
     - target: {fileID: 1689702433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -107203,7 +107206,7 @@ PrefabInstance:
       objectReference: {fileID: 419351096}
     - target: {fileID: 7033132299413078420, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Text
-      value: I'm hungry too.
+      value: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 7526711116437040746, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_RootOrder

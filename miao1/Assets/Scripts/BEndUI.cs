@@ -104,6 +104,8 @@ public class BEndUI : MonoBehaviour
         rank1.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
         rank2.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
         rank3.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+        fullPercent.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+        //fullPercent.SetActive(false);
         num1.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
         num2.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
         num3.GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
