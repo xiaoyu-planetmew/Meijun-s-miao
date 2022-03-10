@@ -156,6 +156,7 @@ public class darkMask : MonoBehaviour
             seed1.GetComponent<Button>().enabled = false;
             seed1.GetComponent<Image>().enabled = false;
             seed1.GetComponent<Animator>().enabled = false;
+            
         }
         if(thisobj == seed2)
         {
@@ -171,6 +172,9 @@ public class darkMask : MonoBehaviour
         seed3.GetComponent<Image>().enabled = false;
         seed3.GetComponent<Animator>().enabled = false;
         }
+        inventoryResponse.instance.becomeUseless(s1);
+        inventoryResponse.instance.becomeUseless(s2);
+        inventoryResponse.instance.becomeUseless(s3);
         thisobj.transform.GetChild(0).GetComponent<Image>().sprite = get.itemSprite;
         GameManager.instance.RemoveItem(get);
         thisobj.transform.GetChild(0).gameObject.SetActive(true);
