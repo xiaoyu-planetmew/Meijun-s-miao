@@ -59,10 +59,10 @@ public class inventoryResponse : MonoBehaviour
         {
         if((!usefulItem.Contains(_item)) && (wrongItem.Count == 0))
         {
-            tipUI.transform.GetChild(0).GetComponent<Text>().text = "I Can`t use " + _item.name; 
+            tipUI.transform.GetChild(0).GetComponent<Text>().text = "これは" + _item.itemDes + "です。"; 
             tipUI.SetActive(true);
             StopAllCoroutines();
-            StartCoroutine(stopTip("I Can`t use " + _item.name, 4f));
+            StartCoroutine(stopTip("これは" + _item.itemDes + "です。", 4f));
         }
         if(wrongItem.Contains(_item))
         {

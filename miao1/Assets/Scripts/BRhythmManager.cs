@@ -444,7 +444,7 @@ public class BRhythmManager : MonoBehaviour
             }
             GameObject.Find("GameManager").transform.Find("acrossScene").gameObject.SetActive(true);
             //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("SampleScene");
             //StartCoroutine(loadDelay());
         }else
         {
