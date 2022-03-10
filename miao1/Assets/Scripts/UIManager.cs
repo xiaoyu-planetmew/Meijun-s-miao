@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class UIManager: MonoBehaviour
 {
-    public GameObject inventoryMenu;
+    public GameObject exitBG;
+    public GameObject exitButton;
 
     private void Start()
     {
-        inventoryMenu.gameObject.SetActive(true);
+        //inventoryMenu.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -33,11 +34,13 @@ public class UIManager: MonoBehaviour
         }
     }
 
-    private void Resume()
+    public void Resume()
     {
         //inventoryMenu.gameObject.SetActive(false);
         Time.timeScale = 1.0f;//Real time is 1.0f
         GameManager.instance.isPaused = false;
+        exitBG.SetActive(false);
+        exitButton.SetActive(false);
     }
 
     private void Pause()
@@ -45,6 +48,8 @@ public class UIManager: MonoBehaviour
         //inventoryMenu.gameObject.SetActive(true);
         Time.timeScale = 0.0f;//STOP THE TIME
         GameManager.instance.isPaused = true;
+        exitBG.SetActive(true);
+        exitButton.SetActive(true);
     }
 
 

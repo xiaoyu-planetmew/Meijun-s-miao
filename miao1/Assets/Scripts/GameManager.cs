@@ -223,4 +223,9 @@ public class GameManager: MonoBehaviour
             RemoveItem(_item);
         }
     }
+    public void destroyGameManager()
+    {
+        SceneManager.LoadScene("startMenu");
+        Destroy(GameObject.Find("GameManager"));
+    }
 }

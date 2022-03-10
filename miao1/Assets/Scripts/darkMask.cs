@@ -292,5 +292,11 @@ public class darkMask : MonoBehaviour
             _image.GetComponent<Image>().color = new Color(_image.GetComponent<Image>().color.r, _image.GetComponent<Image>().color.g, _image.GetComponent<Image>().color.b, _image.GetComponent<Image>().color.a+0.01f);
             yield return 0;
         }
+        StartCoroutine(endGame());
+    }
+    IEnumerator endGame()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.instance.destroyGameManager();
     }
 }
