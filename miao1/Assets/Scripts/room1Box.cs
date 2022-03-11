@@ -36,4 +36,12 @@ public class room1Box : MonoBehaviour
             //Debug.Log(plant3.transform.localEulerAngles.z);
         }
     }
+    public void showBox()
+    {
+        GameObject.Find("shinei01").transform.Find("Canvas").gameObject.SetActive(false);
+    }
+    public void hideBox()
+    {
+        GameObject.Find("shinei01").transform.Find("Canvas").gameObject.SetActive(true);
+    }
 }

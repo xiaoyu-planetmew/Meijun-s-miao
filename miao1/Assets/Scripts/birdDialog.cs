@@ -49,6 +49,8 @@ public class birdDialog : MonoBehaviour
         //GameManager.instance.isPaused = true;
         dialogBox.gameObject.SetActive(true);
         nextPageButton.SetActive(true);
+        inventoryResponse.instance.becomeUseless(upload);
+        GameObject.Find("Content").GetComponent<slotsState>().turnOffInventory();
     }
     public void nextDialog()
     {

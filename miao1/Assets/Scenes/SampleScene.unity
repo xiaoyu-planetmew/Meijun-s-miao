@@ -645,18 +645,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1899568835}
-        m_TargetAssemblyTypeName: slotsState, Assembly-CSharp
-        m_MethodName: turnOffInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &15299773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33530,7 +33518,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863105357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -64066,7 +64054,7 @@ MonoBehaviour:
   slotList: {fileID: 1899568831}
   slots: []
   player: {fileID: 133832561}
-  events: 000000000000000000000000000000000000000000000000000000
+  events: 010100000101010101010101010101010101010101000000000000
   eventName:
   - Moment1
   - Song1HasBeenSung(success)
@@ -66080,6 +66068,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 312780419}
+        m_TargetAssemblyTypeName: room1Box, Assembly-CSharp
+        m_MethodName: hideBox
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -91163,6 +91163,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 312780419}
+        m_TargetAssemblyTypeName: room1Box, Assembly-CSharp
+        m_MethodName: showBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1832039499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107767,7 +107779,7 @@ PrefabInstance:
     - target: {fileID: 571859557, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1310090192}
+      objectReference: {fileID: 1923958581}
     - target: {fileID: 571859557, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -107790,7 +107802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 571859557, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: birdDialog, Assembly-CSharp
+      value: chooseBox, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 571859557, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument

@@ -48,5 +48,12 @@ public class chooseBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         isIn = false;
         //this.transform.parent.gameObject.GetComponent<Text>().color = new Color32(69, 69, 69, 153);
     }
-   
+    public void dontHelpBird()
+    {
+        GameObject.Find("birdDialogBox").GetComponent<birdDialog>().SendMessage("dontHelpBird");
+    }
+    public void helpBird()
+    {
+        GameObject.Find("birdDialogBox").GetComponent<birdDialog>().SendMessage("helpBird");
+    }
 }
