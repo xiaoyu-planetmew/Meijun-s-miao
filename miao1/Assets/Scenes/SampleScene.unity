@@ -92739,7 +92739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cecc943fa9550c4083ac0491337fda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnAniTime: 1
+  burnAniTime: 5
   teleport: {fileID: 1351049190}
   thorn: {fileID: 1843852085}
   _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
