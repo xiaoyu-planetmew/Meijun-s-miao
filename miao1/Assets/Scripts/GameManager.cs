@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour
 {
+    public int languageNum = 0;
     public int targetFrameRate;
     public static GameManager instance;//MARKER SINGLETON PATTERN
     public bool isPaused;
@@ -81,7 +82,14 @@ public class GameManager: MonoBehaviour
 
                 //UPDATE slots Count Text
                 slots[i].transform.GetChild(1).GetComponent<Text>().color = new Color32(241, 236, 226, 255);
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].itemDes;
+                if(languageNum == 0)
+                {
+                    slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].itemDesJ;
+                }
+                if(languageNum == 1)
+                {
+                    slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].itemDesE;
+                }
 
                 //UPDATE CLOSE/THROW button
                 //slots[i].transform.GetChild(2).gameObject.SetActive(true);
@@ -227,5 +235,9 @@ public class GameManager: MonoBehaviour
     {
         SceneManager.LoadScene("startMenu");
         Destroy(GameObject.Find("GameManager"));
+    }
+    public void languageChange(int i)
+    {
+        languageNum = i;
     }
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: basement2Key
   m_EditorClassIdentifier: 
   itemName: basement2Key
-  itemDes: "\u9375"
+  itemDesJ: "\u9375"
+  itemDesE: Key
   itemSprite: {fileID: 21300000, guid: 2cf6d358432aba249b34dd2f30c82313, type: 3}
   itemPrice: 0

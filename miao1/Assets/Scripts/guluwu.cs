@@ -9,8 +9,10 @@ public class guluwu : MonoBehaviour
     public GameObject teleport;
     public GameObject thorn;
     public Item _item;
-    public string wrongTip;
-    public string emptyTip;
+    public string wrongTipJ;
+    public string wrongTipE;
+    public string emptyTipJ;
+    public string emptyTipE;
     private GameObject burn;
     //public GameObject box;
     private bool burnt;
@@ -48,9 +50,23 @@ public class guluwu : MonoBehaviour
     {
         if(GameManager.instance.items.Count == 0)
         {
-            inventoryResponse.instance.emptyItems(emptyTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.emptyItems(emptyTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.emptyItems(emptyTipE);
+            }
         }else{
-            inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
+            }
             inventoryResponse.instance.inventoryTip.SetActive(true);
         }
     }

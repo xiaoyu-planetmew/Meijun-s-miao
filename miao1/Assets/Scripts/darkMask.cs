@@ -21,7 +21,8 @@ public class darkMask : MonoBehaviour
     public GameObject seed1;
     public GameObject seed2;
     public GameObject seed3;
-    public string wrongTip;
+    public string wrongTipJ;
+    public string wrongTipE;
     public Item thisSeed;
     public Item get;
     public GameObject thisobj;
@@ -29,6 +30,7 @@ public class darkMask : MonoBehaviour
     public GameObject camPosition;
     public TextAsset textFile;
     public TextAsset textFile1;
+    public TextAsset textFile1E;
     public List<string> textList = new List<string>();
     public List<string> textList1 = new List<string>();
     public GameObject panel;
@@ -108,8 +110,16 @@ public class darkMask : MonoBehaviour
             seed1.GetComponent<Button>().enabled = false;
             seed2.GetComponent<Button>().enabled = false;
             seed3.GetComponent<Button>().enabled = false;
-            inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTip);
-            inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTipJ);
+                inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTipE);
+                inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTipE);
+            }
             inventoryResponse.instance.inventoryTip.SetActive(true);
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
         }
@@ -118,7 +128,14 @@ public class darkMask : MonoBehaviour
             seed1.GetComponent<Button>().enabled = false;
             seed2.GetComponent<Button>().enabled = false;
             seed3.GetComponent<Button>().enabled = false;
-            inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTipE);
+            }
             inventoryResponse.instance.inventoryTip.SetActive(true);
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
         }
@@ -232,7 +249,14 @@ public class darkMask : MonoBehaviour
         this.transform.parent.gameObject.GetComponent<bambooAni>().getStart();
         GameObject.Find("water2").GetComponent<AudioSource>().enabled = true;
         GetTextFromFile(textFile);
-        GetTextFromFile1(textFile1);
+        if(GameManager.instance.languageNum == 0)
+        {
+            GetTextFromFile1(textFile1);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GetTextFromFile1(textFile1E);
+        }
         panel.SetActive(true);
         
         

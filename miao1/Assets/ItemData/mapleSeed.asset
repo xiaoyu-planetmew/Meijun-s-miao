@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: mapleSeed
   m_EditorClassIdentifier: 
   itemName: mapleSeed
-  itemDes: "\u6953\u306E\u7A2E"
+  itemDesJ: "\u6953\u306E\u7A2E"
+  itemDesE: Maple seed
   itemSprite: {fileID: 21300000, guid: 46a17fe8cad0a3341927ae5fa37e20db, type: 3}
   itemPrice: 0

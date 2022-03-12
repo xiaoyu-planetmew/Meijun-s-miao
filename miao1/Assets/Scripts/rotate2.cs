@@ -8,6 +8,7 @@ public class rotate2 : MonoBehaviour
     public List<float> angles = new List<float>();
     public float f;
     public float speed;
+    //public List<Sprite>()
     // Start is called before the first frame update
     void Start()
     {

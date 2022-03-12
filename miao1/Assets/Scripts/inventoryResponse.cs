@@ -59,10 +59,20 @@ public class inventoryResponse : MonoBehaviour
         {
         if((!usefulItem.Contains(_item)) && (wrongItem.Count == 0))
         {
-            tipUI.transform.GetChild(0).GetComponent<Text>().text = "これは" + _item.itemDes + "です。"; 
-            tipUI.SetActive(true);
-            StopAllCoroutines();
-            StartCoroutine(stopTip("これは" + _item.itemDes + "です。", 4f));
+            if(GameManager.instance.languageNum == 0)
+            {
+                tipUI.transform.GetChild(0).GetComponent<Text>().text = "これは" + _item.itemDesJ + "です。"; 
+                tipUI.SetActive(true);
+                StopAllCoroutines();
+                StartCoroutine(stopTip("これは" + _item.itemDesJ + "です。", 4f));
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                tipUI.transform.GetChild(0).GetComponent<Text>().text = "I can`t use" + _item.itemDesE; 
+                tipUI.SetActive(true);
+                StopAllCoroutines();
+                StartCoroutine(stopTip("I can`t use" + _item.itemDesE, 4f));
+            }
         }
         if(wrongItem.Contains(_item))
         {

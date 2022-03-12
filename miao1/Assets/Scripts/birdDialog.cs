@@ -8,7 +8,8 @@ public class birdDialog : MonoBehaviour
     public GameObject player;
     public GameObject playerTip;
     public GameObject playerChooseBox;
-    public string playerRespond;
+    public string playerRespondJ;
+    public string playerRespondE;
     public GameObject bird;
     public GameObject startButton;
     public GameObject nextPageButton;
@@ -21,7 +22,8 @@ public class birdDialog : MonoBehaviour
     public bool tradeFinish = false;
     public Item upload;
     public Item download;
-    public string wrongTip;
+    public string wrongTipJ;
+    public string wrongTipE;
     public string emptyTip;
 
     // Start is called before the first frame update
@@ -67,15 +69,29 @@ public class birdDialog : MonoBehaviour
         if(GameManager.instance.items.Count == 0)
         {
             inventoryResponse.instance.emptyItems(emptyTip);
-        }else{       
-            inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTip);
+        }else{
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTipJ);
+            }       
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTipE);
+            }
         }
     }
     
     void getMessage()
     {
         playerChooseBox.SetActive(false);
-        playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespond;
+        if(GameManager.instance.languageNum == 0)
+        {
+            playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespondJ;
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespondE;
+        }
         playerTip.SetActive(true);
         GameManager.instance.RemoveItem(upload);
         inventoryResponse.instance.becomeUseless(upload);

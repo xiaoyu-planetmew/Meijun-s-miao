@@ -17,7 +17,8 @@ public class mouseThoughSelect : MonoBehaviour
     public GameObject player;
     public float pickUpDistance;
     public GameObject tip;
-    public string warningText;
+    public string warningTextJ;
+    public string warningTextE;
     public float warningTime;
     void Awake()
     {
@@ -74,7 +75,15 @@ public class mouseThoughSelect : MonoBehaviour
            if((GameObject.Find(hit.collider.gameObject.name).transform.position - player.transform.position).magnitude > pickUpDistance)
            {
                tip.SetActive(true);
-               tip.transform.Find("tipText").GetComponent<Text>().text = warningText;
+               if(GameManager.instance.languageNum == 0)
+               {
+                   tip.transform.Find("tipText").GetComponent<Text>().text = warningTextJ;
+               }
+               if(GameManager.instance.languageNum == 1)
+               {
+                   tip.transform.Find("tipText").GetComponent<Text>().text = warningTextE;
+               }
+               //
                StartCoroutine("warningClose");
             
            }

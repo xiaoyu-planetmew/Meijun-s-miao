@@ -85,8 +85,27 @@ public class DialogSys : MonoBehaviour
             }
         }
     }
+    public void languageChange()
+    {
+        textfiles.Clear();
+        if(GameManager.instance.languageNum == 0)
+        {
+            for(int i=0; i<textfilesJ.Count; i++)
+            {
+                textfiles.Add(textfilesJ[i]);
+            }
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            for(int i=0; i<textfilesE.Count; i++)
+            {
+                textfiles.Add(textfilesE[i]);
+            }
+        }
+    }
     public void fileChoose()
     {
+        languageChange();
         //startButton.GetComponent<Image>().enabled = false;
         if(!GameManager.instance.events[8])
         {

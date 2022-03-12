@@ -44,7 +44,15 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             //SHOW TOOLTIP
             tooltip.ShowTooltip();
 
-            tooltip.UpdateTooltip(thisItem.itemDes);
+            
+            if(GameManager.instance.languageNum == 0)
+            {
+                tooltip.UpdateTooltip(thisItem.itemDesJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                tooltip.UpdateTooltip(thisItem.itemDesE);
+            }
             RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
             tooltip.SetPosition(position);
         }
@@ -66,7 +74,15 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
             tooltip.ShowTooltip();
 
-            tooltip.UpdateTooltip(thisItem.itemDes);
+            //tooltip.UpdateTooltip(thisItem.itemDes);
+            if(GameManager.instance.languageNum == 0)
+            {
+                tooltip.UpdateTooltip(thisItem.itemDesJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                tooltip.UpdateTooltip(thisItem.itemDesE);
+            }
             //tooltip.UpdateTooltip(GetDetailText(thisItem));
             //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
             tooltip.SetPosition(position);

@@ -7,13 +7,17 @@ using UnityEngine.UI;
 public class room2Box : MonoBehaviour
 {
     //public GameObject dialogBox;
-    public string holdFakeKeysStr;
-    public string notHoldStr;
+    public string holdFakeKeysStrJ;
+    public string notHoldStrJ;
+    public string holdFakeKeysStrE;
+    public string notHoldStrE;
     public Item _item;
     public List<Item> fakeKeys = new List<Item>();
     public List<GameObject> on = new List<GameObject>();
-    public string wrongTip;
-    public string emptyTip;
+    public string wrongTipJ;
+    public string emptyTipJ;
+    public string wrongTipE;
+    public string emptyTipE;
     bool holdKeys;
     // Start is called before the first frame update
     void Start()
@@ -55,9 +59,23 @@ public class room2Box : MonoBehaviour
         */
         if(GameManager.instance.items.Count == 0)
         {
-            inventoryResponse.instance.emptyItems(emptyTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.emptyItems(emptyTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.emptyItems(emptyTipE);
+            }
         }else{
-            inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTip);
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipJ);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
+            }
             inventoryResponse.instance.inventoryTip.SetActive(true);
         }
     }
@@ -75,8 +93,8 @@ public class room2Box : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         if((GameManager.instance.player.transform.GetChild(5).GetChild(0).gameObject.activeInHierarchy)
-         && ((GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == holdFakeKeysStr) || 
-         (GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == notHoldStr)))
+         && (((GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == holdFakeKeysStrJ) || (GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == holdFakeKeysStrE)) || 
+         ((GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == notHoldStrJ) || (GameManager.instance.player.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<Text>().text == notHoldStrE))))
         {
             GameManager.instance.player.transform.GetChild(5).GetChild(0).gameObject.SetActive(false);
         }

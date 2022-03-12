@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class birdDialognext : MonoBehaviour
 {
-    public string s1;
-    public string s2;
+    public string Js1;
+    public string Js2;
+    public string Es1;
+    public string Es2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,16 @@ public class birdDialognext : MonoBehaviour
         GameManager.instance.player.transform.Find("Canvas").GetChild(0).gameObject.SetActive(false);
         GameManager.instance.player.transform.Find("Canvas").GetChild(0).GetChild(2).gameObject.SetActive(false);
         GameManager.instance.player.transform.Find("Canvas").GetChild(1).gameObject.SetActive(true);
-        GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = s1;
-        GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = s2;
+        if(GameManager.instance.languageNum == 0)
+        {
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = Js1;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = Js2;
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = Es1;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = Es2;
+        }
     }
     public void click2()
     {

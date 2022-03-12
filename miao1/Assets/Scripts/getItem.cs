@@ -1,0 +1,96 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+public class getItem : MonoBehaviour
+{
+    public GameObject getItemTip;
+    //public Item obj;
+    //public string strJ;
+    //public string strE;
+    //bool finish = false;
+    public List<Item> _items = new List<Item>();
+    public TextAsset textFile;
+    public List<TextAsset> textFilesJ = new List<TextAsset>();
+    public List<TextAsset> textFilesE = new List<TextAsset>();
+    
+    public List<bool> finish = new List<bool>();
+    [SerializeField]List<string> textList = new List<string>();
+    [SerializeField]int index;
+    Item nowItem;
+    // Start is called before the first frame update
+    void Start()
+    {
+        for(int i=0;i<_items.Count;i++)
+        {
+            finish.Add(false);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        /*
+        if(GameManager.instance.items.Contains(obj) && !finish)
+        {
+            if(GameManager.instance.languageNum == 0)
+            {
+                inventoryResponse.instance.girlTip(strJ, 2f);
+            }
+            if(GameManager.instance.languageNum == 1)
+            {
+                inventoryResponse.instance.girlTip(strE, 2f);
+            }
+            finish = true;
+            this.GetComponent<getItem>().enabled = false;
+        }
+        */
+        for(int i=0; i<_items.Count; i++)
+        {
+            if(GameManager.instance.items.Contains(_items[i]) && !finish[i])
+            {
+                showTip(i);
+            }
+        }
+    }
+    void showTip(int _item)
+    {
+        nowItem = _items[_item];
+        getItemTip.SetActive(true);
+        if(GameManager.instance.languageNum == 0)
+        {
+            GetTextFromFile(textFilesJ[_item]);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GetTextFromFile(textFilesE[_item]);
+        }
+        index = 0;
+        nextTip();
+        finish[_item] = true;
+        //getItemTip.transform.GetChild(0).GetComponent<t
+    }
+    public void nextTip()
+    {
+        if(index == textList.Count)
+        {
+            getItemTip.SetActive(false);
+        }else
+        {
+            getItemTip.transform.GetChild(0).GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.05f);
+            index++;
+        }
+    }   
+    void GetTextFromFile(TextAsset file)
+    {
+        textList.Clear();
+        var lineData = file.text.Split('#'); 
+        foreach(var line in lineData)
+        {
+            //Debug.Log(line);
+            textList.Add(line);
+        }
+        textList.RemoveAt(textList.Count - 1);
+    }
+}
