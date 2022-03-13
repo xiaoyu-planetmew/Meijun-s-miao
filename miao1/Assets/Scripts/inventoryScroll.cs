@@ -37,4 +37,8 @@ public class inventoryScroll : MonoBehaviour
             scrollBar.GetComponent<Scrollbar>().value = 1;
         }
     }
+    public void resetBar()
+    {
+        scrollBar.GetComponent<Scrollbar>().value = 0;
+    }
 }

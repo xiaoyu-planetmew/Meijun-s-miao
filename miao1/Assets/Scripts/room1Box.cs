@@ -9,6 +9,7 @@ public class room1Box : MonoBehaviour
     public GameObject plant3;
     public GameObject paper;
     public List<GameObject> boxPart = new List<GameObject>();
+    public GameObject textTip;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class room1Box : MonoBehaviour
     }
     public void open()
     {
+        textTip.SetActive(false);
+        StopAllCoroutines();
         if((plant1.transform.localEulerAngles.z == 90) && (plant2.transform.localEulerAngles.z == 0) && (plant3.transform.localEulerAngles.z == 270f))
         {
             //Debug.Log("open");
@@ -31,6 +34,8 @@ public class room1Box : MonoBehaviour
                 obj.SetActive(false);
             }
         }else{
+            textTip.SetActive(true);
+            StartCoroutine(textShow());
             //Debug.Log(plant1.transform.localEulerAngles.z);
             //Debug.Log(plant2.transform.localEulerAngles.z);
             //Debug.Log(plant3.transform.localEulerAngles.z);
@@ -43,5 +48,10 @@ public class room1Box : MonoBehaviour
     public void hideBox()
     {
         GameObject.Find("shinei01").transform.Find("Canvas").gameObject.SetActive(true);
+    }
+    IEnumerator textShow()
+    {
+        yield return new WaitForSeconds(2f);
+        textTip.SetActive(false);
     }
 }

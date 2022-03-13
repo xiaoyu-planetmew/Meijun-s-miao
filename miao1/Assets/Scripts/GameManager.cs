@@ -115,8 +115,10 @@ public class GameManager: MonoBehaviour
         //MARKER IF There is one existing item in our bags(List)
         if(!items.Contains(_item))
         {
-            items.Add(_item);
-            itemNumbers.Add(1);//ADD ONE 
+            items.Insert(0, _item);
+            //items.Add(_item);
+            itemNumbers.Insert(0, 1);
+            //itemNumbers.Add(1);//ADD ONE 
         }
         else//IF There is a new _item in our bag
         {
@@ -129,7 +131,7 @@ public class GameManager: MonoBehaviour
                 }
             }
         }
-
+        GameObject.Find("Scroll View").GetComponent<inventoryScroll>().resetBar();
         DisplayItems();
     }
 
