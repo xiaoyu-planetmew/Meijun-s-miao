@@ -16,7 +16,7 @@ public class roomCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find(camName).activeInHierarchy)
+        if (GameObject.Find(camName))
         {
             this.GetComponent<Canvas>().worldCamera = GameObject.Find(camName).GetComponent<Camera>();
             cam = GameObject.Find(camName);

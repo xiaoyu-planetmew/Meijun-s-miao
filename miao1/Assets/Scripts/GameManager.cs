@@ -48,6 +48,11 @@ public class GameManager: MonoBehaviour
 
     private void Start()
     {
+        if(GameObject.Find("language"))
+        {
+            languageNum = GameObject.Find("language").GetComponent<startMenuStartButton>().languageNum;
+        }
+        
         slots = new List<GameObject>();
         foreach(Transform child in slotList.transform)
         {
@@ -237,6 +242,8 @@ public class GameManager: MonoBehaviour
     {
         SceneManager.LoadScene("startMenu");
         Destroy(GameObject.Find("GameManager"));
+        Destroy(GameObject.Find("language"));
+        Time.timeScale = 1;
     }
     public void languageChange(int i)
     {

@@ -46,6 +46,10 @@ public class getItem : MonoBehaviour
             this.GetComponent<getItem>().enabled = false;
         }
         */
+        if(GameManager.instance.items.Contains(_items[3]))
+        {
+            finish[0] = true;
+        }
         for(int i=0; i<_items.Count; i++)
         {
             if(GameManager.instance.items.Contains(_items[i]) && !finish[i])
@@ -73,12 +77,20 @@ public class getItem : MonoBehaviour
     }
     public void nextTip()
     {
+        StopAllCoroutines();
         if(index == textList.Count)
         {
             getItemTip.SetActive(false);
-        }else
+        }else if(index == textList.Count - 1)
         {
+            StartCoroutine(closeTip());
+        }
+        if(index < textList.Count)
+        {
+            getItemTip.transform.GetChild(0).GetComponent<Text>().text = "";
             getItemTip.transform.GetChild(0).GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.05f);
+            
+            StartCoroutine(nextButton(textList[index].Length * 0.05f));
             index++;
         }
     }   
@@ -92,5 +104,19 @@ public class getItem : MonoBehaviour
             textList.Add(line);
         }
         textList.RemoveAt(textList.Count - 1);
+    }
+    IEnumerator nextButton(float i)
+    {
+        getItemTip.transform.GetChild(1).gameObject.SetActive(false);
+        yield return new WaitForSeconds(i);
+        getItemTip.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    IEnumerator closeTip()
+    {
+        yield return new WaitForSeconds(4f);
+        if(getItemTip.activeInHierarchy)
+        {
+            getItemTip.SetActive(false);
+        }
     }
 }
