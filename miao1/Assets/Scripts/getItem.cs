@@ -113,7 +113,7 @@ public class getItem : MonoBehaviour
     }
     IEnumerator closeTip()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         if(getItemTip.activeInHierarchy)
         {
             getItemTip.SetActive(false);
