@@ -17,6 +17,8 @@ public class languageChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("GameManager"))
+        {
         if(GameManager.instance.languageNum == 0)
         {
             this.GetComponent<Text>().text = JanpanessString;
@@ -24,6 +26,7 @@ public class languageChange : MonoBehaviour
         if(GameManager.instance.languageNum == 1)
         {
             this.GetComponent<Text>().text = EnglishString;
+        }
         }
     }
 }

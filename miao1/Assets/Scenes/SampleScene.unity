@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strJ: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
-  strE: You must sing and  dance like me.
+  strE: You must sing and dance  like me.
   str: 
   textSpeed: 0.05
 --- !u!114 &25866076
@@ -61065,7 +61065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
+  m_Text: That will give energy  to the seeds.
 --- !u!222 &1315682518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61087,7 +61087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JanpanessString: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
-  EnglishString: That will give  energy to the seeds.
+  EnglishString: That will give energy to the seeds.
 --- !u!224 &1315984908 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3938502239763708631, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
@@ -67473,7 +67473,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002\n"
+  m_Text: You must sing and dance  like me.
 --- !u!222 &1479358359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67495,7 +67495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JanpanessString: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
-  EnglishString: You must sing and  dance like me.
+  EnglishString: You must sing and dance    like me.
 --- !u!1 &1479634053
 GameObject:
   m_ObjectHideFlags: 0
@@ -94710,7 +94710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strJ: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
-  strE: That will give  energy to the seeds.
+  strE: That will give energy      to the seeds.
   str: 
   textSpeed: 0.05
 --- !u!114 &1878433870

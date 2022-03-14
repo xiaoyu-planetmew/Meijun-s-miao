@@ -13,6 +13,8 @@ public class dialogLetters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        strJ.Replace("\\n", "\n");
+        strE.Replace("\\n", "\n");
     }
 
     // Update is called once per frame
