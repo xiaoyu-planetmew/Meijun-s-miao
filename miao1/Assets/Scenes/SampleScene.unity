@@ -39598,7 +39598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 138}
+  m_AnchoredPosition: {x: 120, y: 138}
   m_SizeDelta: {x: 6.98, y: 3.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910238470
@@ -77338,7 +77338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 138}
+  m_AnchoredPosition: {x: 120, y: 138}
   m_SizeDelta: {x: 6.98, y: 3.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549167535
@@ -85791,7 +85791,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1606555587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1606555590}
+        m_TargetAssemblyTypeName: birdDialognext, Assembly-CSharp
+        m_MethodName: click1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910238468}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1606555587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85857,10 +85881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd7d452cfac15146b6fc471e46957b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Js1: 
-  Js2: 
-  Es1: 
-  Es2: 
+  Js1: "\u79C1\u304C\u6301\u3063\u3066\u308B\u3082\u306E\u3092\u898B\u308B\uFF1F"
+  Js2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
+  Es1: This is what I have.
+  Es2: I'm hungry too.
 --- !u!1 &1607887166
 GameObject:
   m_ObjectHideFlags: 0
@@ -94474,7 +94498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 138}
+  m_AnchoredPosition: {x: 120, y: 138}
   m_SizeDelta: {x: 6.98, y: 3.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1723341237
@@ -101113,7 +101137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 138}
+  m_AnchoredPosition: {x: 120, y: 138}
   m_SizeDelta: {x: 6.98, y: 3.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857710856

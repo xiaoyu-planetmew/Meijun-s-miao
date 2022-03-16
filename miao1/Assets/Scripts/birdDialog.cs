@@ -68,7 +68,7 @@ public class birdDialog : MonoBehaviour
     {
         if(isTalk && !tradeFinish)
         {
-            Debug.Log("1");
+            //Debug.Log("1");
             //GameManager.instance.RemoveItem(upload);
             dialog2Box.SetActive(true);
         }
