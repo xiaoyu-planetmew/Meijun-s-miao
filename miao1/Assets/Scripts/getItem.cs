@@ -71,6 +71,7 @@ public class getItem : MonoBehaviour
             GetTextFromFile(textFilesE[_item]);
         }
         index = 0;
+        StopAllCoroutines();
         nextTip();
         finish[_item] = true;
         //getItemTip.transform.GetChild(0).GetComponent<t

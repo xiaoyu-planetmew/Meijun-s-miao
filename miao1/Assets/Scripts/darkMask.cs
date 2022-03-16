@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using Spine.Unity;
+using DG.Tweening;
 public class darkMask : MonoBehaviour
 {
     Camera cam;
@@ -38,6 +39,7 @@ public class darkMask : MonoBehaviour
     [SerializeField] int index = 0;
     public GameObject dialog2;
     public GameObject credit;
+    public GameObject finalText;
 
     // Start is called before the first frame update
     void Start()
@@ -313,22 +315,32 @@ public class darkMask : MonoBehaviour
 
         //StartCoroutine(nextHide());
     }
+   
     IEnumerator dark4()
     {
         panel.SetActive(false);
         while(_image.GetComponent<Image>().color.a < 1)
         {
-            _image.GetComponent<Image>().color = new Color(_image.GetComponent<Image>().color.r, _image.GetComponent<Image>().color.g, _image.GetComponent<Image>().color.b, _image.GetComponent<Image>().color.a+0.01f);
-            GameObject.Find("water2").GetComponent<AudioSource>().volume = GameObject.Find("water2").GetComponent<AudioSource>().volume - 0.01f;
+            _image.GetComponent<Image>().color = new Color(_image.GetComponent<Image>().color.r, _image.GetComponent<Image>().color.g, _image.GetComponent<Image>().color.b, _image.GetComponent<Image>().color.a+0.003f);
+            GameObject.Find("water2").GetComponent<AudioSource>().volume = GameObject.Find("water2").GetComponent<AudioSource>().volume - 0.003f;
             yield return 0;
         }
-        StartCoroutine(endGame());
+        Sequence s = DOTween.Sequence();
+        s.Append(credit.GetComponent<Image>().DOFade(1, 3));
+        s.AppendInterval(5f);
+        s.Append(credit.GetComponent<Image>().DOFade(0, 3));
+        s.Append(finalText.GetComponent<Text>().DOFade(0.8f, 3));
+        s.AppendInterval(2f);
+        s.Append(finalText.GetComponent<Text>().DOFade(0, 3));
+        //s.AppendInterval(5f);
+        s.AppendCallback(() => {GameManager.instance.destroyGameManager();});
+        //StartCoroutine(endGame(s));
     }
-    IEnumerator endGame()
+    IEnumerator endGame(Sequence t)
     {
-        credit.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        credit.SetActive(false);
+        //credit.SetActive(true);
+        yield return t.WaitForCompletion();
+        //credit.SetActive(false);
         GameManager.instance.destroyGameManager();
     }
 }

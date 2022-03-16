@@ -23,7 +23,8 @@ public class basement1 : MonoBehaviour
         if((GameManager.instance.player.transform.position - this.transform.position).magnitude >= 50)
         {
             this.GetComponent<Button>().enabled = false;
-        }else{
+        }else if(!rightSeed)
+        {
             this.GetComponent<Button>().enabled = true;
         }
 
