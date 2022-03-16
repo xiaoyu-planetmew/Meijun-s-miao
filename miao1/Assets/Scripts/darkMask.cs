@@ -37,6 +37,7 @@ public class darkMask : MonoBehaviour
     bool c = false;
     [SerializeField] int index = 0;
     public GameObject dialog2;
+    public GameObject credit;
 
     // Start is called before the first frame update
     void Start()
@@ -318,13 +319,16 @@ public class darkMask : MonoBehaviour
         while(_image.GetComponent<Image>().color.a < 1)
         {
             _image.GetComponent<Image>().color = new Color(_image.GetComponent<Image>().color.r, _image.GetComponent<Image>().color.g, _image.GetComponent<Image>().color.b, _image.GetComponent<Image>().color.a+0.01f);
+            GameObject.Find("water2").GetComponent<AudioSource>().volume = GameObject.Find("water2").GetComponent<AudioSource>().volume - 0.01f;
             yield return 0;
         }
         StartCoroutine(endGame());
     }
     IEnumerator endGame()
     {
-        yield return new WaitForSeconds(3f);
+        credit.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        credit.SetActive(false);
         GameManager.instance.destroyGameManager();
     }
 }

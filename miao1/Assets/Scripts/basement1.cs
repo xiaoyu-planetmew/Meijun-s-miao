@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class basement1 : MonoBehaviour
 {
     public Item target;
-    public string wrongTip;
+    public string wrongTipJ;
+    public string wrongTipE;
     public bool rightSeed = false;
     public Sprite targetSprite;
     public GameObject other1;
@@ -19,11 +20,26 @@ public class basement1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if((GameManager.instance.player.transform.position - this.transform.position).magnitude >= 50)
+        {
+            this.GetComponent<Button>().enabled = false;
+        }else{
+            this.GetComponent<Button>().enabled = true;
+        }
+
     }
     public void hit()
     {
-        inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTip);
+        if(GameManager.instance.languageNum == 0)
+        {
+            
+            inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTipJ);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            
+            inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTipE);
+        }
         inventoryResponse.instance.activeInventoryTip();
         if(other1.GetComponent<Button>().enabled == true)
         {

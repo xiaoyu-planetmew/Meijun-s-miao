@@ -93,7 +93,7 @@ public class cameraFocus : MonoBehaviour
             nowPlaying = 3;
             focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[2];
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[2];
-            if(GameManager.instance.languageNum == 1)
+            if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[2];
             }
@@ -109,7 +109,7 @@ public class cameraFocus : MonoBehaviour
             nowPlaying = 4;
             focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[3];
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[3];
-            if(GameManager.instance.languageNum == 1)
+            if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[3];
             }
@@ -125,7 +125,7 @@ public class cameraFocus : MonoBehaviour
             nowPlaying = 5;
             focusCanvas.transform.GetChild(0).GetComponent<Image>().sprite = BGList[4];
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = titleList[4];
-            if(GameManager.instance.languageNum == 1)
+            if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[4];
             }

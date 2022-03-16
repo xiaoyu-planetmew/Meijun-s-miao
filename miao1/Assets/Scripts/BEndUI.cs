@@ -206,7 +206,7 @@ public class BEndUI : MonoBehaviour
     public void ani()
     {
         Sequence quence = DOTween.Sequence();
-        StartCoroutine(endGameButton(quence));
+        
         quence.Append(title.GetComponent<Image>().DOFade(1, 0.5f));
         if(fullComboBool)
         {
@@ -239,10 +239,20 @@ public class BEndUI : MonoBehaviour
         quence.Join(goodText.GetComponent<Text>().DOFade(1, 0.5f));
         quence.Append(miss.GetComponent<Text>().DOFade(1, 0.5f));
         quence.Join(missText.GetComponent<Text>().DOFade(1, 0.5f));
+        quence.AppendCallback(() =>
+        {
+            endGameButton();
+        });
+        //StartCoroutine(endGameButton(quence));
     }
-    IEnumerator endGameButton(Sequence quence)
+    void endGameButton()
+    {
+        endButton.SetActive(true);
+    }
+/*    IEnumerator endGameButton(Sequence quence)
     {
         yield return quence.WaitForCompletion();
         endButton.SetActive(true);
     }
+    */
 }
