@@ -48,6 +48,7 @@ public class room1Box : MonoBehaviour
     public void hideBox()
     {
         GameObject.Find("shinei01").transform.Find("Canvas").gameObject.SetActive(true);
+        GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
     }
     IEnumerator textShow()
     {
