@@ -42,12 +42,14 @@ public class inventoryResponse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(inventoryTip.activeInHierarchy)
         {
             GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
         }else{
             GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
         }
+        */
     }
     public void importMessage(Item _item)
     {
@@ -68,10 +70,10 @@ public class inventoryResponse : MonoBehaviour
             }
             if(GameManager.instance.languageNum == 1)
             {
-                tipUI.transform.GetChild(0).GetComponent<Text>().text = "I can`t use" + _item.itemDesE; 
+                tipUI.transform.GetChild(0).GetComponent<Text>().text = "I can't use this item"; 
                 tipUI.SetActive(true);
                 StopAllCoroutines();
-                StartCoroutine(stopTip("I can`t use" + _item.itemDesE, 4f));
+                StartCoroutine(stopTip("I can't use this item", 4f));
             }
         }
         if(wrongItem.Contains(_item))
@@ -91,6 +93,7 @@ public class inventoryResponse : MonoBehaviour
                 StartCoroutine(stopTip(wrongTip, 2f));
                 slots.GetComponent<slotsState>().turnOnInventory();
                 inventoryTip.SetActive(false);
+                GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 usefulItemUI.SetActive(false);
                 //finishDialog();
             }
@@ -156,6 +159,8 @@ public class inventoryResponse : MonoBehaviour
     
     public void exportMessage()
     {
+        
+        GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
         if(thisObj == GameObject.Find("darkMask"))
         {
             GameObject.Find("darkMask").gameObject.GetComponent<darkMask>().thisSeed = thisItem;
@@ -170,6 +175,7 @@ public class inventoryResponse : MonoBehaviour
     {
         slots.GetComponent<slotsState>().turnOnInventory();
         inventoryTip.SetActive(false);
+        GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
         tipUI.SetActive(false);
         usefulItemUI.SetActive(false);
     }
@@ -192,5 +198,10 @@ public class inventoryResponse : MonoBehaviour
         tipUI.transform.GetChild(0).GetComponent<Text>().text = str;
         StopAllCoroutines();
         StartCoroutine(stopTip(str, t));
+    }
+    public void activeInventoryTip()
+    {
+        inventoryTip.SetActive(true);
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
     }
 }

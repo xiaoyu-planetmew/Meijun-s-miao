@@ -76,7 +76,7 @@ public class room2Box : MonoBehaviour
             {
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
             }
-            inventoryResponse.instance.inventoryTip.SetActive(true);
+            inventoryResponse.instance.activeInventoryTip();
         }
     }
     public void getMessage()

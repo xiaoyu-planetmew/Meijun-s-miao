@@ -120,7 +120,7 @@ public class darkMask : MonoBehaviour
                 inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTipE);
                 inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTipE);
             }
-            inventoryResponse.instance.inventoryTip.SetActive(true);
+            inventoryResponse.instance.activeInventoryTip();
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
         }
         if(obj == seed3)
@@ -136,7 +136,7 @@ public class darkMask : MonoBehaviour
             {
                 inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTipE);
             }
-            inventoryResponse.instance.inventoryTip.SetActive(true);
+            inventoryResponse.instance.activeInventoryTip();
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
         }
     }

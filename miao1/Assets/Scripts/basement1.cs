@@ -24,7 +24,7 @@ public class basement1 : MonoBehaviour
     public void hit()
     {
         inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTip);
-        inventoryResponse.instance.inventoryTip.SetActive(true);
+        inventoryResponse.instance.activeInventoryTip();
         if(other1.GetComponent<Button>().enabled == true)
         {
             other1.SetActive(false);

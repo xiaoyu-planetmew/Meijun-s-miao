@@ -56,7 +56,6 @@ public class DialogSys : MonoBehaviour
         {
             startButton.SetActive(false);
         }
-        
     }
     void GetTextFromFile(TextAsset file)
     {
@@ -214,6 +213,7 @@ public class DialogSys : MonoBehaviour
             rightAudioRandom();
         }
         isTalking = true;
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
         //Time.timeScale = 0.0f;
         //GameManager.instance.isPaused = true;
         
@@ -235,6 +235,7 @@ public class DialogSys : MonoBehaviour
                 //textLabelcn.gameObject.SetActive(false);
                 //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
+                GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 Time.timeScale = 1.0f;
                 GameManager.instance.isPaused = false;
             }
@@ -324,6 +325,7 @@ public class DialogSys : MonoBehaviour
             //textLabelcn.gameObject.SetActive(false);
             //textLabelen.gameObject.SetActive(false);
             isTalking = false;
+            GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
             Time.timeScale = 1.0f;
             GameManager.instance.isPaused = false;
             //sceneTransButton.SetActive(false);
@@ -375,6 +377,7 @@ public class DialogSys : MonoBehaviour
                 //textLabelcn.gameObject.SetActive(false);
                 //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
+                GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 Time.timeScale = 1.0f;
                 GameManager.instance.isPaused = false;
                 GameManager.instance.events[8] = true;

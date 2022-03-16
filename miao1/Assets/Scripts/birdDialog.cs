@@ -42,17 +42,27 @@ public class birdDialog : MonoBehaviour
         {
             startButton.SetActive(true);
         }
+        /*
+        if(isTalk)
+        {
+            GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
+        }else{
+            GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
+        }
+        */
     }
     public void dialogStart()
     {
         startButton.SetActive(false);
         isTalk = true;
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
         //Time.timeScale = 0.0f;
         //GameManager.instance.isPaused = true;
         dialogBox.gameObject.SetActive(true);
         nextPageButton.SetActive(true);
         inventoryResponse.instance.becomeUseless(upload);
         GameObject.Find("Content").GetComponent<slotsState>().turnOffInventory();
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
     }
     public void nextDialog()
     {
@@ -83,6 +93,8 @@ public class birdDialog : MonoBehaviour
     
     void getMessage()
     {
+        
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
         playerChooseBox.SetActive(false);
         if(GameManager.instance.languageNum == 0)
         {
@@ -110,6 +122,7 @@ public class birdDialog : MonoBehaviour
             //inventoryMenu.gameObject.SetActive(false);
             Debug.Log("You have got a flint");
             tradeFinish = true;
+            GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
             //inventoryResponse.instance.becomeUseless(upload);
         }
     }
@@ -135,6 +148,7 @@ public class birdDialog : MonoBehaviour
         inventoryResponse.instance.finishDialog();
         //inventoryMenu.gameObject.SetActive(false);
         isTalk = false;
+        GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
         Time.timeScale = 1.0f;
     }
 }
