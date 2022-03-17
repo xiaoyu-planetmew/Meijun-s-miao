@@ -13,6 +13,8 @@ public class languageButtonChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("GameManager"))
+        {
         if(GameManager.instance.languageNum == 0)
         {
             this.transform.GetChild(0).gameObject.SetActive(true);
@@ -23,6 +25,7 @@ public class languageButtonChange : MonoBehaviour
         {
             this.transform.GetChild(1).gameObject.SetActive(true);
             this.transform.GetChild(0).gameObject.SetActive(false);
+        }
         }
     }
 }

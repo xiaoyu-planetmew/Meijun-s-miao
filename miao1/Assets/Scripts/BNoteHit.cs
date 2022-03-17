@@ -124,7 +124,7 @@ public class BNoteHit : MonoBehaviour
         if(b2)
         {
             mask.SetActive(true);
-            Debug.Log(Time.time);
+            //Debug.Log(Time.time);
             if(minDistance < 3f && minTrans.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && minTrans.tag == "note" && minTrans.gameObject.GetComponent<BNoteCanBeCount>().line == line && BRhythmManager.instance.trackNumUsed[minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence - 1])
             {
                 b1 = false;
@@ -180,7 +180,9 @@ public class BNoteHit : MonoBehaviour
                     GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holdScale();
                 }
                 hitAni.transform.position = new Vector3(x, y, 0);
-                hitAni.GetComponent<Animator>().Play("long", 0);
+                hitAni.GetComponent<Animator>().SetTrigger("hold");
+                //hitAni.GetComponent<Animator>().Play("long", 0);
+                StopAllCoroutines();
                 StartCoroutine(longNoteHit(minTrans, minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time));
                 num.GetComponent<Text>().text = minTrans.gameObject.GetComponent<DrawBesizerLine>().num.ToString();
                 //Debug.Log(Time.time);
@@ -220,7 +222,9 @@ public class BNoteHit : MonoBehaviour
             BRhythmManager.instance.NoteMissed(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
             if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
             {
+                Debug.Log("miss");
                 hitAni.GetComponent<Animator>().SetTrigger("release");
+                StopAllCoroutines();
             }
             
         }
@@ -233,7 +237,9 @@ public class BNoteHit : MonoBehaviour
         }
         if(Input.GetKeyUp(keyToPress) && hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
         {
+            Debug.Log("up");
             hitAni.GetComponent<Animator>().SetTrigger("release");
+            StopAllCoroutines();
         }
         if(!Input.GetKey(keyToPress))
         {
@@ -252,7 +258,8 @@ public class BNoteHit : MonoBehaviour
         obj.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
         if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
         {
-        hitAni.GetComponent<Animator>().SetTrigger("release");
+            Debug.Log("time");
+            hitAni.GetComponent<Animator>().SetTrigger("release");
         }
     }
     public void buttonActive()
