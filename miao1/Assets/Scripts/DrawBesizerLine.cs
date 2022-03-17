@@ -43,6 +43,10 @@ public class DrawBesizerLine : MonoBehaviour
         sphere.transform.localPosition = lsPoint[(int)(length)];
         sphere.transform.Rotate(new Vector3(90,0,0));
         sphere.transform.LookAt(new Vector3(lsPoint[(int)(length + 1)].x, lsPoint[(int)(length + 1)].y, 0));
+        if(length >= 400)
+        {
+            GameObject.Find("boundry").GetComponent<BNoteDestroy>().noteDestroy(this.gameObject);
+        }
     }
 
     #region 计算贝塞尔曲线的拟合点

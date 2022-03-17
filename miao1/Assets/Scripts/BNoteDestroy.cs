@@ -35,6 +35,41 @@ public class BNoteDestroy : MonoBehaviour
             
         }
     }
+    public void noteDestroy(GameObject other)
+    {
+        if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && other.tag == "note")
+        {
+            BRhythmManager.instance.NoteMissed(other.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+            other.gameObject.SetActive(false);          //对象池方法，把子弹失效就好了
+            other.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
+        
+            other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+            other.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
+            other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+            other.gameObject.SetActive(false);          //对象池方法，把子弹失效就好了
+            //other.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+        }
+        if(other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount == true && other.tag == "longNote")
+        {
+            BRhythmManager.instance.NoteMissed(other.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
+            other.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
+                      //对象池方法，把子弹失效就好了
+            
+            other.gameObject.GetComponent<BNoteCanBeCount>().canBeCount = false;
+            other.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat2;
+            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
+
+            other.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+            other.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
+            other.transform.GetChild(0).GetComponent<TrailRenderer>().material = mat1;
+            other.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
+            GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holding = false;
+            other.gameObject.SetActive(false);
+            //StartCoroutine(longNoteMiss(other.gameObject, other.transform.GetChild(0).GetComponent<TrailRenderer>().time));
+            
+        }
+    }
     IEnumerator longNoteMiss(GameObject obj, float delay)
     {
         yield return new WaitForSeconds(delay);
