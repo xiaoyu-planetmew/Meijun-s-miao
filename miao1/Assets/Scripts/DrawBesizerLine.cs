@@ -48,6 +48,7 @@ public class DrawBesizerLine : MonoBehaviour
             GameObject.Find("boundry").GetComponent<BNoteDestroy>().noteDestroy(this.gameObject);
         }
     }
+    
 
     #region 计算贝塞尔曲线的拟合点
     //初始化算出所有的点的信息

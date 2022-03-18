@@ -25,7 +25,7 @@ public class BNoteHit : MonoBehaviour
     [SerializeField]bool noteFinish = true;
     [SerializeReference] bool b1;
     [SerializeReference] bool b2;
-    [SerializeField]private GameObject minTrans;
+    public GameObject minTrans;
     [SerializeField]private float minDistance;
     //private bool canHit;
     // Start is called before the first frame update
@@ -196,6 +196,7 @@ public class BNoteHit : MonoBehaviour
                     Debug.Log(minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time);
                 }
                 var t = minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time;
+                minTrans.GetComponent<BNoteCanBeCount>().longNoteHit();
                 //hitAni.GetComponent<Animator>().Play("long", 0);
                 StopAllCoroutines();
                 StartCoroutine(longNoteHit(minTrans, t));
@@ -221,16 +222,6 @@ public class BNoteHit : MonoBehaviour
                 passedTime += Time.deltaTime;
             }
             
-            
-            /*
-            if(!(timerStart && !Input.GetKeyUp(keyToPress) 
-            && Time.time - startTime < nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().time) 
-            && !hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
-            {
-                hitAni.GetComponent<Animator>().SetTrigger("release");
-            }
-            */
-            
         }
         if(nowNote != null)
         {
@@ -239,8 +230,6 @@ public class BNoteHit : MonoBehaviour
             BRhythmManager.instance.NoteMissed(minTrans.gameObject.GetComponent<DrawBesizerLine>().numInSequence);
             if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
             {
-                //Debug.Log("miss");
-                //hitAni.GetComponent<Animator>().SetTrigger("release");
                 minTrans.GetComponent<BNoteCanBeCount>().isAni = false;
                 noteFinish = true;
                 StopAllCoroutines();
@@ -251,13 +240,12 @@ public class BNoteHit : MonoBehaviour
         {
             timerStart = false;
             nowNote.transform.GetChild(0).GetComponent<TrailRenderer>().material= mat;
-            
             nowNote = GameObject.Find("NullBNote");
         }
         }
         if(Input.GetKeyUp(keyToPress) && hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
         {
-            //Debug.Log("up");
+            Debug.Log("up");
             hitAni.GetComponent<Animator>().SetTrigger("release");
                 minTrans.GetComponent<BNoteCanBeCount>().isAni = false;
                 noteFinish = true;
@@ -281,6 +269,7 @@ public class BNoteHit : MonoBehaviour
         minTrans.gameObject.SetActive(false);
         minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;
+        minTrans.gameObject.GetComponent<DrawBesizerLine>().line = null;
         minTrans.gameObject.GetComponent<DrawBesizerLine>().enabled = false;
         //BRhythmManager.instance.NoteHit();
         minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time = -1;
