@@ -188,7 +188,7 @@ public class BNoteHit : MonoBehaviour
                     GameObject.Find("RhythmManager").GetComponent<BBackgroundScale>().holdScale();
                 }
                 hitAni.transform.position = new Vector3(x, y, 0);
-                hitAni.GetComponent<Animator>().SetTrigger("hold");
+                hitAni.GetComponent<Animator>().SetBool("hold", true);
                 minTrans.GetComponent<BNoteCanBeCount>().isAni = true;
                 if(line == 5)
                 {
@@ -246,7 +246,7 @@ public class BNoteHit : MonoBehaviour
         if(Input.GetKeyUp(keyToPress) && hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
         {
             Debug.Log("up");
-            hitAni.GetComponent<Animator>().SetTrigger("release");
+            hitAni.GetComponent<Animator>().SetBool("hold", false);
                 minTrans.GetComponent<BNoteCanBeCount>().isAni = false;
                 noteFinish = true;
             StopAllCoroutines();

@@ -23,14 +23,14 @@ public class BNoteCanBeCount : MonoBehaviour
             if (GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
             { 
             Debug.Log("up");
-            GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetTrigger("release");
+            GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
         }
             
         }
         if(this.transform.GetChild(0).GetComponent<TrailRenderer>().material.name == mat.name)
         {
             Debug.Log("miss");
-            GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetTrigger("release");
+            GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
          
         }
     }
@@ -42,8 +42,8 @@ public class BNoteCanBeCount : MonoBehaviour
     {
         if(line != 0)
         {
-        Debug.Log("disable" + this.transform.position);
-        GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetTrigger("release");
+        Debug.Log("disable" + this.transform.position + line);
+        GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
         }
     }
     public void longNoteHit()
@@ -57,9 +57,11 @@ public class BNoteCanBeCount : MonoBehaviour
     }
     IEnumerator longNoteDestroy()
     {
+        
+        Debug.Log(this.transform.GetChild(0).GetComponent<TrailRenderer>().time);
         yield return new WaitForSeconds(this.transform.GetChild(0).GetComponent<TrailRenderer>().time);
         this.gameObject.SetActive(false);
-        
+        //Debug.Log(this.transform.GetChild(0).GetComponent<TrailRenderer>().time);
         line = 0;
         this.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         this.gameObject.GetComponent<DrawBesizerLine>().length = 0;

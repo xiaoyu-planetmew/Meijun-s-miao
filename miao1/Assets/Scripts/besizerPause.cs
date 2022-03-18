@@ -49,7 +49,7 @@ public class besizerPause : MonoBehaviour
     {
         this.GetComponent<BChapterChoose>().chapterRecord[this.GetComponent<BChapterChoose>().chapter] = 0;
         this.GetComponent<besizerSceneReset>().resetScene();
-        BRhythmManager.instance.resetPool();
+        BRhythmManager.instance.setPool();
         Resume();
     }
     public void showTip()
@@ -69,7 +69,7 @@ public class besizerPause : MonoBehaviour
     {
         
         backToMenu();
-        BRhythmManager.instance.resetPool();
+        BRhythmManager.instance.setPool();
         this.GetComponent<besizerSceneReset>().chooseObj.SetActive(false);
         BRhythmManager.instance.startPlaying = false;
         BRhythmManager.instance.gameStart();
