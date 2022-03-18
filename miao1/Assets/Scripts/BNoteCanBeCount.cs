@@ -9,6 +9,7 @@ public class BNoteCanBeCount : MonoBehaviour
     public bool isAni = false;
     public bool isCoroutineRunning = false;
     public Material mat;
+    public GameObject obj;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,17 +34,20 @@ public class BNoteCanBeCount : MonoBehaviour
             GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
          
         }
+        if(line != 0){obj = GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1];}
     }
     void OnEnable()
     {
         isCoroutineRunning = false;
+        if(line != 0){}
     }
     void OnDisable()
     {
-        if(line != 0)
+        if(line != 0 && obj != null)
         {
+            
         Debug.Log("disable" + this.transform.position + line);
-        GameObject.Find("RhythmManager").GetComponent<BRhythmManager>().targets[line - 1].transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
+        obj.transform.GetChild(3).GetComponent<Animator>().SetBool("hold", false);
         }
     }
     public void longNoteHit()
