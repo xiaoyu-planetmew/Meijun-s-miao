@@ -80,7 +80,7 @@ public class BNoteHit : MonoBehaviour
     }
     void noteOnTime()
     {
-        if(noteFinish)
+        if(true)
         {
         minDistance = ((this.transform.GetChild(0).position - notelist[0].transform.position).magnitude);
         minTrans = notelist[0];
@@ -240,7 +240,7 @@ public class BNoteHit : MonoBehaviour
             if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long"))
             {
                 //Debug.Log("miss");
-                hitAni.GetComponent<Animator>().SetTrigger("release");
+                //hitAni.GetComponent<Animator>().SetTrigger("release");
                 minTrans.GetComponent<BNoteCanBeCount>().isAni = false;
                 noteFinish = true;
                 StopAllCoroutines();
@@ -272,16 +272,12 @@ public class BNoteHit : MonoBehaviour
     IEnumerator longNoteHit(GameObject minTrans, float noteLength)
     {
         yield return new WaitForSeconds(noteLength + 0.1f);
-        if(line == 5)
-        {
-        Debug.Log(minTrans.transform.position);
-        Debug.Log(minTrans.transform.GetChild(0).GetComponent<TrailRenderer>().time);}
-        if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long") && minTrans.GetComponent<BNoteCanBeCount>().isAni && minTrans.activeInHierarchy && minTrans.GetComponent<BNoteCanBeCount>().line == line)
+       /* if(hitAni.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("long") && minTrans.GetComponent<BNoteCanBeCount>().isAni && minTrans.activeInHierarchy && minTrans.GetComponent<BNoteCanBeCount>().line == line)
         {
             Debug.Log("time");
             hitAni.GetComponent<Animator>().SetTrigger("release");
             minTrans.GetComponent<BNoteCanBeCount>().isAni = false;
-        }
+        }*/
         minTrans.gameObject.SetActive(false);
         minTrans.gameObject.GetComponent<DrawBesizerLine>().basePoint.Clear();
         minTrans.gameObject.GetComponent<DrawBesizerLine>().length = 0;

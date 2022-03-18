@@ -43,6 +43,7 @@ public class BRhythmManager : MonoBehaviour
     public GameObject blueBorderAni;
     public GameObject artLetterAni;
     public float delayTime;
+    public List<GameObject> targets = new List<GameObject>();
     //[Tooltip("����Ŀ�����ɵĹ�����¼���ӦID")]
     //[EventID]
     //public string eventID;
@@ -52,7 +53,7 @@ public class BRhythmManager : MonoBehaviour
     //public List<BeatScroller> noteLanes = new List<BeatScroller>();
     //SimpleMusicPlayer simpleMusicPlayer;
     //public Transform simpleMusicPlayerTrans;
-    
+
     //public static BNotesPool BNotesPoolInstance;      //子弹池单例
     public GameObject bulletObj;                        //子弹perfabs
     public int pooledAmount = 6;                        //子弹池初始大小
@@ -73,7 +74,7 @@ public class BRhythmManager : MonoBehaviour
     private int longCurrentIndex = 0;
     public GameObject main;
     public GameObject trackTips;
-    public List<GameObject> targets = new List<GameObject>();
+    //public List<GameObject> targets = new List<GameObject>();
     public GameObject comboAni;
     public GameObject endUI;
     public GameObject mainChooseCanvas;
