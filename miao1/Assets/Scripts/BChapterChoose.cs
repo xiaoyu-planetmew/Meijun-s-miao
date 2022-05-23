@@ -17,6 +17,7 @@ public class BChapterChoose : MonoBehaviour
     public List<Sprite> chapterFigure;
     public List<Sprite> chapterTitleJ;
     public List<Sprite> chapterTitleE;
+    public List<Sprite> chapterTitleCN;
     public List<Sprite> chapterName;
     public List<float> chapterRecord;
     public GameObject ppreviousChapter;
@@ -81,14 +82,7 @@ public class BChapterChoose : MonoBehaviour
         ppreviousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[pprevious];
         if(GameObject.Find("GameManager"))
         {
-            if(GameManager.instance.languageNum == 0)
-            {
-
-            }
-            if(GameManager.instance.languageNum == 1)
-            {
-
-            }
+            
         }else{
             
         }
@@ -111,6 +105,11 @@ public class BChapterChoose : MonoBehaviour
                 nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleE[nnext];
                 nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleE[nnext].bounds.size.x * 100, chapterTitleE[nnext].bounds.size.y * 100);
             
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[nnext];
+                nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleCN[nnext].bounds.size.x * 100, chapterTitleCN[nnext].bounds.size.y * 100);
             }
         }else{
             nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[nnext];
@@ -158,6 +157,10 @@ public class BChapterChoose : MonoBehaviour
             {
                 ppreviousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleE[pprevious];
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                ppreviousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[pprevious];
+            }
         }else{
             ppreviousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[pprevious];
         }
@@ -182,7 +185,11 @@ public class BChapterChoose : MonoBehaviour
             {
                 previousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleE[previous];
                 previousChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleE[nnext].bounds.size.x * 100, chapterTitleE[nnext].bounds.size.y * 100);
-            
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                previousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[previous];
+                previousChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleCN[nnext].bounds.size.x * 100, chapterTitleCN[nnext].bounds.size.y * 100);
             }
         }else{
             previousChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleJ[nnext].bounds.size.x * 100, chapterTitleJ[nnext].bounds.size.y * 100);
@@ -205,6 +212,10 @@ public class BChapterChoose : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 nowChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleE[chapter];
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                nowChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[chapter];
             }
         }else{
             nowChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[chapter];
@@ -233,6 +244,12 @@ public class BChapterChoose : MonoBehaviour
                 nextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleE[nnext].bounds.size.x * 100, chapterTitleE[nnext].bounds.size.y * 100);
             
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                nextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[next];
+                nextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleCN[nnext].bounds.size.x * 100, chapterTitleCN[nnext].bounds.size.y * 100);
+            
+            }
         }else{
             nextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleJ[nnext].bounds.size.x * 100, chapterTitleJ[nnext].bounds.size.y * 100);
         }
@@ -256,6 +273,12 @@ public class BChapterChoose : MonoBehaviour
             {
                 nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleE[nnext];
                 nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleE[nnext].bounds.size.x * 100, chapterTitleE[nnext].bounds.size.y * 100);
+            
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleCN[nnext];
+                nnextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleCN[nnext].bounds.size.x * 100, chapterTitleCN[nnext].bounds.size.y * 100);
             
             }
         }else{

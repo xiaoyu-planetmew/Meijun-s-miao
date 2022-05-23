@@ -8,6 +8,8 @@ public class birdDialognext : MonoBehaviour
     public string Js2;
     public string Es1;
     public string Es2;
+    public string CNs1;
+    public string CNs2;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,11 @@ public class birdDialognext : MonoBehaviour
         {
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = Es1;
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = Es2;
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = CNs1;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = CNs2;
         }
     }
     public void click2()

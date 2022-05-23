@@ -10,6 +10,7 @@ public class birdDialog : MonoBehaviour
     public GameObject playerChooseBox;
     public string playerRespondJ;
     public string playerRespondE;
+    public string playerRespondCN;
     public GameObject bird;
     public GameObject startButton;
     public GameObject nextPageButton;
@@ -24,6 +25,7 @@ public class birdDialog : MonoBehaviour
     public Item download;
     public string wrongTipJ;
     public string wrongTipE;
+    public string wrongTipCN;
     public string emptyTip;
 
     // Start is called before the first frame update
@@ -88,6 +90,10 @@ public class birdDialog : MonoBehaviour
             {
                 inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTipE);
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                inventoryResponse.instance.becomeUseful(upload, this.gameObject, wrongTipCN);
+            }  
         }
     }
     
@@ -103,6 +109,10 @@ public class birdDialog : MonoBehaviour
         if(GameManager.instance.languageNum == 1)
         {
             playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespondE;
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            playerTip.transform.GetChild(0).GetComponent<Text>().text = playerRespondCN;
         }
         playerTip.SetActive(true);
         GameManager.instance.RemoveItem(upload);

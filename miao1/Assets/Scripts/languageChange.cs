@@ -8,6 +8,7 @@ public class languageChange : MonoBehaviour
 {
     public string JanpanessString;
     public string EnglishString;
+    public string ChineseString;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,10 @@ public class languageChange : MonoBehaviour
         if(GameManager.instance.languageNum == 1)
         {
             this.GetComponent<Text>().text = EnglishString;
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            this.GetComponent<Text>().text = ChineseString;
         }
         }
     }

@@ -14,6 +14,7 @@ public class getItem : MonoBehaviour
     public TextAsset textFile;
     public List<TextAsset> textFilesJ = new List<TextAsset>();
     public List<TextAsset> textFilesE = new List<TextAsset>();
+    public List<TextAsset> textFilesCN = new List<TextAsset>();
     
     public List<bool> finish = new List<bool>();
     [SerializeField]List<string> textList = new List<string>();
@@ -69,6 +70,10 @@ public class getItem : MonoBehaviour
         if(GameManager.instance.languageNum == 1)
         {
             GetTextFromFile(textFilesE[_item]);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GetTextFromFile(textFilesCN[_item]);
         }
         index = 0;
         StopAllCoroutines();

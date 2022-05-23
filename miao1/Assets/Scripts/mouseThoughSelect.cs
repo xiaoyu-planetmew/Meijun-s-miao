@@ -19,6 +19,7 @@ public class mouseThoughSelect : MonoBehaviour
     public GameObject tip;
     public string warningTextJ;
     public string warningTextE;
+    public string warningTextCN;
     public float warningTime;
     void Awake()
     {
@@ -82,6 +83,10 @@ public class mouseThoughSelect : MonoBehaviour
                if(GameManager.instance.languageNum == 1)
                {
                    tip.transform.Find("tipText").GetComponent<Text>().text = warningTextE;
+               }
+               if(GameManager.instance.languageNum == 2)
+               {
+                   tip.transform.Find("tipText").GetComponent<Text>().text = warningTextCN;
                }
                //
                StartCoroutine("warningClose");

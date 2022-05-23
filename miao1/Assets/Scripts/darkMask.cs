@@ -24,14 +24,16 @@ public class darkMask : MonoBehaviour
     public GameObject seed3;
     public string wrongTipJ;
     public string wrongTipE;
+    public string wrongTipCN;
     public Item thisSeed;
     public Item get;
     public GameObject thisobj;
     public GameObject wrongTipBox;
     public GameObject camPosition;
     public TextAsset textFile;
-    public TextAsset textFile1;
+    public TextAsset textFile1J;
     public TextAsset textFile1E;
+    public TextAsset textFile1CN;
     public List<string> textList = new List<string>();
     public List<string> textList1 = new List<string>();
     public GameObject panel;
@@ -123,6 +125,11 @@ public class darkMask : MonoBehaviour
                 inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTipE);
                 inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTipE);
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                inventoryResponse.instance.becomeUseful(s1, this.gameObject, wrongTipCN);
+                inventoryResponse.instance.becomeUseful(s2, this.gameObject, wrongTipCN);
+            }
             inventoryResponse.instance.activeInventoryTip();
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
         }
@@ -138,6 +145,10 @@ public class darkMask : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTipE);
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                inventoryResponse.instance.becomeUseful(s3, this.gameObject, wrongTipCN);
             }
             inventoryResponse.instance.activeInventoryTip();
             inventoryResponse.instance.slots.GetComponent<slotsState>().turnOnInventory();
@@ -254,11 +265,15 @@ public class darkMask : MonoBehaviour
         GetTextFromFile(textFile);
         if(GameManager.instance.languageNum == 0)
         {
-            GetTextFromFile1(textFile1);
+            GetTextFromFile1(textFile1J);
         }
         if(GameManager.instance.languageNum == 1)
         {
             GetTextFromFile1(textFile1E);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GetTextFromFile1(textFile1CN);
         }
         panel.SetActive(true);
         

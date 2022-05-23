@@ -24,6 +24,7 @@ public class DialogSys : MonoBehaviour
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<TextAsset> textfilesE = new List<TextAsset>();
     public List<TextAsset> textfilesJ = new List<TextAsset>();
+    public List<TextAsset> textfilesCN = new List<TextAsset>();
     public bool firstMeet;
     public bool isTalking;
     //private bool holdTarget;
@@ -99,6 +100,13 @@ public class DialogSys : MonoBehaviour
             for(int i=0; i<textfilesE.Count; i++)
             {
                 textfiles.Add(textfilesE[i]);
+            }
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            for(int i=0; i<textfilesE.Count; i++)
+            {
+                textfiles.Add(textfilesCN[i]);
             }
         }
     }

@@ -26,14 +26,10 @@ public class startMenuStartButton : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
-    public void startButtonJ()
+    public void languageSelectButton(int num)
     {
         //SceneManager.LoadScene("SampleScene");
-        languageNum = 0;
+        languageNum = num;
     }
-    public void startButtonE()
-    {
-        //SceneManager.LoadScene("SampleScene");
-        languageNum = 1;
-    }
+
 }

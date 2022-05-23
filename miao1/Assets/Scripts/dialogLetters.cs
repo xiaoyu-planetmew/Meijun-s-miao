@@ -8,6 +8,7 @@ public class dialogLetters : MonoBehaviour
 {
     public string strJ;
     public string strE;
+    public string strCN;
     public string str;
     public float textSpeed;
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class dialogLetters : MonoBehaviour
     {
         strJ.Replace("\\n", "\n");
         strE.Replace("\\n", "\n");
+        strCN.Replace("\\n", "\n");
     }
 
     // Update is called once per frame
@@ -35,6 +37,11 @@ public class dialogLetters : MonoBehaviour
         {
             this.transform.GetChild(0).GetComponent<Text>().DOText(strE, strE.Length * 0.05f);
             StartCoroutine(SetText(strE.Length * 0.05f));
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            this.transform.GetChild(0).GetComponent<Text>().DOText(strCN, strCN.Length * 0.05f);
+            StartCoroutine(SetText(strCN.Length * 0.05f));
         }
         
     }

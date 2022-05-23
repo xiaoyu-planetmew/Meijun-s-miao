@@ -95,6 +95,10 @@ public class GameManager: MonoBehaviour
                 {
                     slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].itemDesE;
                 }
+                if(languageNum == 2)
+                {
+                    slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].itemDesCN;
+                }
 
                 //UPDATE CLOSE/THROW button
                 //slots[i].transform.GetChild(2).gameObject.SetActive(true);

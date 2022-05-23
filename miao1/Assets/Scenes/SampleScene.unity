@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
   strE: You must sing and dance  like me.
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &25866076
@@ -4003,6 +4004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u306F\u3044\uFF01"
   strE: Yes!
+  strCN: 
   str: "\u306F\u3044\uFF01"
   textSpeed: 0.05
 --- !u!114 &82936031
@@ -6350,6 +6352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u7A2E\u306E\u6210\u9577\u3092\u52A9\u3051\u308B\u6B4C\u304C\u3042\u308B\u3002"
   EnglishString: I know a song that will help the plants grow.
+  ChineseString: 
 --- !u!1 &141993683
 GameObject:
   m_ObjectHideFlags: 0
@@ -19043,6 +19046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u904A\u3093\u3067\u304F\u308C\u3066\u3042\u308A\u304C\u3068\u3046\u3002"
   EnglishString: Thanks for playing.
+  ChineseString: 
 --- !u!114 &366352235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20667,6 +20671,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: 74f304b6453a85c44944573eccf64cc7, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
+  wrongTipCN: 
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: aa437620ada94464c9ccee7bafdcefd8, type: 3}
   other1: {fileID: 1805652835}
@@ -20860,6 +20865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u30A2\u30A4\u30C6\u30E0\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044"
   EnglishString: Choose An Item
+  ChineseString: 
 --- !u!95 &397126189
 Animator:
   serializedVersion: 3
@@ -21301,6 +21307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3044\u3056\uFF01"
   EnglishString: Let's begin!
+  ChineseString: 
 --- !u!1 &415353969
 GameObject:
   m_ObjectHideFlags: 0
@@ -21756,6 +21763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u306F\u3044\uFF01"
   strE: Yes!
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &422136529
@@ -24323,6 +24331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3053\u3053\u306B\u7A2E\u3092\u690D\u3048\u3066\u304F\u308C\u3002"
   EnglishString: Plant the seeds here.
+  ChineseString: 
 --- !u!1 &490065694
 GameObject:
   m_ObjectHideFlags: 0
@@ -25402,6 +25411,7 @@ MonoBehaviour:
   - Ancient Song 3
   - Ancient Song 4
   - Ancient Song 5
+  nameListCN: []
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26726,6 +26736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u7A2E\u306E\u6210\u9577\u3092\u52A9\u3051\u308B\u6B4C\u304C\u3042\u308B\u3002"
   strE: I know a song that will help the plants grow.
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &570435442
@@ -30210,6 +30221,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: db5e0f7d400bd9246aca574895f10e56, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
+  wrongTipCN: 
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: a4e59e960751d8847b437595fd64c8e2, type: 3}
   other1: {fileID: 395773082}
@@ -45126,6 +45138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3055\u3042\u3001 \u3059\u3079\u3066\u305D\u308D\u3063\u305F\u3088\u3046\u3060\u3002 "
   EnglishString: My child, it seems we are ready.
+  ChineseString: 
 --- !u!1 &921411944
 GameObject:
   m_ObjectHideFlags: 0
@@ -52458,6 +52471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u306F\u3044\uFF01"
   EnglishString: Yes!
+  ChineseString: 
 --- !u!1 &1052432491
 GameObject:
   m_ObjectHideFlags: 0
@@ -61689,6 +61703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: MAIN MENU
   EnglishString: MAIN MENU
+  ChineseString: 
 --- !u!1 &1182378138
 GameObject:
   m_ObjectHideFlags: 0
@@ -66712,6 +66727,7 @@ MonoBehaviour:
   playerChooseBox: {fileID: 1190268325}
   playerRespondJ: "\u3069\u3046\u305E\u3002\u3042\u3052\u308B\u308F\u3002"
   playerRespondE: Here.
+  playerRespondCN: 
   bird: {fileID: 1600929128}
   startButton: {fileID: 15299770}
   nextPageButton: {fileID: 1606555584}
@@ -66725,6 +66741,7 @@ MonoBehaviour:
   download: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
   wrongTipJ: "\u3053\u308C\u306F\u98DF\u3079\u3089\u308C\u306A\u3044\u3088\u3002"
   wrongTipE: Do you have any food?
+  wrongTipCN: 
   emptyTip: 
 --- !u!4 &1310090193
 Transform:
@@ -66896,6 +66913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
   EnglishString: That will give energy to the seeds.
+  ChineseString: 
 --- !u!224 &1315984908 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3938502239763708631, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
@@ -70660,6 +70678,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
+  textFilesCN: []
   finish: 
   textList: []
   index: 0
@@ -73764,6 +73783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
   EnglishString: You must sing and dance    like me.
+  ChineseString: 
 --- !u!1 &1479634053
 GameObject:
   m_ObjectHideFlags: 0
@@ -76570,6 +76590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u4E00\u7DD2\u306B\u6B4C\u304A\u3046\u3002"
   EnglishString: Sing with me.
+  ChineseString: 
 --- !u!1 &1532879607
 GameObject:
   m_ObjectHideFlags: 0
@@ -77815,6 +77836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3082\u3046\u4E00\u5EA6\u8A66\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044\u3002"
   EnglishString: Try again.
+  ChineseString: 
 --- !u!114 &1550013294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86173,6 +86195,8 @@ MonoBehaviour:
   Js2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   Es1: This is what I have.
   Es2: I'm hungry too.
+  CNs1: 
+  CNs2: 
 --- !u!1 &1607887166
 GameObject:
   m_ObjectHideFlags: 0
@@ -97186,6 +97210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u306F\u3044\uFF01"
   EnglishString: Yes!
+  ChineseString: 
 --- !u!1 &1775578339
 GameObject:
   m_ObjectHideFlags: 0
@@ -97915,6 +97940,7 @@ MonoBehaviour:
   JanpanessString: "\u3042\u3042\u3001\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u2026 
     \u4F55\u304B\u98DF\u3079\u7269\u6301\u3063\u3066\u308B\uFF1F"
   EnglishString: I'm so hungry...  Do you have any food?
+  ChineseString: 
 --- !u!1 &1791842886
 GameObject:
   m_ObjectHideFlags: 0
@@ -98145,6 +98171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u4E00\u7DD2\u306B\u6B4C\u304A\u3046\u3002"
   strE: Sing with me.
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &1792029653
@@ -98734,6 +98761,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: b5f940645bf26f54a9e98af7494e075e, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
+  wrongTipCN: 
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: d471ff2011c02d4429c11d13421b4bfa, type: 3}
   other1: {fileID: 395773082}
@@ -99187,6 +99215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u304A\u3044\u3057\u305D\u3046\uFF01 \u3042\u308A\u304C\u3068\u3046\uFF01"
   EnglishString: It looks delicious. Thank you!
+  ChineseString: 
 --- !u!1001 &1815862023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100294,6 +100323,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 069e24219fdfcae42a00c66df65c5268, type: 3}
   - {fileID: 4900000, guid: e46ec370f5a89584687a00429ffa38a2, type: 3}
   - {fileID: 4900000, guid: d81e55b954a6d5d43bbb31b3fba58343, type: 3}
+  textfilesCN: []
   firstMeet: 1
   isTalking: 0
   index: 0
@@ -101682,8 +101712,10 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
+  wrongTipCN: 
   emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   emptyTipE: Something's missing.
+  emptyTipCN: 
   wall: {fileID: 878043478}
 --- !u!212 &1862200914
 SpriteRenderer:
@@ -102740,6 +102772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
   strE: That will give energy      to the seeds.
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &1878433870
@@ -103447,6 +103480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u304A\u793C\u306B\u3001 \u3053\u306E\u30D8\u30F3\u306A\u77F3\u3092\u3082\u3089\u3063\u3066\uFF01"
   EnglishString: You can have this strange stone.
+  ChineseString: 
 --- !u!1 &1900961072
 GameObject:
   m_ObjectHideFlags: 0
@@ -104059,6 +104093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u3055\u3042\u3001 \u3059\u3079\u3066\u305D\u308D\u3063\u305F\u3088\u3046\u3060\u3002 "
   strE: My child, it seems we are ready.
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &1919136810
@@ -104917,6 +104952,8 @@ MonoBehaviour:
   Js2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   Es1: This is what I have.
   Es2: I'm hungry too.
+  CNs1: 
+  CNs2: 
 --- !u!1 &1935996397
 GameObject:
   m_ObjectHideFlags: 0
@@ -106140,6 +106177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u3044\u3056\uFF01"
   strE: Let's begin!
+  strCN: 
   str: 
   textSpeed: 0.05
 --- !u!114 &1966297805
@@ -117335,14 +117373,16 @@ MonoBehaviour:
   seed3: {fileID: 1790307714}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
+  wrongTipCN: 
   thisSeed: {fileID: 0}
   get: {fileID: 0}
   thisobj: {fileID: 0}
   wrongTipBox: {fileID: 612614846}
   camPosition: {fileID: 431847058}
   textFile: {fileID: 4900000, guid: a18f932816d820f4c9b0d4cafe2df36c, type: 3}
-  textFile1: {fileID: 4900000, guid: c9686a460f568774ea7d0d622a01aba9, type: 3}
+  textFile1J: {fileID: 4900000, guid: c9686a460f568774ea7d0d622a01aba9, type: 3}
   textFile1E: {fileID: 4900000, guid: f1232c61349695043a50a68538e327c3, type: 3}
+  textFile1CN: {fileID: 0}
   textList: []
   textList1: []
   panel: {fileID: 863410176}
@@ -118105,6 +118145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   EnglishString: I'm hungry too.
+  ChineseString: 
 --- !u!1001 &2790612841484438542
 PrefabInstance:
   m_ObjectHideFlags: 0

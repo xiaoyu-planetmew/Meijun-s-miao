@@ -75,6 +75,13 @@ public class inventoryResponse : MonoBehaviour
                 StopAllCoroutines();
                 StartCoroutine(stopTip("I can't use this item", 4f));
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                tipUI.transform.GetChild(0).GetComponent<Text>().text = "我不能用这个"; 
+                tipUI.SetActive(true);
+                StopAllCoroutines();
+                StartCoroutine(stopTip("我不能用这个", 4f));
+            }
         }
         if(wrongItem.Contains(_item))
         {

@@ -22,6 +22,7 @@ public class cameraFocus : MonoBehaviour
     public List<Sprite> titleList = new List<Sprite>();
     public List<string> nameListJ = new List<string>();
     public List<string> nameListE = new List<string>();
+    public List<string> nameListCN = new List<string>();
     int index;
     float loX;
     float loY;
@@ -69,6 +70,10 @@ public class cameraFocus : MonoBehaviour
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[0];
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[0];
+            }
         }else
         if((GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && GameManager.instance.events[8]) 
         && !(GameManager.instance.events[11]))
@@ -84,6 +89,10 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[1];
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[1];
             }
         }else
         if((GameManager.instance.events[12] && GameManager.instance.events[13] && GameManager.instance.events[14] && GameManager.instance.events[8]) 
@@ -101,6 +110,10 @@ public class cameraFocus : MonoBehaviour
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[2];
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[2];
+            }
         }else
         if((GameManager.instance.events[16] && GameManager.instance.events[17] && GameManager.instance.events[18] && GameManager.instance.events[8]) 
         && !(GameManager.instance.events[19]))
@@ -117,6 +130,10 @@ public class cameraFocus : MonoBehaviour
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[3];
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[3];
+            }
         }
         if((GameManager.instance.events[20] && GameManager.instance.events[21] && GameManager.instance.events[22] && GameManager.instance.events[8]) 
         && !(GameManager.instance.events[23]))
@@ -132,6 +149,10 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[4];
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[4];
             }
         }
         index = 0;

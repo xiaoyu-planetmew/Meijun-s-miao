@@ -18,6 +18,8 @@ public class room2Box : MonoBehaviour
     public string emptyTipJ;
     public string wrongTipE;
     public string emptyTipE;
+    public string wrongTipCN;
+    public string emptyTipCN;
     bool holdKeys;
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,10 @@ public class room2Box : MonoBehaviour
             {
                 inventoryResponse.instance.emptyItems(emptyTipE);
             }
+            if(GameManager.instance.languageNum == 2)
+            {
+                inventoryResponse.instance.emptyItems(emptyTipCN);
+            }
         }else{
             if(GameManager.instance.languageNum == 0)
             {
@@ -75,6 +81,10 @@ public class room2Box : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
+            }
+            if(GameManager.instance.languageNum == 2)
+            {
+                inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipCN);
             }
             inventoryResponse.instance.activeInventoryTip();
         }

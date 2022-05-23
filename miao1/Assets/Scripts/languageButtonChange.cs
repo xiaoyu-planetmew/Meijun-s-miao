@@ -19,12 +19,21 @@ public class languageButtonChange : MonoBehaviour
         {
             this.transform.GetChild(0).gameObject.SetActive(true);
             this.transform.GetChild(1).gameObject.SetActive(false);
+            this.transform.GetChild(2).gameObject.SetActive(false);
             //this.GetComponent<Text>().text = JanpanessString;
         }
         if(GameManager.instance.languageNum == 1)
         {
             this.transform.GetChild(1).gameObject.SetActive(true);
             this.transform.GetChild(0).gameObject.SetActive(false);
+            this.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            this.transform.GetChild(0).gameObject.SetActive(false);
+            this.transform.GetChild(1).gameObject.SetActive(false);
+            this.transform.GetChild(2).gameObject.SetActive(true);
+            //this.GetComponent<Text>().text = JanpanessString;
         }
         }
     }

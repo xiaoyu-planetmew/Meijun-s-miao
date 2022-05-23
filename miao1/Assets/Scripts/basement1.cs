@@ -7,6 +7,7 @@ public class basement1 : MonoBehaviour
     public Item target;
     public string wrongTipJ;
     public string wrongTipE;
+    public string wrongTipCN;
     public bool rightSeed = false;
     public Sprite targetSprite;
     public GameObject other1;
@@ -40,6 +41,11 @@ public class basement1 : MonoBehaviour
         {
             
             inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTipE);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            
+            inventoryResponse.instance.becomeUseful(target, this.gameObject, wrongTipCN);
         }
         inventoryResponse.instance.activeInventoryTip();
         if(other1.GetComponent<Button>().enabled == true)
