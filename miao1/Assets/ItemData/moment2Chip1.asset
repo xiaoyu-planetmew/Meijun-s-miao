@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: moment2Chip1
   itemDesJ: "\u3084\u3076\u308C\u305F\u697D\u8B5C\u4E00"
   itemDesE: Torn sheet music1
+  itemDesCN: "\u7834\u788E\u7684\u4E50\u7AE0(\u4E00)"
   itemSprite: {fileID: 21300000, guid: f7609db009cdac44baecf42ebc5ba89c, type: 3}
   itemPrice: 2

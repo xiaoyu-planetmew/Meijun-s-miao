@@ -1524,6 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &25866073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &35605017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,6 +3952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &82936028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6352,7 +6355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u7A2E\u306E\u6210\u9577\u3092\u52A9\u3051\u308B\u6B4C\u304C\u3042\u308B\u3002"
   EnglishString: I know a song that will help the plants grow.
-  ChineseString: 
+  ChineseString: "\u8BA9\u6211\u60F3\u60F3\uFF0C\u73B0\u5728\u6211\u9700\u8981\u4F60\u548C\u6211\u4E00\u8D77\u5531\u5E2E\u52A9\u751F\u957F\u7684\u6B4C\u8C23\u3002"
 --- !u!1 &141993683
 GameObject:
   m_ObjectHideFlags: 0
@@ -14318,6 +14321,7 @@ RectTransform:
   m_Children:
   - {fileID: 604264700}
   - {fileID: 1728277098}
+  - {fileID: 1540978359}
   m_Father: {fileID: 312780415}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16262,6 +16266,8 @@ MonoBehaviour:
   emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
   emptyTipE: Something's missing.
+  wrongTipCN: 
+  emptyTipCN: 
 --- !u!114 &290104217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19046,7 +19052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u904A\u3093\u3067\u304F\u308C\u3066\u3042\u308A\u304C\u3068\u3046\u3002"
   EnglishString: Thanks for playing.
-  ChineseString: 
+  ChineseString: "\u611F\u8C22\u6E38\u73A9"
 --- !u!114 &366352235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20381,6 +20387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &390148253
 GameObject:
   m_ObjectHideFlags: 0
@@ -20671,7 +20678,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: 74f304b6453a85c44944573eccf64cc7, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
-  wrongTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: aa437620ada94464c9ccee7bafdcefd8, type: 3}
   other1: {fileID: 1805652835}
@@ -21307,7 +21314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3044\u3056\uFF01"
   EnglishString: Let's begin!
-  ChineseString: 
+  ChineseString: "\u5F00\u59CB\u5427!"
 --- !u!1 &415353969
 GameObject:
   m_ObjectHideFlags: 0
@@ -22659,6 +22666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 2f47b03d4ae651d4880f14aa9e53edf4, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 22ac42bb5f3530d478d52407fb64d693, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4b9afc5436ee94644a7a66886fc63719, type: 3}
 --- !u!1 &446490479
 GameObject:
   m_ObjectHideFlags: 0
@@ -23334,6 +23342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &459244928
 GameObject:
   m_ObjectHideFlags: 0
@@ -24331,7 +24340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3053\u3053\u306B\u7A2E\u3092\u690D\u3048\u3066\u304F\u308C\u3002"
   EnglishString: Plant the seeds here.
-  ChineseString: 
+  ChineseString: "\u628A\u79CD\u5B50\u79CD\u5728\u8FD9\u91CC\u5427"
 --- !u!1 &490065694
 GameObject:
   m_ObjectHideFlags: 0
@@ -26472,6 +26481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &562346680
 GameObject:
   m_ObjectHideFlags: 0
@@ -29105,6 +29115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &616483201
 GameObject:
   m_ObjectHideFlags: 0
@@ -30221,7 +30232,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: db5e0f7d400bd9246aca574895f10e56, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
-  wrongTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: a4e59e960751d8847b437595fd64c8e2, type: 3}
   other1: {fileID: 395773082}
@@ -45138,7 +45149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3055\u3042\u3001 \u3059\u3079\u3066\u305D\u308D\u3063\u305F\u3088\u3046\u3060\u3002 "
   EnglishString: My child, it seems we are ready.
-  ChineseString: 
+  ChineseString: "\u54E6\uFF0C\u770B\u6765\u4F60\u5DF2\u7ECF\u51C6\u5907\u597D\u4E86\u4E00\u5207\u3002"
 --- !u!1 &921411944
 GameObject:
   m_ObjectHideFlags: 0
@@ -48440,6 +48451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 2f47b03d4ae651d4880f14aa9e53edf4, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 22ac42bb5f3530d478d52407fb64d693, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4b9afc5436ee94644a7a66886fc63719, type: 3}
 --- !u!1 &1003156753
 GameObject:
   m_ObjectHideFlags: 0
@@ -52471,7 +52483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u306F\u3044\uFF01"
   EnglishString: Yes!
-  ChineseString: 
+  ChineseString: "\u597D!"
 --- !u!1 &1052432491
 GameObject:
   m_ObjectHideFlags: 0
@@ -53329,6 +53341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1069223492
 GameObject:
   m_ObjectHideFlags: 0
@@ -61402,6 +61415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1173497023
 GameObject:
   m_ObjectHideFlags: 0
@@ -66727,7 +66741,7 @@ MonoBehaviour:
   playerChooseBox: {fileID: 1190268325}
   playerRespondJ: "\u3069\u3046\u305E\u3002\u3042\u3052\u308B\u308F\u3002"
   playerRespondE: Here.
-  playerRespondCN: 
+  playerRespondCN: "\u8FD9\u4E2A"
   bird: {fileID: 1600929128}
   startButton: {fileID: 15299770}
   nextPageButton: {fileID: 1606555584}
@@ -66741,7 +66755,7 @@ MonoBehaviour:
   download: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
   wrongTipJ: "\u3053\u308C\u306F\u98DF\u3079\u3089\u308C\u306A\u3044\u3088\u3002"
   wrongTipE: Do you have any food?
-  wrongTipCN: 
+  wrongTipCN: "\u4F60\u6709\u5403\u7684\u4E48?"
   emptyTip: 
 --- !u!4 &1310090193
 Transform:
@@ -66913,7 +66927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
   EnglishString: That will give energy to the seeds.
-  ChineseString: 
+  ChineseString: "\u4E3A\u79CD\u5B50\u4F20\u9012\u80FD\u91CF\u3002"
 --- !u!224 &1315984908 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3938502239763708631, guid: 0f1dd8b066858de4a94977e334840baa, type: 3}
@@ -67170,6 +67184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1324082578
 GameObject:
   m_ObjectHideFlags: 0
@@ -68506,6 +68521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1356277502
 GameObject:
   m_ObjectHideFlags: 0
@@ -70476,6 +70492,7 @@ GameObject:
   - component: {fileID: 1397711440}
   - component: {fileID: 1397711441}
   - component: {fileID: 1397711442}
+  - component: {fileID: 1397711443}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -70678,7 +70695,15 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
   - {fileID: 4900000, guid: 8507cdf7ce363774aa87b6dd33465c19, type: 3}
-  textFilesCN: []
+  textFilesCN:
+  - {fileID: 4900000, guid: 346fcedd80d65384eb3297160a654f6e, type: 3}
+  - {fileID: 4900000, guid: 4301c136ffbcdae47ab442be9427d82c, type: 3}
+  - {fileID: 4900000, guid: 07f41fbfc1e08a342936e16612b50cc4, type: 3}
+  - {fileID: 4900000, guid: d0ffe3e18f9649f42af008a27f95d5fd, type: 3}
+  - {fileID: 4900000, guid: cb28967d156e7c347bbcc6fc36d8dfa5, type: 3}
+  - {fileID: 4900000, guid: cb28967d156e7c347bbcc6fc36d8dfa5, type: 3}
+  - {fileID: 4900000, guid: cb28967d156e7c347bbcc6fc36d8dfa5, type: 3}
+  - {fileID: 4900000, guid: cb28967d156e7c347bbcc6fc36d8dfa5, type: 3}
   finish: 
   textList: []
   index: 0
@@ -70697,6 +70722,49 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 62805b61dc1b7f648ba7e508ec1b8cdc, type: 2}
   - {fileID: 11400000, guid: 1400b4e4d3c49414db30a0d1216b20e7, type: 2}
+--- !u!114 &1397711443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397711434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f8e955ef76c9044bcb7b5836340fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 1547472741298562299}
+  - {fileID: 1547472741298562298}
+  - {fileID: 1547472741298562297}
+  - {fileID: 1547472741298562296}
+  - {fileID: 246057325}
+  - {fileID: 573587176}
+  - {fileID: 1791595699}
+  - {fileID: 1814959823}
+  - {fileID: 1900044243}
+  - {fileID: 1579781484}
+  - {fileID: 661651306}
+  - {fileID: 1465495432}
+  - {fileID: 1925113596}
+  - {fileID: 1408426912}
+  - {fileID: 487605076}
+  - {fileID: 918689780}
+  - {fileID: 139742494}
+  - {fileID: 1530743967}
+  - {fileID: 1774729722}
+  - {fileID: 1479358358}
+  - {fileID: 1315682517}
+  - {fileID: 1049601467}
+  - {fileID: 411091511}
+  - {fileID: 1896518151}
+  - {fileID: 366352235}
+  - {fileID: 61477877}
+  fonts:
+  - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
+  - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
+  - {fileID: 12800000, guid: 4b4f94c8213e12243a9b2659ca442915, type: 3}
 --- !u!1 &1398188802
 GameObject:
   m_ObjectHideFlags: 0
@@ -73783,7 +73851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
   EnglishString: You must sing and dance    like me.
-  ChineseString: 
+  ChineseString: "\u4F60\u8981\u548C\u6211\u4E00\u6837\u4E00\u8FB9\u8DF3\u821E\u4E00\u8FB9\u6B4C\u5531\u3002"
 --- !u!1 &1479634053
 GameObject:
   m_ObjectHideFlags: 0
@@ -75546,6 +75614,7 @@ MonoBehaviour:
   tip: {fileID: 1429342258}
   warningTextJ: "\u9060\u3059\u304E\u3066 \u306F\u3063\u304D\u308A\u898B\u3048\u307E\u305B\u3093\u3002"
   warningTextE: It's too far.
+  warningTextCN: "\u592A\u8FDC\u4E86,\u6211\u62FF\u4E0D\u5230"
   warningTime: 5
 --- !u!1 &1513026224
 GameObject:
@@ -76590,7 +76659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u4E00\u7DD2\u306B\u6B4C\u304A\u3046\u3002"
   EnglishString: Sing with me.
-  ChineseString: 
+  ChineseString: "\u548C\u6211\u4E00\u8D77\u5531\u5427"
 --- !u!1 &1532879607
 GameObject:
   m_ObjectHideFlags: 0
@@ -77462,6 +77531,150 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.579643, y: 1.3744507}
   m_EdgeRadius: 0
+--- !u!1 &1540978358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540978359}
+  - component: {fileID: 1540978362}
+  - component: {fileID: 1540978361}
+  - component: {fileID: 1540978360}
+  m_Layer: 0
+  m_Name: btn_kaisuoCN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1540978359
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540978358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 237361672}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -162}
+  m_SizeDelta: {x: 227, y: 99}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1540978360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540978358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: a3c7989568913134bb5002e50dbd0267, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a3c7989568913134bb5002e50dbd0267, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a3c7989568913134bb5002e50dbd0267, type: 3}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1540978361}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 312780419}
+        m_TargetAssemblyTypeName: room1Box, Assembly-CSharp
+        m_MethodName: open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 133832564}
+        m_TargetAssemblyTypeName: FinalMovement, Assembly-CSharp
+        m_MethodName: continueMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1540978361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540978358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a3c7989568913134bb5002e50dbd0267, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1540978362
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540978358}
+  m_CullTransparentMesh: 1
 --- !u!1 &1542751984
 GameObject:
   m_ObjectHideFlags: 0
@@ -77836,7 +78049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u3082\u3046\u4E00\u5EA6\u8A66\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044\u3002"
   EnglishString: Try again.
-  ChineseString: 
+  ChineseString: "\u518D\u8BD5\u4E00\u6B21"
 --- !u!114 &1550013294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80172,6 +80385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1596379759
 GameObject:
   m_ObjectHideFlags: 0
@@ -91401,6 +91615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1617781432
 GameObject:
   m_ObjectHideFlags: 0
@@ -93800,6 +94015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1686604984
 GameObject:
   m_ObjectHideFlags: 0
@@ -97210,7 +97426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u306F\u3044\uFF01"
   EnglishString: Yes!
-  ChineseString: 
+  ChineseString: "\u597D!"
 --- !u!1 &1775578339
 GameObject:
   m_ObjectHideFlags: 0
@@ -97940,7 +98156,7 @@ MonoBehaviour:
   JanpanessString: "\u3042\u3042\u3001\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u2026 
     \u4F55\u304B\u98DF\u3079\u7269\u6301\u3063\u3066\u308B\uFF1F"
   EnglishString: I'm so hungry...  Do you have any food?
-  ChineseString: 
+  ChineseString: "\u6211\u597D\u997F\u554A... \u4F60\u6709\u4EC0\u4E48\u5403\u7684\u4E1C\u897F\u5417?"
 --- !u!1 &1791842886
 GameObject:
   m_ObjectHideFlags: 0
@@ -98117,6 +98333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: 391ffb9c1b6379b4a8e148a603b4ae60, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 9d067dc52f3aa7542802975d4eb48964, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4293a7099ec4d97429d6ef4c991ca574, type: 3}
 --- !u!1 &1792029650
 GameObject:
   m_ObjectHideFlags: 0
@@ -98761,7 +98978,7 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: b5f940645bf26f54a9e98af7494e075e, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
-  wrongTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
   rightSeed: 0
   targetSprite: {fileID: 21300000, guid: d471ff2011c02d4429c11d13421b4bfa, type: 3}
   other1: {fileID: 395773082}
@@ -99215,7 +99432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u304A\u3044\u3057\u305D\u3046\uFF01 \u3042\u308A\u304C\u3068\u3046\uFF01"
   EnglishString: It looks delicious. Thank you!
-  ChineseString: 
+  ChineseString: "\u8FD9\u4E2A\u770B\u8D77\u6765\u5F88\u597D\u5403.\u8C22\u8C22\u4F60!"
 --- !u!1001 &1815862023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100323,7 +100540,16 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 069e24219fdfcae42a00c66df65c5268, type: 3}
   - {fileID: 4900000, guid: e46ec370f5a89584687a00429ffa38a2, type: 3}
   - {fileID: 4900000, guid: d81e55b954a6d5d43bbb31b3fba58343, type: 3}
-  textfilesCN: []
+  textfilesCN:
+  - {fileID: 4900000, guid: fd44026bc6a46b54f8ffee58c6f45afb, type: 3}
+  - {fileID: 4900000, guid: 5ac4668e3a34366458486154d1aa83f2, type: 3}
+  - {fileID: 4900000, guid: 7d547b9ef2f1038409c31ae6e8721e04, type: 3}
+  - {fileID: 4900000, guid: 011d4fa00ee7c9e4f81b994cbbeba9b5, type: 3}
+  - {fileID: 4900000, guid: 1cf0607bac6434c46ade7ba08e987c2e, type: 3}
+  - {fileID: 4900000, guid: 11efe7d012d15b74bb96aeac00e5c505, type: 3}
+  - {fileID: 4900000, guid: 56f29ffd2a1cbbe4fb54747b93e5cbb2, type: 3}
+  - {fileID: 4900000, guid: 5798327e2ca1afe4abc0157d41861fe8, type: 3}
+  - {fileID: 4900000, guid: 65eb8940510fdc845ba2c92e51d8dfef, type: 3}
   firstMeet: 1
   isTalking: 0
   index: 0
@@ -101129,6 +101355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessSprite: {fileID: 21300000, guid: fc0cb0b4d836b2c45a009591648f01ac, type: 3}
   EnglishSprite: {fileID: 21300000, guid: 22ac42bb5f3530d478d52407fb64d693, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: 4b9afc5436ee94644a7a66886fc63719, type: 3}
 --- !u!1 &1849875984
 GameObject:
   m_ObjectHideFlags: 0
@@ -101712,10 +101939,10 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: f17596461d0dced4fa15e0e55ba0f7c3, type: 2}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
-  wrongTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
   emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   emptyTipE: Something's missing.
-  emptyTipCN: 
+  emptyTipCN: "\u597D\u50CF\u5C11\u4E86\u70B9\u4EC0\u4E48\u4E1C\u897F"
   wall: {fileID: 878043478}
 --- !u!212 &1862200914
 SpriteRenderer:
@@ -103480,7 +103707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u304A\u793C\u306B\u3001 \u3053\u306E\u30D8\u30F3\u306A\u77F3\u3092\u3082\u3089\u3063\u3066\uFF01"
   EnglishString: You can have this strange stone.
-  ChineseString: 
+  ChineseString: "\u8FD9\u4E2A\u5947\u602A\u7684\u77F3\u5934\u7ED9\u4F60\u5427."
 --- !u!1 &1900961072
 GameObject:
   m_ObjectHideFlags: 0
@@ -104952,8 +105179,8 @@ MonoBehaviour:
   Js2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   Es1: This is what I have.
   Es2: I'm hungry too.
-  CNs1: 
-  CNs2: 
+  CNs1: "\u4F60\u770B\u770B\u8FD9\u4E2A."
+  CNs2: "\u5BF9\u4E0D\u8D77,\u6211\u4E5F\u5F88\u997F"
 --- !u!1 &1935996397
 GameObject:
   m_ObjectHideFlags: 0
@@ -117373,7 +117600,7 @@ MonoBehaviour:
   seed3: {fileID: 1790307714}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
-  wrongTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
   thisSeed: {fileID: 0}
   get: {fileID: 0}
   thisobj: {fileID: 0}
@@ -117382,7 +117609,7 @@ MonoBehaviour:
   textFile: {fileID: 4900000, guid: a18f932816d820f4c9b0d4cafe2df36c, type: 3}
   textFile1J: {fileID: 4900000, guid: c9686a460f568774ea7d0d622a01aba9, type: 3}
   textFile1E: {fileID: 4900000, guid: f1232c61349695043a50a68538e327c3, type: 3}
-  textFile1CN: {fileID: 0}
+  textFile1CN: {fileID: 4900000, guid: 299f6b631c39f024c81fa3cfe4553109, type: 3}
   textList: []
   textList1: []
   panel: {fileID: 863410176}
@@ -118146,6 +118373,50 @@ MonoBehaviour:
   JanpanessString: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   EnglishString: I'm hungry too.
   ChineseString: 
+--- !u!114 &1547472741298562296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7033132299413078420, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1547472741298562293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547472741298562294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1547472741298562297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 854804362, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1547472741298562293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1547472741298562298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 895411164, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1547472741298562293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1547472741298562299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1419203046927092542, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1547472741298562293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2790612841484438542
 PrefabInstance:
   m_ObjectHideFlags: 0

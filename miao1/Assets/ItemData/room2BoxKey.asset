@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: room2BoxKey
   itemDesJ: "\u9375"
   itemDesE: Key
+  itemDesCN: "\u94A5\u5319"
   itemSprite: {fileID: 21300000, guid: 7305cf053c6258947a1b992e4adadd20, type: 3}
   itemPrice: 0

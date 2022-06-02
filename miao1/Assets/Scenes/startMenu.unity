@@ -5308,10 +5308,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: d7f6ef2b7443ddf458da791c58ef25ba, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: d7f6ef2b7443ddf458da791c58ef25ba, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: d7f6ef2b7443ddf458da791c58ef25ba, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: b6fc294f1ecfc3342b278dd8c1989e03, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 46b01b9afb9dd6a49ae1553cd38e8473, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -5415,7 +5415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b6fc294f1ecfc3342b278dd8c1989e03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46b01b9afb9dd6a49ae1553cd38e8473, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6149,7 +6149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -283}
+  m_AnchoredPosition: {x: 0, y: -253}
   m_SizeDelta: {x: 340, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858134224
@@ -6181,10 +6181,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f81c88c31e63e304fb3f9d46bd2d77da, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: f81c88c31e63e304fb3f9d46bd2d77da, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: f81c88c31e63e304fb3f9d46bd2d77da, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: f9a6d033303a3004eab297e8907562b0, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: af0c0f17735d675429974e4bbc0dca9f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 46b01b9afb9dd6a49ae1553cd38e8473, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6264,7 +6264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9a6d033303a3004eab297e8907562b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46b01b9afb9dd6a49ae1553cd38e8473, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6613,7 +6613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 94}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 747, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100715150
@@ -11672,6 +11672,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1161258507}
+        m_TargetAssemblyTypeName: startMenuStartButton, Assembly-CSharp
+        m_MethodName: startButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1236606186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12096,7 +12108,7 @@ GameObject:
   - component: {fileID: 1518261704}
   - component: {fileID: 1518261703}
   m_Layer: 5
-  m_Name: startButtonE (1)
+  m_Name: startButtonCN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12163,10 +12175,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: ef811ebe6c2d7084fbb0836b6e995f04, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: ef811ebe6c2d7084fbb0836b6e995f04, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: ef811ebe6c2d7084fbb0836b6e995f04, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 191f4b17bb9f439478fbfb45b014dafb, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 8669cdc7ff82f43459d44e747673bbee, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 8669cdc7ff82f43459d44e747673bbee, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 8669cdc7ff82f43459d44e747673bbee, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 46b01b9afb9dd6a49ae1553cd38e8473, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -12185,7 +12197,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1161258507}
+        m_TargetAssemblyTypeName: startMenuStartButton, Assembly-CSharp
+        m_MethodName: startButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12210,7 +12234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 191f4b17bb9f439478fbfb45b014dafb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81288798598c25741b516c0f40841d66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17374,6 +17398,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1161258507}
+        m_TargetAssemblyTypeName: startMenuStartButton, Assembly-CSharp
+        m_MethodName: startButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1891400402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22308,7 +22344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -133}
+  m_AnchoredPosition: {x: 0, y: -103}
   m_SizeDelta: {x: 340, y: 74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986358392
@@ -27555,7 +27591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -209}
+  m_AnchoredPosition: {x: 0, y: -179}
   m_SizeDelta: {x: 340, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114237409

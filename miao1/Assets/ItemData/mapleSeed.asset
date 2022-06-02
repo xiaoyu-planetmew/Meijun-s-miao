@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: mapleSeed
   itemDesJ: "\u6953\u306E\u7A2E"
   itemDesE: Maple seed
+  itemDesCN: "\u67AB\u6811\u79CD\u5B50"
   itemSprite: {fileID: 21300000, guid: 46a17fe8cad0a3341927ae5fa37e20db, type: 3}
   itemPrice: 0
