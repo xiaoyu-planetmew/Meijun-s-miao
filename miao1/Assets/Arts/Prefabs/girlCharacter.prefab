@@ -3803,6 +3803,8 @@ MonoBehaviour:
   Js2: 
   Es1: 
   Es2: 
+  CNs1: 
+  CNs2: 
 --- !u!1 &7878123780192769100
 GameObject:
   m_ObjectHideFlags: 0

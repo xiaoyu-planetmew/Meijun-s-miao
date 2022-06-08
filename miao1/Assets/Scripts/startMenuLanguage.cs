@@ -24,7 +24,7 @@ public class startMenuLanguage : MonoBehaviour
         {
             this.transform.GetChild(1).gameObject.SetActive(true);
             this.transform.GetChild(0).gameObject.SetActive(false);
-            this.transform.GetChild(1).gameObject.SetActive(false);
+            this.transform.GetChild(2).gameObject.SetActive(false);
         }
         if(GameObject.Find("language").GetComponent<startMenuStartButton>().languageNum == 2)
         {
