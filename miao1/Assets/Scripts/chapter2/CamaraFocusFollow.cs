@@ -12,7 +12,7 @@ public class CamaraFocusFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 3.6f, this.transform.position.z);
     }
