@@ -8,7 +8,7 @@ public class teleportButtonActive : MonoBehaviour
     public GameObject button;
     public Item _item;
     public int e;
-    GameObject player;
+    public GameObject player;
     public float jumpDistance;
     bool holdItem = true;
     // Start is called before the first frame update
@@ -20,6 +20,8 @@ public class teleportButtonActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("GameManager"))
+        {
         if(_item != null && !GameManager.instance.events[e])
         {
             if(!GameManager.instance.items.Contains(_item))
@@ -32,6 +34,7 @@ public class teleportButtonActive : MonoBehaviour
             holdItem = true;
         }
         player = GameManager.instance.player;
+        }
         if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) < jumpDistance) 
         && (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) < 10) && holdItem)
         {
