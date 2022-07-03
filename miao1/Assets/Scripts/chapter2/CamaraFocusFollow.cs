@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public class CamaraFocusFollow : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class CamaraFocusFollow : MonoBehaviour
             if(cam.name == "Main Camera")
             {
                 cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
-                cam.transform.position = new Vector3(-280f, 2.86f, -10f);
+                cam.transform.DOMove(new Vector3(-280f, 2.86f, -10f), 0.5f);
+                //cam.transform.position = new Vector3(-280f, 2.86f, -10f);
                 cam.fieldOfView = 100;
             }
         }else{
