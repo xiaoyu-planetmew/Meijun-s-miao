@@ -3579,7 +3579,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: dcfdfd9c4dde5034fb1d295dc556e98c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3805,6 +3805,8 @@ MonoBehaviour:
   Es2: 
   CNs1: 
   CNs2: 
+  fontJE: {fileID: 0}
+  fontCN: {fileID: 0}
 --- !u!1 &7878123780192769100
 GameObject:
   m_ObjectHideFlags: 0

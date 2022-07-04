@@ -30,16 +30,25 @@ public class dialogLetters : MonoBehaviour
         this.transform.GetChild(0).GetComponent<Text>().text = "";
         if(GameManager.instance.languageNum == 0)
         {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            this.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
             this.transform.GetChild(0).GetComponent<Text>().DOText(strJ, strJ.Length * 0.05f);
             StartCoroutine(SetText(strJ.Length * 0.05f));
         }
         if(GameManager.instance.languageNum == 1)
         {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            this.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
             this.transform.GetChild(0).GetComponent<Text>().DOText(strE, strE.Length * 0.05f);
             StartCoroutine(SetText(strE.Length * 0.05f));
         }
         if(GameManager.instance.languageNum == 2)
         {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+            this.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
             this.transform.GetChild(0).GetComponent<Text>().DOText(strCN, strCN.Length * 0.05f);
             StartCoroutine(SetText(strCN.Length * 0.05f));
         }

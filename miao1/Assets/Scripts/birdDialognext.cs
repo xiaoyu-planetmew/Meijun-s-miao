@@ -10,6 +10,9 @@ public class birdDialognext : MonoBehaviour
     public string Es2;
     public string CNs1;
     public string CNs2;
+    
+    public Font fontJE;
+    public Font fontCN;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,17 +32,23 @@ public class birdDialognext : MonoBehaviour
         if(GameManager.instance.languageNum == 0)
         {
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = Js1;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().font = fontJE;
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = Js2;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().font = fontJE;
         }
         if(GameManager.instance.languageNum == 1)
         {
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = Es1;
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = Es2;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().font = fontJE;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().font = fontJE;
         }
         if(GameManager.instance.languageNum == 2)
         {
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().text = CNs1;
             GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().text = CNs2;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(0).GetComponent<Text>().font = fontCN;
+            GameManager.instance.player.transform.Find("Canvas").GetChild(1).transform.GetChild(1).GetComponent<Text>().font = fontCN;
         }
     }
     public void click2()

@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
   strE: You must sing and dance  like me.
-  strCN: 
+  strCN: "\u4F60\u8981\u548C\u6211\u4E00\u6837\u4E00\u8FB9\u8DF3\u821E\u4E00\u8FB9\u6B4C\u5531\u3002"
   str: 
   textSpeed: 0.05
 --- !u!114 &25866076
@@ -4007,7 +4007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u306F\u3044\uFF01"
   strE: Yes!
-  strCN: 
+  strCN: "\u597D!"
   str: "\u306F\u3044\uFF01"
   textSpeed: 0.05
 --- !u!114 &82936031
@@ -16266,8 +16266,8 @@ MonoBehaviour:
   emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
   emptyTipE: Something's missing.
-  wrongTipCN: 
-  emptyTipCN: 
+  wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
+  emptyTipCN: "\u6211\u5E94\u8BE5\u53BB\u627E\u4E2A\u4E1C\u897F\u6253\u5F00\u5B83"
 --- !u!114 &290104217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20872,7 +20872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u30A2\u30A4\u30C6\u30E0\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044"
   EnglishString: Choose An Item
-  ChineseString: 
+  ChineseString: "\u9009\u62E9\u4E00\u4EF6\u7269\u54C1"
 --- !u!95 &397126189
 Animator:
   serializedVersion: 3
@@ -21770,7 +21770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u306F\u3044\uFF01"
   strE: Yes!
-  strCN: 
+  strCN: "\u597D!"
   str: 
   textSpeed: 0.05
 --- !u!114 &422136529
@@ -25389,6 +25389,24 @@ MonoBehaviour:
   panel: {fileID: 1173497023}
   text1: {fileID: 1542751984}
   text2: {fileID: 1408426910}
+  textfilesJ:
+  - {fileID: 4900000, guid: e4d561d04ffe3de488436ab0186bd444, type: 3}
+  - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
+  - {fileID: 4900000, guid: 187828e4ca176db418e2970e5f10660b, type: 3}
+  - {fileID: 4900000, guid: 309ea76c6b1db354badfc6dcf6877bb2, type: 3}
+  - {fileID: 4900000, guid: 8897c60d5ec95f040b141db992d067ef, type: 3}
+  textfilesE:
+  - {fileID: 4900000, guid: e4d561d04ffe3de488436ab0186bd444, type: 3}
+  - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
+  - {fileID: 4900000, guid: 187828e4ca176db418e2970e5f10660b, type: 3}
+  - {fileID: 4900000, guid: 309ea76c6b1db354badfc6dcf6877bb2, type: 3}
+  - {fileID: 4900000, guid: 8897c60d5ec95f040b141db992d067ef, type: 3}
+  textfilesCN:
+  - {fileID: 4900000, guid: e4d561d04ffe3de488436ab0186bd444, type: 3}
+  - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
+  - {fileID: 4900000, guid: 187828e4ca176db418e2970e5f10660b, type: 3}
+  - {fileID: 4900000, guid: 309ea76c6b1db354badfc6dcf6877bb2, type: 3}
+  - {fileID: 4900000, guid: 8897c60d5ec95f040b141db992d067ef, type: 3}
   textfiles:
   - {fileID: 4900000, guid: e4d561d04ffe3de488436ab0186bd444, type: 3}
   - {fileID: 4900000, guid: 352f5f75de8ba964a931ccd809bc8356, type: 3}
@@ -25420,7 +25438,15 @@ MonoBehaviour:
   - Ancient Song 3
   - Ancient Song 4
   - Ancient Song 5
-  nameListCN: []
+  nameListCN:
+  - "\u53E4\u4EE3\u4E50\u8C31(\u4E00)"
+  - "\u53E4\u4EE3\u4E50\u8C31(\u4E8C)"
+  - "\u53E4\u4EE3\u4E50\u8C31(\u4E09)"
+  - "\u53E4\u4EE3\u4E50\u8C31(\u56DB)"
+  - "\u53E4\u4EE3\u4E50\u8C31(\u4E94)"
+  fontJE: {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
+  fontCN: {fileID: 12800000, guid: 4b4f94c8213e12243a9b2659ca442915, type: 3}
+  nowPlaying: 0
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26746,7 +26772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u7A2E\u306E\u6210\u9577\u3092\u52A9\u3051\u308B\u6B4C\u304C\u3042\u308B\u3002"
   strE: I know a song that will help the plants grow.
-  strCN: 
+  strCN: "\u8BA9\u6211\u60F3\u60F3\uFF0C\u73B0\u5728\u6211\u9700\u8981\u4F60\u548C\u6211\u4E00\u8D77\u5531\u5E2E\u52A9\u751F\u957F\u7684\u6B4C\u8C23\u3002"
   str: 
   textSpeed: 0.05
 --- !u!114 &570435442
@@ -27000,6 +27026,7 @@ GameObject:
   - component: {fileID: 573587175}
   - component: {fileID: 573587177}
   - component: {fileID: 573587176}
+  - component: {fileID: 573587178}
   m_Layer: 0
   m_Name: tipText
   m_TagString: Untagged
@@ -27068,6 +27095,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573587174}
   m_CullTransparentMesh: 1
+--- !u!114 &573587178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573587174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JanpanessString: The area ahead, I'll explore it later
+  EnglishString: The area ahead, I'll explore it later
+  ChineseString: "\u524D\u9762\u7684\u533A\u57DF,\u4EE5\u540E\u518D\u6765\u63A2\u7D22\u5427"
 --- !u!1001 &576592299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46481,6 +46523,7 @@ MonoBehaviour:
   button: {fileID: 458221975}
   _item: {fileID: 11400000, guid: 62805b61dc1b7f648ba7e508ec1b8cdc, type: 2}
   e: 24
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &958209320
 GameObject:
@@ -46693,6 +46736,7 @@ MonoBehaviour:
   button: {fileID: 614112535}
   _item: {fileID: 0}
   e: 0
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &963100406
 GameObject:
@@ -51238,6 +51282,7 @@ MonoBehaviour:
   button: {fileID: 1617384691}
   _item: {fileID: 0}
   e: 0
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &1041240667
 GameObject:
@@ -53126,10 +53171,7 @@ MonoBehaviour:
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
-    ModeOverride: 0
     LensShift: {x: 0, y: 0}
-    GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -79701,6 +79743,7 @@ GameObject:
   - component: {fileID: 1579781483}
   - component: {fileID: 1579781485}
   - component: {fileID: 1579781484}
+  - component: {fileID: 1579781486}
   m_Layer: 0
   m_Name: tipText
   m_TagString: Untagged
@@ -79769,6 +79812,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579781482}
   m_CullTransparentMesh: 1
+--- !u!114 &1579781486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579781482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JanpanessString: "\u3053\u308C\u306F\u98DF\u3079\u3089\u308C\u306A\u3044\u3088\u3002"
+  EnglishString: I can't eat it.
+  ChineseString: "\u6211\u4E0D\u80FD\u5403\u8FD9\u4E2A\u5440"
 --- !u!1 &1584919121
 GameObject:
   m_ObjectHideFlags: 0
@@ -86409,8 +86467,10 @@ MonoBehaviour:
   Js2: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   Es1: This is what I have.
   Es2: I'm hungry too.
-  CNs1: 
-  CNs2: 
+  CNs1: "\u7ED9\u4F60\u8FD9\u4E2A"
+  CNs2: "\u53EF\u662F\u6211\u4E5F\u5F88\u997F"
+  fontJE: {fileID: 12800000, guid: f9e42fe4706dbe24eb0ef182b6d0c3e0, type: 3}
+  fontCN: {fileID: 12800000, guid: 086865f5dbe70e747ba46dac20bd675e, type: 3}
 --- !u!1 &1607887166
 GameObject:
   m_ObjectHideFlags: 0
@@ -97638,6 +97698,7 @@ MonoBehaviour:
   button: {fileID: 1684417500}
   _item: {fileID: 0}
   e: 0
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &1786997732
 GameObject:
@@ -98388,7 +98449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u4E00\u7DD2\u306B\u6B4C\u304A\u3046\u3002"
   strE: Sing with me.
-  strCN: 
+  strCN: "\u548C\u6211\u4E00\u8D77\u5531\u5427"
   str: 
   textSpeed: 0.05
 --- !u!114 &1792029653
@@ -101920,6 +101981,7 @@ MonoBehaviour:
   button: {fileID: 1351049190}
   _item: {fileID: 0}
   e: 3
+  player: {fileID: 0}
   jumpDistance: 2
 --- !u!114 &1862200912
 MonoBehaviour:
@@ -102999,7 +103061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u305D\u3046\u3059\u308C\u3070\u7A2E\u306B\u529B\u304C\u5C4A\u304F\u3002"
   strE: That will give energy      to the seeds.
-  strCN: 
+  strCN: "\u4E3A\u79CD\u5B50\u4F20\u9012\u80FD\u91CF\u3002"
   str: 
   textSpeed: 0.05
 --- !u!114 &1878433870
@@ -103435,6 +103497,7 @@ GameObject:
   - component: {fileID: 1896518150}
   - component: {fileID: 1896518152}
   - component: {fileID: 1896518151}
+  - component: {fileID: 1896518153}
   m_Layer: 0
   m_Name: tipText
   m_TagString: Untagged
@@ -103503,6 +103566,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896518149}
   m_CullTransparentMesh: 1
+--- !u!114 &1896518153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896518149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JanpanessString: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
+  EnglishString: This doesn't seem to be it.
+  ChineseString: "\u597D\u50CF\u4E0D\u662F\u8FD9\u4E2A\u3002  "
 --- !u!1 &1899568831
 GameObject:
   m_ObjectHideFlags: 0
@@ -104320,7 +104398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u3055\u3042\u3001 \u3059\u3079\u3066\u305D\u308D\u3063\u305F\u3088\u3046\u3060\u3002 "
   strE: My child, it seems we are ready.
-  strCN: 
+  strCN: "\u54E6\uFF0C\u770B\u6765\u4F60\u5DF2\u7ECF\u51C6\u5907\u597D\u4E86\u4E00\u5207\u3002"
   str: 
   textSpeed: 0.05
 --- !u!114 &1919136810
@@ -105181,6 +105259,8 @@ MonoBehaviour:
   Es2: I'm hungry too.
   CNs1: "\u4F60\u770B\u770B\u8FD9\u4E2A."
   CNs2: "\u5BF9\u4E0D\u8D77,\u6211\u4E5F\u5F88\u997F"
+  fontJE: {fileID: 12800000, guid: f9e42fe4706dbe24eb0ef182b6d0c3e0, type: 3}
+  fontCN: {fileID: 12800000, guid: 086865f5dbe70e747ba46dac20bd675e, type: 3}
 --- !u!1 &1935996397
 GameObject:
   m_ObjectHideFlags: 0
@@ -105418,6 +105498,7 @@ MonoBehaviour:
   button: {fileID: 1594374490}
   _item: {fileID: 0}
   e: 0
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &1940316424
 GameObject:
@@ -106404,7 +106485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strJ: "\u3044\u3056\uFF01"
   strE: Let's begin!
-  strCN: 
+  strCN: "\u5F00\u59CB\u5427!"
   str: 
   textSpeed: 0.05
 --- !u!114 &1966297805
@@ -106492,6 +106573,7 @@ MonoBehaviour:
   button: {fileID: 1323034294}
   _item: {fileID: 0}
   e: 0
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &1974052190
 GameObject:
@@ -116521,6 +116603,7 @@ MonoBehaviour:
   button: {fileID: 21735358}
   _item: {fileID: 11400000, guid: 1400b4e4d3c49414db30a0d1216b20e7, type: 2}
   e: 25
+  player: {fileID: 0}
   jumpDistance: 1
 --- !u!1 &2122283527
 GameObject:
@@ -118321,6 +118404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7727535330875900416, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dcfdfd9c4dde5034fb1d295dc556e98c, type: 2}
     - target: {fileID: 7830293831711687043, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
@@ -118352,6 +118439,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1714724433, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
     - {fileID: 460085380, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+    - {fileID: 108140578, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
 --- !u!1 &1547472741298562294 stripped
 GameObject:
@@ -118372,7 +118460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JanpanessString: "\u79C1\u3082\u304A\u306A\u304B\u304C\u7A7A\u3044\u305F\u308F\u3002"
   EnglishString: I'm hungry too.
-  ChineseString: 
+  ChineseString: "\u6211\u4E5F\u5F88\u997F\u5440"
 --- !u!114 &1547472741298562296 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7033132299413078420, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}

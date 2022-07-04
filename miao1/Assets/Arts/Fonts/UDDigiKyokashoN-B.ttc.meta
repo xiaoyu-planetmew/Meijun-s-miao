@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1f6734ba1a2a5a4aa121be2283a91ad
+guid: f9e42fe4706dbe24eb0ef182b6d0c3e0
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - UD Digi Kyokasho N-B
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

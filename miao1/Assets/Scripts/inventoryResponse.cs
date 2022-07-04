@@ -64,6 +64,9 @@ public class inventoryResponse : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 tipUI.transform.GetChild(0).GetComponent<Text>().text = "これは" + _item.itemDesJ + "です。"; 
+                GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+                tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                DestroyImmediate(obj);
                 tipUI.SetActive(true);
                 StopAllCoroutines();
                 StartCoroutine(stopTip("これは" + _item.itemDesJ + "です。", 4f));
@@ -71,6 +74,9 @@ public class inventoryResponse : MonoBehaviour
             if(GameManager.instance.languageNum == 1)
             {
                 tipUI.transform.GetChild(0).GetComponent<Text>().text = "I can't use this item"; 
+                GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+                tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                DestroyImmediate(obj);
                 tipUI.SetActive(true);
                 StopAllCoroutines();
                 StartCoroutine(stopTip("I can't use this item", 4f));
@@ -78,6 +84,9 @@ public class inventoryResponse : MonoBehaviour
             if(GameManager.instance.languageNum == 2)
             {
                 tipUI.transform.GetChild(0).GetComponent<Text>().text = "我不能用这个"; 
+                GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+                tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                DestroyImmediate(obj);
                 tipUI.SetActive(true);
                 StopAllCoroutines();
                 StartCoroutine(stopTip("我不能用这个", 4f));
@@ -128,7 +137,25 @@ public class inventoryResponse : MonoBehaviour
     }
     public void emptyItems(string str)
     {
-        tipUI.transform.GetChild(0).GetComponent<Text>().text = str; 
+        tipUI.transform.GetChild(0).GetComponent<Text>().text = str;
+        if(GameManager.instance.languageNum == 0)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+            tipUI.transform.GetChild(0).GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
         tipUI.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(stopTip(str, 2f));

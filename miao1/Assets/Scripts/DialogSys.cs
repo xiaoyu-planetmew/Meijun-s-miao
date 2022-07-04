@@ -184,6 +184,11 @@ public class DialogSys : MonoBehaviour
                 textNum = 1;
                 //holdTarget = true;
             }
+            else 
+            {
+                GetTextFromFile(textfiles[2]);
+                textNum = 2;
+            }
             /*
             for (int i = 0; i < GameManager.instance.items.Count; i++)
             {
@@ -492,6 +497,24 @@ public class DialogSys : MonoBehaviour
     {
         //Debug.Log(textList[index].Length);
         textFinished = false;
+        if(GameManager.instance.languageNum == 0)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            textLabelleft.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            textLabelleft.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+            textLabelleft.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
         textLabelleft.GetComponent<Text>().text = "";
         for(int i = 0; i < textList[index].Length; i++)
         {
@@ -505,6 +528,24 @@ public class DialogSys : MonoBehaviour
     IEnumerator SetTextRight()
     {
         textFinished = false;
+        if(GameManager.instance.languageNum == 0)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            textLabelright.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+            textLabelright.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+            textLabelright.GetComponent<Text>().font = obj.GetComponent<Text>().font;
+            DestroyImmediate(obj);
+        }
         textLabelright.GetComponent<Text>().text = "";
         //Debug.Log(textList[index].Length);
         for(int i = 0; i < textList[index].Length; i++)

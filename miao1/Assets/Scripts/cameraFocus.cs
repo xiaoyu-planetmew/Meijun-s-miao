@@ -16,6 +16,9 @@ public class cameraFocus : MonoBehaviour
     public GameObject panel;
     public GameObject text1;
     public GameObject text2;
+    public List<TextAsset> textfilesJ = new List<TextAsset>();
+    public List<TextAsset> textfilesE = new List<TextAsset>();
+    public List<TextAsset> textfilesCN = new List<TextAsset>();
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<string> textList = new List<string>();
     public List<Sprite> BGList = new List<Sprite>();
@@ -23,11 +26,13 @@ public class cameraFocus : MonoBehaviour
     public List<string> nameListJ = new List<string>();
     public List<string> nameListE = new List<string>();
     public List<string> nameListCN = new List<string>();
+    public Font fontJE;
+    public Font fontCN;
     int index;
     float loX;
     float loY;
     float loZ;
-    int nowPlaying;
+    [SerializeField]int nowPlaying;
     //public Transform homeLocation;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +44,31 @@ public class cameraFocus : MonoBehaviour
     void Update()
     {
         text2.GetComponent<Text>().text = GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().output;
+    }
+    public void languageChange()
+    {
+        textfiles.Clear();
+        if(GameManager.instance.languageNum == 0)
+        {
+            for(int i=0; i<textfilesJ.Count; i++)
+            {
+                textfiles.Add(textfilesJ[i]);
+            }
+        }
+        if(GameManager.instance.languageNum == 1)
+        {
+            for(int i=0; i<textfilesE.Count; i++)
+            {
+                textfiles.Add(textfilesE[i]);
+            }
+        }
+        if(GameManager.instance.languageNum == 2)
+        {
+            for(int i=0; i<textfilesE.Count; i++)
+            {
+                textfiles.Add(textfilesCN[i]);
+            }
+        }
     }
     void GetTextFromFile(TextAsset file)
     {
@@ -55,6 +85,7 @@ public class cameraFocus : MonoBehaviour
     }
     void fileChoose()
     {
+        //languageChange();
         if((GameManager.instance.events[0] && GameManager.instance.events[1] && GameManager.instance.events[6] && GameManager.instance.events[8]) 
         && !(GameManager.instance.events[9]))
         {
@@ -65,14 +96,17 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[0];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[0];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 2)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[0];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontCN;
             }
         }else
         if((GameManager.instance.events[5] && GameManager.instance.events[10] && GameManager.instance.events[7] && GameManager.instance.events[8]) 
@@ -85,14 +119,17 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[1];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[1];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 2)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[1];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontCN;
             }
         }else
         if((GameManager.instance.events[12] && GameManager.instance.events[13] && GameManager.instance.events[14] && GameManager.instance.events[8]) 
@@ -105,14 +142,17 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[2];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[2];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 2)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[2];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontCN;
             }
         }else
         if((GameManager.instance.events[16] && GameManager.instance.events[17] && GameManager.instance.events[18] && GameManager.instance.events[8]) 
@@ -125,14 +165,17 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[3];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[3];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 2)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[3];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontCN;
             }
         }
         if((GameManager.instance.events[20] && GameManager.instance.events[21] && GameManager.instance.events[22] && GameManager.instance.events[8]) 
@@ -145,14 +188,17 @@ public class cameraFocus : MonoBehaviour
             if(GameManager.instance.languageNum == 0)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListJ[4];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 1)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListE[4];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontJE;
             }
             if(GameManager.instance.languageNum == 2)
             {
                 focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = nameListCN[4];
+                focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().font = fontCN;
             }
         }
         index = 0;
