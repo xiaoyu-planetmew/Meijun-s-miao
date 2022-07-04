@@ -7,6 +7,7 @@ public class PortalJump : MonoBehaviour
     public Transform target;
     public GameObject player;
     public GameObject mask;
+    public bool underWater = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,12 @@ public class PortalJump : MonoBehaviour
     public void teleport()
     {
         player.transform.position = target.transform.position;
+        if(underWater)
+        {
+            player.GetComponent<PlayerUnderWaterControl>().underWater = true;
+        }else{
+            player.GetComponent<PlayerUnderWaterControl>().underWater = false;
+        }
         StartCoroutine(ShowMask());
     }
     IEnumerator ShowMask()
