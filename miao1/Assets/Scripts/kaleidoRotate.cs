@@ -11,11 +11,36 @@ using UnityEngine.EventSystems;
     {
         public bool canBeDrag = true;
         public bool draging;
+    public bool right;
         public Vector2 directionTo;
         public Vector2 directionFrom; 
         public Vector2 directionDelta; 
         public Vector2 cursePosition;
         public Camera pressEventCamera;
+        public List<float> angles = new List<float>();
+        void Update()
+        {
+            
+            //Debug.Log(i);
+            //Debug.Log((Mathf.Abs(this.transform.localEulerAngles.z - angles[i])));
+                if((this.transform.localEulerAngles.z < 5 || this.transform.localEulerAngles.z > 355) && !draging)
+                {
+                    right = true;
+                    //Debug.Log(angles[i]);
+                }
+                else
+                {
+                    right = false;
+                }
+            
+            
+            if (this.transform.parent.GetComponent<kaledoControl>().groupRight)
+            {
+            //this.transform.eulerAngles
+                this.transform.rotation = Quaternion.AngleAxis(0, Vector3.zero);
+                //this.transform.eulerAngles = Vector3.MoveTowards(this.transform.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 5f);
+            }
+        }
         public void OnDrag(PointerEventData eventData)
         {
            if(canBeDrag)

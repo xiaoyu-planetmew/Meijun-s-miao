@@ -11,6 +11,8 @@ public class kaledoControl : MonoBehaviour
     public GameObject activedRing;
     public int activedRingNum;
     public float speed = 5;
+    public bool groupDraging;
+    public bool groupRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,26 +30,38 @@ public class kaledoControl : MonoBehaviour
             }
         }
         rotateStop();
-        
+        rotateRight();
     }
     void rotateStop()
     {
         for(int i=0; i<rings.Count; i++)
         {
-            if(rings[i].GetComponent<kaleidoRotate>().draging = true)
+            if(rings[i].GetComponent<kaleidoRotate>().draging == true)
             {
+                groupDraging = true;
                 return;
                 //Debug.Log("r1");
-            }
-            
-            
-            if((rings[i].transform.localEulerAngles.z > 5 || rings[i].transform.localEulerAngles.z < 355))
+            }else
             {
-                return;
-                //Debug.Log("r2");
+                groupDraging = false;
             }
-            //Debug.Log("r3");
-            rings[i].transform.eulerAngles = Vector3.MoveTowards(rings[i].transform.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * speed); 
+        }
+        
+    }
+    void rotateRight()
+    {
+        for (int j = 0; j < rings.Count; j++)
+        {
+            
+            if (rings[j].GetComponent<kaleidoRotate>().right == false)
+            {
+                groupRight = false;
+
+                UnityEngine.Debug.Log("r1");
+                return;
+            }
+            if(!groupDraging)
+            groupRight = true;
         }
     }
 }
