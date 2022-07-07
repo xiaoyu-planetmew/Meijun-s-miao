@@ -255,7 +255,20 @@ public class AllIn1Shader : MonoBehaviour
         SetKeyword("FOG_ON");
         SetSceneDirty();
     }
-
+    public void SetKeywordOn(string keyword)
+    {
+        if (destroyed) return;
+        if (currMaterial == null)
+        {
+            FindCurrMaterial();
+            if (currMaterial == null)
+            {
+                MissingRenderer();
+                return;
+            }
+        }
+        currMaterial.EnableKeyword(keyword);
+    }
     private void SetKeyword(string keyword, bool state = false)
     {
         if (destroyed) return;

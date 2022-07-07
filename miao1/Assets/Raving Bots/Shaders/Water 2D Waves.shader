@@ -24,6 +24,7 @@ Shader "Water/Water 2D Waves"
 			"IgnoreProjector"="True" 
 			"RenderType"="Transparent" 
 			"PreviewType"="Plane"
+			"RenderPipeline" = "UniversalPipeline"
 		}
 		
 		Cull Off
@@ -34,7 +35,7 @@ Shader "Water/Water 2D Waves"
 		GrabPass { }
 		Pass 
 		{
-			CGPROGRAM
+			HLSLPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			
@@ -98,7 +99,7 @@ Shader "Water/Water 2D Waves"
 				
 				return c;
 			}
-			ENDCG
+			ENDHLSL
 		}
 	}
 }

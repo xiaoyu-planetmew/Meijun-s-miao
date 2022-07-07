@@ -286,11 +286,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 744790651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0e452efae4bd546b5601489e7faa5c, type: 3}
+  m_Script: {fileID: 11500000, guid: fcca91542e6bb3f4895a62cf3c037f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDrag: 1
-  draging: 0
+  angles:
+  - 0
+  - 360
+  highLight0: {fileID: 0}
+  highLight1: {fileID: 0}
+  highLight2: {fileID: 0}
+  highLight3: {fileID: 0}
+  f: 0
+  speed: 0
 --- !u!114 &744790654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +511,10 @@ MonoBehaviour:
   - 180
   - 270
   - 360
+  highLight0: {fileID: 0}
+  highLight1: {fileID: 0}
+  highLight2: {fileID: 0}
+  highLight3: {fileID: 0}
   f: 45
   speed: 50
 --- !u!1 &1166025170
@@ -553,11 +564,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166025170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0e452efae4bd546b5601489e7faa5c, type: 3}
+  m_Script: {fileID: 11500000, guid: fcca91542e6bb3f4895a62cf3c037f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDrag: 1
-  draging: 0
+  angles:
+  - 0
+  - 360
+  highLight0: {fileID: 0}
+  highLight1: {fileID: 0}
+  highLight2: {fileID: 0}
+  highLight3: {fileID: 0}
+  f: 0
+  speed: 0
 --- !u!114 &1166025173
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -41,6 +41,13 @@ using UnityEngine.EventSystems;
             {
                 if(!this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().draging)
                 {
+                    this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().passiveRotation(directionTo, directionFrom, this.transform.parent.gameObject.GetComponent<kaledoControl>().directions[i]);
+                }
+            }
+            /*for(int i=0; i<this.transform.parent.gameObject.GetComponent<kaledoControl>().rings.Count; i++)
+            {
+                if(!this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().draging)
+                {
                     this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().passiveRotation(
                     new Vector2
                     (directionDelta.x/(this.transform.parent.gameObject.GetComponent<kaledoControl>().directions[this.transform.parent.gameObject.GetComponent<kaledoControl>().activedRingNum]) 
@@ -50,16 +57,40 @@ using UnityEngine.EventSystems;
                     cursePosition,
                     pressEventCamera);
                 }
-            }
+            }*/
             draging = true;
         }
-        public void passiveRotation(Vector2 directionDeltaFromActivedRing, Vector2 cursePositionFromActivedRing, Camera pressEventCameraFromActivedRing)
+        public Quaternion passiveFromToRotation(Vector2 u, Vector2 v, float speed)
         {
+            float lTheta = Vector2.Dot(u.normalized, v.normalized);
+
+            if (lTheta >= 1f)
+            {
+                return Quaternion.identity;
+            } 
+            else if (lTheta <= -1f)
+            {
+                Vector3 lSimpleAxis = Vector3.Cross(u,  Vector3.right);
+                if (lSimpleAxis.sqrMagnitude == 0f) { lSimpleAxis = Vector3.Cross(u, Vector3.up); }
+
+                return Quaternion.AngleAxis(180f, lSimpleAxis);
+            }
+
+            float lRadians = Mathf.Acos(lTheta) * speed;
+            Vector3 lAxis = Vector3.Cross(u, v);
+
+            return Quaternion.AngleAxis(lRadians * Mathf.Rad2Deg, lAxis);
+        }
+        public void passiveRotation(Vector2 directionDeltaFromActivedRing, Vector2 cursePositionFromActivedRing, float speed)
+        {
+            /*
             Vector2 curSelfScreenPosition = RectTransformUtility.WorldToScreenPoint(pressEventCameraFromActivedRing, transform.position);
             directionTo = curSelfScreenPosition - cursePositionFromActivedRing;
             //directionDelta = eventData.delta;
             directionFrom = directionTo - directionDeltaFromActivedRing;
             this.transform.rotation *= Quaternion.FromToRotation(directionTo, directionFrom);
+            */
+            this.transform.rotation *= passiveFromToRotation(directionDeltaFromActivedRing, cursePositionFromActivedRing, speed);
         }
     }
 //}
