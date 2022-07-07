@@ -37,16 +37,16 @@ public class kaledoControl : MonoBehaviour
             if(rings[i].GetComponent<kaleidoRotate>().draging = true)
             {
                 return;
-                Debug.Log("r1");
+                //Debug.Log("r1");
             }
             
             
             if((rings[i].transform.localEulerAngles.z > 5 || rings[i].transform.localEulerAngles.z < 355))
             {
                 return;
-                Debug.Log("r2");
+                //Debug.Log("r2");
             }
-            Debug.Log("r3");
+            //Debug.Log("r3");
             rings[i].transform.eulerAngles = Vector3.MoveTowards(rings[i].transform.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * speed); 
         }
     }
