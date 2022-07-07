@@ -28270,6 +28270,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1779034652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567518428429453479, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1567827598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1779034653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779034652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fb29acc81dc634cae5711d9e2f08ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781467383
 GameObject:
   m_ObjectHideFlags: 0
@@ -29824,7 +29841,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2015771872, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
   m_PrefabInstance: {fileID: 1567827598}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1779034652}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
@@ -30079,6 +30096,18 @@ MonoBehaviour:
       - m_Target: {fileID: 741615960}
         m_TargetAssemblyTypeName: PortalJump, Assembly-CSharp
         m_MethodName: teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1897293605}
+        m_TargetAssemblyTypeName: AllIn1Shader, Assembly-CSharp
+        m_MethodName: ClearAllKeywords
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32058,6 +32087,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1897293605}
+        m_TargetAssemblyTypeName: AllIn1Shader, Assembly-CSharp
+        m_MethodName: SetKeywordOn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DISTORT_ON
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2014956311

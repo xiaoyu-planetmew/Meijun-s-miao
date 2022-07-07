@@ -189,7 +189,7 @@ Material:
     - _Cutoff: 0.352
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DistortAmount: 0.03
+    - _DistortAmount: 0.05
     - _DistortTexXSpeed: 5
     - _DistortTexYSpeed: 5
     - _DoubleSidedLighting: 0
