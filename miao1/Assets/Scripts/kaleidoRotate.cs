@@ -23,7 +23,7 @@ using UnityEngine.EventSystems;
             
             //Debug.Log(i);
             //Debug.Log((Mathf.Abs(this.transform.localEulerAngles.z - angles[i])));
-                if((this.transform.localEulerAngles.z < 5 || this.transform.localEulerAngles.z > 355) && !draging)
+                if((this.transform.localEulerAngles.z < 10 || this.transform.localEulerAngles.z > 350) && !draging)
                 {
                     right = true;
                     //Debug.Log(angles[i]);
