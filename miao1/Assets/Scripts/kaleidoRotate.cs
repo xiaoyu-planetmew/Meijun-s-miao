@@ -66,7 +66,7 @@ using UnityEngine.EventSystems;
             {
                 if(!this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().draging)
                 {
-                    this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().passiveRotation(directionTo, directionFrom, this.transform.parent.gameObject.GetComponent<kaledoControl>().directions[i]);
+                    this.transform.parent.gameObject.GetComponent<kaledoControl>().rings[i].GetComponent<kaleidoRotate>().passiveRotation(directionTo, directionFrom, (this.transform.parent.gameObject.GetComponent<kaledoControl>().directions[i]/ (this.transform.parent.gameObject.GetComponent<kaledoControl>().directions[this.transform.parent.gameObject.GetComponent<kaledoControl>().activedRingNum])));
                 }
             }
             /*for(int i=0; i<this.transform.parent.gameObject.GetComponent<kaledoControl>().rings.Count; i++)
