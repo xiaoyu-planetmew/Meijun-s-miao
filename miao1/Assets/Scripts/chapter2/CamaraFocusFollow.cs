@@ -20,19 +20,24 @@ public class CamaraFocusFollow : MonoBehaviour
     void FixedUpdate()
     {
         this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + yAxis, this.transform.position.z);
-        if(obj.transform.position.x < -261)
-        {   
-            if(cam.name == "Main Camera")
+        if (obj.transform.position.x < -100)
+        {
+            if (obj.transform.position.x < -261)
             {
-                cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
-                cam.transform.DOMove(new Vector3(-280f, 2.86f, -10f), 0.5f);
-                //cam.transform.position = new Vector3(-280f, 2.86f, -10f);
-                cam.fieldOfView = 100;
+                if (cam.name == "Main Camera")
+                {
+                    cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
+                    cam.transform.DOMove(new Vector3(-280f, 2.86f, -10f), 0.5f);
+                    //cam.transform.position = new Vector3(-280f, 2.86f, -10f);
+                    cam.fieldOfView = 100;
+                }
             }
-        }else{
-            if(cam.name == "Main Camera")
+            else
             {
-                cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                if (cam.name == "Main Camera")
+                {
+                    cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                }
             }
         }
     }
