@@ -13,89 +13,173 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public Tooltips tooltip;
     private Vector2 position;
-
+    int scene;
     //HELPER FUNCTION to get the items on this button
     void Start()
     {
         tip = this.transform.GetChild(1).gameObject;
+        if (GameObject.Find("GameManager")) scene = 1;
+        if (GameObject.Find("GameManager")) scene = 2;
     }
 
     private Item GetThisItem()
     {
-        for(int i = 0; i < GameManager.instance.items.Count; i++)
+        if (scene == 1)
         {
-            if(buttonID == i)
+            for (int i = 0; i < GameManager.instance.items.Count; i++)
             {
-                thisItem = GameManager.instance.items[i];
+                if (buttonID == i)
+                {
+                    thisItem = GameManager.instance.items[i];
+                }
             }
         }
-
+        if (scene == 2)
+        {
+            for (int i = 0; i < GameManager2.instance.items.Count; i++)
+            {
+                if (buttonID == i)
+                {
+                    thisItem = GameManager2.instance.items[i];
+                }
+            }
+        }
         return thisItem;
     }
 
     public void CloseButton()
     {
-        GameManager.instance.RemoveItem(GetThisItem());
-
-        //Once we press the colse button, We have to Update the current thisItem
-        thisItem = GetThisItem();
-        if(thisItem != null)
+        if (scene == 1)
         {
-            //SHOW TOOLTIP
-            tooltip.ShowTooltip();
+            GameManager.instance.RemoveItem(GetThisItem());
 
-            
-            if(GameManager.instance.languageNum == 0)
+            //Once we press the colse button, We have to Update the current thisItem
+            thisItem = GetThisItem();
+            if (thisItem != null)
             {
-                tooltip.UpdateTooltip(thisItem.itemDesJ);
+                //SHOW TOOLTIP
+                tooltip.ShowTooltip();
+
+
+                if (GameManager.instance.languageNum == 0)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesJ);
+                }
+                if (GameManager.instance.languageNum == 1)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesE);
+                }
+                if (GameManager.instance.languageNum == 2)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesCN);
+                }
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
+                tooltip.SetPosition(position);
             }
-            if(GameManager.instance.languageNum == 1)
+            else
             {
-                tooltip.UpdateTooltip(thisItem.itemDesE);
+                //HIDE TOOLTIP
+                tooltip.HideTooltip();
+                tooltip.UpdateTooltip("");//CLEAR
             }
-            if(GameManager.instance.languageNum == 2)
-            {
-                tooltip.UpdateTooltip(thisItem.itemDesCN);
-            }
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
-            tooltip.SetPosition(position);
         }
-        else
+        if (scene == 2)
         {
-            //HIDE TOOLTIP
-            tooltip.HideTooltip();
-            tooltip.UpdateTooltip("");//CLEAR
+            GameManager2.instance.RemoveItem(GetThisItem());
+
+            //Once we press the colse button, We have to Update the current thisItem
+            thisItem = GetThisItem();
+            if (thisItem != null)
+            {
+                //SHOW TOOLTIP
+                tooltip.ShowTooltip();
+
+
+                if (GameManager2.instance.languageNum == 0)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesJ);
+                }
+                if (GameManager2.instance.languageNum == 1)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesE);
+                }
+                if (GameManager2.instance.languageNum == 2)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesCN);
+                }
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
+                tooltip.SetPosition(position);
+            }
+            else
+            {
+                //HIDE TOOLTIP
+                tooltip.HideTooltip();
+                tooltip.UpdateTooltip("");//CLEAR
+            }
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetThisItem();
-
-        if(thisItem != null)
+        if (scene == 1)
         {
-            //Debug.Log("ENTER " + thisItem.itemName + " SLOT");
+            GetThisItem();
 
-            tooltip.ShowTooltip();
+            if (thisItem != null)
+            {
+                //Debug.Log("ENTER " + thisItem.itemName + " SLOT");
 
-            //tooltip.UpdateTooltip(thisItem.itemDes);
-            if(GameManager.instance.languageNum == 0)
-            {
-                tooltip.UpdateTooltip(thisItem.itemDesJ);
+                tooltip.ShowTooltip();
+
+                //tooltip.UpdateTooltip(thisItem.itemDes);
+                if (GameManager.instance.languageNum == 0)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesJ);
+                }
+                if (GameManager.instance.languageNum == 1)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesE);
+                }
+                if (GameManager.instance.languageNum == 2)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesCN);
+                }
+                //tooltip.UpdateTooltip(GetDetailText(thisItem));
+                //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
+                tooltip.SetPosition(position);
+
+                tip.SetActive(true);
             }
-            if(GameManager.instance.languageNum == 1)
+        }
+        if (scene == 2)
+        {
+            GetThisItem();
+
+            if (thisItem != null)
             {
-                tooltip.UpdateTooltip(thisItem.itemDesE);
+                //Debug.Log("ENTER " + thisItem.itemName + " SLOT");
+
+                tooltip.ShowTooltip();
+
+                //tooltip.UpdateTooltip(thisItem.itemDes);
+                if (GameManager2.instance.languageNum == 0)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesJ);
+                }
+                if (GameManager2.instance.languageNum == 1)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesE);
+                }
+                if (GameManager2.instance.languageNum == 2)
+                {
+                    tooltip.UpdateTooltip(thisItem.itemDesCN);
+                }
+                //tooltip.UpdateTooltip(GetDetailText(thisItem));
+                //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
+                tooltip.SetPosition(position);
+
+                tip.SetActive(true);
             }
-            if(GameManager.instance.languageNum == 2)
-            {
-                tooltip.UpdateTooltip(thisItem.itemDesCN);
-            }
-            //tooltip.UpdateTooltip(GetDetailText(thisItem));
-            //RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
-            tooltip.SetPosition(position);
-            
-            tip.SetActive(true);
         }
     }
     public void OnPointerClick(PointerEventData eventData)
