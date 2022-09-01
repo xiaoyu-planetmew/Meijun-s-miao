@@ -5,12 +5,14 @@ using UnityEngine.UI;
 using Spine.Unity;
 using Spine;
 using System.Runtime.CompilerServices;
+using UnityEngine.Events;
+using Cinemachine;
 
 public class FinalMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D coll;
-    private Animator anim;
+    public Animator anim;
 
     public float speed, jumpForce;
     private float horizontalMove;
@@ -24,6 +26,7 @@ public class FinalMovement : MonoBehaviour
     bool jumpPressed;
     bool outside;
     int jumpCount;
+    public bool otherAnim = false;
     public bool running;
     public bool walking;
     public bool moving;
@@ -37,7 +40,10 @@ public class FinalMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-        anim = this.transform.GetChild(0).GetComponent<Animator>();
+        if(anim == null)
+        {
+            anim = this.transform.GetChild(0).GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
@@ -83,7 +89,39 @@ public class FinalMovement : MonoBehaviour
             {
                 moving = false;
             }
+        SpineStateMachine();
+        
     }
+    public void SpineStateMachine()
+    {
+        if (Mathf.Abs(horizontalMove) <= 0.001 && !otherAnim && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "idol")
+        {
+            ChracterNewAnim("idol", true);
+        }
+        if (Mathf.Abs(horizontalMove) >= 0.001 && outside && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "run")
+        {
+            ChracterNewAnim("run", true);
+        }
+        if (Mathf.Abs(horizontalMove) >= 0.001 && !outside && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "walk")
+        {
+            ChracterNewAnim("walk", true);
+        }
+    }
+    public void ChracterNewAnim(string animationName, bool loop)
+    {
+        if(this.transform.Find("ChracterNew"))
+        {
+            SkeletonAnimation skeletonAnimation;   //gameobject的component。
+            skeletonAnimation = this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>();
+            if (skeletonAnimation == null) return;
+            Spine.AnimationState spineAnimationState = skeletonAnimation.state;
+            Spine.Skeleton skeleton;
+            //skeletonAnimation.skeleton.SetToSetupPose();
+            //spineAnimationState.ClearTracks();
+            spineAnimationState.SetAnimation(0, animationName, loop);
+        }
+    }
+    
     public void stopMoving()
     {
         horizontalMove = 0;
@@ -144,6 +182,10 @@ public class FinalMovement : MonoBehaviour
         if(horizontalMove == -1)
         {
             transform.GetChild(0).localScale = new Vector3(horizontalMove * i, i, i);
+            if(transform.Find("ChracterNew"))
+            {
+                transform.Find("ChracterNew").localScale = new Vector3(horizontalMove * i, i, i);
+            }
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             //playerCanvas.scale
             if(outside)
@@ -160,6 +202,10 @@ public class FinalMovement : MonoBehaviour
         if(horizontalMove == 1)
         {
             transform.GetChild(0).localScale = new Vector3(horizontalMove * i, i, i);
+            if (transform.Find("ChracterNew"))
+            {
+                transform.Find("ChracterNew").localScale = new Vector3(horizontalMove * i, i, i);
+            }
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             if(outside)
             {
@@ -179,7 +225,14 @@ public class FinalMovement : MonoBehaviour
         }
 
     }
-
+    public void changeCanMove(bool move)
+    {
+        canMove = move;
+        if(canMove)
+        {
+            GameObject.Find("Main Camera").GetComponent<CinemachineBrain>().enabled = true;
+        }
+    }
     void Jump()//跳跃
     {
         if (isGround)
@@ -227,6 +280,7 @@ public class FinalMovement : MonoBehaviour
         if(this.transform.position.y < 10 && this.transform.position.y > -10)
         {
             anim.SetBool("outside", true);
+            
             outside = true;
         }
         else{

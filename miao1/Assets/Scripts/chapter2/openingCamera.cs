@@ -14,13 +14,18 @@ public class openingCamera : MonoBehaviour
     }
     void cam1()
     {
+        GameManager2.instance.player.GetComponent<FinalMovement>().canMove = false;
+        //GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().enabled = false;
         Sequence quence = DOTween.Sequence();
-        quence.Append(transform.DOMove(new Vector3(-44.92f, 3.706468f, -10f), 5).OnComplete(() =>
+        quence.Append(transform.DOMove(new Vector3(-43.34f, 3.706468f, -10f), 5).OnComplete(() =>
         {
-            this.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+            //this.gameObject.GetComponent<CinemachineBrain>().enabled = true;
             this.transform.Find("darkMask").GetComponent<SpriteRenderer>().enabled = false;
         }));
-        quence.Join(this.transform.Find("darkMask").GetComponent<SpriteRenderer>().DOFade(0, 5));
+        quence.Join(this.transform.Find("darkMask").GetComponent<SpriteRenderer>().DOFade(0, 5).OnComplete(() => {
+            //GameManager2.instance.player.GetComponent<FinalMovement>().canMove = true;
+            //GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().enabled = true;
+        })); ;
     }
     // Update is called once per frame
     void Update()

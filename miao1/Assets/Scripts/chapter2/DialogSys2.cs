@@ -93,9 +93,11 @@ public class DialogSys2 : MonoBehaviour
     {
         if (!isTalking)
         {
+            index = 0;
             GetTextFromFile(textfiles[Num]);
             eventNum = Num;
             fileChoose();
+            Debug.Log("start" + Num);
         }
     }
     public void dialogNext()
@@ -112,9 +114,9 @@ public class DialogSys2 : MonoBehaviour
                 //textLabelcn.gameObject.SetActive(false);
                 //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
-                player.GetComponent<FinalMovement>().canMove = true;
+                //player.GetComponent<FinalMovement>().canMove = true;
                 afterDialogEvents[eventNum].Invoke();
-
+                Debug.Log("dialog" + eventNum);
                 return;
                 //TutorialTrackController.Instance.FinishTutorial();
             }
@@ -126,6 +128,23 @@ public class DialogSys2 : MonoBehaviour
                 //textBackground.gameObject.SetActive(true);
             }
         }
+    }
+    public void dialogFinish()
+    {
+        textList.Clear();
+        textTalker.Clear();
+        textFinished = true;
+        isTalking = false;
+        index = 0;
+        //SoundController.Instance.Talk_Radio_Stop.HandleEvent(gameObject);
+        textBackground.gameObject.SetActive(false);
+        //nextPageButton.gameObject.SetActive(false);
+
+        //textLabelcn.gameObject.SetActive(false);
+        //textLabelen.gameObject.SetActive(false);
+        isTalking = false;
+        Debug.Log("finish");
+        //afterDialogEvents[eventNum].Invoke();
     }
     void GetTextFromFile(TextAsset file)
     {
@@ -241,7 +260,7 @@ public class DialogSys2 : MonoBehaviour
         textBackground.gameObject.SetActive(true);
         textFinished = false;
         textLabel.GetComponent<Text>().text = "";
-        textLabel.GetComponent<Text>().DOText(textList[index], 2).OnComplete(() => {
+        textLabel.GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.1f).OnComplete(() => {
             index = index + 1;
             textFinished = true;
         });
