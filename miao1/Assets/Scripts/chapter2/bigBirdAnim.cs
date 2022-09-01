@@ -41,7 +41,7 @@ public class bigBirdAnim : MonoBehaviour
                 {
                     Debug.Log("fly");
                     flyPath();
-                    DialogSys2.Instance.dialogStart(4);
+                
                 };
                 spineAnimationState.AddAnimation(0, "fly", true, 0f);
             }
@@ -83,6 +83,7 @@ public class bigBirdAnim : MonoBehaviour
             this.transform.localEulerAngles = new Vector3(0, 0, 0);
             GameManager2.instance.player.GetComponent<FinalMovement>().canMove = true;
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+            DialogSys2.Instance.dialogStart(4);
         }
         skeletonAnimation.skeleton.SetToSetupPose();
         spineAnimationState.ClearTracks();
