@@ -98,7 +98,7 @@ Material:
     - _ColorSwapRedLuminosity: 0.5
     - _Contrast: 1
     - _Cutoff: 0.1
-    - _DistortAmount: 0.5
+    - _DistortAmount: 0.16
     - _DistortTexXSpeed: 5
     - _DistortTexYSpeed: 5
     - _FadeAmount: -0.1

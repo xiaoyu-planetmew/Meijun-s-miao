@@ -31,8 +31,25 @@ public class bigBirdAnim : MonoBehaviour
         //this.GetComponent<Animator>().enabled = false;
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.transform.Find("birdAnimation").gameObject.SetActive(true);
-        spineAnimationState.SetAnimation(0, "debut", false);
-        spineAnimationState.AddAnimation(0, "idle", false, 0f).Complete += delegate
+        spineAnimationState.SetAnimation(0, "debut", false).Complete += delegate
+        {
+            if (this.gameObject.name == "lanlu")
+            {
+                this.transform.localScale = new Vector3(1, 1, 1);
+                spineAnimationState.AddAnimation(0, "take off", false, 0f).Complete += delegate
+                {
+                    Debug.Log("fly");
+                    flyPath();
+
+                };
+                spineAnimationState.AddAnimation(0, "fly", true, 0f);
+            }
+            if (this.gameObject.name == "honglu")
+            {
+                flyDelay();
+            }
+        }; 
+        /*spineAnimationState.AddAnimation(0, "idle", false, 0f).Complete += delegate
         {
             if (this.gameObject.name == "lanlu")
             {
@@ -50,7 +67,7 @@ public class bigBirdAnim : MonoBehaviour
                 flyDelay();
             }
         };
-        
+        */
         
     }
     void flyDelay()
@@ -69,7 +86,7 @@ public class bigBirdAnim : MonoBehaviour
     IEnumerator final()
     {
         Debug.Log("final0");
-        yield return new WaitForSeconds(11);
+        yield return new WaitForSeconds(6);
         Debug.Log("final");
         this.transform.position = finalPos.transform.position;
         if (this.gameObject.name == "lanlu")

@@ -5263,7 +5263,19 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1573547925}
+        m_TargetAssemblyTypeName: FinalMovement, Assembly-CSharp
+        m_MethodName: changeCanMove
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   isTalking: 0
   index: 0
   textList: []
@@ -12986,6 +12998,8 @@ GameObject:
   - component: {fileID: 597123354}
   - component: {fileID: 597123353}
   - component: {fileID: 597123352}
+  - component: {fileID: 597123356}
+  - component: {fileID: 597123355}
   m_Layer: 0
   m_Name: ChracterNew
   m_TagString: Untagged
@@ -13096,6 +13110,34 @@ MeshRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 25
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &597123355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597123350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fb29acc81dc634cae5711d9e2f08ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &597123356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597123350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrenght: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &608360377
 GameObject:
   m_ObjectHideFlags: 0
@@ -21943,7 +21985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 2d751d222ef7a044d95892d45a97a8ba, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 2c6b9fed62c2db34b8da70417e970cd5, type: 2}
   initialSkinName: honglu
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -28211,7 +28253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 2d751d222ef7a044d95892d45a97a8ba, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 2c6b9fed62c2db34b8da70417e970cd5, type: 2}
   initialSkinName: lanlu
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -32509,6 +32551,17 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1573547925 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5567668448618670814, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+  m_PrefabInstance: {fileID: 1567827598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573547919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070afde29949d43b184f02ae92a2c8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1573547928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7526711116437040746, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
