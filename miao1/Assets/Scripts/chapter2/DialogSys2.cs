@@ -39,6 +39,7 @@ public class DialogSys2 : MonoBehaviour
     public List<AudioClip> rightAudio = new List<AudioClip>();
     bool textFinished;
     public string output;
+    public bool canContinue = true;
     int textNum;
     // Start is called before the first frame update
     private void Awake()
@@ -102,7 +103,7 @@ public class DialogSys2 : MonoBehaviour
     }
     public void dialogNext()
     {
-        if (textFinished)
+        if (textFinished && canContinue)
         {
             if (index >= textList.Count)
             {
@@ -253,7 +254,7 @@ public class DialogSys2 : MonoBehaviour
             {
                 textLabel = textLabels[i];
                 textBackground = textBackgrounds[i];
-                
+                Debug.Log(speakers[i]);
             }
         }
         textLabel.SetActive(true);

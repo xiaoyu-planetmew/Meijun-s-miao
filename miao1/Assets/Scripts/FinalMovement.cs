@@ -227,6 +227,7 @@ public class FinalMovement : MonoBehaviour
     }
     public void changeCanMove(bool move)
     {
+        horizontalMove = 0;
         canMove = move;
         if(canMove)
         {

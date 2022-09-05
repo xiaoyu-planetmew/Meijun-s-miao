@@ -11,7 +11,8 @@ public class UIFollow : MonoBehaviour
 
     bool hasFollowed = false;
     public Canvas canvas;
-
+    public float x;
+    public float y;
     public void Init()
     {
         if(_camera.gameObject.activeInHierarchy)
@@ -40,7 +41,7 @@ public class UIFollow : MonoBehaviour
             Vector2 point;
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent as RectTransform, pos, canvas.worldCamera, out point))
             {
-                transform.localPosition = new Vector3(point.x + 23.33f, -24f, 0);
+                transform.localPosition = new Vector3(point.x + x, y, 0);
                 hasFollowed = true;
             }
         }

@@ -35,6 +35,20 @@ public class chracterAnimEvents : MonoBehaviour
     {
 
     }
+    public void Ah()
+    {
+        DialogSys2.Instance.canContinue = false;
+        Debug.Log("ah");
+        StartCoroutine(AhDelay());
+        
+    }
+    IEnumerator AhDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        DialogSys2.Instance.dialogFinish();
+        DialogSys2.Instance.afterDialogEvents[1].Invoke();
+        DialogSys2.Instance.canContinue = true;
+    }
     public void playOtherAnim(int i)
     {
         string animationName = animNames[i];

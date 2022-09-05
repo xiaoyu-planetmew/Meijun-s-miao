@@ -13,6 +13,7 @@ TagManager:
   - note
   - longNote
   - ground
+  - Clickable
   layers:
   - Default
   - TransparentFX
