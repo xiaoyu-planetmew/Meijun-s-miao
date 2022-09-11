@@ -46,9 +46,13 @@ public class laoPoPoControl : MonoBehaviour
     }
     public void LaoPoPoSecond()
     {
-        this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run_angry", true);
+        StartCoroutine(LaoPoPoRun());
         DG.Tweening.Sequence quence = DOTween.Sequence();
-        quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(30.3f, 3.706468f, -10f), 1));
+        quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(30.3f, 3.706468f, -10f), 1)).OnComplete(() =>
+            {
+                
+            }            
+        );
         quence.Append(this.transform.DOMove(new Vector3(23.34f, -0.62f, 0), 2));
         quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(22.37f, 3.706468f, -10f), 1));
         quence.Append(this.transform.DOMove(new Vector3(21.34f, 2.04f, 0), 2));
@@ -58,6 +62,11 @@ public class laoPoPoControl : MonoBehaviour
             DialogSys2.Instance.dialogStart(6);
         });
         quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 1));
+    }
+    IEnumerator LaoPoPoRun()
+    {
+        yield return new WaitForSeconds(1);
+        this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run_angry", true);
     }
     public void LaoPoPoThird()
     {

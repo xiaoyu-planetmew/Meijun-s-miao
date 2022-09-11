@@ -91,7 +91,7 @@ public class bigBirdAnim2 : MonoBehaviour
     }
     public void flyPath1()
     {
-        this.transform.localScale = new Vector3(1, 1, 1);
+        //this.transform.localScale = new Vector3(1, 1, 1);
         var positions = Pos1.Select(u => u.position).ToArray();
         /*
             参数一:路径点 数组
@@ -103,7 +103,7 @@ public class bigBirdAnim2 : MonoBehaviour
             SetOptions(true) 路径从头回到原点
             SetLookAt(0) 路径物体与路径点保持的夹角 取值范围0-1
          */
-        transform.DOPath(positions, 6, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.left);
+        transform.DOPath(positions, 6, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.right);
         StartCoroutine(final1());
     }
     public void flyAway()
