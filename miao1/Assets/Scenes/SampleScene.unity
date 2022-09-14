@@ -14239,6 +14239,8 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
+  updateTiming: 1
+  unscaledTime: 0
   _animationName: idol
   loop: 1
   timeScale: 1
@@ -26963,6 +26965,8 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
+  updateTiming: 1
+  unscaledTime: 0
   _animationName: shake
   loop: 1
   timeScale: 0.3
@@ -49447,6 +49451,8 @@ MonoBehaviour:
   target: {fileID: 247540770}
   alwaysFollow: 1
   canvas: {fileID: 1535436388}
+  x: 22.21
+  y: -24.61
 --- !u!1 &1018977299
 GameObject:
   m_ObjectHideFlags: 0
@@ -50285,6 +50291,8 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
+  updateTiming: 1
+  unscaledTime: 0
   _animationName: widle
   loop: 1
   timeScale: 1
@@ -117951,6 +117959,8 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
+  updateTiming: 1
+  unscaledTime: 0
   _animationName: shake
   loop: 1
   timeScale: 0.3
@@ -118775,6 +118785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1210096977, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883d95ac3a74a0242b18adf522317eb0, type: 2}
     - target: {fileID: 1210096978, guid: f6578be8e95afc942b2c3e95ac6fb495, type: 3}
       propertyPath: m_Mesh
       value: 
