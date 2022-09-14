@@ -19,7 +19,7 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         tip = this.transform.GetChild(1).gameObject;
         if (GameObject.Find("GameManager")) scene = 1;
-        if (GameObject.Find("GameManager")) scene = 2;
+        if (GameObject.Find("GameManager2")) scene = 2;
     }
 
     private Item GetThisItem()

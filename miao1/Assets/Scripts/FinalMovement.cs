@@ -89,7 +89,7 @@ public class FinalMovement : MonoBehaviour
             {
                 moving = false;
             }
-        SpineStateMachine();
+        if(this.transform.Find("ChracterNew")) SpineStateMachine();
         
     }
     public void SpineStateMachine()

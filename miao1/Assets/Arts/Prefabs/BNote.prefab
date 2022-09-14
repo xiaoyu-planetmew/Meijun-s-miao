@@ -182,6 +182,7 @@ MonoBehaviour:
   isAni: 0
   isCoroutineRunning: 0
   mat: {fileID: 2100000, guid: 16def1119512c3d44aa5ba8144cd158c, type: 2}
+  obj: {fileID: 0}
 --- !u!1 &1303183826060401653
 GameObject:
   m_ObjectHideFlags: 0

@@ -2073,6 +2073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070afde29949d43b184f02ae92a2c8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   speed: 3
   jumpForce: 20
   groundCheck: {fileID: 3981428345875763556}
@@ -2084,6 +2085,7 @@ MonoBehaviour:
   isDashing: 0
   walk: {fileID: 4234007567421969555}
   run: {fileID: 3882947093676052429}
+  otherAnim: 0
   running: 0
   walking: 0
   moving: 0
@@ -3579,7 +3581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dcfdfd9c4dde5034fb1d295dc556e98c, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3668,6 +3670,7 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+  updateTiming: 1
 --- !u!114 &2015771872
 MonoBehaviour:
   m_ObjectHideFlags: 0
