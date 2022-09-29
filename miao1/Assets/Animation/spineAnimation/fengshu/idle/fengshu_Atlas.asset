@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: fengshu_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 79ca7248f29077041bbc78a61207882e, type: 3}
+  materials:
+  - {fileID: 2100000, guid: dd913fe64b4d420418d8a35f3d2240db, type: 2}
+  - {fileID: 2100000, guid: 9a6634b1aff90544fb10cd342505426f, type: 2}
+  - {fileID: 2100000, guid: e427b89705e885249b9121033b79c04b, type: 2}

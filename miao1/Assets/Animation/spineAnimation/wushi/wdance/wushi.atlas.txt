@@ -84,6 +84,7 @@ shenti
 bounds:2,187,391,473
 shuzhi
 bounds:1578,440,220,121
+offsets:106,109,432,339
 rotate:90
 yanjing
 bounds:1061,71,166,55

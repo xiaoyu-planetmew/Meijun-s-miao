@@ -19,7 +19,7 @@ public class UIManager: MonoBehaviour
 
     private void InventoryControl()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("GameManager"))
         {
             //if Game is Paused, press Escape, Resume the Game
             if (GameManager.instance.isPaused)

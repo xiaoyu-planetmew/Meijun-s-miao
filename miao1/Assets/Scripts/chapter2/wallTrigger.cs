@@ -25,4 +25,8 @@ public class wallTrigger : MonoBehaviour
                 e.Invoke();
         }
     }
+    public void disableThis()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

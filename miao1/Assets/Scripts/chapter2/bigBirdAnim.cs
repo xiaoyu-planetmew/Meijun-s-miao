@@ -158,7 +158,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
         }
         skeletonAnimation.skeleton.SetToSetupPose();
         spineAnimationState.ClearTracks();
-        spineAnimationState.SetAnimation(0, "idle", true);
+        spineAnimationState.SetAnimation(0, "eat", true);
     }
     IEnumerator final1()
     {

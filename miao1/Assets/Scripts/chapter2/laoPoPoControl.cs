@@ -11,6 +11,7 @@ public class laoPoPoControl : MonoBehaviour
     public GameObject wall;
     //public GameObject LaoPoPoCanvas;
     Vector3 camPos;
+    public GameObject laoPoPoAni;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,13 +75,15 @@ public class laoPoPoControl : MonoBehaviour
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(this.transform.DOMove(new Vector3(15.34f, 2.04f, 0f), 0.5f));
         quence.Append(this.transform.DOMove(new Vector3(10.83f, -0.62f, 0f), 1f));
-        quence.Append(this.transform.DOMove(new Vector3(-24.3f, -0.62f, 0f), 6)).OnComplete(() =>
+        quence.Append(this.transform.DOMove(new Vector3(-39.81f, -0.62f, 0f), 6)).OnComplete(() =>
         {
-            this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
+            laoPoPoAni.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         });
         quence.Join(GameObject.Find("Main Camera").transform.DOMove(camPos, 3)).OnComplete(() =>
         {
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+            GameObject.Find("Maple").gameObject.GetComponent<MapleControl>().maple1();
+            //this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         });
     }
 }
