@@ -42,31 +42,39 @@ public class MapleControl : MonoBehaviour
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(-42.72f, 2.34f, -6.69f), 5).OnComplete(() =>
         {
-            face.SetActive(true);
-            face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
-            //DialogSys2.Instance.isTalking = false;
-            //DialogSys2.Instance.dialogStart(7);
-        }));
-        quence.AppendInterval(3).OnComplete(() => {
-            face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
             DialogSys2.Instance.isTalking = false;
             DialogSys2.Instance.dialogStart(7);
-        });
+            //DialogSys2.Instance.isTalking = false;
+            //DialogSys2.Instance.dialogStart(7);
+        }));
     }
     public void maple3()
+    {
+        laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
+        face.SetActive(true);
+        face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
+        DG.Tweening.Sequence quence = DOTween.Sequence();
+        quence.AppendInterval(3).OnComplete(() =>
+        {
+            face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+            DialogSys2.Instance.isTalking = false;
+            DialogSys2.Instance.dialogStart(8);
+        });
+    }
+    public void maple4()
     {
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(-40.12f, 5.86f, -6.69f), 5));
         quence.AppendInterval(3);
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(-42.72f, 2.34f, -6.69f), 5).OnComplete(() =>
         {
-            
+            laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
             DialogSys2.Instance.isTalking = false;
-            DialogSys2.Instance.dialogStart(8);
+            DialogSys2.Instance.dialogStart(9);
         }));
     }
-    public void maple4()
+    public void maple5()
     {
         laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         DG.Tweening.Sequence quence = DOTween.Sequence();

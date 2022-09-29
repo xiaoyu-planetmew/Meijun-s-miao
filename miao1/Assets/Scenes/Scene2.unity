@@ -5688,8 +5688,8 @@ MonoBehaviour:
   mouseTexture: {fileID: 2800000, guid: 6db961197bc4b794ab20a924479853fc, type: 3}
   mouseTexture1: {fileID: 2800000, guid: 6db961197bc4b794ab20a924479853fc, type: 3}
   mouseTexture2: {fileID: 2800000, guid: 6db961197bc4b794ab20a924479853fc, type: 3}
-  x: 89
-  y: 127
+  x: 45
+  y: 63
 --- !u!1 &240322748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5917,6 +5917,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 332e28400cfbb4b48af7506c805cdf30, type: 3}
   - {fileID: 4900000, guid: a4980b56af91fbd429e86b6f4d3be4cd, type: 3}
   - {fileID: 4900000, guid: 2cd42643aed27b143b0a4185ef74b6d4, type: 3}
+  - {fileID: 4900000, guid: 037016a117fd5634d9821525deb69c0f, type: 3}
   - {fileID: 4900000, guid: 7a1aec1a02992b04cb55201c10bb7e77, type: 3}
   textfilesEN:
   - {fileID: 4900000, guid: 68738fbb49352754dad9df07d27a17bc, type: 3}
@@ -5927,6 +5928,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: e034cf059c92ab3499911fa784a8827e, type: 3}
   - {fileID: 4900000, guid: 7b95d97265564c64eb4caee0ad4a05ae, type: 3}
   - {fileID: 4900000, guid: be95e89139a8d37479c6714607024150, type: 3}
+  - {fileID: 4900000, guid: 429156c602767374e896714c84a32e99, type: 3}
   - {fileID: 4900000, guid: ee2e332a14c87984094336930bd933dc, type: 3}
   textfilesJP:
   - {fileID: 4900000, guid: 502935484d615fc4ebaf60b35ce63490, type: 3}
@@ -5937,6 +5939,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 4518cd09d119c06438b7253435e11385, type: 3}
   - {fileID: 4900000, guid: 8605e80df8eed6346a2d4575ddc8757a, type: 3}
   - {fileID: 4900000, guid: 314f65b869d890c4c949c4a27c5f730e, type: 3}
+  - {fileID: 4900000, guid: 14f11784a4363c744a7455bfc0be801f, type: 3}
   - {fileID: 4900000, guid: 46a0466154c30054fa1a6272012a4d11, type: 3}
   textfiles: []
   afterDialogEvents:
@@ -25733,7 +25736,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 917dd32117fc8cd448b25b49a08860e2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -35540,7 +35543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3882947093676052429, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Volume
-      value: 0.13
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3882947093676052429, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_audioClip
@@ -36207,7 +36210,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 355273429
   m_SortingLayer: 1
-  m_SortingOrder: -15
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1592359613
 GameObject:
@@ -42185,7 +42188,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b4ee1d915b0a984c8873d76d9c9a6e6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

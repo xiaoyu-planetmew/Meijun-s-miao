@@ -48,21 +48,29 @@ public class laoPoPoControl : MonoBehaviour
     public void LaoPoPoSecond()
     {
         StartCoroutine(LaoPoPoRun());
+        Vector3[] pos = new Vector3[4];
+        pos[0] = new Vector3(35.26f, -0.62f, 0f);
+        pos[1] = new Vector3(23.34f, -0.62f, 0f);
+        pos[2] = new Vector3(21.34f, 2.04f, 0f);
+        pos[3] = new Vector3(17.22f, 2.04f, 0f);
+        //{ (35.26f, -0.62f, 0f), (23.34f, -0.62f, 0f), (21.34f, 2.04f, 0f), (17.22f, 2.04f, 0f) };
         DG.Tweening.Sequence quence = DOTween.Sequence();
-        quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(30.3f, 3.706468f, -10f), 1)).OnComplete(() =>
-            {
-                
-            }            
-        );
-        quence.Append(this.transform.DOMove(new Vector3(23.34f, -0.62f, 0), 2));
-        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(22.37f, 3.706468f, -10f), 1));
-        quence.Append(this.transform.DOMove(new Vector3(21.34f, 2.04f, 0), 2));
-        quence.Append(this.transform.DOMove(new Vector3(17.22f, 2.04f, 0), 2)).OnComplete(() =>
+        quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(30.3f, 3.706468f, -10f), 1));
+        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
         {
             this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
             DialogSys2.Instance.dialogStart(6);
-        });
-        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 1));
+        }); ;
+        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 6));
+        //quence.Append(this.transform.DOMove(new Vector3(23.34f, -0.62f, 0), 2));
+        //quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(22.37f, 3.706468f, -10f), 1));
+        //quence.Append(this.transform.DOMove(new Vector3(21.34f, 2.04f, 0), 2));
+        //quence.Append(this.transform.DOMove(new Vector3(17.22f, 2.04f, 0), 2)).OnComplete(() =>
+        //{
+        //    this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
+        //    DialogSys2.Instance.dialogStart(6);
+        //});
+        //quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 1));
     }
     IEnumerator LaoPoPoRun()
     {
