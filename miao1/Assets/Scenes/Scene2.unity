@@ -25719,7 +25719,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 355273429
   m_SortingLayer: 1
-  m_SortingOrder: -16
+  m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!82 &1125559301
 AudioSource:
@@ -38917,7 +38917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1671861448
 Transform:
   m_ObjectHideFlags: 0
@@ -42185,7 +42185,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b4ee1d915b0a984c8873d76d9c9a6e6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
