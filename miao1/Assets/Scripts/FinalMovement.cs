@@ -94,9 +94,9 @@ public class FinalMovement : MonoBehaviour
     }
     public void SpineStateMachine()
     {
-        if (Mathf.Abs(horizontalMove) <= 0.001 && !otherAnim && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "idol")
+        if (Mathf.Abs(horizontalMove) <= 0.001 && !otherAnim && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "idle")
         {
-            ChracterNewAnim("idol", true);
+            ChracterNewAnim("idle", true);
         }
         if (Mathf.Abs(horizontalMove) >= 0.001 && outside && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "run")
         {
@@ -144,6 +144,7 @@ public class FinalMovement : MonoBehaviour
 
 
         //SwitchAnim();
+        //if(canMove)
         SwitchSpineAnim();
     }
 

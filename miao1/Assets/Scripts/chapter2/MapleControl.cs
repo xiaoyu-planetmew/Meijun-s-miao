@@ -11,8 +11,10 @@ public class MapleControl : MonoBehaviour
     public GameObject maple;
     public GameObject face;
     public GameObject wall2;
+    public GameObject wall3;
     public GameObject npc;
     public GameObject laoPoPo;
+    public GameObject moment1;
     Vector3 camPos;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,7 @@ public class MapleControl : MonoBehaviour
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
         wall2.SetActive(true);
         npc.transform.position = new Vector3(-46.58f, -0.44f, 0f);
-        npc.transform.localScale = new Vector3(-1, 1, 1);
+        npc.transform.GetChild(0).localScale = new Vector3(-0.4f, 0.4f, 0.4f);
         GameObject.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
     }
     public void maple2()
@@ -51,12 +53,14 @@ public class MapleControl : MonoBehaviour
     }
     public void maple3()
     {
+        npc.transform.Find("JiangSongCanvas").Find("duihuakuang (1)").gameObject.SetActive(true);
         laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         face.SetActive(true);
         face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.AppendInterval(3).OnComplete(() =>
         {
+            npc.transform.Find("JiangSongCanvas").Find("duihuakuang (1)").gameObject.SetActive(false);
             face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             DialogSys2.Instance.isTalking = false;
             DialogSys2.Instance.dialogStart(8);
@@ -76,12 +80,34 @@ public class MapleControl : MonoBehaviour
     }
     public void maple5()
     {
-        laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
+        laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_sad", true);
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Join(GameObject.Find("Main Camera").transform.DOMove(camPos, 3)).OnComplete(() =>
         {
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+            wall3.SetActive(true);
         });
+    }
+    public void maple6()
+    {
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;
+        DG.Tweening.Sequence quence = DOTween.Sequence();
+        quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(-43.71f, 2.34f, -7.5f), 2).OnComplete(() =>
+        {
+            //laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
+            DialogSys2.Instance.isTalking = false;
+            DialogSys2.Instance.dialogStart(10);
+            //DialogSys2.Instance.isTalking = false;
+            //DialogSys2.Instance.dialogStart(7);
+        }));
+        
+    }
+    public void maple7()
+    {
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+        moment1.SetActive(true);
     }
 }

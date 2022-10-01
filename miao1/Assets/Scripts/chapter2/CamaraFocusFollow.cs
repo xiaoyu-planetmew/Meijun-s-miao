@@ -19,7 +19,14 @@ public class CamaraFocusFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + yAxis, this.transform.position.z);
+        if(obj.GetComponent<PlayerUnderWaterControl>().underWater)
+        {
+            this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, this.transform.position.z);
+        }
+        if(!obj.GetComponent<PlayerUnderWaterControl>().underWater)
+        {
+            this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + yAxis, this.transform.position.z);
+        }
         if (obj.transform.position.x < -100)
         {
             if (obj.transform.position.x < -261)

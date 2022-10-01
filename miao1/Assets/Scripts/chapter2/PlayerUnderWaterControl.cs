@@ -30,6 +30,8 @@ public class PlayerUnderWaterControl : MonoBehaviour
             this.gameObject.GetComponent<FinalMovement>().enabled = false;
             this.gameObject.GetComponent<UnderWaterMove>().enabled = true;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            this.gameObject.GetComponent<PlatformEffector2D>().useOneWay = false;
+            this.transform.Find("groundcheck").GetComponent<playerJumpDown>().enabled = false;
         }
         if(!underWater)
         {
@@ -37,6 +39,8 @@ public class PlayerUnderWaterControl : MonoBehaviour
             this.gameObject.GetComponent<FinalMovement>().enabled = true;
             this.gameObject.GetComponent<UnderWaterMove>().enabled = false;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            this.gameObject.GetComponent<PlatformEffector2D>().useOneWay = true;
+            this.transform.Find("groundcheck").GetComponent<playerJumpDown>().enabled = true;
         }
     }
 }
