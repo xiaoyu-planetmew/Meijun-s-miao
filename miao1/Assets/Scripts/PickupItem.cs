@@ -1,34 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PickupItem: MonoBehaviour
 {
     public Item itemData;
+    public UnityEvent afterPickUp;
     //public GameObject pickupEffect;
-/*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
+    /*
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (GameManager.instance.items.Count < GameManager.instance.slots.Length)//Items number greater than the Inventory Grid total/max numbers
+            if (other.tag == "Player")
             {
-                //Instantiate(pickupEffect, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                if (GameManager.instance.items.Count < GameManager.instance.slots.Length)//Items number greater than the Inventory Grid total/max numbers
+                {
+                    //Instantiate(pickupEffect, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
 
-                GameManager.instance.AddItem(itemData);
-            }
-            else
-            {
-                Debug.Log("You CANNOT PICK UP ANY ITEMS NOW. YOUR BAG IS FULL!!!");
-            }
+                    GameManager.instance.AddItem(itemData);
+                }
+                else
+                {
+                    Debug.Log("You CANNOT PICK UP ANY ITEMS NOW. YOUR BAG IS FULL!!!");
+                }
 
+            }
         }
-    }
-*/
+    */
     public void pickUp()
     {
-        if (GameManager.instance.items.Count < GameManager.instance.slots.Count)//Items number greater than the Inventory Grid total/max numbers
+        if (GameObject.Find("GameManager"))
+        {
+            if (GameManager.instance.items.Count < GameManager.instance.slots.Count)//Items number greater than the Inventory Grid total/max numbers
             {
                 //Instantiate(pickupEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
@@ -39,6 +43,25 @@ public class PickupItem: MonoBehaviour
             {
                 Debug.Log("You CANNOT PICK UP ANY ITEMS NOW. YOUR BAG IS FULL!!!");
             }
+        }
+        if (GameObject.Find("GameManager2"))
+        {
+            if (GameManager2.instance.items.Count < GameManager2.instance.slots.Count)//Items number greater than the Inventory Grid total/max numbers
+            {
+                //Instantiate(pickupEffect, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+
+                GameManager2.instance.AddItem(itemData);
+            }
+            else
+            {
+                Debug.Log("You CANNOT PICK UP ANY ITEMS NOW. YOUR BAG IS FULL!!!");
+            }
+        }
+        if(afterPickUp != null)
+        {
+            afterPickUp.Invoke();
+        }
     }
 
 }

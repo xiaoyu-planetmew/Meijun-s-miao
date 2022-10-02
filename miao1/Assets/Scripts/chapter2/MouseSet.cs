@@ -13,14 +13,24 @@ public class MouseSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        nowTexture = mouseTexture;
+        nowx = mousex;
+        nowy = mousey;
     }
-    
+    public Texture nowTexture;
+    public int nowx;
+    public int nowy;
     public Texture mouseTexture;
-    public Texture mouseTexture1;
-    public Texture mouseTexture2;
-    public int x;
-    public int y;
+    public int mousex;
+    public int mousey;
+    public Texture axe1;
+    public int axe1x;
+    public int axe1y;
+    public Texture axe2;
+    public int axe2x;
+    public int axe2y;
+
+
 
     void Update()
     {
@@ -38,11 +48,28 @@ public class MouseSet : MonoBehaviour
     void OnGUI()
     {
         Cursor.visible = false;//“˛≤ÿ Û±Í÷∏’Î
-        GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, x, y), mouseTexture);
+        GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, nowx, nowy), nowTexture);
     }
-    public void mouseChange(bool b)
+    public void mouseChange(string s)
     {
-        inGUI = b;
+        if(s == "mouseTexture")
+        {
+            nowTexture = mouseTexture;
+            nowx = mousex;
+            nowy = mousey;
+        }
+        if (s == "axe1")
+        {
+            nowTexture = axe1;
+            nowx = axe1x;
+            nowy = axe1y;
+        }
+        if (s == "axe2")
+        {
+            nowTexture = axe2;
+            nowx = axe2x;
+            nowy = axe2y;
+        }
     }
     // Update is called once per frame
     

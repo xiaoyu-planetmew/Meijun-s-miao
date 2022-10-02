@@ -21,11 +21,15 @@ public class EventControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        showNPC_Button();
+        //showNPC_Button();
     }
     public void eventFinish(int i)
     {
-        events[i] = true;
+        if(!events[i])
+        { 
+            events[i] = true;
+        }
+        
     }
     void showNPC_Button()
     {
@@ -46,6 +50,14 @@ public class EventControl : MonoBehaviour
         {
             DialogSys2.Instance.dialogStart(0);
         }
+        if (events[0] && events[1] && !events[2])
+        {
+            DialogSys2.Instance.dialogStartMoment(false);
+        }
+        if (events[0] && events[1] && events[2] && !events[3])
+        {
+            DialogSys2.Instance.dialogStartMoment(true);
+        }
     }
     public void LaoPoPo_ButtonAct()
     {
@@ -53,5 +65,9 @@ public class EventControl : MonoBehaviour
         {
             DialogSys2.Instance.dialogStart(0);
         }
+    }
+    public void finishEvent(int i)
+    {
+        events[i] = true;
     }
 }
