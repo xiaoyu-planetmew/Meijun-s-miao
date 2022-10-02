@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31d395694a3de34458a0358c543a07bc, type: 3}
-  m_Name: chapter2Moment1
+  m_Name: axe
   m_EditorClassIdentifier: 
-  itemName: chapter2Moment1
-  itemDesJ: chapter2Moment1
-  itemDesE: chapter2Moment1
-  itemDesCN: chapter2Moment1
-  itemSprite: {fileID: 21300000, guid: f6dc1647a81ddd8449ece2b3fa4d2d9d, type: 3}
+  itemName: axe
+  itemDesJ: "\u65A7"
+  itemDesE: axe
+  itemDesCN: "\u65A7\u5B50"
+  itemSprite: {fileID: 21300000, guid: 605aba008b93bd54bb30c03bb578bbdd, type: 3}
   itemPrice: 0

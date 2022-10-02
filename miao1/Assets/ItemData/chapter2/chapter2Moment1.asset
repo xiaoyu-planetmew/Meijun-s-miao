@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d395694a3de34458a0358c543a07bc, type: 3}
+  m_Name: chapter2Moment1
+  m_EditorClassIdentifier: 
+  itemName: chapter2Moment1
+  itemDesJ: "\u53E4\u4EE3\u306E\u66F2(\u516D)"
+  itemDesE: Ancient Song 6
+  itemDesCN: "\u53E4\u4EE3\u4E50\u7AE0(\u516D)"
+  itemSprite: {fileID: 21300000, guid: f6dc1647a81ddd8449ece2b3fa4d2d9d, type: 3}
+  itemPrice: 0

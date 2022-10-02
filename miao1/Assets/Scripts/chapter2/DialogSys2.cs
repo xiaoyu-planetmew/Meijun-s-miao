@@ -21,7 +21,10 @@ public class DialogSys2 : MonoBehaviour
     public List<TextAsset> textfilesJP = new List<TextAsset>();
     //public GameObject sceneTransButton;
     public List<TextAsset> textfiles = new List<TextAsset>();
+    public List<TextAsset> momentFind = new List<TextAsset>();
+    public List<TextAsset> momentNotFind = new List<TextAsset>();
     public List<UnityEvent> afterDialogEvents = new List<UnityEvent>();
+    //public UnityEvent  
 
     //public List<TextAsset> textfilesE = new List<TextAsset>();
     //public List<TextAsset> textfilesJ = new List<TextAsset>();
@@ -101,6 +104,44 @@ public class DialogSys2 : MonoBehaviour
             Debug.Log("start" + Num);
         }
     }
+    public void dialogStartMoment(bool moment)
+    {
+        if (!isTalking)
+        {
+            if(moment)
+            {
+                index = 0;
+                if (GameObject.Find("GameManager") && GameObject.Find("GameManager").GetComponent<GameManager>())
+                {
+                    GetTextFromFile(momentFind[GameManager.instance.languageNum]);
+                }
+                else
+                {
+                    GetTextFromFile(momentFind[2]);
+                }
+                //GetTextFromFile(momentFind[Num]);
+                eventNum = -1;
+                fileChoose();
+                Debug.Log("startNotFind");
+            }
+            if (!moment)
+            {
+                index = 0;
+                if (GameObject.Find("GameManager") && GameObject.Find("GameManager").GetComponent<GameManager>())
+                {
+                    GetTextFromFile(momentNotFind[GameManager.instance.languageNum]);
+                }
+                else
+                {
+                    GetTextFromFile(momentNotFind[2]);
+                }
+                //GetTextFromFile(momentFind[Num]);
+                eventNum = -2;
+                fileChoose();
+                Debug.Log("startNotFind");
+            }
+        }
+    }
     public void dialogNext()
     {
         if (textFinished && canContinue)
@@ -116,7 +157,13 @@ public class DialogSys2 : MonoBehaviour
                 //textLabelen.gameObject.SetActive(false);
                 isTalking = false;
                 //player.GetComponent<FinalMovement>().canMove = true;
+                if(eventNum >= 0)
                 afterDialogEvents[eventNum].Invoke();
+                if(eventNum < 0)
+                {
+                    player.GetComponent<FinalMovement>().continueMoving();
+                    GameObject.Find("Npc").transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
+                }
                 Debug.Log("dialog" + eventNum);
                 return;
                 //TutorialTrackController.Instance.FinishTutorial();

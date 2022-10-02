@@ -88,6 +88,7 @@ public class bigBirdAnim2 : MonoBehaviour
         skeletonAnimation.skeleton.SetToSetupPose();
         spineAnimationState.ClearTracks();
         spineAnimationState.SetAnimation(0, "idle", true);
+        EventControl.Instance.finishEvent(0);
     }
     public void flyPath1()
     {

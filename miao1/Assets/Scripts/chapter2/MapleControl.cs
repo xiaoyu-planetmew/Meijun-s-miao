@@ -34,6 +34,7 @@ public class MapleControl : MonoBehaviour
         wall2.SetActive(true);
         npc.transform.position = new Vector3(-46.58f, -0.44f, 0f);
         npc.transform.GetChild(0).localScale = new Vector3(-0.4f, 0.4f, 0.4f);
+        npc.transform.Find("JiangSongCanvas").GetComponent<NearShow>().startButton.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(38, -86);
         GameObject.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
     }
     public void maple2()
@@ -109,5 +110,6 @@ public class MapleControl : MonoBehaviour
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
         moment1.SetActive(true);
+        EventControl.Instance.finishEvent(1);
     }
 }

@@ -201,9 +201,10 @@ public class GameManager2 : MonoBehaviour
     {
         foreach (Item i in items)
         {
-            if (i.itemName == "Moment1")
+            if (i.itemName == "chapter2Moment1")
             {
-                events[0] = true;
+                EventControl.Instance.finishEvent(2);
+                //events[0] = true;
             }
             if (i.itemName == "spider")
             {
