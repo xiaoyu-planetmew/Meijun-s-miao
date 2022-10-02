@@ -65,7 +65,7 @@ public class GameManager2 : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().name == "SampleScene")
+        if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "Scene2")
         {
             itemCheck();
             DisplayItems();

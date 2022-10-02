@@ -140,7 +140,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
     IEnumerator final()
     {
         Debug.Log("final0");
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(3);
         Debug.Log("final");
         this.transform.position = finalPos.transform.position;
         if (this.gameObject.name == "lanlu")
@@ -163,7 +163,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
     IEnumerator final1()
     {
         Debug.Log("final0");
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(3);
         Debug.Log("final");
         this.transform.position = finalPos1.transform.position;
         if (this.gameObject.name == "lanlu")
@@ -183,6 +183,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
         skeletonAnimation.skeleton.SetToSetupPose();
         spineAnimationState.ClearTracks();
         spineAnimationState.SetAnimation(0, "idle", true);
+        this.gameObject.SetActive(false);
     }
     public void flyPath()
     {
@@ -197,7 +198,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
             SetOptions(true) 路径从头回到原点
             SetLookAt(0) 路径物体与路径点保持的夹角 取值范围0-1
          */
-        transform.DOPath(positions, 6, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.left);
+        transform.DOPath(positions, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.left);
         StartCoroutine(final());
     }
     public void flyPath1()

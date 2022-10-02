@@ -57,18 +57,31 @@ public class MapleControl : MonoBehaviour
     }
     public void maple3()
     {
-        npc.transform.Find("JiangSongCanvas").Find("duihuakuang (1)").gameObject.SetActive(true);
+        //npc.transform.Find("JiangSongCanvas").Find("duihuakuang (2)").gameObject.SetActive(true);
         laoPoPo.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
-        face.SetActive(true);
-        face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
+        StartCoroutine(duihuakuang2());
+        
         DG.Tweening.Sequence quence = DOTween.Sequence();
+        quence.AppendInterval(2).OnComplete(() =>
+        {
+            
+            //face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
+        });
         quence.AppendInterval(3).OnComplete(() =>
         {
-            npc.transform.Find("JiangSongCanvas").Find("duihuakuang (1)").gameObject.SetActive(false);
+            
             face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             DialogSys2.Instance.isTalking = false;
             DialogSys2.Instance.dialogStart(8);
         });
+    }
+    IEnumerator duihuakuang2()
+    {
+        npc.transform.Find("JiangSongCanvas").Find("duihuakuang (2)").gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        npc.transform.Find("JiangSongCanvas").Find("duihuakuang (2)").gameObject.SetActive(false);
+        face.SetActive(true);
+        face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appear", false);
     }
     public void maple4()
     {

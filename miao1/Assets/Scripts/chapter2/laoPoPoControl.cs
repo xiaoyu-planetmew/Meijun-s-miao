@@ -83,18 +83,20 @@ public class laoPoPoControl : MonoBehaviour
         pos[0] = new Vector3(17.22f, 2.04f, 0f);
         pos[1] = new Vector3(15.34f, 2.04f, 0f);
         pos[2] = new Vector3(10.83f, -0.62f, 0f);
-        pos[3] = new Vector3(-39.81f, -0.62f, 0f);
+        pos[3] = new Vector3(-5f, -0.62f, 0f);
         //pos[3] = new Vector3(17.22f, 2.04f, 0f);
         this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run_angry", true);
         DG.Tweening.Sequence quence = DOTween.Sequence();
         //quence.Append(this.transform.DOMove(new Vector3(15.34f, 2.04f, 0f), 0.5f));
         //quence.Append(this.transform.DOMove(new Vector3(10.83f, -0.62f, 0f), 1f));
-        quence.Append(this.transform.DOPath(pos, 8, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
+        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
         {
+            
             laoPoPoAni.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         });
-        quence.Join(GameObject.Find("Main Camera").transform.DOMove(camPos, 3)).OnComplete(() =>
+        quence.Insert(5, GameObject.Find("Main Camera").transform.DOMove(camPos, 3)).OnComplete(() =>
         {
+            this.transform.position = new Vector3(-39.81f, -0.62f, 0f);
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
             GameObject.Find("Maple").gameObject.GetComponent<MapleControl>().maple1();
             //this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
