@@ -26,7 +26,10 @@ public class EventControl : MonoBehaviour
     public void eventFinish(int i)
     {
         if(!events[i])
-        events[i] = true;
+        { 
+            events[i] = true;
+        }
+        
     }
     void showNPC_Button()
     {

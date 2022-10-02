@@ -206,9 +206,9 @@ public class GameManager2 : MonoBehaviour
                 EventControl.Instance.finishEvent(2);
                 //events[0] = true;
             }
-            if (i.itemName == "spider")
+            if (i.itemName == "axe")
             {
-                events[2] = true;
+                EventControl.Instance.finishEvent(5);
             }
             if (i.itemName == "flintstone")
             {
