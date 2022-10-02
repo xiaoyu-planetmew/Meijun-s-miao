@@ -163,6 +163,11 @@ public class DialogSys2 : MonoBehaviour
                 {
                     player.GetComponent<FinalMovement>().continueMoving();
                     GameObject.Find("Npc").transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
+                    if(eventNum == -1)
+                    {
+                        EventControl.Instance.finishEvent(3);
+                        EventControl.Instance.finishEvent(4);
+                    }
                 }
                 Debug.Log("dialog" + eventNum);
                 return;

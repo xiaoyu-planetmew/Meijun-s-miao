@@ -6159,6 +6159,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 46a0466154c30054fa1a6272012a4d11, type: 3}
   - {fileID: 4900000, guid: f33eb728536814640b9b4d328cd81bf8, type: 3}
   - {fileID: 4900000, guid: 22bad5ac618736d4f9aa4696b6b32467, type: 3}
+  - {fileID: 4900000, guid: 89f72832f7b79fb4dbf3fd69019fb9e9, type: 3}
   textfiles: []
   momentFind:
   - {fileID: 4900000, guid: 4dc8aeef4f6fe8c48ab87ec19dc67fe3, type: 3}
@@ -6469,6 +6470,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1573547925}
+        m_TargetAssemblyTypeName: FinalMovement, Assembly-CSharp
+        m_MethodName: continueMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
   isTalking: 0
   index: 0
   textList: []
@@ -31790,7 +31813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1323179536
 Transform:
   m_ObjectHideFlags: 0
@@ -31816,8 +31839,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43076923, y: 0.2576923, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0186081, y: 1.9477243, z: 0.2}
+  m_Center: {x: 0, y: 0.036739826, z: 0}
 --- !u!114 &1323179538
 MonoBehaviour:
   m_ObjectHideFlags: 0
