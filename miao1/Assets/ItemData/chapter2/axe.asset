@@ -16,5 +16,5 @@ MonoBehaviour:
   itemDesJ: "\u65A7"
   itemDesE: axe
   itemDesCN: "\u65A7\u5B50"
-  itemSprite: {fileID: 21300000, guid: 605aba008b93bd54bb30c03bb578bbdd, type: 3}
+  itemSprite: {fileID: 21300000, guid: eca87847d944eff498c234754ac656ec, type: 3}
   itemPrice: 0

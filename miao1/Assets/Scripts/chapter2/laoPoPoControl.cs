@@ -79,17 +79,17 @@ public class laoPoPoControl : MonoBehaviour
     }
     public void LaoPoPoThird()
     {
-        Vector3[] pos = new Vector3[3];
+        Vector3[] pos = new Vector3[4];
         pos[0] = new Vector3(17.22f, 2.04f, 0f);
         pos[1] = new Vector3(15.34f, 2.04f, 0f);
         pos[2] = new Vector3(10.83f, -0.62f, 0f);
+        pos[3] = new Vector3(-39.81f, -0.62f, 0f);
         //pos[3] = new Vector3(17.22f, 2.04f, 0f);
         this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run_angry", true);
         DG.Tweening.Sequence quence = DOTween.Sequence();
         //quence.Append(this.transform.DOMove(new Vector3(15.34f, 2.04f, 0f), 0.5f));
         //quence.Append(this.transform.DOMove(new Vector3(10.83f, -0.62f, 0f), 1f));
-        quence.Append(this.transform.DOPath(pos, 2, PathType.Linear, PathMode.Ignore));
-        quence.Append(this.transform.DOMove(new Vector3(-39.81f, -0.62f, 0f), 6)).OnComplete(() =>
+        quence.Append(this.transform.DOPath(pos, 8, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
         {
             laoPoPoAni.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
         });

@@ -122,7 +122,7 @@ public class DialogSys2 : MonoBehaviour
                 //GetTextFromFile(momentFind[Num]);
                 eventNum = -1;
                 fileChoose();
-                Debug.Log("startNotFind");
+                Debug.Log("startFind");
             }
             if (!moment)
             {

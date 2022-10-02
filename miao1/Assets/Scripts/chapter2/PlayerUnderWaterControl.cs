@@ -39,6 +39,7 @@ public class PlayerUnderWaterControl : MonoBehaviour
             this.gameObject.GetComponent<FinalMovement>().enabled = true;
             this.gameObject.GetComponent<UnderWaterMove>().enabled = false;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(!this.gameObject.GetComponent<PlatformEffector2D>().useOneWay)
             this.gameObject.GetComponent<PlatformEffector2D>().useOneWay = true;
             this.transform.Find("groundcheck").GetComponent<playerJumpDown>().enabled = true;
         }
