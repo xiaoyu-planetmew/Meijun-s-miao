@@ -12,6 +12,7 @@ public class laoPoPoControl : MonoBehaviour
     //public GameObject LaoPoPoCanvas;
     Vector3 camPos;
     public GameObject laoPoPoAni;
+    public AnimationCurve AniCurve;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,21 +57,27 @@ public class laoPoPoControl : MonoBehaviour
         //{ (35.26f, -0.62f, 0f), (23.34f, -0.62f, 0f), (21.34f, 2.04f, 0f), (17.22f, 2.04f, 0f) };
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(30.3f, 3.706468f, -10f), 1));
-        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
+        /*
+        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).SetEase(AniCurve).OnComplete(() =>
         {
             this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
             DialogSys2.Instance.dialogStart(6);
         }); 
         quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 6));
-        //quence.Append(this.transform.DOMove(new Vector3(23.34f, -0.62f, 0), 2));
+        */
+        
         //quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(22.37f, 3.706468f, -10f), 1));
-        //quence.Append(this.transform.DOMove(new Vector3(21.34f, 2.04f, 0), 2));
-        //quence.Append(this.transform.DOMove(new Vector3(17.22f, 2.04f, 0), 2)).OnComplete(() =>
-        //{
-        //    this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
-        //    DialogSys2.Instance.dialogStart(6);
-        //});
-        //quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 1));
+        //quence.Append(this.transform.DOMove(pos[0], 2).SetEase(AniCurve));
+        quence.Append(this.transform.DOMove(pos[1], 2).SetEase(AniCurve));
+        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(24.1f, 3.706468f, -10f), 2));
+        quence.Append(this.transform.DOMove(pos[2], 1).SetEase(AniCurve));
+        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(19.2f, 3.706468f, -10f), 1));
+        quence.Append(this.transform.DOMove(pos[3], 1).SetEase(AniCurve)).OnComplete(() =>
+        {
+            this.transform.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_angry", true);
+            DialogSys2.Instance.dialogStart(6);
+        });
+        quence.Join(GameObject.Find("Main Camera").transform.DOMove(new Vector3(13.2f, 3.706468f, -10f), 1));
     }
     IEnumerator LaoPoPoRun()
     {
@@ -89,7 +96,7 @@ public class laoPoPoControl : MonoBehaviour
         DG.Tweening.Sequence quence = DOTween.Sequence();
         //quence.Append(this.transform.DOMove(new Vector3(15.34f, 2.04f, 0f), 0.5f));
         //quence.Append(this.transform.DOMove(new Vector3(10.83f, -0.62f, 0f), 1f));
-        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).OnComplete(() =>
+        quence.Append(this.transform.DOPath(pos, 6, PathType.Linear, PathMode.Ignore)).SetEase(AniCurve).OnComplete(() =>
         {
             
             laoPoPoAni.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);

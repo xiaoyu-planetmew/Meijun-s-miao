@@ -313,7 +313,7 @@ public class DialogSys2 : MonoBehaviour
         textBackground.gameObject.SetActive(true);
         textFinished = false;
         textLabel.GetComponent<Text>().text = "";
-        textLabel.GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.1f).OnComplete(() => {
+        textLabel.GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.1f).SetEase(Ease.Linear).OnComplete(() => {
             index = index + 1;
             textFinished = true;
         });
