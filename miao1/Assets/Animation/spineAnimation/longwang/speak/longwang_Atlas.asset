@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: longwang_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 49a546f5eb26fdc458f5ac1f65d8b2b9, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4a76934969b4feb408a4871acf14a7c5, type: 2}
+  - {fileID: 2100000, guid: 9f3407d2567f4b24aaaa9de8f9ba4fdb, type: 2}
+  - {fileID: 2100000, guid: 19689134cc3963946b3d22bfbdec1163, type: 2}

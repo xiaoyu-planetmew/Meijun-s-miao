@@ -77,7 +77,7 @@ public class DialogSys2 : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                DialogSys2.Instance.dialogNext();
+                //DialogSys2.Instance.dialogNext();
                 //SoundController.Instance.Button_Off.HandleEvent(gameObject);
             }
 
@@ -165,8 +165,7 @@ public class DialogSys2 : MonoBehaviour
                     GameObject.Find("Npc").transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
                     if(eventNum == -1)
                     {
-                        EventControl.Instance.finishEvent(3);
-                        EventControl.Instance.finishEvent(4);
+                        
                     }
                 }
                 Debug.Log("dialog" + eventNum);
@@ -216,7 +215,6 @@ public class DialogSys2 : MonoBehaviour
         for(int j = 0; j < textList.Count; j++)
         {
             string s = textList[j].Substring(0, 2);
-
             textList[j] = textList[j].Substring(2);
             textTalker.Add(s);
             /*
@@ -300,6 +298,23 @@ public class DialogSys2 : MonoBehaviour
     {
         textLabel.SetActive(false);
         textBackground.gameObject.SetActive(false);
+        Debug.Log(s);
+        if (s == "³ªÌø")
+        {
+            if (eventNum == 12)
+            {
+                GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(0);
+            }
+            if (eventNum == 14)
+            {
+                GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
+            }
+        }
+        else if (s == "³ªÍê")
+        {
+            GameObject.Find("Npc").GetComponent<NpcMusicFocus>().cancelFocus();
+            //dialogNext();
+        }
         for (int i=0;i<speakers.Count;i++)
         {
             if(s == speakers[i])
@@ -313,6 +328,7 @@ public class DialogSys2 : MonoBehaviour
         textBackground.gameObject.SetActive(true);
         textFinished = false;
         textLabel.GetComponent<Text>().text = "";
+        output = textList[index];
         textLabel.GetComponent<Text>().DOText(textList[index], textList[index].Length * 0.1f).SetEase(Ease.Linear).OnComplete(() => {
             index = index + 1;
             textFinished = true;

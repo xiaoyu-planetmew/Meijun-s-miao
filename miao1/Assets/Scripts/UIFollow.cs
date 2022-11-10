@@ -41,7 +41,7 @@ public class UIFollow : MonoBehaviour
             Vector2 point;
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent as RectTransform, pos, canvas.worldCamera, out point))
             {
-                transform.localPosition = new Vector3(point.x + x, y, 0);
+                transform.localPosition = new Vector3(point.x + x, point.y + y, 0);
                 hasFollowed = true;
             }
         }

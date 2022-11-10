@@ -4112,6 +4112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: a41ec094e7259c4488e481db096dc6af, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &87141602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6482,6 +6485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 8db644c36dd37214d8c6db7a0b5458c9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &142498309
 Transform:
   m_ObjectHideFlags: 0
@@ -8101,6 +8107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &189869913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16946,6 +16955,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &301701171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22878,6 +22890,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 316feca2feb021c44a54c01b5cb69952, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &450504004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23471,6 +23486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 1400b4e4d3c49414db30a0d1216b20e7, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &459677425
 Transform:
   m_ObjectHideFlags: 0
@@ -27669,6 +27687,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: addaf663df0c0c042ab6449bb83ea829, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &586542746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34045,6 +34066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752095438}
+  - component: {fileID: 752095439}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -34071,6 +34093,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752095439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752095437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f8e955ef76c9044bcb7b5836340fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 1547472741298562299}
+  - {fileID: 1547472741298562298}
+  - {fileID: 1547472741298562297}
+  - {fileID: 1547472741298562296}
+  - {fileID: 246057325}
+  - {fileID: 573587176}
+  - {fileID: 1791595699}
+  - {fileID: 1814959823}
+  - {fileID: 1900044243}
+  - {fileID: 1579781484}
+  - {fileID: 661651306}
+  - {fileID: 1465495432}
+  - {fileID: 1925113596}
+  - {fileID: 1408426912}
+  - {fileID: 487605076}
+  - {fileID: 918689780}
+  - {fileID: 139742494}
+  - {fileID: 1530743967}
+  - {fileID: 1774729722}
+  - {fileID: 1479358358}
+  - {fileID: 1315682517}
+  - {fileID: 1049601467}
+  - {fileID: 411091511}
+  - {fileID: 1896518151}
+  - {fileID: 366352235}
+  - {fileID: 61477877}
+  - {fileID: 1408426912}
+  fonts:
+  - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
+  - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
+  - {fileID: 12800000, guid: 4b4f94c8213e12243a9b2659ca442915, type: 3}
 --- !u!1 &755138653
 GameObject:
   m_ObjectHideFlags: 0
@@ -45477,6 +45543,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: cd14dddc0196da345bfb4ae579d5f7a1, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &926069896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51337,6 +51406,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: e62b4a05171e793468ffc73c0df1268d, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1041240670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54677,6 +54749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 7c78b15a26c13eb458407547139ba56b, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1088143534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63915,6 +63990,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 74f304b6453a85c44944573eccf64cc7, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1235800455
 Transform:
   m_ObjectHideFlags: 0
@@ -70811,6 +70889,7 @@ MonoBehaviour:
   - {fileID: 1896518151}
   - {fileID: 366352235}
   - {fileID: 61477877}
+  - {fileID: 1408426912}
   fonts:
   - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
   - {fileID: 12800000, guid: a1f6734ba1a2a5a4aa121be2283a91ad, type: 3}
@@ -72122,6 +72201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 62805b61dc1b7f648ba7e508ec1b8cdc, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1443803738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74202,6 +74284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: db5e0f7d400bd9246aca574895f10e56, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1481043402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76951,6 +77036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1535313921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78519,6 +78607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: c127e48f6e8ef654080461a935db5c6e, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1558120422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96477,6 +96568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1743493482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97753,6 +97847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: b5f940645bf26f54a9e98af7494e075e, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1786997735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104996,6 +105093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 8777660bb50b30848b22154f5a0458bc, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1931864140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106643,6 +106743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 0d4f474f8c50e9f4d8a3a197ab71eb58, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1974052194
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109728,6 +109831,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: d1205d8b6594747429afd03688907ba9, type: 2}
+  afterPickUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &2071340070
 SpriteRenderer:
   m_ObjectHideFlags: 0

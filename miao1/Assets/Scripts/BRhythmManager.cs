@@ -225,7 +225,17 @@ public class BRhythmManager : MonoBehaviour
                 chooseCanvas[4].SetActive(true);
                 chooseCanvas[4].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager.instance.songRecord[4].ToString("0.00%");
             }
-        }else
+        }else if (GameObject.Find("GameManager2"))
+        {
+            mainChooseCanvas.SetActive(false);
+            if (true)
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 0;
+                chooseCanvas[0].SetActive(true);
+                chooseCanvas[0].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager2.instance.songRecord[0].ToString("0.00%");
+            }
+        }
+        else
         {
             mainChooseCanvas.SetActive(true);
             for(int i = 0; i < chooseCanvas.Count; i++)

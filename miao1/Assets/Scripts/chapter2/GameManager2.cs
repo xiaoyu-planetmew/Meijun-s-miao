@@ -208,27 +208,12 @@ public class GameManager2 : MonoBehaviour
             }
             if (i.itemName == "axe")
             {
-                EventControl.Instance.finishEvent(5);
+                EventControl.Instance.finishEvent(6);
             }
-            if (i.itemName == "flintstone")
+            if (i.itemName == "chapter2Moment1")
             {
-                events[3] = true;
-            }
-            if (i.itemName == "Moment2")
-            {
-                events[5] = true;
-            }
-            if (i.itemName == "Moment3")
-            {
-                events[12] = true;
-            }
-            if (i.itemName == "Moment4")
-            {
-                events[16] = true;
-            }
-            if (i.itemName == "Moment5")
-            {
-                events[20] = true;
+                EventControl.Instance.finishEvent(7);
+                //events[0] = true;
             }
         }
     }

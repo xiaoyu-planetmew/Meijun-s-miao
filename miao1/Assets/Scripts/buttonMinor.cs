@@ -18,7 +18,7 @@ public class buttonMinor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKeyDown(key)) || (anyKey && Input.anyKeyDown))
+        if(((Input.GetKeyDown(key)) || (anyKey && Input.anyKeyDown)) && b.GetComponent<Button>().isActiveAndEnabled)
         {
             b.gameObject.GetComponent<Button>().onClick.Invoke();
         }

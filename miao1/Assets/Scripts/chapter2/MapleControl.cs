@@ -10,6 +10,8 @@ public class MapleControl : MonoBehaviour
 {
     public GameObject maple;
     public GameObject face;
+    public GameObject hudie;
+    public GameObject hudieCanvas;
     public GameObject wall2;
     public GameObject wall3;
     public GameObject wall4;
@@ -173,24 +175,21 @@ public class MapleControl : MonoBehaviour
             maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "disappear", false);
             DG.Tweening.Sequence quence = DOTween.Sequence();
             quence.AppendInterval(3);
-            quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 5).OnComplete(() =>
+            hudie.gameObject.SetActive(true);
+            quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 2).OnComplete(() =>
             {
                 GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
                 GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
                 npc.gameObject.SetActive(true);
-                laoPoPo.gameObject.SetActive(true);
+                //npc.transform.Find("JiangSongCanvas").gameObject.GetComponent<NearShow>().enabled = true;
+                //laoPoPo.gameObject.SetActive(true);
+                maple.gameObject.SetActive(false);
+                
+                hudieCanvas.gameObject.SetActive(true);
             }));
             
         }
         cutTimes++;
     }
-    public void maple10()
-    {
-        //cutDownButton1.SetActive(true);
-        cutTimes++;
-        if(cutTimes >= 3)
-        {
-
-        }
-    }
+    
 }
