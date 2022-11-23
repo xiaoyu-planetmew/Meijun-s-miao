@@ -27,7 +27,7 @@ public class GameManager2 : MonoBehaviour
     public ItemButton[] itemButtons;//ALL of ITEM BUTTONS in this game [Used for reset]
     public string mail;
     public List<float> songRecord = new List<float>();
-
+    public GameObject eventCtrl;
 
     private void Awake()
     {

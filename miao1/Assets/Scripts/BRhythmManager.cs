@@ -228,11 +228,17 @@ public class BRhythmManager : MonoBehaviour
         }else if (GameObject.Find("GameManager2"))
         {
             mainChooseCanvas.SetActive(false);
-            if (true)
+            if (GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[2] && !GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[4])
             {
                 this.gameObject.GetComponent<BChapterChoose>().chapter = 0;
                 chooseCanvas[0].SetActive(true);
                 chooseCanvas[0].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager2.instance.songRecord[0].ToString("0.00%");
+            }
+            if (GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[7] && !GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[9])
+            {
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 1;
+                chooseCanvas[1].SetActive(true);
+                chooseCanvas[1].transform.Find("nowChapter").GetChild(0).GetChild(2).GetComponent<Text>().text = GameManager2.instance.songRecord[1].ToString("0.00%");
             }
         }
         else
@@ -457,7 +463,38 @@ public class BRhythmManager : MonoBehaviour
             //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
             SceneManager.LoadScene("SampleScene");
             //StartCoroutine(loadDelay());
-        }else
+        }else if(GameObject.Find("GameManager2"))
+        {
+            if (this.gameObject.GetComponent<BChapterChoose>().chapter == 0)
+            {
+                if (accurary >= 0.5 && GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[2])
+                {
+                    GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(4);
+                    if (newBest)
+                    {
+                        GameManager2.instance.songRecord[0] = accurary;
+                    }
+                }
+                GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(3);
+            }
+            if (this.gameObject.GetComponent<BChapterChoose>().chapter == 1)
+            {
+                if (accurary >= 0.5 && GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[7])
+                {
+                    GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(9);
+                    if (newBest)
+                    {
+                        GameManager2.instance.songRecord[1] = accurary;
+                    }
+                }
+                GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(8);
+            }
+            GameObject.Find("GameManager2").transform.Find("acrossScene").gameObject.SetActive(true);
+            //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
+            SceneManager.LoadScene("Scene2");
+            //StartCoroutine(loadDelay());
+        }
+        else
         {
             if(newBest)
             {
@@ -477,9 +514,24 @@ public class BRhythmManager : MonoBehaviour
     }
     IEnumerator loadDelay()
     {
-        GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
+        if (GameObject.Find("GameManager"))
+        {
+            GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;
+        }
+        else if (GameObject.Find("GameManager2"))
+        {
+            GameManager2.instance.gameObject.GetComponent<SceneCheck2>().enabled = false;
+        }
         yield return new WaitForSeconds(0.1f);
-        GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = true;
+        if (GameObject.Find("GameManager"))
+        {
+            GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = true;
+        }
+        else if (GameObject.Find("GameManager2"))
+        {
+            GameManager2.instance.gameObject.GetComponent<SceneCheck2>().enabled = true;
+        }
+        
     }
     public void comboAniControl()
     {

@@ -37,5 +37,26 @@ public class languageSpriteChange : MonoBehaviour
             //this.GetComponent<Text>().text = EnglishString;
         }
         }
+        if (GameObject.Find("GameManager2"))
+        {
+            if (GameManager2.instance.languageNum == 0)
+            {
+                this.GetComponent<Image>().sprite = JanpanessSprite;
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(JanpanessSprite.bounds.size.x * 100, JanpanessSprite.bounds.size.y * 100);
+                //this.GetComponent<Text>().text = JanpanessString;
+            }
+            if (GameManager2.instance.languageNum == 1)
+            {
+                this.GetComponent<Image>().sprite = EnglishSprite;
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(EnglishSprite.bounds.size.x * 100, EnglishSprite.bounds.size.y * 100);
+                //this.GetComponent<Text>().text = EnglishString;
+            }
+            if (GameManager2.instance.languageNum == 2)
+            {
+                this.GetComponent<Image>().sprite = ChineseSprite;
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(ChineseSprite.bounds.size.x * 100, ChineseSprite.bounds.size.y * 100);
+                //this.GetComponent<Text>().text = EnglishString;
+            }
+        }
     }
 }

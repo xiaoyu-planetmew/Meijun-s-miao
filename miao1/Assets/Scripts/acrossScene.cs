@@ -25,5 +25,10 @@ public class acrossScene : MonoBehaviour
             GameObject.Find("NPCDialogBox").transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.Invoke();
             this.gameObject.SetActive(false);
         }
+        if (scene.name == "Scene2")
+        {
+            GameObject.Find("Npc").transform.Find("JiangSongCanvas").Find("startButton").GetComponent<Button>().onClick.Invoke();
+            this.gameObject.SetActive(false);
+        }
     }
 }

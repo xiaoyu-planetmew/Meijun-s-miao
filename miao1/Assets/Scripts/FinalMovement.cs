@@ -63,18 +63,34 @@ public class FinalMovement : MonoBehaviour
             walk.Play();
         }
         */
-        if(!moving)
+        if(!moving && running)
         {
+            walk.Stop();
+            run.Play();
+            moving = true;
+        }
+        if (!moving && walking)
+        {
+            run.Stop();
+            walk.Play();
+            moving = true;
+        }
+        if (!moving)
+        {
+            /*
             if(running)
             {
+                walk.Stop();
                 run.Play();
                 moving = true;
             }
             if(walking)
             {
+                run.Stop();
                 walk.Play();
                 moving = true;
             }
+            */
             if(!running)
             {
                 run.Stop();
@@ -91,6 +107,24 @@ public class FinalMovement : MonoBehaviour
             }
         if(this.transform.Find("ChracterNew")) SpineStateMachine();
         
+    }
+    public void stopSound()
+    {
+        /*
+        moving = false;
+        running = false;
+        walking = false;
+        run.Stop();
+        walk.Stop();
+        */
+        StopAllCoroutines();
+        StartCoroutine(moveDelay());
+    }
+    IEnumerator moveDelay()
+    {
+        changeCanMove(false);
+        yield return new WaitForSeconds(1f);
+        changeCanMove(true);
     }
     public void SpineStateMachine()
     {
@@ -124,6 +158,8 @@ public class FinalMovement : MonoBehaviour
     
     public void stopMoving()
     {
+        run.Stop();
+        walk.Stop();
         horizontalMove = 0;
         canMove = false;
     }
@@ -138,10 +174,21 @@ public class FinalMovement : MonoBehaviour
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
-        GroundMovement();
+        if(canMove)
+        {
 
-        Jump();
+            GroundMovement();
 
+            Jump();
+        }
+        if(outside)
+        {
+            walk.Stop();
+        }
+        if (!outside)
+        {
+            run.Stop();
+        }
 
         //SwitchAnim();
         //if(canMove)
@@ -177,7 +224,7 @@ public class FinalMovement : MonoBehaviour
         {
             horizontalMove = 0;
         }
-        }
+        }else horizontalMove = 0;
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         var i = transform.GetChild(0).localScale.y;
         if(horizontalMove == -1)
@@ -230,7 +277,9 @@ public class FinalMovement : MonoBehaviour
     {
         horizontalMove = 0;
         canMove = move;
-        if(canMove)
+        //run.Stop();
+        //walk.Stop();
+        if(canMove && GameObject.Find("Main Camera"))
         {
             GameObject.Find("Main Camera").GetComponent<CinemachineBrain>().enabled = true;
         }

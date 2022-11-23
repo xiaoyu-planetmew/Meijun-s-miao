@@ -176,6 +176,7 @@ public class MapleControl : MonoBehaviour
             DG.Tweening.Sequence quence = DOTween.Sequence();
             quence.AppendInterval(3);
             hudie.gameObject.SetActive(true);
+            hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
             quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 2).OnComplete(() =>
             {
                 GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
@@ -183,7 +184,7 @@ public class MapleControl : MonoBehaviour
                 npc.gameObject.SetActive(true);
                 //npc.transform.Find("JiangSongCanvas").gameObject.GetComponent<NearShow>().enabled = true;
                 //laoPoPo.gameObject.SetActive(true);
-                maple.gameObject.SetActive(false);
+                //maple.gameObject.SetActive(false);
                 
                 hudieCanvas.gameObject.SetActive(true);
             }));

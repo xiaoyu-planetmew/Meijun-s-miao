@@ -40,6 +40,7 @@ public class triggerSceneJump : MonoBehaviour
         {
             if(jumpToSceneNum == 1)
             {
+                GameManager.instance.player.GetComponent<FinalMovement>().stopSound();
                 GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 GameManager.instance.player.transform.position = locations[1].transform.position;
                 cameras[0].SetActive(false);
@@ -50,6 +51,7 @@ public class triggerSceneJump : MonoBehaviour
         {
             if(jumpToSceneNum == 0)
             {
+                GameManager.instance.player.GetComponent<FinalMovement>().stopSound();
                 GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 GameManager.instance.player.transform.position = locations[0].transform.position;
                 cameras[0].SetActive(true);

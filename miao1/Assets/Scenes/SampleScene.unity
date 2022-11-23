@@ -14730,6 +14730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a625834d4c094c973b81dcc94233b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posY: 0
 --- !u!4 &247540772
 Transform:
   m_ObjectHideFlags: 0
@@ -16954,7 +16955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afacae9b5ad1486479768525fb6eac29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 94004e8543e211749a644d28e0a701b9, type: 2}
+  itemData: {fileID: 0}
   afterPickUp:
     m_PersistentCalls:
       m_Calls: []
@@ -37179,6 +37180,7 @@ GameObject:
   - component: {fileID: 858222870}
   - component: {fileID: 858222872}
   - component: {fileID: 858222871}
+  - component: {fileID: 858222873}
   m_Layer: 5
   m_Name: title
   m_TagString: Untagged
@@ -37243,6 +37245,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858222869}
   m_CullTransparentMesh: 1
+--- !u!114 &858222873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858222869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321561f2bd45eaf4980686ca84e05681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JanpanessSprite: {fileID: 21300000, guid: d543ba93eee80884baa102ae09b59727, type: 3}
+  EnglishSprite: {fileID: 21300000, guid: d543ba93eee80884baa102ae09b59727, type: 3}
+  ChineseSprite: {fileID: 21300000, guid: ba12d5cdcb5a4da459793c08a063a2df, type: 3}
 --- !u!1001 &858769090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48504,18 +48521,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1002160619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49521,7 +49526,7 @@ MonoBehaviour:
   alwaysFollow: 1
   canvas: {fileID: 1535436388}
   x: 22.21
-  y: -24.61
+  y: 83.58
 --- !u!1 &1018977299
 GameObject:
   m_ObjectHideFlags: 0
@@ -118456,6 +118461,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3882947093676052429, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_Pitch
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882947093676052429, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c7d8ac58c96efaa44b429a3469461ad8, type: 3}
     - target: {fileID: 4817629250981351976, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
