@@ -48,6 +48,10 @@ public class mouseThoughSelect2 : MonoBehaviour
         {
             camList[i] = cams.transform.GetChild(i);
         }
+        if (player == null)
+        {
+            player = GameManager2.instance.player;
+        }
     }
 
     void Update()

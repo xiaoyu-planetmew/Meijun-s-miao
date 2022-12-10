@@ -59,7 +59,7 @@ public class UnderWaterMove: MonoBehaviour
             spineAnimationState.SetAnimation(0, animationName, loop);
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if(canMove)
         {
@@ -91,14 +91,27 @@ public class UnderWaterMove: MonoBehaviour
                 }
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             }
-            movement(vector);
+            
         }
+        else
+        {
+            xmove = 0;
+            ymove = 0;
+            myplayer.velocity = new Vector2(0, 0);
+            //hracterNewAnim("swim_idle", true);
+        }
+        movement(vector);
         SpineStateMachine();
+        if(!canMove && this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().AnimationName != "swim_idle")
+        {
+            
+            //ChracterNewAnim("swim_idle", true);
+        }
     }
  
     private void movement(Vector2 vec)
     {
-        if (vec != Vector2.zero)          //判定是否在运动
+        if (canMove && vec != Vector2.zero)          //判定是否在运动
         {
             //playerani.SetBool("iswalking", true);
             myplayer.velocity = new Vector2(xmove * speed, ymove * speed);
@@ -109,6 +122,8 @@ public class UnderWaterMove: MonoBehaviour
         else
         {
             //playerani.SetBool("iswalking", false);
+            xanim = 0;                //将运动的值赋给动画判定的值。
+            yanim = 0;
             myplayer.velocity = new Vector2(xmove * speed, ymove * speed);
         }
  

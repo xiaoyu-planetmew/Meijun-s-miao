@@ -21,12 +21,14 @@ public class underWater1Ctrl : MonoBehaviour
     public Transform girlTarget;
     public bool fishItem = false;
     public List<Item> fishItems = new List<Item>();
+    public List<GameObject> fishItemPos = new List<GameObject>();
     public GameObject startButton;
     public GameObject hudie;
     public Vector3 hudiePos;
     public Vector3 hudieCam;
     public GameObject blackMask;
     public Vector3 girlPos;
+    public GameObject bubble;
     Vector3 camPos;
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,7 @@ public class underWater1Ctrl : MonoBehaviour
         //StartCoroutine(playerMove());
         camPos = GameObject.Find("Main Camera").transform.position;
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+        GameManager2.instance.player.GetComponent <UnderWaterMove>().ChracterNewAnim("swim_idle", true);
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;/*
         GameManager2.instance.player.transform.DOMove(new Vector3(17.70056f, -9.609916f, 0), 5).OnComplete(() =>
         {
@@ -173,6 +176,11 @@ public class underWater1Ctrl : MonoBehaviour
         hongyu.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak", true);
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+        foreach(var obj in fishItemPos)
+        {
+            obj.GetComponent<BoxCollider2D>().enabled = true;
+            obj.GetComponent<clickAnswer>().enabled = true;
+        }
     }
     public void yuDialog9()
     {
@@ -203,24 +211,40 @@ public class underWater1Ctrl : MonoBehaviour
     }
     public void yuDialog11()
     {
-        hudie.transform.position = hudiePos;
+        hudie.transform.localPosition = hudiePos;
+        bubble.SetActive(true);
+        StartCoroutine(yuDialog11Delay());
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(hudieCam, 5).OnComplete(() =>
         {
             blackMask.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
+            blackMask.GetComponent<SpriteRenderer>().enabled = true;
             blackMask.gameObject.SetActive(true);
+            Debug.Log("1");
         }));
-        quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(1, 2)).OnComplete(() =>
+        quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2)).OnComplete(() =>
         {
+            Debug.Log("2");
             GameManager2.instance.player.transform.position = girlPos;
             GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
             GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         });
-        quence.AppendInterval(2);
+        quence.AppendInterval(5);
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>
         {
+            Debug.Log("3");
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+            bubble.SetActive(false);
         });
+    }
+    IEnumerator yuDialog11Delay()
+    {
+        yield return new WaitForSeconds(8);
+        Debug.Log("2");
+        GameManager2.instance.player.transform.position = girlPos;
+        GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
+        GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
     }
 }

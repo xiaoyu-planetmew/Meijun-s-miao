@@ -62,7 +62,7 @@ public class FinalMovement : MonoBehaviour
         {
             walk.Play();
         }
-        */
+        
         if(!moving && running)
         {
             walk.Stop();
@@ -74,24 +74,23 @@ public class FinalMovement : MonoBehaviour
             run.Stop();
             walk.Play();
             moving = true;
-        }
+        }*/
         if (!moving)
         {
-            /*
+            
             if(running)
             {
-                walk.Stop();
+                //walk.Stop();
                 run.Play();
                 moving = true;
             }
             if(walking)
             {
-                run.Stop();
+                //run.Stop();
                 walk.Play();
                 moving = true;
             }
-            */
-            if(!running)
+            if (!running)
             {
                 run.Stop();
             }
@@ -99,9 +98,8 @@ public class FinalMovement : MonoBehaviour
             {
                 walk.Stop();
             }
-            
         }
-        if(!running && !walking)
+        if (!running && !walking)
             {
                 moving = false;
             }
@@ -158,10 +156,12 @@ public class FinalMovement : MonoBehaviour
     
     public void stopMoving()
     {
-        run.Stop();
-        walk.Stop();
+        //run.Stop();
+        //walk.Stop();
         horizontalMove = 0;
         canMove = false;
+        //running = false;
+        //walking = false;
     }
     public void continueMoving()
     {
@@ -173,13 +173,15 @@ public class FinalMovement : MonoBehaviour
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-
-        if(canMove)
+        GroundMovement();
+        Jump();
+        /*
+        if (canMove)
         {
 
-            GroundMovement();
+            
 
-            Jump();
+            
         }
         if(outside)
         {
@@ -189,7 +191,7 @@ public class FinalMovement : MonoBehaviour
         {
             run.Stop();
         }
-
+        */
         //SwitchAnim();
         //if(canMove)
         SwitchSpineAnim();
@@ -344,5 +346,10 @@ public class FinalMovement : MonoBehaviour
         //var sa = this.transform.GetChild(0).GetComponent<SkeletonAnimation>();
         
         
+    }
+    private void OnDisable()
+    {
+        run.Stop();
+        walk.Stop();
     }
 }

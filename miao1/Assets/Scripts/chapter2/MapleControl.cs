@@ -175,8 +175,10 @@ public class MapleControl : MonoBehaviour
             maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "disappear", false);
             DG.Tweening.Sequence quence = DOTween.Sequence();
             quence.AppendInterval(3);
+            hudie.GetComponent<SkeletonAnimation>().Skeleton.A = 0;
             hudie.gameObject.SetActive(true);
-            hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
+            //hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
+            StartCoroutine(hudieAppear());
             quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 2).OnComplete(() =>
             {
                 GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
@@ -192,5 +194,21 @@ public class MapleControl : MonoBehaviour
         }
         cutTimes++;
     }
-    
+    IEnumerator hudieAppear()
+    {
+        //yield return (hudie.GetComponent<SkeletonAnimation>().Skeleton.A >= 1);
+        //hudie.GetComponent<SkeletonAnimation>().Skeleton.A = hudie.GetComponent<SkeletonAnimation>().Skeleton.A + 0.1f;
+        while (1 - hudie.GetComponent<SkeletonAnimation>().Skeleton.A > 0.05f)
+        {
+            hudie.GetComponent<SkeletonAnimation>().Skeleton.A = Mathf.Lerp(hudie.GetComponent<SkeletonAnimation>().Skeleton.A, 1, 0.2f * Time.deltaTime);
+            yield return null;//代表每一帧执行返回一次，相当于在update中执行，但比update要节省性能
+        }
+    }
+    public void hudieTest()
+    {
+        hudie.GetComponent<SkeletonAnimation>().Skeleton.A = 0;
+        hudie.gameObject.SetActive(true);
+        //hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
+        StartCoroutine(hudieAppear());
+    }
 }
