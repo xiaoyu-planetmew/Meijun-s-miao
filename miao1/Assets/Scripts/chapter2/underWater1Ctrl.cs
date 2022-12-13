@@ -178,7 +178,7 @@ public class underWater1Ctrl : MonoBehaviour
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
         foreach(var obj in fishItemPos)
         {
-            obj.GetComponent<BoxCollider2D>().enabled = true;
+            obj.GetComponent<BoxCollider>().enabled = true;
             obj.GetComponent<clickAnswer>().enabled = true;
         }
     }

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4666327569414431401}
   - component: {fileID: 7881219794250055105}
   - component: {fileID: 2927139007479463099}
+  - component: {fileID: 6850550945463527891}
   m_Layer: 5
   m_Name: dialogBox
   m_TagString: Untagged
@@ -231,3 +232,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d9df17c99ec1d14c9a35dad21da345c, type: 3}
   - {fileID: 21300000, guid: f336d7d2b70f1c14a9bc6e73eda83b97, type: 3}
   langNum: 2
+--- !u!114 &6850550945463527891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497702299375940601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d0d14b505e5e74dacc341ceeb0b79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse: duihua

@@ -189,14 +189,14 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
     {
         var positions = Pos.Select(u => u.position).ToArray();
         /*
-            ²ÎÊýÒ»:Â·¾¶µã Êý×é
-            ²ÎÊý¶þ:Íê³É¶¯»­ÐèÒª ¶àÉÙÃë
-            ²ÎÊýÈý:Â·¾¶µÄ»¡¶ÈÊÇÇúÏß»¹ÊÇÖ±Ïß
-            ²ÎÊýËÄ:Â·¾¶Ä£Ê½ Full3D
-            ²ÎÊýÎå:Â·¾¶µãµÄ¾«ÃÜ¶È ÊýÖµÔ½´óÔ½¾«ÃÜ
-            ²ÎÊýÁù:Â·¾¶ÏßÂ·µÄÑÕÉ«
-            SetOptions(true) Â·¾¶´ÓÍ·»Øµ½Ô­µã
-            SetLookAt(0) Â·¾¶ÎïÌåÓëÂ·¾¶µã±£³ÖµÄ¼Ð½Ç È¡Öµ·¶Î§0-1
+            ï¿½ï¿½ï¿½ï¿½Ò»:Â·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½Òª ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½Ä£Ê½ Full3D
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½Ü¶ï¿½ ï¿½ï¿½ÖµÔ½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½É«
+            SetOptions(true) Â·ï¿½ï¿½ï¿½ï¿½Í·ï¿½Øµï¿½Ô­ï¿½ï¿½
+            SetLookAt(0) Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ã±£ï¿½ÖµÄ¼Ð½ï¿½ È¡Öµï¿½ï¿½Î§0-1
          */
         transform.DOPath(positions, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.left);
         StartCoroutine(final());
@@ -205,24 +205,29 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
     {
         var positions = Pos1.Select(u => u.position).ToArray();
         /*
-            ²ÎÊýÒ»:Â·¾¶µã Êý×é
-            ²ÎÊý¶þ:Íê³É¶¯»­ÐèÒª ¶àÉÙÃë
-            ²ÎÊýÈý:Â·¾¶µÄ»¡¶ÈÊÇÇúÏß»¹ÊÇÖ±Ïß
-            ²ÎÊýËÄ:Â·¾¶Ä£Ê½ Full3D
-            ²ÎÊýÎå:Â·¾¶µãµÄ¾«ÃÜ¶È ÊýÖµÔ½´óÔ½¾«ÃÜ
-            ²ÎÊýÁù:Â·¾¶ÏßÂ·µÄÑÕÉ«
-            SetOptions(true) Â·¾¶´ÓÍ·»Øµ½Ô­µã
-            SetLookAt(0) Â·¾¶ÎïÌåÓëÂ·¾¶µã±£³ÖµÄ¼Ð½Ç È¡Öµ·¶Î§0-1
+            ï¿½ï¿½ï¿½ï¿½Ò»:Â·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½Òª ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½Ä£Ê½ Full3D
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½Ü¶ï¿½ ï¿½ï¿½ÖµÔ½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Â·ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½É«
+            SetOptions(true) Â·ï¿½ï¿½ï¿½ï¿½Í·ï¿½Øµï¿½Ô­ï¿½ï¿½
+            SetLookAt(0) Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ã±£ï¿½ÖµÄ¼Ð½ï¿½ È¡Öµï¿½ï¿½Î§0-1
          */
         transform.DOPath(positions, 6, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false).SetLookAt(0, Vector3.left);
         StartCoroutine(final1());
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = false;
         this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<mouseChangeObj>().ExitUI();
+        this.GetComponent<mouseChangeObj>().enabled = false;
         //takeof();
+        elseBird.GetComponent<BoxCollider>().enabled = false;
         elseBird.GetComponent<Animator>().enabled = true;
+        elseBird.GetComponent<mouseChangeObj>().ExitUI();
+        elseBird.GetComponent<mouseChangeObj>().enabled = false;
         //DialogSys2.Instance.dialogStart(3);
         GameManager2.instance.player.GetComponent<chracterAnimEvents>().playOtherAnim(1);
         GameManager2.instance.player.GetComponent<chracterAnimEvents>().jiangSongAnim(1);

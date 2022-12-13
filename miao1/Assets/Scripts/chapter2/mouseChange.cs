@@ -22,6 +22,10 @@ public class mouseChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         MouseSet.Instance.mouseChange(mouse);
     }
+    public void OnPointerOver(PointerEventData eventData)
+    {
+        MouseSet.Instance.mouseChange(mouse);
+    }
     public void OnPointerExit(PointerEventData eventData)
     {
         MouseSet.Instance.mouseChange("mouseTexture");

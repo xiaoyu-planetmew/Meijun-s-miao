@@ -158,7 +158,10 @@ public class DialogSys2 : MonoBehaviour
                 isTalking = false;
                 //player.GetComponent<FinalMovement>().canMove = true;
                 if(eventNum >= 0)
-                afterDialogEvents[eventNum].Invoke();
+                {
+                    afterDialogEvents[eventNum].Invoke();
+                    MouseSet.Instance.mouseChange("mouseTexture");
+                }
                 if(eventNum < 0)
                 {
                     player.GetComponent<FinalMovement>().continueMoving();
@@ -299,7 +302,7 @@ public class DialogSys2 : MonoBehaviour
         textLabel.SetActive(false);
         textBackground.gameObject.SetActive(false);
         Debug.Log(s);
-        if (s == "³ªÌø")
+        if (s == "ï¿½ï¿½ï¿½ï¿½")
         {
             if (eventNum == 12)
             {
@@ -310,7 +313,7 @@ public class DialogSys2 : MonoBehaviour
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
             }
         }
-        else if (s == "³ªÍê")
+        else if (s == "ï¿½ï¿½ï¿½ï¿½")
         {
             GameObject.Find("Npc").GetComponent<NpcMusicFocus>().cancelFocus();
             //dialogNext();

@@ -47,6 +47,7 @@ public class chracterAnimEvents : MonoBehaviour
         yield return new WaitForSeconds(2f);
         DialogSys2.Instance.dialogFinish();
         DialogSys2.Instance.afterDialogEvents[1].Invoke();
+        MouseSet.Instance.mouseChange("mouseTexture");
         DialogSys2.Instance.canContinue = true;
     }
     public void playOtherAnim(int i)
@@ -57,7 +58,7 @@ public class chracterAnimEvents : MonoBehaviour
         Debug.Log(i);
         if (this.transform.Find("ChracterNew"))
         {
-            SkeletonAnimation skeletonAnimation;   //gameobjectµÄcomponent¡£            
+            SkeletonAnimation skeletonAnimation;   //gameobjectï¿½ï¿½componentï¿½ï¿½            
             skeletonAnimation = this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>();
             if (skeletonAnimation == null) return;
             skeletonAnimation.AnimationState.Event += HandleEvent;
@@ -95,7 +96,7 @@ public class chracterAnimEvents : MonoBehaviour
         Debug.Log(i);
         if (NPC)
         {
-            SkeletonAnimation skeletonAnimation;   //gameobjectµÄcomponent¡£            
+            SkeletonAnimation skeletonAnimation;   //gameobjectï¿½ï¿½componentï¿½ï¿½            
             skeletonAnimation = NPC.GetComponent<SkeletonAnimation>();
             if (skeletonAnimation == null) return;
             //skeletonAnimation.AnimationState.Event += HandleEvent;
