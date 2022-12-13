@@ -36,6 +36,7 @@ public class PickupItem: MonoBehaviour
             {
                 //Instantiate(pickupEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                MouseSet.Instance.mouseChange("mouseTexture");
 
                 GameManager.instance.AddItem(itemData);
             }
@@ -50,6 +51,7 @@ public class PickupItem: MonoBehaviour
             {
                 //Instantiate(pickupEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                MouseSet.Instance.mouseChange("mouseTexture");
 
                 GameManager2.instance.AddItem(itemData);
             }
@@ -63,5 +65,12 @@ public class PickupItem: MonoBehaviour
             afterPickUp.Invoke();
         }
     }
-
+    void OnMouseEnter()
+    {
+       MouseSet.Instance.mouseChange("zhuaqu");
+    } 
+    void OnMouseExit()
+    {
+        MouseSet.Instance.mouseChange("mouseTexture");
+    }
 }
