@@ -13,10 +13,12 @@ public class MouseSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nowTexture = mouseTexture;
-        nowx = mousex;
-        nowy = mousey;
+        nowTexture = cursors[0];
+        nowx = (int)cursorXYs[0].x;
+        nowy = (int)cursorXYs[0].y;
     }
+    public List<Texture> cursors = new List<Texture>();
+    public List<Vector2> cursorXYs = new List<Vector2>();
     public Texture nowTexture;
     public int nowx;
     public int nowy;
@@ -29,8 +31,15 @@ public class MouseSet : MonoBehaviour
     public Texture axe2;
     public int axe2x;
     public int axe2y;
-
-
+    public Texture zhuaQu;
+    public int zhuaQux;
+    public int zhuaQuy;
+    public Texture chaKan;
+    public int chaKanx;
+    public int chaKany;
+    public Texture duiHua;
+    public int duiHuax;
+    public int duiHuay;
 
     void Update()
     {
@@ -47,11 +56,12 @@ public class MouseSet : MonoBehaviour
     }
     void OnGUI()
     {
-        Cursor.visible = false;//Òþ²ØÊó±êÖ¸Õë
+        Cursor.visible = false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
         GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, nowx, nowy), nowTexture);
     }
     public void mouseChange(string s)
     {
+        /*
         if(s == "mouseTexture")
         {
             nowTexture = mouseTexture;
@@ -69,6 +79,15 @@ public class MouseSet : MonoBehaviour
             nowTexture = axe2;
             nowx = axe2x;
             nowy = axe2y;
+        }*/
+        for(int i=0; i<cursors.Count; i++)
+        {
+            if(cursors[i].name == s)
+            {
+                nowTexture = cursors[i];
+                nowx = (int)cursorXYs[i].x;
+                nowy = (int)cursorXYs[i].y;
+            }
         }
     }
     // Update is called once per frame
