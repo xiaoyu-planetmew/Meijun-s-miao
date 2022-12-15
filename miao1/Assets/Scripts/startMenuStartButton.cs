@@ -26,6 +26,10 @@ public class startMenuStartButton : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void startButton2()
+    {
+        SceneManager.LoadScene("Scene2");
+    }
     public void languageSelectButton(int num)
     {
         //SceneManager.LoadScene("SampleScene");

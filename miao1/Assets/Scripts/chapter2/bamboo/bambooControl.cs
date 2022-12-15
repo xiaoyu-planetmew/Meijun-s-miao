@@ -8,6 +8,7 @@ using DG.Tweening;
 public class bambooControl : MonoBehaviour
 {
     public GameObject beijingtu;
+    public GameObject zhutong2;
     public GameObject bambooAudio;
     public List<AudioClip> bambooVoices = new List<AudioClip>();
     public List<Sprite> patternLight = new List<Sprite>();
@@ -23,18 +24,34 @@ public class bambooControl : MonoBehaviour
     public bool bool2;
     public int nowNote;
     public int nowLineNumber;
+    public int succeedCount = 0;
+    public List<GameObject> jiesuan = new List<GameObject>();
+    public Sprite chenggong;
+    public Sprite shibai;
+    public Sprite diban;
+    public UnityEvent successEvent;
+    public GameObject daji;
     // Start is called before the first frame update
     void Start()
     {
         newLines();
         newLine(0);
         nowLineNumber = 0;
+        MouseSet.Instance.mouseChange("bangzi");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void zhutongStart()
+    {
+        newLines();
+        newLine(0);
+        nowLineNumber = 0;
+        MouseSet.Instance.mouseChange("bangzi");
+        zhutongReset();
     }
     public void newLines()
     {
@@ -97,13 +114,14 @@ public class bambooControl : MonoBehaviour
         }
         if (lineCounts[l] == 5)
         {
-            tips[0].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(-432, 432, 0);
-            tips[1].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(-216, 432, 0);
-            tips[2].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 432, 0);
-            tips[3].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(216, 432, 0);
-            tips[4].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(432, 432, 0);
+            tips[0].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(-364, 405.76f, 0);
+            tips[1].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(-182, 405.76f, 0);
+            tips[2].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 405.76f, 0);
+            tips[3].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(182, 405.76f, 0);
+            tips[4].GetComponent<RectTransform>().anchoredPosition3D = new Vector3(364, 405.76f, 0);
         }
-        newDelay();
+        //newDelay();
+        turnButtons(true);
     }
     public void inputLine(int pos)
     {
@@ -206,18 +224,23 @@ public class bambooControl : MonoBehaviour
         StartCoroutine(wrongDelay());
         turnButtons(false);
         DG.Tweening.Sequence quence = DOTween.Sequence();
+        
+            nowLineNumber++;
+            showJiesuan(nowLineNumber, false);
         //quence.AppendInterval(1);
         quence.Append(beijingtu.transform.DOShakePosition(1, new Vector3(20, 0, 0), 10, 50, true)).OnComplete(() => 
         {
             turnButtons(true);
-            nowLineNumber++;
-            if (nowLineNumber >= lines.Count)
-            {
-                Debug.Log("finish");
-            }
-            else
-                newLine(nowLineNumber);
+            succeedCount = 0;
+            wrongEnd();
         });
+    }
+    public void wrongEnd()
+    {        
+            newLines();
+            newLine(0);
+            nowLineNumber = 0;
+            showJiesuan(0, true);
     }
     IEnumerator wrongDelay()
     {
@@ -232,16 +255,70 @@ public class bambooControl : MonoBehaviour
     {
         Debug.Log("success");
         nowLineNumber++;
+        succeedCount++;
+        showJiesuan(nowLineNumber, true);
+        if(succeedCount >= 3)
+        {
+            succeedGame();
+        }else{
+            newLine(nowLineNumber);
+        }
         if (nowLineNumber >= lines.Count)
         {
             Debug.Log("finish");
-        }else
-        newLine(nowLineNumber);
+        }
+    }
+    public void zhutongReset()
+    {
+        succeedCount = 0;
+        showJiesuan(0, true);
+        bambooAudio.GetComponent<AudioSource>().clip = null;
+    }
+    public void succeedGame()
+    {
+        successEvent.Invoke();
+        StartCoroutine(afterAni1());
+        bambooAudio.GetComponent<AudioSource>().clip = null;
+    }
+    IEnumerator afterAni1()
+    {
+        yield return new WaitForSeconds(1f);
+        beijingtu.SetActive(false);
+        zhutong2.SetActive(true);
     }
     public void playAudio(int pos)
     {
         bambooAudio.GetComponent<AudioSource>().Stop();
         bambooAudio.GetComponent<AudioSource>().clip = bambooVoices[pos];
         bambooAudio.GetComponent<AudioSource>().Play();
+    }
+    void showJiesuan(int n, bool m)
+    {
+        if(m)
+        {
+            for(int i=0; i<jiesuan.Count; i++)
+            {
+                jiesuan[i].GetComponent<Image>().sprite = diban;
+                if(i<n)
+                {
+                    jiesuan[i].GetComponent<Image>().sprite = chenggong;
+                }
+            }
+        }
+        if(!m)
+        {
+            for(int i=0; i<jiesuan.Count; i++)
+            {
+                jiesuan[i].GetComponent<Image>().sprite = diban;
+                if(i == n-1)
+                {
+                    jiesuan[i].GetComponent<Image>().sprite = shibai;
+                }
+                if(i<n-1)
+                {
+                    jiesuan[i].GetComponent<Image>().sprite = chenggong;
+                }
+            }
+        }
     }
 }

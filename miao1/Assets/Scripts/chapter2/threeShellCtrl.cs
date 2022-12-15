@@ -129,8 +129,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[2].localPosition };
             Vector3[] positionsB = { pos[2].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 0)
             {
                 pearlPos = 1;
@@ -148,8 +148,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[2].localPosition };
             Vector3[] positionsB = { pos[2].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 1)
             {
                 pearlPos = 0;
@@ -167,8 +167,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[3].localPosition, pos[4].localPosition };
             Vector3[] positionsB = { pos[4].localPosition, pos[3].localPosition, pos[1].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 0)
             {
                 pearlPos = 2;
@@ -186,8 +186,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[3].localPosition, pos[4].localPosition };
             Vector3[] positionsB = { pos[4].localPosition, pos[3].localPosition, pos[1].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 2)
             {
                 pearlPos = 0;
@@ -205,8 +205,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[2].localPosition, pos[3].localPosition, pos[4].localPosition };
             Vector3[] positionsB = { pos[4].localPosition, pos[2].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 1)
             {
                 pearlPos = 2;
@@ -224,8 +224,8 @@ public class threeShellCtrl : MonoBehaviour
             Vector3[] positionsA = { pos[2].localPosition, pos[3].localPosition, pos[4].localPosition };
             Vector3[] positionsB = { pos[4].localPosition, pos[2].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 0.7f, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 2)
             {
                 pearlPos = 1;
@@ -254,6 +254,10 @@ public class threeShellCtrl : MonoBehaviour
             succeedEvent.Invoke();
             realPearl.transform.position = pearl.transform.position;
             realPearl.SetActive(true);
+            
+            pos[0].GetComponent<BoxCollider2D>().enabled = false;
+            pos[2].GetComponent<BoxCollider2D>().enabled = false;
+            pos[4].GetComponent<BoxCollider2D>().enabled = false;    
             pearl.SetActive(true);
         }
         if(a != pearlPos)

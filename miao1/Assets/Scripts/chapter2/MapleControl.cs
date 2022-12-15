@@ -26,6 +26,7 @@ public class MapleControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine("treeAni2");
         
     }
 
@@ -36,6 +37,8 @@ public class MapleControl : MonoBehaviour
     }
     public void maple1()
     {
+        StopCoroutine("treeAni1");
+        StopCoroutine("treeAni2");
         maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idleB", true);
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
         wall2.SetActive(true);
@@ -43,6 +46,18 @@ public class MapleControl : MonoBehaviour
         npc.transform.GetChild(0).localScale = new Vector3(-0.4f, 0.4f, 0.4f);
         npc.transform.Find("JiangSongCanvas").GetComponent<NearShow>().startButton.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(38, -86);
         GameObject.Find("LaoPoPoAnimation").GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle_angry", true);
+    }
+    IEnumerator treeAni1()
+    {
+        maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "wind", true);
+        yield return new WaitForSeconds(4);
+        StartCoroutine("treeAni2");
+    }
+    IEnumerator treeAni2()
+    {
+        maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+        yield return new WaitForSeconds(20);        
+        StartCoroutine("treeAni1");
     }
     public void maple2()
     {

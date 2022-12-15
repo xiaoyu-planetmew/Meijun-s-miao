@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.Events;
 using DG.Tweening;
 public class shakeClick : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class shakeClick : MonoBehaviour
     public float leftAngle;
     public float rightAngle;
     public float duration;
+    public UnityEvent afterShake;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +44,6 @@ public class shakeClick : MonoBehaviour
     {
         this.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
         shakeBool = false;
+        afterShake.Invoke();
     }
 }

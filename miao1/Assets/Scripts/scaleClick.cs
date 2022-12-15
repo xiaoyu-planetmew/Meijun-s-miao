@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.Events;
 using DG.Tweening;
 
 public class scaleClick : MonoBehaviour
@@ -9,6 +11,7 @@ public class scaleClick : MonoBehaviour
     public float scaleLong;
     public float scaleShort;
     public float scaleDuration;
+    public UnityEvent afterScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,8 @@ public class scaleClick : MonoBehaviour
     }
     private void scaleFinish()
     {
+        //this.transform.localScale = new Vector3(1, 1, 1);
         scaleBool = false;
+        afterScale.Invoke();
     }
 }

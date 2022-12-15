@@ -28,6 +28,7 @@ public class underWater1Ctrl : MonoBehaviour
     public Vector3 hudiePos;
     public Vector3 hudieCam;
     public GameObject blackMask;
+    public GameObject blackMask2;
     public Vector3 girlPos;
     public GameObject nest;
     public GameObject bubble;
@@ -223,11 +224,13 @@ public class underWater1Ctrl : MonoBehaviour
             blackMask.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
             blackMask.GetComponent<SpriteRenderer>().enabled = true;
             blackMask.gameObject.SetActive(true);
+            blackMask2.gameObject.SetActive(true);
             //Debug.Log("1");
         }));
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2)).OnComplete(() =>
         {
             //Debug.Log("2");
+            blackMask2.gameObject.SetActive(false);
             GameManager2.instance.player.transform.position = girlPos;
             GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
             GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();

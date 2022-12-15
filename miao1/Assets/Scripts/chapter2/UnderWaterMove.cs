@@ -53,7 +53,7 @@ public class UnderWaterMove: MonoBehaviour
             skeletonAnimation = this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>();
             if (skeletonAnimation == null) return;
             Spine.AnimationState spineAnimationState = skeletonAnimation.state;
-            Spine.Skeleton skeleton;
+            //Spine.Skeleton skeleton;
             //skeletonAnimation.skeleton.SetToSetupPose();
             //spineAnimationState.ClearTracks();
             spineAnimationState.SetAnimation(0, animationName, loop);
