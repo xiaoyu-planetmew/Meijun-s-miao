@@ -210,7 +210,7 @@ public class GameManager2 : MonoBehaviour
             {
                 EventControl.Instance.finishEvent(6);
             }
-            if (i.itemName == "chapter2Moment1")
+            if (i.itemName == "chapter2Moment2")
             {
                 EventControl.Instance.finishEvent(7);
                 //events[0] = true;

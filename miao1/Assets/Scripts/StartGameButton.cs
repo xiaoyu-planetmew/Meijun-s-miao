@@ -23,6 +23,6 @@ public class StartGameButton : MonoBehaviour {
         SceneManager.LoadSceneAsync(sceneNum);
 		
         Time.timeScale = 1.0f;
-        GameManager.instance.isPaused = false;
+        if(GameObject.Find("GameManager")) GameManager.instance.isPaused = false;
     }
 }

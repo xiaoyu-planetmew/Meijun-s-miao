@@ -16,6 +16,7 @@ public class DialogSys2 : MonoBehaviour
     public GameObject textBackground;
     //public GameObject startButton;
     public GameObject nextPageButton;
+    public GameObject transButton;
     public List<TextAsset> textfilesCN = new List<TextAsset>();
     public List<TextAsset> textfilesEN = new List<TextAsset>();
     public List<TextAsset> textfilesJP = new List<TextAsset>();
@@ -168,7 +169,7 @@ public class DialogSys2 : MonoBehaviour
                     GameObject.Find("Npc").transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
                     if(eventNum == -1)
                     {
-                        
+                        transButton.SetActive(true);
                     }
                 }
                 Debug.Log("dialog" + eventNum);
@@ -302,7 +303,7 @@ public class DialogSys2 : MonoBehaviour
         textLabel.SetActive(false);
         textBackground.gameObject.SetActive(false);
         Debug.Log(s);
-        if (s == "³ªÌø")
+        if (s == "ï¿½ï¿½ï¿½ï¿½")
         {
             if (eventNum == 12)
             {
@@ -313,7 +314,7 @@ public class DialogSys2 : MonoBehaviour
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
             }
         }
-        else if (s == "³ªÍê")
+        else if (s == "ï¿½ï¿½ï¿½ï¿½")
         {
             GameObject.Find("Npc").GetComponent<NpcMusicFocus>().cancelFocus();
             //dialogNext();

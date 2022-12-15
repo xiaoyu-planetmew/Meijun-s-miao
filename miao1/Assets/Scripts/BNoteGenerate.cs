@@ -145,6 +145,7 @@ public class BNoteGenerate : MonoBehaviour
     }
     void readFromTXT()
     {
+        Debug.Log("read");
         trackNum.Clear();
         trackTime.Clear();
         line.Clear();
@@ -157,30 +158,34 @@ public class BNoteGenerate : MonoBehaviour
         }
         for(int i = 0; i < lineData.Length - 1; i++)
         {
+            Debug.Log(lineData[i]);
             var noteData = lineData[i].Split(',');
+            Debug.Log(noteData[0]);
+            Debug.Log(noteData[1]);
+            Debug.Log(noteData[2]);
             trackNum.Add(float.Parse(noteData[0]));
             trackTime.Add(float.Parse(noteData[1]));
-            if(noteData[2] == "S")
+            if(noteData[2][0] == 'S')
             {
                 line.Add(1);
             }
-            if(noteData[2] == "D")
+            if(noteData[2][0] == 'D')
             {
                 line.Add(2);
             }
-            if(noteData[2] == "F")
+            if(noteData[2][0] == 'F')
             {
                 line.Add(3);
             }
-            if(noteData[2] == "J")
+            if(noteData[2][0] == 'J')
             {
                 line.Add(4);
             }
-            if(noteData[2] == "K")
+            if(noteData[2][0] == 'K')
             {
                 line.Add(5);
             }
-            if(noteData[2] == "L")
+            if(noteData[2][0] == 'L')
             {
                 line.Add(6);
             }
@@ -210,27 +215,27 @@ public class BNoteGenerate : MonoBehaviour
             //longLineList.Add(int.Parse(noteData[3]));
             usedLongNote.Add(true);
             
-            if(noteData[3] == "S")
+            if(noteData[3][0] == 'S')
             {
                 longLineList.Add(1);
             }
-            if(noteData[3] == "D")
+            if(noteData[3][0] == 'D')
             {
                 longLineList.Add(2);
             }
-            if(noteData[3] == "F")
+            if(noteData[3][0] == 'F')
             {
                 longLineList.Add(3);
             }
-            if(noteData[3] == "J")
+            if(noteData[3][0] == 'J')
             {
                 longLineList.Add(4);
             }
-            if(noteData[3] == "K")
+            if(noteData[3][0] == 'K')
             {
                 longLineList.Add(5);
             }
-            if(noteData[3] == "L")
+            if(noteData[3][0] == 'L')
             {
                 longLineList.Add(6);
             }
