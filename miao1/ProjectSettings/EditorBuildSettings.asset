@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BesizerTest.unity
     guid: 3c589de153ccc5942b07a50b7e9f863f
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 76de44f475fbe5943bcab0ca370566c7
+  - enabled: 1
+    path: Assets/Scenes/BesizerTest2.unity
+    guid: 56b4d01841313b446b40e06d39c1e0b4
   m_configObjects: {}

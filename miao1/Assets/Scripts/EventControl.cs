@@ -9,6 +9,7 @@ public class EventControl : MonoBehaviour
     public List<bool> events = new List<bool>();
     public List<string> eventNames = new List<string>();
     public List<Item> moments = new List<Item>();
+    //public GameObject transButton;
     private void Awake()
     {
         Instance = this;
@@ -24,6 +25,7 @@ public class EventControl : MonoBehaviour
     {
         //showNPC_Button();
         //¡Ÿ ±
+        /*
         if(GameManager2.instance.items.Contains(moments[0]))
         {
             EventControl.Instance.finishEvent(3);
@@ -34,6 +36,7 @@ public class EventControl : MonoBehaviour
             EventControl.Instance.finishEvent(8);
             EventControl.Instance.finishEvent(9);
         }
+        */
     }
     public void eventFinish(int i)
     {
@@ -69,6 +72,7 @@ public class EventControl : MonoBehaviour
         if (events[0] && events[1] && events[2] && !events[3] && !events[5])
         {
             DialogSys2.Instance.dialogStartMoment(true);
+            //transButton.SetActive(true);
         }
         if (events[0] && events[1] && events[2] && events[3] && events[4] && !events[5])
         {
@@ -82,6 +86,7 @@ public class EventControl : MonoBehaviour
         if (events[5] && events[7] && !events[8])
         {
             DialogSys2.Instance.dialogStartMoment(true);
+            //transButton.SetActive(true);
         }
         if (events[5] && events[7] && events[8] && events[9])
         {
