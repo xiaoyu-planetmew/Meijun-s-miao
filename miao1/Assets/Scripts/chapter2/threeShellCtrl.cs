@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 using System.Linq;
 using UnityEngine.Events;
@@ -8,10 +9,20 @@ using UnityEngine.EventSystems;
 
 public class threeShellCtrl : MonoBehaviour
 {
+    public UnityEvent succeedEvent;
+    public UnityEvent failedEvent;
+    public GameObject tip;
+    public GameObject restartChoose;
+    public string warningTextJ;
+    public string warningTextE;
+    public string warningTextCN;
+    public float warningTime;
     public int pearlPos;
     public Sprite shellOff;
     public Sprite shellOn;
+    public GameObject startPearl;
     public GameObject pearl;
+    public GameObject realPearl;
     public List<Vector3> shellPos = new List<Vector3>();
     public List<GameObject> shells = new List<GameObject>();
     public Transform pathPoint1;
@@ -23,6 +34,12 @@ public class threeShellCtrl : MonoBehaviour
     void Start()
     {
         
+    }
+    public void jumpRandomInvoke()
+    {
+        pearlPos = 1;
+        shellStart();
+        nowTimes = 0;
     }
     public void shellGameInvoke()
     {
@@ -39,10 +56,10 @@ public class threeShellCtrl : MonoBehaviour
     {
         for(int i=0; i<shells.Count; i++)
         {
-            shells[i].transform.position = shellPos[i];
+            shells[i].transform.localPosition = shellPos[i];
             shells[i].GetComponent<SpriteRenderer>().sprite = shellOff;
         }
-        pearl.transform.position = shellPos[pearlPos];
+        pearl.transform.localPosition = shellPos[pearlPos];
         shells[pearlPos].GetComponent<SpriteRenderer>().sprite = shellOn;
         pearl.SetActive(true);
         nowPos[0] = 0;
@@ -58,7 +75,7 @@ public class threeShellCtrl : MonoBehaviour
         yield return new WaitForSeconds(2f);
         for (int i = 0; i < shells.Count; i++)
         {
-            shells[i].transform.position = shellPos[i];
+            shells[i].transform.localPosition = shellPos[i];
             shells[i].GetComponent<SpriteRenderer>().sprite = shellOff;
         }
         pearl.SetActive(false);
@@ -109,11 +126,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if(a == 0 && b == 1)
         {
-            Vector3[] positionsA = { pos[0].position, pos[1].position, pos[2].position };
-            Vector3[] positionsB = { pos[2].position, pos[0].position };
+            Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[2].localPosition };
+            Vector3[] positionsB = { pos[2].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 0)
             {
                 pearlPos = 1;
@@ -128,11 +145,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if (a == 1 && b == 0)
         {
-            Vector3[] positionsA = { pos[0].position, pos[1].position, pos[2].position };
-            Vector3[] positionsB = { pos[2].position, pos[0].position };
+            Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[2].localPosition };
+            Vector3[] positionsB = { pos[2].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 1)
             {
                 pearlPos = 0;
@@ -147,11 +164,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if (a == 0 && b == 2)
         {
-            Vector3[] positionsA = { pos[0].position, pos[1].position, pos[3].position, pos[4].position };
-            Vector3[] positionsB = { pos[4].position, pos[3].position, pos[1].position, pos[0].position };
+            Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[3].localPosition, pos[4].localPosition };
+            Vector3[] positionsB = { pos[4].localPosition, pos[3].localPosition, pos[1].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 0)
             {
                 pearlPos = 2;
@@ -166,11 +183,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if (a == 2 && b == 0)
         {
-            Vector3[] positionsA = { pos[0].position, pos[1].position, pos[3].position, pos[4].position };
-            Vector3[] positionsB = { pos[4].position, pos[3].position, pos[1].position, pos[0].position };
+            Vector3[] positionsA = { pos[0].localPosition, pos[1].localPosition, pos[3].localPosition, pos[4].localPosition };
+            Vector3[] positionsB = { pos[4].localPosition, pos[3].localPosition, pos[1].localPosition, pos[0].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 2)
             {
                 pearlPos = 0;
@@ -185,11 +202,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if (a == 1 && b == 2)
         {
-            Vector3[] positionsA = { pos[2].position, pos[3].position, pos[4].position };
-            Vector3[] positionsB = { pos[4].position, pos[2].position };
+            Vector3[] positionsA = { pos[2].localPosition, pos[3].localPosition, pos[4].localPosition };
+            Vector3[] positionsB = { pos[4].localPosition, pos[2].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 1)
             {
                 pearlPos = 2;
@@ -204,11 +221,11 @@ public class threeShellCtrl : MonoBehaviour
         }
         if (a == 2 && b == 1)
         {
-            Vector3[] positionsA = { pos[2].position, pos[3].position, pos[4].position };
-            Vector3[] positionsB = { pos[4].position, pos[2].position };
+            Vector3[] positionsA = { pos[2].localPosition, pos[3].localPosition, pos[4].localPosition };
+            Vector3[] positionsB = { pos[4].localPosition, pos[2].localPosition };
             Sequence quence = DOTween.Sequence();
-            shells[nowPos[a]].transform.DOPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
-            shells[nowPos[b]].transform.DOPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[a]].transform.DOLocalPath(positionsB, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
+            shells[nowPos[b]].transform.DOLocalPath(positionsA, 2, PathType.CatmullRom, PathMode.Full3D, 50).SetOptions(false);
             if (pearlPos == 2)
             {
                 pearlPos = 1;
@@ -224,7 +241,7 @@ public class threeShellCtrl : MonoBehaviour
     }
     public void shellRollFinish()
     {
-        pearl.transform.position = shellPos[pearlPos];
+        pearl.transform.localPosition = shellPos[pearlPos];
         pos[0].GetComponent<BoxCollider2D>().enabled = true;
         pos[2].GetComponent<BoxCollider2D>().enabled = true;
         pos[4].GetComponent<BoxCollider2D>().enabled = true;    
@@ -234,16 +251,68 @@ public class threeShellCtrl : MonoBehaviour
         shells[nowPos[a]].GetComponent<SpriteRenderer>().sprite = shellOn;
         if(a == pearlPos)
         {
+            succeedEvent.Invoke();
+            realPearl.transform.position = pearl.transform.position;
+            realPearl.SetActive(true);
             pearl.SetActive(true);
         }
         if(a != pearlPos)
         {
-            StartCoroutine(RestartRoll());
+            failedEvent.Invoke();
+            failedWaring();
+           //StartCoroutine(RestartRoll());
         }
+    }
+    public void ResetShell()
+    {
+        startPearl.SetActive(true);
+        pearl.SetActive(false);
+        for(int i=0; i<shells.Count; i++)
+        {
+            shells[i].transform.localPosition = shellPos[i];
+            shells[i].GetComponent<SpriteRenderer>().sprite = shellOff;
+        }
+        shells[1].GetComponent<SpriteRenderer>().sprite = shellOn;
     }
     IEnumerator RestartRoll()
     {
         yield return new WaitForSeconds(2f);
         shellGameInvoke();
+    }
+    void failedWaring()
+    {
+        if(tip != null)
+        {
+            tip.SetActive(true);
+                        if (GameManager2.instance.languageNum == 0)
+                        {
+                            tip.transform.Find("tipText").GetComponent<Text>().text = warningTextJ;
+                            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+                            tip.transform.Find("tipText").GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                            DestroyImmediate(obj);
+                        }
+                        if (GameManager2.instance.languageNum == 1)
+                        {
+                            tip.transform.Find("tipText").GetComponent<Text>().text = warningTextE;
+                            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/UDDigiKyokashoN-B"));
+                            tip.transform.Find("tipText").GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                            DestroyImmediate(obj);
+                        }
+                        if (GameManager2.instance.languageNum == 2)
+                        {
+                            tip.transform.Find("tipText").GetComponent<Text>().text = warningTextCN;
+                            GameObject obj = Instantiate(Resources.Load<GameObject>("Fonts/简剪纸"));
+                            tip.transform.Find("tipText").GetComponent<Text>().font = obj.GetComponent<Text>().font;
+                            DestroyImmediate(obj);
+                        }
+                        //
+                        StartCoroutine("warningClose");
+            restartChoose.SetActive(true);
+        }
+    }
+    IEnumerator warningClose()
+    {
+        yield return new WaitForSeconds(warningTime);
+        tip.SetActive(false);
     }
 }

@@ -219,6 +219,7 @@ public class bigBirdAnim : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("bird");
         this.GetComponent<BoxCollider>().enabled = false;
         this.GetComponent<Animator>().enabled = true;
         this.GetComponent<mouseChangeObj>().ExitUI();

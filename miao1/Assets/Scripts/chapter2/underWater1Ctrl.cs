@@ -22,12 +22,14 @@ public class underWater1Ctrl : MonoBehaviour
     public bool fishItem = false;
     public List<Item> fishItems = new List<Item>();
     public List<GameObject> fishItemPos = new List<GameObject>();
+    public GameObject shell;
     public GameObject startButton;
     public GameObject hudie;
     public Vector3 hudiePos;
     public Vector3 hudieCam;
     public GameObject blackMask;
     public Vector3 girlPos;
+    public GameObject nest;
     public GameObject bubble;
     Vector3 camPos;
     // Start is called before the first frame update
@@ -181,6 +183,7 @@ public class underWater1Ctrl : MonoBehaviour
             obj.GetComponent<BoxCollider>().enabled = true;
             obj.GetComponent<clickAnswer>().enabled = true;
         }
+        shell.SetActive(true);
     }
     public void yuDialog9()
     {
@@ -220,20 +223,21 @@ public class underWater1Ctrl : MonoBehaviour
             blackMask.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
             blackMask.GetComponent<SpriteRenderer>().enabled = true;
             blackMask.gameObject.SetActive(true);
-            Debug.Log("1");
+            //Debug.Log("1");
         }));
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2)).OnComplete(() =>
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             GameManager2.instance.player.transform.position = girlPos;
             GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
             GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+            nest.SetActive(true);
         });
         quence.AppendInterval(5);
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>
         {
-            Debug.Log("3");
+            //Debug.Log("3");
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
             bubble.SetActive(false);
         });

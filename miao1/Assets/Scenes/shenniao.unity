@@ -5078,6 +5078,7 @@ GameObject:
   - component: {fileID: 1312779950}
   - component: {fileID: 1312779949}
   - component: {fileID: 1312779955}
+  - component: {fileID: 1312779956}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5287,6 +5288,54 @@ MonoBehaviour:
   - {fileID: 220945142}
   nowStart: -1
   SEInterval: 4
+--- !u!114 &1312779956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312779948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7e8eaa47a58794a88d74b55ccb27b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGUI: 0
+  cursors:
+  - {fileID: 2800000, guid: a91257663b0e4184ab921b0e04dac812, type: 3}
+  - {fileID: 2800000, guid: 477318e0ea9e80b4bbb5a38ede2b9ab9, type: 3}
+  - {fileID: 2800000, guid: b2ba998799ac85c46ba67749d5d3b740, type: 3}
+  - {fileID: 2800000, guid: a7a4b83cb7ef4714bae8fde4910aadaf, type: 3}
+  - {fileID: 2800000, guid: f748680a7fbe77a43a94b0e571a98fc9, type: 3}
+  - {fileID: 2800000, guid: 3bb56de562b986a44a27df7994f7e8cb, type: 3}
+  cursorXYs:
+  - {x: 45, y: 64}
+  - {x: 197, y: 223}
+  - {x: 253, y: 176}
+  - {x: 61, y: 63}
+  - {x: 61, y: 53}
+  - {x: 63, y: 43}
+  nowTexture: {fileID: 0}
+  nowx: 0
+  nowy: 0
+  mouseTexture: {fileID: 2800000, guid: a91257663b0e4184ab921b0e04dac812, type: 3}
+  mousex: 45
+  mousey: 64
+  axe1: {fileID: 2800000, guid: 477318e0ea9e80b4bbb5a38ede2b9ab9, type: 3}
+  axe1x: 197
+  axe1y: 223
+  axe2: {fileID: 2800000, guid: b2ba998799ac85c46ba67749d5d3b740, type: 3}
+  axe2x: 253
+  axe2y: 176
+  zhuaQu: {fileID: 2800000, guid: a7a4b83cb7ef4714bae8fde4910aadaf, type: 3}
+  zhuaQux: 61
+  zhuaQuy: 63
+  chaKan: {fileID: 2800000, guid: f748680a7fbe77a43a94b0e571a98fc9, type: 3}
+  chaKanx: 61
+  chaKany: 53
+  duiHua: {fileID: 2800000, guid: 3bb56de562b986a44a27df7994f7e8cb, type: 3}
+  duiHuax: 63
+  duiHuay: 43
 --- !u!1 &1324675254
 GameObject:
   m_ObjectHideFlags: 0

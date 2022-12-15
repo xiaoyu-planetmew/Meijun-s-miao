@@ -302,7 +302,7 @@ public class DialogSys2 : MonoBehaviour
         textLabel.SetActive(false);
         textBackground.gameObject.SetActive(false);
         Debug.Log(s);
-        if (s == "ï¿½ï¿½ï¿½ï¿½")
+        if (s == "³ªÌø")
         {
             if (eventNum == 12)
             {
@@ -313,7 +313,7 @@ public class DialogSys2 : MonoBehaviour
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
             }
         }
-        else if (s == "ï¿½ï¿½ï¿½ï¿½")
+        else if (s == "³ªÍê")
         {
             GameObject.Find("Npc").GetComponent<NpcMusicFocus>().cancelFocus();
             //dialogNext();

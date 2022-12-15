@@ -19,6 +19,7 @@ public class MapleControl : MonoBehaviour
     public GameObject laoPoPo;
     public GameObject moment1;
     public GameObject cutDownButton;
+    public GameObject nest;
     public int cutTimes = 0;
     Vector3 camPos;
     // Start is called before the first frame update
@@ -201,7 +202,7 @@ public class MapleControl : MonoBehaviour
         while (1 - hudie.GetComponent<SkeletonAnimation>().Skeleton.A > 0.05f)
         {
             hudie.GetComponent<SkeletonAnimation>().Skeleton.A = Mathf.Lerp(hudie.GetComponent<SkeletonAnimation>().Skeleton.A, 1, 0.2f * Time.deltaTime);
-            yield return null;//代表每一帧执行返回一次，相当于在update中执行，但比update要节省性能
+            yield return null;//锟斤拷锟斤拷每一帧执锟叫凤拷锟斤拷一锟轿ｏ拷锟洁当锟斤拷锟斤拷update锟斤拷执锟叫ｏ拷锟斤拷锟斤拷update要锟斤拷省锟斤拷锟斤拷
         }
     }
     public void hudieTest()

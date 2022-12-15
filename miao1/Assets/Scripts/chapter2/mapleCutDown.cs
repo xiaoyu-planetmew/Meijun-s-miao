@@ -18,7 +18,7 @@ public class mapleCutDown : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        MouseSet.Instance.mouseChange("axe1");
+        MouseSet.Instance.mouseChange("shubiao_futou");
     }
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -26,11 +26,11 @@ public class mapleCutDown : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        MouseSet.Instance.mouseChange("axe2");
+        MouseSet.Instance.mouseChange("shubiao_futou02");
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        MouseSet.Instance.mouseChange("axe1");
+        MouseSet.Instance.mouseChange("shubiao_futou");
     }
     
 }
