@@ -18,7 +18,7 @@ public class StartGameButton : MonoBehaviour {
 		
 	}
 
-    private void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadSceneAsync(sceneNum);
 		

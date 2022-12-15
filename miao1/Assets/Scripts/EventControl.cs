@@ -12,7 +12,17 @@ public class EventControl : MonoBehaviour
     //public GameObject transButton;
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -24,7 +34,7 @@ public class EventControl : MonoBehaviour
     void Update()
     {
         //showNPC_Button();
-        //ÁÙÊ±
+        //ï¿½ï¿½Ê±
         /*
         if(GameManager2.instance.items.Contains(moments[0]))
         {

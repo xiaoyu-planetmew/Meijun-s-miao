@@ -8,7 +8,17 @@ public class MouseSet : MonoBehaviour
     public bool inGUI = false;
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
     // Start is called before the first frame update
     void Start()

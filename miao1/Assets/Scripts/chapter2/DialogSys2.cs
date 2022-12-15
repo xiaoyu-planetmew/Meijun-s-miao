@@ -48,7 +48,18 @@ public class DialogSys2 : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
@@ -303,7 +314,7 @@ public class DialogSys2 : MonoBehaviour
         textLabel.SetActive(false);
         textBackground.gameObject.SetActive(false);
         Debug.Log(s);
-        if (s == "����")
+        if (s == "唱跳")
         {
             if (eventNum == 12)
             {
@@ -314,7 +325,7 @@ public class DialogSys2 : MonoBehaviour
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
             }
         }
-        else if (s == "����")
+        else if (s == "唱完")
         {
             GameObject.Find("Npc").GetComponent<NpcMusicFocus>().cancelFocus();
             //dialogNext();

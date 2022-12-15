@@ -13,13 +13,13 @@ public class clickAnswer : MonoBehaviour, IPointerClickHandler
     [SerializeField] private List<Transform> camList = new List<Transform>();
     //[SerializeField] private Camera cam;
 
-    //4.²ÎÊýlayerMask ÔÚÖ¸¶¨²ãÉÏÅö×²¼ì²â(×¢ÒâÊÇpublic£¬²»È»ÔÚ½Å±¾ÊôÐÔÄÇ¶ùÕÒ²»µ½Ö¸¶¨µÄ²ã£¬¿Ó)
+    //4.ï¿½ï¿½ï¿½ï¿½layerMask ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½(×¢ï¿½ï¿½ï¿½ï¿½publicï¿½ï¿½ï¿½ï¿½È»ï¿½Ú½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä²ã£¬ï¿½ï¿½)
     public LayerMask clickableLayer;
     // Start is called before the first frame update
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "SampleScene" || scene.name == "Scene2")
+        if ((scene.name == "SampleScene" || scene.name == "Scene2") && (cams == null))
         {
             cams = GameObject.Find("Cameras");
         }
@@ -31,7 +31,7 @@ public class clickAnswer : MonoBehaviour, IPointerClickHandler
     void OnEnable()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "SampleScene" || scene.name == "Scene2")
+        if ((scene.name == "SampleScene" || scene.name == "Scene2") && (cams == null))
         {
             cams = GameObject.Find("Cameras");
         }
@@ -58,10 +58,10 @@ public class clickAnswer : MonoBehaviour, IPointerClickHandler
                         cam = camList[i].gameObject.GetComponent<Camera>();
                     }
                 }
-                //1.²ÎÊýray ÎªÉäÏßÅö×²¼ì²âµÄ¹âÏß(·µ»ØÒ»¸ö´ÓÏà»úµ½ÆÁÄ»Êó±êÎ»ÖÃµÄ¹âÏß)
+                //1.ï¿½ï¿½ï¿½ï¿½ray Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Î»ï¿½ÃµÄ¹ï¿½ï¿½ï¿½)
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-                if ((Physics.Raycast(ray, out hit, 50, clickableLayer.value)) && (Input.GetMouseButtonDown(0)) && (hit.collider.gameObject == this)) //Èç¹ûÅö×²¼ì²âµ½ÎïÌå
+                if ((Physics.Raycast(ray, out hit, 50, clickableLayer.value)) && (Input.GetMouseButtonDown(0)) && (hit.collider.gameObject == this)) //ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½âµ½ï¿½ï¿½ï¿½ï¿½
                 {
                     Debug.Log(hit.collider.gameObject.name);
                     if (afterClick != null)

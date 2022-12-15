@@ -397,6 +397,11 @@ public class BRhythmManager : MonoBehaviour
         //activeEnd();
         
     }
+    public void testEndGame()
+    {
+        accurary = 0.6f;
+        endGame();
+    }
     public void endGame()
     {
         if(GameObject.Find("GameManager"))
