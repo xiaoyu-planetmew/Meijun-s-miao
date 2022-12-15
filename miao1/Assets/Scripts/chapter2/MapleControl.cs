@@ -18,6 +18,7 @@ public class MapleControl : MonoBehaviour
     public GameObject npc;
     public GameObject laoPoPo;
     public GameObject moment1;
+    public List<GameObject> moment1Chips;
     public GameObject cutDownButton;
     public GameObject nest;
     public int cutTimes = 0;
@@ -129,7 +130,11 @@ public class MapleControl : MonoBehaviour
     {
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
-        moment1.SetActive(true);
+        //moment1.SetActive(true);
+        foreach(var i in moment1Chips)
+        {
+            i.SetActive(true);
+        }
         EventControl.Instance.finishEvent(1);
     }
     public void maple8()

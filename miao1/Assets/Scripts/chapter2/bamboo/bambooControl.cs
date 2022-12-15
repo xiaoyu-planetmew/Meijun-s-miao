@@ -26,6 +26,7 @@ public class bambooControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        newLines();
         newLine(0);
         nowLineNumber = 0;
     }
@@ -34,6 +35,19 @@ public class bambooControl : MonoBehaviour
     void Update()
     {
         
+    }
+    public void newLines()
+    {
+        for(int i=0; i<lines.Count; i++)
+        {
+            lines[i] = 0;
+            for(int j=0; j<5; j++)
+            {
+                int n = Random.Range(0, 3);
+                lines[i] = lines[i] + (n*(int)(Mathf.Pow(10, j)));
+            }
+            lineCounts[i] = 5;
+        }
     }
     public void newLine(int l)
     {
