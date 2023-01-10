@@ -324,6 +324,14 @@ public class DialogSys2 : MonoBehaviour
             {
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(1);
             }
+            if(eventNum == 24)
+            {
+                GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(2);
+            }
+            if(eventNum == 27)
+            {
+                GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(3);
+            }
         }
         else if (s == "唱完")
         {

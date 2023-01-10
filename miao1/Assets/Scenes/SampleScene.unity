@@ -589,6 +589,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &8310731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -693,6 +696,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &8939214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4494,6 +4500,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &95998271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7979,6 +7988,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &186535260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16883,6 +16895,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &301701166
 GameObject:
   m_ObjectHideFlags: 0
@@ -17572,6 +17587,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &321938824 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7304371576134044033, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
@@ -19951,6 +19969,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &389438536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21654,6 +21675,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &420985682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23755,6 +23779,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &474849886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29608,6 +29635,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &625095014
 GameObject:
   m_ObjectHideFlags: 0
@@ -30837,6 +30867,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &672442037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31500,6 +31533,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &683257139
 GameObject:
   m_ObjectHideFlags: 0
@@ -35420,6 +35456,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &801370882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36378,6 +36417,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &824867902
 GameObject:
   m_ObjectHideFlags: 0
@@ -38204,6 +38246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2893d7cf45412824992c8447db9125e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcButton: {fileID: 0}
 --- !u!1 &886350315
 GameObject:
   m_ObjectHideFlags: 0
@@ -46204,6 +46247,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &945125535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46988,6 +47034,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &974311564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50132,6 +50181,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1027800628
 GameObject:
   m_ObjectHideFlags: 0
@@ -51768,6 +51820,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1043404182
 GameObject:
   m_ObjectHideFlags: 0
@@ -53021,6 +53076,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1063781368
 GameObject:
   m_ObjectHideFlags: 0
@@ -61948,6 +62006,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1182378142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64464,6 +64525,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1255405301
 GameObject:
   m_ObjectHideFlags: 0
@@ -65442,6 +65506,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1274094368
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68334,6 +68401,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1347920605
 GameObject:
   m_ObjectHideFlags: 0
@@ -69310,7 +69380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1369273531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72535,6 +72605,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1445007438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73248,6 +73321,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1461902896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92331,6 +92407,9 @@ MonoBehaviour:
   scaleLong: 1.2
   scaleShort: 0.8
   scaleDuration: 0.2
+  afterScale:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1628205012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92719,6 +92798,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1635744939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93270,6 +93352,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1656349737
 GameObject:
   m_ObjectHideFlags: 0
@@ -96751,6 +96836,9 @@ MonoBehaviour:
   leftAngle: -8
   rightAngle: 8
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1744071612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102565,6 +102653,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1868041116
 GameObject:
   m_ObjectHideFlags: 0
@@ -102848,6 +102939,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1871374849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110882,6 +110976,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2095160937
 GameObject:
   m_ObjectHideFlags: 0
@@ -117672,6 +117769,9 @@ MonoBehaviour:
   leftAngle: -10
   rightAngle: 10
   duration: 0.2
+  afterShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2136071487
 GameObject:
   m_ObjectHideFlags: 0
@@ -118486,6 +118586,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1489576865}
+    - target: {fileID: 2015771869, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: initialSkinName
+      value: zhujue01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015771869, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: skeletonDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d7b898ad83d9b9c47ad21f23f72bd564, type: 2}
+    - target: {fileID: 2015771872, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 342270261157010850, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: b
       value: 
@@ -118587,9 +118699,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727535330875900416, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727535330875900416, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dcfdfd9c4dde5034fb1d295dc556e98c, type: 2}
+      objectReference: {fileID: 2100000, guid: 9da1611c273f0864ba45f6eb0de72bae, type: 2}
     - target: {fileID: 7830293831711687043, guid: 33eda9094032a1d40a30f8bcff39276f, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0

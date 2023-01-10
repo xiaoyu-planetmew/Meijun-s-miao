@@ -1156,5 +1156,6 @@
         }
     }
 	CustomEditor "AllIn1SpriteShader"
-	Fallback "Sprites/Default"
+	//Fallback "Sprites/Default"
+	Fallback "Universal Render Pipeline/2D/Sprite-Lit-Default"
 }

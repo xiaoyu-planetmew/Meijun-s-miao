@@ -5,9 +5,11 @@ using DG.Tweening;
 using Cinemachine;
 using Spine;
 using Spine.Unity;
+using static Spine.AnimationState;
 
 public class MapleControl : MonoBehaviour
 {
+    private List<System.Action> mUnRegisterEventActions = new List<System.Action>();
     public GameObject maple;
     public GameObject face;
     public GameObject hudie;
@@ -21,7 +23,12 @@ public class MapleControl : MonoBehaviour
     public List<GameObject> moment1Chips;
     public GameObject cutDownButton;
     public GameObject nest;
+    public GameObject shenniao;
+    public GameObject shenniaoCircle;
     public int cutTimes = 0;
+    public GameObject jiangyang;
+    public AnimationCurve jiangyangAniCurve;
+    public GameObject wall6;
     Vector3 camPos;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +41,26 @@ public class MapleControl : MonoBehaviour
     void Update()
     {
         
+    }
+     public void PlaySpineAddEvent(SkeletonAnimation anim, string name, bool isLoop = false, System.Action action = null)
+    {
+        anim.AnimationState.SetAnimation(0, name, isLoop);
+        TrackEntryDelegate ac = delegate
+        {
+            action();
+        };
+        anim.AnimationState.Complete += ac;
+ 
+        mUnRegisterEventActions.Add(() =>
+        {
+            anim.AnimationState.Complete -= ac;
+        });
+    }
+
+    public void UnRegisterAll()
+    {
+        mUnRegisterEventActions.ForEach(action => action());
+        mUnRegisterEventActions.Clear();
     }
     public void maple1()
     {
@@ -202,6 +229,7 @@ public class MapleControl : MonoBehaviour
             StartCoroutine(hudieAppear());
             quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 2).OnComplete(() =>
             {
+                hudie.GetComponent<SkeletonAnimation>().Skeleton.A = 1;
                 GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
                 GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
                 npc.gameObject.SetActive(true);
@@ -221,7 +249,7 @@ public class MapleControl : MonoBehaviour
         //hudie.GetComponent<SkeletonAnimation>().Skeleton.A = hudie.GetComponent<SkeletonAnimation>().Skeleton.A + 0.1f;
         while (1 - hudie.GetComponent<SkeletonAnimation>().Skeleton.A > 0.05f)
         {
-            hudie.GetComponent<SkeletonAnimation>().Skeleton.A = Mathf.Lerp(hudie.GetComponent<SkeletonAnimation>().Skeleton.A, 1, 0.2f * Time.deltaTime);
+            hudie.GetComponent<SkeletonAnimation>().Skeleton.A = Mathf.Lerp(hudie.GetComponent<SkeletonAnimation>().Skeleton.A, 1, 0.3f * Time.deltaTime);
             yield return null;//����ÿһִ֡�з���һ�Σ��൱����update��ִ�У�����updateҪ��ʡ����
         }
     }
@@ -232,4 +260,50 @@ public class MapleControl : MonoBehaviour
         //hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
         StartCoroutine(hudieAppear());
     }
+    public void maple10()
+    {
+        jiangyang.SetActive(true);
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+    }
+    public void maple11()
+    {
+        //jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "laugh", false).Complete += maple12();
+        PlaySpineAddEvent(jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "laugh", false, (() => {
+            jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "laugh_loop", true);
+        }));
+        
+    }
+    public void maple12()
+    {
+        UnRegisterAll();
+        jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+        jiangyang.transform.GetChild(0).transform.localScale = new Vector3(-1, 1, 1);
+        StartCoroutine("maple12Delay");
+        EventControl.Instance.eventFinish(17);
+    }
+    IEnumerator maple12Delay()
+    {
+        yield return new WaitForSeconds(1);
+        jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run", true);
+        jiangyang.transform.DOMove(new Vector3(-58.74f, -0.78f, 0), 2).OnComplete(() => {
+            GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+            wall6.SetActive(false);
+            jiangyang.transform.position = new Vector3(-281f, -1.56f, 0);
+            jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+            jiangyang.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
+        });
+    }
+    public void maple13()
+    {
+        shenniao.SetActive(true);
+        shenniao.GetComponent<UnityEngine.Animation>()["shenniaodengchang"].speed = 0f;
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;
+        GameObject.Find("Main Camera").transform.DOMove(new Vector3(-43.34f, 6f, -16.4f), 2).OnComplete(() => {
+            shenniao.SetActive(true);
+            shenniaoCircle.SetActive(true);
+        });
+    }
 }
+

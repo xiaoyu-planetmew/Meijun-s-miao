@@ -102,7 +102,7 @@ public class threeShellCtrl : MonoBehaviour
         Debug.Log(times);
         while (nowTimes < times)
         {
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(1f);
             int a = Random.Range(0, 3);
             int b = Random.Range(0, 3);
             while (a == b)

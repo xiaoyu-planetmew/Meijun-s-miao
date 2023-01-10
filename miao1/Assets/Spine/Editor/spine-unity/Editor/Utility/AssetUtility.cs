@@ -338,6 +338,11 @@ namespace Spine.Unity.Editor {
 						Debug.LogWarningFormat("`{0}` : If this file is a Spine atlas, please change its extension to `.atlas.txt`. This is to allow Unity to recognize it and avoid filename collisions. You can also set this file extension when exporting from the Spine editor.", str);
 					}
 					break;
+				case ".skel":
+					if (SpineEditorUtilities.Preferences.atlasTxtImportWarning) {
+						Debug.LogWarningFormat("`{0}` : If this file is a Spine skeleton, please change its extension to `.skel.bytes`. This is to allow Unity to recognize it and avoid filename collisions. You can also set this file extension when exporting from the Spine editor.", str);
+					}
+					break;
 				case ".txt":
 					if (str.EndsWith(".atlas.txt", System.StringComparison.Ordinal))
 						atlasPaths.Add(str);
@@ -879,6 +884,7 @@ namespace Spine.Unity.Editor {
 				return false;
 			}
 
+			texImporter.sRGBTexture = false; // as PMA is the default, prevent any border issues that may arise when enabling mipmaps later.
 			texImporter.textureCompression = TextureImporterCompression.Uncompressed;
 			texImporter.alphaSource = TextureImporterAlphaSource.FromInput;
 			texImporter.mipmapEnabled = false;

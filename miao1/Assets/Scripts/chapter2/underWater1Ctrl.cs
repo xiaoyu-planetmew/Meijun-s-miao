@@ -31,6 +31,7 @@ public class underWater1Ctrl : MonoBehaviour
     public GameObject blackMask2;
     public Vector3 girlPos;
     public GameObject nest;
+    public GameObject moment3;
     public GameObject bubble;
     Vector3 camPos;
     // Start is called before the first frame update
@@ -230,12 +231,12 @@ public class underWater1Ctrl : MonoBehaviour
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2)).OnComplete(() =>
         {
             //Debug.Log("2");
-            blackMask2.gameObject.SetActive(false);
             GameManager2.instance.player.transform.position = girlPos;
             GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
             GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
             nest.SetActive(true);
+            moment3.SetActive(true);
         });
         quence.AppendInterval(5);
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>
@@ -253,5 +254,8 @@ public class underWater1Ctrl : MonoBehaviour
         GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
         GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+            blackMask2.gameObject.SetActive(false);
+            nest.SetActive(true);
+            moment3.SetActive(true);
     }
 }

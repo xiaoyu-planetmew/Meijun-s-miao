@@ -145,7 +145,9 @@ public class NpcMusicFocus : MonoBehaviour
     {
         //Debug.Log("1");
         NPCDialogBox.transform.GetChild(1).gameObject.GetComponent<Button>().onClick.Invoke();
-        index++;
+        //index++;
+        index = DialogSys2.Instance.index - 2;
+        Debug.Log(index);
         if (index <= textList.Count - 1)
         {
             text1.GetComponent<Text>().text = textList[index];
@@ -175,7 +177,6 @@ public class NpcMusicFocus : MonoBehaviour
         while (focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a < 1)
         {
             focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a + 0.01f);
-            focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.a + 0.01f);
             focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.a + 0.01f);
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.a + 0.01f);
             focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.r, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.g, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.b, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.a + 0.01f);
@@ -190,10 +191,10 @@ public class NpcMusicFocus : MonoBehaviour
         while (focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a > 0)
         {
             focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a - 0.01f);
-            focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.a - 0.01f);
             focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.a - 0.01f);
             focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.a - 0.01f);
             focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.r, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.g, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.b, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.a - 0.01f);
+            focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.b, focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.a - 0.01f);
             //Debug.Log(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.a);
             //GameObject.Find("")
             yield return 0;
@@ -205,10 +206,8 @@ public class NpcMusicFocus : MonoBehaviour
         yield return new WaitUntil(() => cam.gameObject.transform.position == new Vector3(loX, loY, loZ));
         cam.GetComponent<CinemachineBrain>().enabled = true;
         focusCanvas.transform.GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.b, 0);
-        focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color.b, 0);
         focusCanvas.transform.GetChild(1).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetComponent<Image>().color.b, 0);
         focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(0).GetComponent<Image>().color.b, 0);
-        focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.r, focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.g, focusCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().color.b, 0);
         focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color = new Color(focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.r, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.g, focusCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().color.b, 0);
         focusCanvas.transform.GetChild(0).gameObject.SetActive(false);
         

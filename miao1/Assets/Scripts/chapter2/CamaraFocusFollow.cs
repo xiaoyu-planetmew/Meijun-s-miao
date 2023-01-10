@@ -34,7 +34,7 @@ public class CamaraFocusFollow : MonoBehaviour
                 if (cam.name == "Main Camera")
                 {
                     cam.gameObject.GetComponent<CinemachineBrain>().enabled = false;
-                    cam.transform.DOMove(new Vector3(-280f, 2.86f, -10f), 0.5f);
+                    cam.transform.DOMove(new Vector3(-280f, 2.86f, -8.8f), 0.5f);
                     //cam.transform.position = new Vector3(-280f, 2.86f, -10f);
                     cam.fieldOfView = 100;
                 }

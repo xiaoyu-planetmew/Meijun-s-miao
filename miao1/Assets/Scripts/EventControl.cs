@@ -98,9 +98,21 @@ public class EventControl : MonoBehaviour
             DialogSys2.Instance.dialogStartMoment(true);
             //transButton.SetActive(true);
         }
-        if (events[5] && events[7] && events[8] && events[9])
+        if (events[5] && events[7] && events[8] && events[9] && !events[10])
         {
             DialogSys2.Instance.dialogStart(14);
+        }
+        if(events[12] && !events[13])
+        {
+            DialogSys2.Instance.dialogStartMoment(false);
+        }
+        if(events[13] && !events[14])
+        {
+            DialogSys2.Instance.dialogStartMoment(true);
+        }
+        if(events[15] && !events[16])
+        {
+            DialogSys2.Instance.dialogStart(24);
         }
     }
     public void LaoPoPo_ButtonAct()
@@ -113,5 +125,12 @@ public class EventControl : MonoBehaviour
     public void finishEvent(int i)
     {
         events[i] = true;
+    }
+    public void test(int n)
+    {
+        for(int i=0; i<=n; i++)
+        {
+            events[i] = true;
+        }
     }
 }

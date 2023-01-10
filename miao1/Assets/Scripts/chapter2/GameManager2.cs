@@ -215,6 +215,16 @@ public class GameManager2 : MonoBehaviour
                 EventControl.Instance.finishEvent(7);
                 //events[0] = true;
             }
+            if (i.itemName == "chapter2Moment3")
+            {
+                EventControl.Instance.finishEvent(13);
+                //events[0] = true;
+            }
+            if (i.itemName == "chapter2Moment4")
+            {
+                EventControl.Instance.finishEvent(18);
+                //events[0] = true;
+            }
         }
     }
     public void NextSceneMail(string s)
@@ -231,7 +241,7 @@ public class GameManager2 : MonoBehaviour
     public void destroyGameManager()
     {
         SceneManager.LoadScene("startMenu");
-        Destroy(GameObject.Find("GameManager"));
+        Destroy(GameObject.Find("GameManager2"));
         Destroy(GameObject.Find("language"));
         Time.timeScale = 1;
     }

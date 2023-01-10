@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CircleProcess : MonoBehaviour
@@ -9,9 +10,11 @@ public class CircleProcess : MonoBehaviour
 
     public Transform process;
     public Transform indicator;
+    public Animation shenniao;
 
     public int targetProcess = 2;
     private float currentAmout = 0;
+    public UnityEvent succeedEvent;
   
     void Update()
     {
@@ -30,7 +33,8 @@ public class CircleProcess : MonoBehaviour
         }
         else
         {
-            indicator.GetComponent<Text>().text = "激活成功";
+            //indicator.GetComponent<Text>().text = "激活成功";
+            succeedEvent.Invoke();
         }
     }
     public void Process()
@@ -41,6 +45,8 @@ public class CircleProcess : MonoBehaviour
             currentAmout = targetProcess;
         if (currentAmout<0)
             currentAmout = 0;
+
+        shenniao["shenniaodengchang"].normalizedTime = currentAmout / 2;
     }
 
     public void Clickprocess(bool bStart)
