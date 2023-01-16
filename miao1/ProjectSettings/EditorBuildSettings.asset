@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/startMenu2.unity
     guid: b75be775090291442b2c01aca173eb6a
-  m_configObjects: {}
+  - enabled: 0
+    path: Assets/Scenes/anim.unity
+    guid: 7953b97a5706f544c966c9e65dba75fd
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: bbcda4e70d5cf61439ca0bd269d27c81, type: 2}

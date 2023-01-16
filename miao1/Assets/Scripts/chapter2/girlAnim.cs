@@ -40,18 +40,33 @@ public class girlAnim : MonoBehaviour
         this.GetComponent<Animator>().speed = 0;
         Button2C01.SetActive(true);
     }
+    public void countPlus()
+    {
+        nowCount++;
+    }
     public void next()
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
         this.GetComponent<Animator>().speed = animSpeed;
         Debug.Log(triggers[nowCount]);
         this.GetComponent<Animator>().SetTrigger(triggers[nowCount]);
-        nowCount++;
+        //nowCount++;
         nextButton.SetActive(false);
     }
     public void changeCut()
     {
         nowCut++;
+        /*
+        if(nowCount<24)
+        {
+            
+            //this.GetComponent<SpriteRenderer>().enabled = true;
+            this.GetComponent<Animator>().SetTrigger(triggers[nowCount]);
+            //this.GetComponent<Animator>().speed = animSpeed;
+            Debug.Log(triggers[nowCount]);
+        }else{
+            this.GetComponent<SpriteRenderer>().enabled = false;
+        }*/
         StartCoroutine(changeCutDelay());
     }
     IEnumerator changeCutDelay()
@@ -59,15 +74,15 @@ public class girlAnim : MonoBehaviour
         animSpeed = this.GetComponent<Animator>().speed;
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<Animator>().speed = 0;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         
         if(nowCount<24)
         {
             
             //this.GetComponent<SpriteRenderer>().enabled = true;
             this.GetComponent<Animator>().SetTrigger(triggers[nowCount]);
-            nowCount++;
             this.GetComponent<Animator>().speed = animSpeed;
+            Debug.Log(triggers[nowCount]);
         }else{
             this.GetComponent<SpriteRenderer>().enabled = false;
         }

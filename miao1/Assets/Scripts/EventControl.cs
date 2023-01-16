@@ -114,6 +114,18 @@ public class EventControl : MonoBehaviour
         {
             DialogSys2.Instance.dialogStart(24);
         }
+        if(events[17] && !events[18])
+        {
+            DialogSys2.Instance.dialogStartMoment(false);
+        }
+        if(events[18] && !events[19])
+        {
+            DialogSys2.Instance.dialogStartMoment(true);
+        }
+        if(events[20] && !events[21])
+        {
+            DialogSys2.Instance.dialogStart(27);
+        }
     }
     public void LaoPoPo_ButtonAct()
     {
