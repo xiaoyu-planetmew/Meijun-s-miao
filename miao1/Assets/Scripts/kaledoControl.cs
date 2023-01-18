@@ -57,7 +57,7 @@ public class kaledoControl : MonoBehaviour
             {
                 groupRight = false;
 
-                UnityEngine.Debug.Log("r1");
+                //UnityEngine.Debug.Log("r1");
                 return;
             }
             if(!groupDraging)

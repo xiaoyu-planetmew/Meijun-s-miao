@@ -18,9 +18,10 @@ MonoBehaviour:
   m_GUID: b6d1d3e57337b4a40b9c18179dab8d6f
   m_SerializeEntries:
   - m_GUID: 9a06e1a7368c0ef45816e5f20c8e8f45
-    m_Address: "Assets/Animation/sequenceFrame/\u5973\u5B69\u7684\u8BD7/girlAnim.controller"
+    m_Address: "sequenceFrame/\u5973\u5B69\u7684\u8BD7/girlAnim.controllerrlAnim.controller"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - default
     m_MainAsset: {fileID: 9100000, guid: 9a06e1a7368c0ef45816e5f20c8e8f45, type: 2}
     m_TargetAsset: {fileID: 9100000, guid: 9a06e1a7368c0ef45816e5f20c8e8f45, type: 2}
   m_ReadOnly: 0

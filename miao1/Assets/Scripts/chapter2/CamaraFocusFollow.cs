@@ -37,6 +37,10 @@ public class CamaraFocusFollow : MonoBehaviour
                     cam.transform.DOMove(new Vector3(-280f, 2.86f, -8.8f), 0.5f);
                     //cam.transform.position = new Vector3(-280f, 2.86f, -10f);
                     cam.fieldOfView = 100;
+                    for(int i=0; i<DialogSys2.Instance.textBackgrounds.Count; i++)
+                    {
+                        DialogSys2.Instance.textBackgrounds[i].transform.localScale = new Vector3(58.67182f, 58.67182f, 58.67182f);
+                    }
                 }
             }
             else
@@ -44,6 +48,10 @@ public class CamaraFocusFollow : MonoBehaviour
                 if (cam.name == "Main Camera")
                 {
                     cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                    for(int i=0; i<DialogSys2.Instance.textBackgrounds.Count; i++)
+                    {
+                        DialogSys2.Instance.textBackgrounds[i].transform.localScale = new Vector3(51.114f, 51.114f, 51.114f);
+                    }
                 }
             }
         }

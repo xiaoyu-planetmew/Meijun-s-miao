@@ -51,6 +51,7 @@ public class bigBridgeControl : MonoBehaviour
         PlaySpineAddEvent(leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             leiShen.transform.GetChild(1).Find("startButton").gameObject.SetActive(true);
+            UnRegisterAll();
         }));
     }
     public void bigBridge2()
@@ -64,12 +65,13 @@ public class bigBridgeControl : MonoBehaviour
     public void bigBridge4()
     {
         longWang.SetActive(true);
-        jiangSong.transform.position = new Vector3(-269.15f, -1.52f ,0);
+        jiangSong.transform.position = new Vector3(-284.68f, -1.52f ,0);
         PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             DialogSys2.Instance.dialogStart(29);
             PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "speak", false, (() => {
                 longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
             }));
+            UnRegisterAll();
         }));
     }
     public void bigBridge5()

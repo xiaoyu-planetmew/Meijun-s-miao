@@ -24,7 +24,7 @@ public class FinalMovement : MonoBehaviour
     public AudioSource run;
 
     bool jumpPressed;
-    bool outside;
+    bool outside = true;
     int jumpCount;
     public bool otherAnim = false;
     public bool running;
@@ -199,7 +199,8 @@ public class FinalMovement : MonoBehaviour
 
     void GroundMovement()
     {
-        //var playing = false;
+
+        
         if(outside && transform.localScale.y != 0.4f)
         {
             speed = 5;
@@ -211,7 +212,7 @@ public class FinalMovement : MonoBehaviour
             transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
         //horizontalMove = Input.GetAxisRaw("Horizontal");//只返回-1，0，1
-
+        
         if(canMove)
         {
         if(Input.GetKey("a"))
@@ -329,7 +330,7 @@ public class FinalMovement : MonoBehaviour
     */
     void SwitchSpineAnim()
     {
-        
+        if(GameObject.Find("GameManager")){
         if(this.transform.position.y < 10 && this.transform.position.y > -10)
         {
             anim.SetBool("outside", true);
@@ -341,6 +342,7 @@ public class FinalMovement : MonoBehaviour
             outside = false;
         }
         anim.SetFloat("moving", Mathf.Abs(horizontalMove));
+        }
         //anim.SetFloat("moving", Mathf.Abs(rb.velocity.x));
         //bool turning;
         //var sa = this.transform.GetChild(0).GetComponent<SkeletonAnimation>();

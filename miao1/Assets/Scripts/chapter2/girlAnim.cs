@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class girlAnim : MonoBehaviour
 {
@@ -10,11 +11,22 @@ public class girlAnim : MonoBehaviour
     public int nowCount = 1;
     public int nowCut = 1;
     public float animSpeed = 1;
-    // Start is called before the first frame update
+    public AssetLabelReference assetLabel;
+
     void Start()
     {
-        
+        Addressables.LoadAssetsAsync<RuntimeAnimatorController>(assetLabel, OnLoadDone);
     }
+
+    /// <summary>
+    /// 资源加载完成回调，此处可以加一个进度显示和交互限制，等待加载完毕之后再操作，防止异常
+    /// </summary>
+    /// <param name="animtorClip"></param>
+    void OnLoadDone(RuntimeAnimatorController animtorClip)
+    {
+        Debug.Log(animtorClip.name);
+    }
+    // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
