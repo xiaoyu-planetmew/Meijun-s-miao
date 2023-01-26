@@ -148,8 +148,8 @@ public class FinalMovement : MonoBehaviour
             if (skeletonAnimation == null) return;
             Spine.AnimationState spineAnimationState = skeletonAnimation.state;
             Spine.Skeleton skeleton;
-            skeletonAnimation.skeleton.SetToSetupPose();
-            spineAnimationState.ClearTracks();
+            //skeletonAnimation.skeleton.SetToSetupPose();
+            //spineAnimationState.ClearTracks();
             spineAnimationState.SetAnimation(0, animationName, loop);
         }
     }

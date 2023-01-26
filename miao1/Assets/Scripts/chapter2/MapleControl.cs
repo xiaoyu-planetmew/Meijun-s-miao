@@ -279,6 +279,7 @@ public class MapleControl : MonoBehaviour
         UnRegisterAll();
         jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
         jiangyang.transform.GetChild(0).transform.localScale = new Vector3(-1, 1, 1);
+        //npc.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         StartCoroutine("maple12Delay");
         EventControl.Instance.eventFinish(17);
     }
@@ -286,9 +287,13 @@ public class MapleControl : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "run", true);
+        //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "wwalk", true);
+        //npc.transform.DOMove(new Vector3(-54.4f, -0.44f, 0), 2);
         jiangyang.transform.DOMove(new Vector3(-58.74f, -0.78f, 0), 2).OnComplete(() => {
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
             wall6.SetActive(false);
+            //npc.transform.position = new Vector3(-244.25f, -4.44f, 0);            
+            //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "widle", true);
             jiangyang.transform.position = new Vector3(-281f, -1.56f, 0);
             jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             jiangyang.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);

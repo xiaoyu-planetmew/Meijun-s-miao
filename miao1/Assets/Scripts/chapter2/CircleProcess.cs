@@ -38,10 +38,11 @@ public class CircleProcess : MonoBehaviour
         {
             //indicator.GetComponent<Text>().text = "激活成功";
             succeedEvent.Invoke();
+            shenniao.transform.localPosition = new Vector3(-7.09f, -1.83f, shenniao.transform.localPosition.z);
         }
-        if(currentAmout > 0)
+        if(currentAmout > 0 && currentAmout < targetProcess && shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationName != "appeared")
         {
-            shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "wind", true);
+            shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appeared", true);
         }
     }
     public void Process()
@@ -53,7 +54,8 @@ public class CircleProcess : MonoBehaviour
         if (currentAmout<0)
             currentAmout = 0;
 
-        shenniao["shenniaodengchang"].normalizedTime = currentAmout / 2;
+        //shenniao["shenniaodengchang"].normalizedTime = currentAmout / 2;
+        shenniao.transform.localPosition = new Vector3(shenniao.transform.localPosition.x, 17.5f-(17.5f + 6.6f) * currentAmout / 2f, shenniao.transform.localPosition.z);
     }
 
     public void Clickprocess(bool bStart)
