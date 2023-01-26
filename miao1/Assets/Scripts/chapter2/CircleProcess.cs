@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Spine;
+using Spine.Unity;
+using static Spine.AnimationState;
 
 public class CircleProcess : MonoBehaviour
 {
@@ -10,7 +13,7 @@ public class CircleProcess : MonoBehaviour
 
     public Transform process;
     public Transform indicator;
-    public Animation shenniao;
+    public UnityEngine.Animation shenniao;
 
     public int targetProcess = 2;
     private float currentAmout = 0;
@@ -35,6 +38,10 @@ public class CircleProcess : MonoBehaviour
         {
             //indicator.GetComponent<Text>().text = "激活成功";
             succeedEvent.Invoke();
+        }
+        if(currentAmout > 0)
+        {
+            shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "wind", true);
         }
     }
     public void Process()
