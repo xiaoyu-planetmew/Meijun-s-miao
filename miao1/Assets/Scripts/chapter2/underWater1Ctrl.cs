@@ -30,9 +30,13 @@ public class underWater1Ctrl : MonoBehaviour
     public GameObject blackMask;
     public GameObject blackMask2;
     public Vector3 girlPos;
+    public GameObject NPC;
+    public Vector3 NPC_Pos;
     public GameObject nest;
     public GameObject moment3;
     public GameObject bubble;
+    public GameObject girlAnim;
+    public GameObject mapleParticle;
     Vector3 camPos;
     // Start is called before the first frame update
     void Start()
@@ -216,45 +220,70 @@ public class underWater1Ctrl : MonoBehaviour
     }
     public void yuDialog11()
     {
+        mapleParticle.SetActive(false);
+        GameObject.Find("InventoryCanvas").gameObject.GetComponent<Canvas>().enabled = false;
         hudie.transform.localPosition = hudiePos;
         bubble.SetActive(true);
-        StartCoroutine(yuDialog11Delay());
+        //StartCoroutine(yuDialog11Delay());
         DG.Tweening.Sequence quence = DOTween.Sequence();
         quence.Append(GameObject.Find("Main Camera").transform.DOMove(hudieCam, 5).OnComplete(() =>
         {
             blackMask.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
             blackMask.GetComponent<SpriteRenderer>().enabled = true;
             blackMask.gameObject.SetActive(true);
-            blackMask2.gameObject.SetActive(true);
+            //blackMask2.gameObject.SetActive(true);
             //Debug.Log("1");
         }));
         quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2)).OnComplete(() =>
         {
             //Debug.Log("2");
-            GameManager2.instance.player.transform.position = girlPos;
+            //girlAnim.SetActive(true);
+            blackMask.SetActive(false);
+            girlAnim.SetActive(true);
+        });
+        //quence.AppendInterval(5);
+        //quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>
+        //{
+        //    //Debug.Log("3");
+        //    girlAnim.SetActive(true);
+        //});
+    }
+    public void yuDialog12()
+    {
+        girlAnim.SetActive(false);
+        GameManager2.instance.player.transform.position = girlPos;
             GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
             GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
             nest.SetActive(true);
             moment3.SetActive(true);
-        });
-        quence.AppendInterval(5);
-        quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>
-        {
-            //Debug.Log("3");
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
             bubble.SetActive(false);
-        });
+            mapleParticle.SetActive(true);
+            GameObject.Find("InventoryCanvas").gameObject.GetComponent<Canvas>().enabled = true;
+            GameManager2.instance.player.transform.position = girlPos;
+        NPC.transform.localPosition = NPC_Pos;
+        NPC.transform.Find("Spine GameObject (wushi)").localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        NPC.transform.Find("JiangSongCanvas").GetComponent<RectTransform>().anchoredPosition = new Vector2(-1.18f, 4.32f);
+        GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
+        GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+            //blackMask2.gameObject.SetActive(false);
+            nest.SetActive(true);
+            moment3.SetActive(true);
     }
     IEnumerator yuDialog11Delay()
     {
         yield return new WaitForSeconds(8);
         Debug.Log("2");
         GameManager2.instance.player.transform.position = girlPos;
+        NPC.transform.localPosition = NPC_Pos;
+        NPC.transform.Find("Spine GameObject (wushi)").localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        NPC.transform.Find("JiangSongCanvas").GetComponent<RectTransform>().anchoredPosition = new Vector2(-1.18f, 4.32f);
         GameManager2.instance.player.GetComponent<PlayerUnderWaterControl>().underWater = false;
         GameManager2.instance.player.transform.Find("ChracterNew").GetComponent<ShaderControl>().ClearAllKeywords();
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
-            blackMask2.gameObject.SetActive(false);
+            //blackMask2.gameObject.SetActive(false);
             nest.SetActive(true);
             moment3.SetActive(true);
     }

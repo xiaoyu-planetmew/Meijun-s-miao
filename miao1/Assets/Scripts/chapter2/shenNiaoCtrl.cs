@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using DG.Tweening;
+using Cinemachine;
 
 
 public class shenNiaoCtrl : MonoBehaviour
@@ -336,7 +337,10 @@ public class shenNiaoCtrl : MonoBehaviour
     }
     public void succeed()
     {
-        succeedEvent.Invoke();
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+        GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;
+        GameObject.Find("Main Camera").transform.localPosition = new Vector3(-43.56f, 3.31f, -10f);
+        //succeedEvent.Invoke();
     }
     public void clearAll()
     {

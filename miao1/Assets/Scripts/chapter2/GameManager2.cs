@@ -227,7 +227,7 @@ public class GameManager2 : MonoBehaviour
             }
             if (i.itemName == "chapter2Moment5")
             {
-                EventControl.Instance.finishEvent(24);
+                EventControl.Instance.finishEvent(23);
                 //events[0] = true;
             }
         }

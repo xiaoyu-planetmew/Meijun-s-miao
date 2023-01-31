@@ -50,6 +50,11 @@ public class chracterAnimEvents : MonoBehaviour
         MouseSet.Instance.mouseChange("mouseTexture");
         DialogSys2.Instance.canContinue = true;
     }
+    public void playLoopAnim(int i)
+    {
+        this.GetComponent<FinalMovement>().otherAnim = true;
+        this.transform.Find("ChracterNew").GetComponent<SkeletonAnimation>().state.SetAnimation(0, animNames[i], true);
+    }
     public void playOtherAnim(int i)
     {
         string animationName = animNames[i];
@@ -87,6 +92,10 @@ public class chracterAnimEvents : MonoBehaviour
             };
         }
         return;
+    }
+    public void stopAnim()
+    {
+        this.GetComponent<FinalMovement>().otherAnim = false;
     }
     public void jiangSongAnim(int i)
     {

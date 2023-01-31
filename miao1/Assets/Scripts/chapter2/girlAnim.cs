@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AddressableAssets;
 
 public class girlAnim : MonoBehaviour
@@ -11,6 +12,7 @@ public class girlAnim : MonoBehaviour
     public int nowCount = 1;
     public int nowCut = 1;
     public float animSpeed = 1;
+    public UnityEvent afterAnim;
     //public Animator anim;
 
     void Start()
@@ -110,5 +112,9 @@ public class girlAnim : MonoBehaviour
     public void newCut()
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
+    }
+    public void playFinish()
+    {
+        if(afterAnim != null) afterAnim.Invoke();
     }
 }

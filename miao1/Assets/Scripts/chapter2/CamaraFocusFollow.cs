@@ -39,7 +39,7 @@ public class CamaraFocusFollow : MonoBehaviour
                     cam.fieldOfView = 100;
                     for(int i=0; i<DialogSys2.Instance.textBackgrounds.Count; i++)
                     {
-                        DialogSys2.Instance.textBackgrounds[i].transform.localScale = new Vector3(58.67182f, 58.67182f, 58.67182f);
+                        DialogSys2.Instance.textBackgrounds[i].transform.localScale = new Vector3(82.84924f, 82.84924f, 82.84924f);
                     }
                 }
             }

@@ -36,12 +36,12 @@ public class teleportButtonActive : MonoBehaviour
         player = GameManager.instance.player;
         }
         if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) < jumpDistance) 
-        && (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) < 10) && holdItem)
+        && (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) < 3) && holdItem)
         {
             button.SetActive(true);
         }
         if((Mathf.Abs(buttonLocation.transform.position.x - player.transform.position.x) > jumpDistance) 
-        || (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) > 10)&& holdItem)
+        || (Mathf.Abs(buttonLocation.transform.position.y - player.transform.position.y) > 3)&& holdItem)
         {
             button.SetActive(false);
         }

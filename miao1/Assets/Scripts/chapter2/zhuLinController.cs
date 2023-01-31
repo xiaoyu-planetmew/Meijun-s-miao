@@ -50,7 +50,7 @@ public class zhuLinController : MonoBehaviour
     public void zhuLin4()
     {
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
-        fuDao.transform.DOLocalMoveY(-27.38f, 2).OnComplete(() => {
+        fuDao.transform.DOLocalMoveY(-27.38f, 5).OnComplete(() => {
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
             //fuDao.transform.Find("fudaoTrigger").gameObject.SetActive(true);
         });

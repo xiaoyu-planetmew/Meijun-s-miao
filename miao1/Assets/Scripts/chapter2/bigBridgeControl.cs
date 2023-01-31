@@ -13,6 +13,7 @@ public class bigBridgeControl : MonoBehaviour
     public GameObject leiShen;
     public GameObject longWang;
     public GameObject jiangSong;
+    public GameObject jiangYang;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class bigBridgeControl : MonoBehaviour
         PlaySpineAddEvent(leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             leiShen.transform.GetChild(1).Find("startButton").gameObject.SetActive(true);
+            jiangYang.transform.Find("JiangYangCanvas").GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 12.6f);
             UnRegisterAll();
         }));
     }
@@ -66,9 +68,10 @@ public class bigBridgeControl : MonoBehaviour
     {
         longWang.SetActive(true);
         jiangSong.transform.position = new Vector3(-284.68f, -1.52f ,0);
+        jiangSong.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
         PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             DialogSys2.Instance.dialogStart(29);
-            leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
+            longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
             //PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "speak", false, (() => {
              //   longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
             //}));

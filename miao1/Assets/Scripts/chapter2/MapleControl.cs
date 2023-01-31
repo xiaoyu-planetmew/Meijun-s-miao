@@ -278,7 +278,7 @@ public class MapleControl : MonoBehaviour
     {
         UnRegisterAll();
         jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
-        jiangyang.transform.GetChild(0).transform.localScale = new Vector3(-1, 1, 1);
+        jiangyang.transform.GetChild(0).transform.localScale = new Vector3(-1f, 1, 1);
         //npc.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         StartCoroutine("maple12Delay");
         EventControl.Instance.eventFinish(17);
@@ -297,12 +297,15 @@ public class MapleControl : MonoBehaviour
             jiangyang.transform.position = new Vector3(-281f, -1.56f, 0);
             jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             jiangyang.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
+            
+            GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         });
     }
     public void maple13()
     {
         shenniao.SetActive(true);
         shenniao.GetComponent<UnityEngine.Animation>()["shenniaodengchang"].speed = 0f;
+        GameManager2.instance.player.transform.Find("ChracterNew").localScale = new Vector3(-1f, 1, 1);
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
         GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;
         GameObject.Find("Main Camera").transform.DOMove(new Vector3(-43.34f, 6f, -16.4f), 2).OnComplete(() => {
