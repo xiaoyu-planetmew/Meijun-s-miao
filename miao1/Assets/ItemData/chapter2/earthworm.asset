@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: earthworm
   m_EditorClassIdentifier: 
   itemName: earthworm
-  itemDesJ: earthworm
+  itemDesJ: "\u30DF\u30DF\u30BA"
   itemDesE: earthworm
-  itemDesCN: earthworm
+  itemDesCN: "\u86AF\u8693"
   itemSprite: {fileID: 21300000, guid: f253de8a90291d340a5fdd7ac9e3b7dd, type: 3}
   itemPrice: 0
