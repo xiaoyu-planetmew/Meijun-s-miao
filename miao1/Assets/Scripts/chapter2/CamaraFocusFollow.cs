@@ -10,6 +10,7 @@ public class CamaraFocusFollow : MonoBehaviour
     public float yAxis;
     
     public Camera cam;
+    public bool camLock;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class CamaraFocusFollow : MonoBehaviour
         {
             this.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + yAxis, this.transform.position.z);
         }
-        if (obj.transform.position.x < -100)
+        if (obj.transform.position.x < -100 && camLock)
         {
             if (obj.transform.position.x < -261)
             {
@@ -55,5 +56,10 @@ public class CamaraFocusFollow : MonoBehaviour
                 }
             }
         }
+    }
+    public void camShake()
+    {
+        camLock = false;
+        this.GetComponent<ShakeCamera>().enabled = true;
     }
 }

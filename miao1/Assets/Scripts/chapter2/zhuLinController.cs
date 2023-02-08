@@ -13,6 +13,7 @@ public class zhuLinController : MonoBehaviour
     public GameObject wall;
     public GameObject kaleido;
     public GameObject moment5;
+    public GameObject NPC;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,5 +59,11 @@ public class zhuLinController : MonoBehaviour
     public void zhuLin3()
     {
         moment5.SetActive(true);
+    }
+    public void zhuLin5()
+    {
+        NPC.transform.position = new Vector3(-41f, -0.44f, 0f);
+        NPC.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        NPC.transform.Find("musicFollow").transform.position = new Vector3(-43.55f, 1.84f, -5.14f);
     }
 }

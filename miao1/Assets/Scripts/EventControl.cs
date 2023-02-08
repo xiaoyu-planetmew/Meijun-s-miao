@@ -84,6 +84,11 @@ public class EventControl : MonoBehaviour
             DialogSys2.Instance.dialogStartMoment(true);
             //transButton.SetActive(true);
         }
+        if (events[0] && events[1] && events[2] && events[3] && !events[4])
+        {
+            DialogSys2.Instance.dialogMomentFailed();
+            //transButton.SetActive(true);
+        }
         if (events[0] && events[1] && events[2] && events[3] && events[4] && !events[5])
         {
             DialogSys2.Instance.dialogStart(12);
@@ -98,6 +103,11 @@ public class EventControl : MonoBehaviour
             DialogSys2.Instance.dialogStartMoment(true);
             //transButton.SetActive(true);
         }
+        if (events[5] && events[7] && events[8] && !events[9])
+        {
+            DialogSys2.Instance.dialogMomentFailed();
+            //transButton.SetActive(true);
+        }
         if (events[5] && events[7] && events[8] && events[9] && !events[10])
         {
             DialogSys2.Instance.dialogStart(14);
@@ -110,6 +120,10 @@ public class EventControl : MonoBehaviour
         {
             DialogSys2.Instance.dialogStartMoment(true);
         }
+        if(events[14] && !events[15])
+        {
+            DialogSys2.Instance.dialogMomentFailed();
+        }
         if(events[15] && !events[16])
         {
             DialogSys2.Instance.dialogStart(24);
@@ -121,6 +135,9 @@ public class EventControl : MonoBehaviour
         if(events[18] && !events[19])
         {
             DialogSys2.Instance.dialogStartMoment(true);
+        }if(events[19] && !events[20])
+        {
+            DialogSys2.Instance.dialogMomentFailed();
         }
         if(events[20] && !events[21])
         {

@@ -70,6 +70,7 @@ public class girlAnim : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
         this.GetComponent<Animator>().speed = animSpeed;
+        Debug.Log(nowCount);
         Debug.Log(triggers[nowCount]);
         this.GetComponent<Animator>().SetTrigger(triggers[nowCount]);
         //nowCount++;

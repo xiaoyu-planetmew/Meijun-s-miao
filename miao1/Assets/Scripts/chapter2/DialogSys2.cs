@@ -24,6 +24,7 @@ public class DialogSys2 : MonoBehaviour
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<TextAsset> momentFind = new List<TextAsset>();
     public List<TextAsset> momentNotFind = new List<TextAsset>();
+    public List<TextAsset> momentFailed = new List<TextAsset>();
     public List<UnityEvent> afterDialogEvents = new List<UnityEvent>();
     //public UnityEvent  
 
@@ -153,6 +154,22 @@ public class DialogSys2 : MonoBehaviour
                 Debug.Log("startNotFind");
             }
         }
+    }
+    public void dialogMomentFailed()
+    {
+        index = 0;
+        if (GameObject.Find("GameManager") && GameObject.Find("GameManager").GetComponent<GameManager>())
+        {
+            GetTextFromFile(momentFailed[GameManager.instance.languageNum]);
+        }
+        else
+        {
+            GetTextFromFile(momentFailed[2]);
+        }
+                //GetTextFromFile(momentFind[Num]);
+        eventNum = -1;
+        fileChoose();
+        Debug.Log("MomentFailed");
     }
     public void dialogNext()
     {
