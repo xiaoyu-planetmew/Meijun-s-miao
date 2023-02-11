@@ -46661,6 +46661,7 @@ MonoBehaviour:
   e: 24
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 0
 --- !u!1 &958209320
 GameObject:
   m_ObjectHideFlags: 0
@@ -46874,6 +46875,7 @@ MonoBehaviour:
   e: 0
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 10
 --- !u!1 &963100406
 GameObject:
   m_ObjectHideFlags: 0
@@ -51418,6 +51420,7 @@ MonoBehaviour:
   e: 0
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 0
 --- !u!1 &1041240667
 GameObject:
   m_ObjectHideFlags: 0
@@ -97944,6 +97947,7 @@ MonoBehaviour:
   e: 0
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 0
 --- !u!1 &1786997732
 GameObject:
   m_ObjectHideFlags: 0
@@ -102230,6 +102234,7 @@ MonoBehaviour:
   e: 3
   player: {fileID: 0}
   jumpDistance: 2
+  verticalDistance: 0
 --- !u!114 &1862200912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105756,6 +105761,7 @@ MonoBehaviour:
   e: 0
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 0
 --- !u!1 &1940316424
 GameObject:
   m_ObjectHideFlags: 0
@@ -106831,6 +106837,7 @@ MonoBehaviour:
   e: 0
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 10
 --- !u!1 &1974052190
 GameObject:
   m_ObjectHideFlags: 0
@@ -116870,6 +116877,7 @@ MonoBehaviour:
   e: 25
   player: {fileID: 0}
   jumpDistance: 1
+  verticalDistance: 0
 --- !u!1 &2122283527
 GameObject:
   m_ObjectHideFlags: 0
