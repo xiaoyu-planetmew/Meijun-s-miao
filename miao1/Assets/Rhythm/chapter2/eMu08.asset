@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
   m_Name: eMu08
   m_EditorClassIdentifier: 
-  mSourceClip: {fileID: 0}
+  mSourceClip: {fileID: 8300000, guid: 1f11fe1c809b4904b9407b8144926069, type: 3}
   mAudioFilePath: 
   mSampleRate: -1
   mIgnoreLatencyOffset: 0
@@ -22,4 +22,5 @@ MonoBehaviour:
     samplesPerBeat: 22050
     beatsPerMeasure: 4
     bStartNewMeasure: 1
-  mTracks: []
+  mTracks:
+  - {fileID: 11400000, guid: bd1f5cd94b4ad3d40aa913291a9e2c55, type: 2}
