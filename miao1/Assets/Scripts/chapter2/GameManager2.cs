@@ -230,6 +230,11 @@ public class GameManager2 : MonoBehaviour
                 EventControl.Instance.finishEvent(23);
                 //events[0] = true;
             }
+            if (i.itemName == "bamboo")
+            {
+                EventControl.Instance.finishEvent(27);
+                //events[0] = true;
+            }
         }
     }
     public void NextSceneMail(string s)

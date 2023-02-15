@@ -256,6 +256,13 @@ public class BRhythmManager : MonoBehaviour
                 chooseCanvas[3].SetActive(true);
                 chooseCanvas[3].transform.Find("nowChapter").GetChild(0).GetChild(3).GetComponent<Text>().text = GameManager2.instance.songRecord[3].ToString("0.00%");
             }
+            if (GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[23] && !GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[25])
+            {
+                Debug.Log("c4");
+                this.gameObject.GetComponent<BChapterChoose>().chapter = 4;
+                chooseCanvas[4].SetActive(true);
+                chooseCanvas[4].transform.Find("nowChapter").GetChild(0).GetChild(4).GetComponent<Text>().text = GameManager2.instance.songRecord[4].ToString("0.00%");
+            }
         }
         else
         {
@@ -533,6 +540,18 @@ public class BRhythmManager : MonoBehaviour
                     }
                 }
                 GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(19);
+            }
+            if (this.gameObject.GetComponent<BChapterChoose>().chapter == 4)
+            {
+                if (accurary >= 0.5 && GameManager2.instance.eventCtrl.GetComponent<EventControl>().events[23])
+                {
+                    GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(25);
+                    if (newBest)
+                    {
+                        GameManager2.instance.songRecord[4] = accurary;
+                    }
+                }
+                GameManager2.instance.eventCtrl.GetComponent<EventControl>().finishEvent(24);
             }
             GameObject.Find("GameManager2").transform.Find("acrossScene").gameObject.SetActive(true);
             //GameManager.instance.gameObject.GetComponent<sceneCheck>().enabled = false;

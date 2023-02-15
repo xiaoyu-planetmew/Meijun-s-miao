@@ -14,6 +14,9 @@ public class bigBridgeControl : MonoBehaviour
     public GameObject longWang;
     public GameObject jiangSong;
     public GameObject jiangYang;
+    public GameObject thunder;
+    public GameObject bigWave;
+    public GameObject bambooTube;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,5 +84,46 @@ public class bigBridgeControl : MonoBehaviour
     public void bigBridge5()
     {
         longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+    }
+    public void bigBridge6()
+    {
+        longWang.SetActive(false);
+        leiShen.SetActive(false);
+    }
+    public void bigBridge7()
+    {
+        PlaySpineAddEvent(leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
+            leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+            UnRegisterAll();
+            DialogSys2.Instance.dialogStart(37);
+            thunder.SetActive(true);
+        }));
+        PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
+            longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
+            //PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "speak", false, (() => {
+             //   longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
+            //}));
+            UnRegisterAll();
+        }));
+        jiangSong.transform.Find("Spine GameObject (wushi)").GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
+        jiangSong.GetComponent<Animator>().enabled = true;
+        jiangSong.GetComponent<Animator>().SetTrigger("moveToBridge");
+        
+    }
+    public void bigBridge8()
+    {
+        bambooTube.SetActive(true);
+    }
+    public void bigBridge9()
+    {
+        DialogSys2.Instance.dialogStart(42);
+    }
+    public void bigBridge10()
+    {
+        DialogSys2.Instance.dialogStart(43);
+    }
+    public void bigBridge11()
+    {
+        DialogSys2.Instance.dialogStart(44);
     }
 }

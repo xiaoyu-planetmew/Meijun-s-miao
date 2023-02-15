@@ -14,6 +14,8 @@ public class zhuLinController : MonoBehaviour
     public GameObject kaleido;
     public GameObject moment5;
     public GameObject NPC;
+    public GameObject shenniao;
+    public Item bamboo;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,7 @@ public class zhuLinController : MonoBehaviour
             GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
             //fuDao.transform.Find("fudaoTrigger").gameObject.SetActive(true);
         });
+        zhuLin5();
     }
     public void zhuLin3()
     {
@@ -62,8 +65,14 @@ public class zhuLinController : MonoBehaviour
     }
     public void zhuLin5()
     {
-        NPC.transform.position = new Vector3(-41f, -0.44f, 0f);
+        shenniao.GetComponent<SkeletonAnimation>().state.SetAnimation(0, "idle", true);
+        NPC.transform.position = new Vector3(-40.64f, -0.9f, 0);
         NPC.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
-        NPC.transform.Find("musicFollow").transform.position = new Vector3(-43.55f, 1.84f, -5.14f);
+        NPC.transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
+        //NPC.transform.Find("musicFollow").transform.position = new Vector3(-43.55f, 1.84f, -5.14f);
+    }
+    public void zhulin6()
+    {
+        GameManager2.instance.AddItem(bamboo);
     }
 }

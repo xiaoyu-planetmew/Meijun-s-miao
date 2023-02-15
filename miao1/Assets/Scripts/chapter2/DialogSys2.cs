@@ -10,7 +10,7 @@ public class DialogSys2 : MonoBehaviour
     [Header("eventNum")]
     public int eventNum;
     public GameObject player;
-    //public GameObject npc;
+    public GameObject npc;
     //public GameObject cam;
     public GameObject textLabel;
     public GameObject textBackground;
@@ -135,6 +135,8 @@ public class DialogSys2 : MonoBehaviour
                 //GetTextFromFile(momentFind[Num]);
                 eventNum = -1;
                 fileChoose();
+                
+                
                 Debug.Log("startFind");
             }
             if (!moment)
@@ -198,6 +200,8 @@ public class DialogSys2 : MonoBehaviour
                     if(eventNum == -1)
                     {
                         transButton.SetActive(true);
+                        npc.transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = false;
+                        npc.transform.Find("JiangSongCanvas").Find("startButton").gameObject.SetActive(false);
                     }
                 }
                 Debug.Log("dialog" + eventNum);
@@ -348,6 +352,10 @@ public class DialogSys2 : MonoBehaviour
             if(eventNum == 27)
             {
                 GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(3);
+            }
+            if(eventNum == 31)
+            {
+                GameObject.Find("Npc").GetComponent<NpcMusicFocus>().focus(4);
             }
         }
         else if (s == "唱完")

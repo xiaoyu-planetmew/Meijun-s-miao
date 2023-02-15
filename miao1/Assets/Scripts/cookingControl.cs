@@ -37,7 +37,7 @@ public class cookingControl : MonoBehaviour
         float r = Random.Range(75f, 600f);
         float w = Random.Range(50f, 150f);
         target.GetComponent<RectTransform>().anchoredPosition = new Vector2(r, 0);
-        target.GetComponent<RectTransform>().sizeDelta = new Vector2(w, 20);
+        target.GetComponent<RectTransform>().sizeDelta = new Vector2(w, 70);
         moving = true;
         scrollBar.GetComponent<Scrollbar>().value = 0f;
         

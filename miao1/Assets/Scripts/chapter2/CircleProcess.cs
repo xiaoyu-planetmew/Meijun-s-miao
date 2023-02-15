@@ -18,6 +18,10 @@ public class CircleProcess : MonoBehaviour
     public int targetProcess = 2;
     private float currentAmout = 0;
     public UnityEvent succeedEvent;
+    void Start() 
+    {
+        shenniao.gameObject.SetActive(true);
+    }
   
     void Update()
     {
