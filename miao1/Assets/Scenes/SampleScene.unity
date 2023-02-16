@@ -102234,7 +102234,7 @@ MonoBehaviour:
   e: 3
   player: {fileID: 0}
   jumpDistance: 2
-  verticalDistance: 0
+  verticalDistance: 10
 --- !u!114 &1862200912
 MonoBehaviour:
   m_ObjectHideFlags: 0
