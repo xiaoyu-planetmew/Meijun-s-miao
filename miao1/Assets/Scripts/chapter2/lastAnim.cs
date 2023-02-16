@@ -12,6 +12,7 @@ public class lastAnim : MonoBehaviour
 {
     private List<System.Action> mUnRegisterEventActions = new List<System.Action>();
     public List<GameObject> anims = new List<GameObject>();
+    public GameObject audio;
     public GameObject mask;
     public GameObject camFocus;
     public Transform focusLocation;
@@ -199,6 +200,7 @@ public class lastAnim : MonoBehaviour
         index = 0;
         text1.GetComponent<Text>().text = textListHmong[index];
         text2.GetComponent<Text>().text = textList[index];
+        audio.GetComponent<AudioSource>().Play();
     }
     public void next()
     {
@@ -287,6 +289,7 @@ public class lastAnim : MonoBehaviour
     }
     public void final()
     {
+        audio.GetComponent<AudioSource>().Stop();
         credit.SetActive(true);
         mask.gameObject.SetActive(true);
         mask.GetComponent<SpriteRenderer>().enabled = true;
