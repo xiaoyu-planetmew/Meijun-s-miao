@@ -69,16 +69,18 @@ public class DialogSys2 : MonoBehaviour
         {
             for (int i = 0; i < textfilesCN.Count; i++)
             {
-                if (GameManager.instance.languageNum == 0) textfiles.Add(textfilesCN[i]);
+                if (GameManager.instance.languageNum == 2) textfiles.Add(textfilesCN[i]);
                 if (GameManager.instance.languageNum == 1) textfiles.Add(textfilesEN[i]);
-                if (GameManager.instance.languageNum == 2) textfiles.Add(textfilesJP[i]);
+                if (GameManager.instance.languageNum == 0) textfiles.Add(textfilesJP[i]);
             }
         }
         else
         {
             for (int i = 0; i < textfilesJP.Count; i++)
             {
-                textfiles.Add(textfilesJP[i]);
+                if (GameManager2.instance.languageNum == 2) textfiles.Add(textfilesCN[i]);
+                if (GameManager2.instance.languageNum == 1) textfiles.Add(textfilesEN[i]);
+                if (GameManager2.instance.languageNum == 0) textfiles.Add(textfilesJP[i]);
             }
         }
         //firstMeet = true;        

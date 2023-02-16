@@ -44,14 +44,15 @@ public class GameManager2 : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         Application.targetFrameRate = targetFrameRate;
-    }
-
-    private void Start()
-    {
         if (GameObject.Find("language"))
         {
             languageNum = GameObject.Find("language").GetComponent<startMenuStartButton>().languageNum;
         }
+    }
+
+    private void Start()
+    {
+        
 
         slots = new List<GameObject>();
         foreach (Transform child in slotList.transform)

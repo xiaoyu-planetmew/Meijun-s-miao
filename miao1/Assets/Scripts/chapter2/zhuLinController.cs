@@ -74,5 +74,7 @@ public class zhuLinController : MonoBehaviour
     public void zhulin6()
     {
         GameManager2.instance.AddItem(bamboo);
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+        NPC.transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
     }
 }
