@@ -62,9 +62,10 @@ public class girlAnim : MonoBehaviour
         this.GetComponent<Animator>().speed = 0;
         Button2C01.SetActive(true);
     }
-    public void countPlus()
+    public void countPlus(int now)
     {
-        nowCount++;
+        nowCount = now;
+        //nowCount++;
     }
     public void next()
     {
@@ -76,9 +77,10 @@ public class girlAnim : MonoBehaviour
         //nowCount++;
         nextButton.SetActive(false);
     }
-    public void changeCut()
+    public void changeCut(int now)
     {
-        nowCut++;
+        nowCut = now;
+        //nowCut++;
         /*
         if(nowCount<24)
         {
