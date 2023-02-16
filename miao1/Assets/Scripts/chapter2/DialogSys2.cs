@@ -132,7 +132,7 @@ public class DialogSys2 : MonoBehaviour
                 }
                 else
                 {
-                    GetTextFromFile(momentFind[2]);
+                    GetTextFromFile(momentFind[GameManager2.instance.languageNum]);
                 }
                 //GetTextFromFile(momentFind[Num]);
                 eventNum = -1;
@@ -150,7 +150,7 @@ public class DialogSys2 : MonoBehaviour
                 }
                 else
                 {
-                    GetTextFromFile(momentNotFind[2]);
+                    GetTextFromFile(momentNotFind[GameManager2.instance.languageNum]);
                 }
                 //GetTextFromFile(momentFind[Num]);
                 eventNum = -2;
