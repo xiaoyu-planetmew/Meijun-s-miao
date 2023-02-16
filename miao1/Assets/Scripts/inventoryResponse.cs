@@ -94,7 +94,7 @@ public class inventoryResponse : MonoBehaviour
                         StartCoroutine(stopTip("我不能用这个", 4f));
                     }
                 }
-                if (GameObject.Find("GameManager2"))
+                if (GameObject.Find("GameManager2") && _item.itemName != "painting")
                 {
                     if (GameManager2.instance.languageNum == 0)
                     {
@@ -176,6 +176,11 @@ public class inventoryResponse : MonoBehaviour
                 //finishDialog();
             }
         }
+        }
+        if(_item.itemName == "painting")
+        {
+            this.transform.parent.transform.Find("painting").gameObject.SetActive(true);
+            GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
         }
     }
     public void emptyItems(string str)

@@ -168,7 +168,7 @@ public class DialogSys2 : MonoBehaviour
         }
         else
         {
-            GetTextFromFile(momentFailed[2]);
+            GetTextFromFile(momentFailed[GameManager2.instance.languageNum]);
         }
                 //GetTextFromFile(momentFind[Num]);
         eventNum = -1;
