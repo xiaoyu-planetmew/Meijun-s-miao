@@ -265,9 +265,16 @@ public class NpcMusicFocus : MonoBehaviour
         panel.transform.GetChild(3).gameObject.GetComponent<Button>().enabled = true;
         NPCDialogBox.transform.GetChild(1).gameObject.SetActive(true);
     }
+    public void bigBridgeAnimStart()
+    {
+        npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
+        npc.transform.GetChild(0).transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        //this.GetComponent<Animator>().enabled = false;
+    }
     public void bigBridgeAnim()
     {
         npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().state.SetAnimation(0, "widle", true);
         npc.transform.GetChild(0).transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
+        this.GetComponent<Animator>().enabled = false;
     }
 }

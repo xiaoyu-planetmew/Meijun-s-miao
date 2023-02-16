@@ -57,6 +57,14 @@ public class CamaraFocusFollow : MonoBehaviour
             }
         }
     }
+    public void exitBridge()
+    {
+        cam.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                    for(int i=0; i<DialogSys2.Instance.textBackgrounds.Count; i++)
+                    {
+                        DialogSys2.Instance.textBackgrounds[i].transform.localScale = new Vector3(51.114f, 51.114f, 51.114f);
+                    }
+    }
     public void camShake()
     {
         camLock = false;

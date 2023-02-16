@@ -6,6 +6,7 @@ public class PlayerUnderWaterControl : MonoBehaviour
 {
     public bool underWater = false;
     public bool canMove = true;
+    public AudioSource underWaterAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class PlayerUnderWaterControl : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             this.gameObject.GetComponent<PlatformEffector2D>().useOneWay = false;
             this.transform.Find("groundcheck").GetComponent<playerJumpDown>().enabled = false;
+            if(!underWaterAudio.isPlaying) underWaterAudio.Play();
         }
         if(!underWater)
         {
@@ -42,6 +44,7 @@ public class PlayerUnderWaterControl : MonoBehaviour
             if(!this.gameObject.GetComponent<PlatformEffector2D>().useOneWay)
             this.gameObject.GetComponent<PlatformEffector2D>().useOneWay = true;
             this.transform.Find("groundcheck").GetComponent<playerJumpDown>().enabled = true;
+            if(underWaterAudio.isPlaying) underWaterAudio.Stop();
         }
     }
 }

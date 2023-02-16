@@ -13,10 +13,12 @@ public class girlAnim : MonoBehaviour
     public int nowCut = 1;
     public float animSpeed = 1;
     public UnityEvent afterAnim;
+    public GameObject cam;
     //public Animator anim;
 
     void Start()
     {
+        //cam.GetComponent<AudioSource>().Stop();
         //Addressables.LoadAssetsAsync<RuntimeAnimatorController>(assetLabel, OnLoadDone);
         //Addressables.LoadAssetAsync<RuntimeAnimatorController>("sequenceFrame/女孩的诗/girlAnim.controllerrlAnim.controller").Completed += OnLoadDone;
     }
@@ -119,5 +121,6 @@ public class girlAnim : MonoBehaviour
     public void playFinish()
     {
         if(afterAnim != null) afterAnim.Invoke();
+        cam.GetComponent<AudioSource>().Play();
     }
 }

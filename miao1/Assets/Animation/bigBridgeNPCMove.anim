@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -246.37, y: -4.37, z: 0}
+        value: {x: -247.8, y: -4.37, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -30,8 +30,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.4833333
         value: {x: -261.74, y: -4.37, z: 0}
-        inSlope: {x: -9.378201, y: 0, z: 0}
-        outSlope: {x: -9.378201, y: 0, z: 0}
+        inSlope: {x: -9.373115, y: 0, z: 0}
+        outSlope: {x: -9.373115, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -39,15 +39,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.9833333
         value: {x: -266.39, y: -1.51, z: 0}
-        inSlope: {x: -9.964339, y: 0, z: 0}
-        outSlope: {x: -9.964339, y: 0, z: 0}
+        inSlope: {x: -9.964338, y: 0, z: 0}
+        outSlope: {x: -9.964338, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 3.35
-        value: {x: -281.85, y: -1.51, z: 0}
+        value: {x: -283.6, y: -1.51, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -102,7 +102,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -246.37
+        value: -247.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -112,8 +112,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.4833333
         value: -261.74
-        inSlope: -9.378201
-        outSlope: -9.378201
+        inSlope: -9.373115
+        outSlope: -9.373115
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -121,15 +121,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.9833333
         value: -266.39
-        inSlope: -9.964339
-        outSlope: -9.964339
+        inSlope: -9.964338
+        outSlope: -9.964338
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.35
-        value: -281.85
+        value: -283.6
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -239,6 +239,13 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: bigBridgeAnimStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 3.35
     functionName: bigBridgeAnim
     data: 

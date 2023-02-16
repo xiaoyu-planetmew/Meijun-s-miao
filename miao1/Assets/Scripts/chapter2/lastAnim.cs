@@ -13,6 +13,7 @@ public class lastAnim : MonoBehaviour
     private List<System.Action> mUnRegisterEventActions = new List<System.Action>();
     public List<GameObject> anims = new List<GameObject>();
     public GameObject mask;
+    public GameObject camFocus;
     public Transform focusLocation;
     public GameObject focusCanvas;
     public GameObject canvas1;
@@ -40,6 +41,7 @@ public class lastAnim : MonoBehaviour
     //public List<string> nameListCN = new List<string>();
     public Font fontJE;
     public Font fontCN;
+    public GameObject credit;
     int index;
     //[SerializeField] int nowPlaying;
     // Start is called before the first frame update
@@ -74,7 +76,8 @@ public class lastAnim : MonoBehaviour
     }
     public void finalStart()
     {
-        
+        camFocus.GetComponent<CamaraFocusFollow>().exitBridge();
+        camFocus.GetComponent<CamaraFocusFollow>().enabled = false;
         mask.gameObject.SetActive(true);
         mask.GetComponent<SpriteRenderer>().enabled = true;
         mask.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
@@ -232,6 +235,10 @@ public class lastAnim : MonoBehaviour
             anims[4].SetActive(true);
             longwang();
         }
+        if (index > textList.Count - 1)
+        {
+            final();
+        }
     }
     IEnumerator nextHide()
     {
@@ -277,5 +284,22 @@ public class lastAnim : MonoBehaviour
         //anims[0].gameObject.GetComponent<SkeletonAnimation>().timeScale = -1;
         //Timer.call()
         anims[1].transform.position = new Vector3(-33.68f, -0.65f, 0);
+    }
+    public void final()
+    {
+        credit.SetActive(true);
+        mask.gameObject.SetActive(true);
+        mask.GetComponent<SpriteRenderer>().enabled = true;
+        mask.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        mask.GetComponent<SpriteRenderer>().DOFade(0.99f, 2);
+        credit.transform.GetChild(0).gameObject.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
+            StartCoroutine(finalDelay());
+        });
+
+    }
+    IEnumerator finalDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        GameManager2.instance.destroyGameManager();
     }
 }

@@ -70,8 +70,11 @@ public class bigBridgeControl : MonoBehaviour
     public void bigBridge4()
     {
         longWang.SetActive(true);
-        jiangSong.transform.position = new Vector3(-284.68f, -1.52f ,0);
-        jiangSong.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
+        jiangSong.transform.Find("Spine GameObject (wushi)").GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
+        jiangSong.GetComponent<Animator>().enabled = true;
+        jiangSong.GetComponent<Animator>().SetTrigger("moveToBridge");
+        //jiangSong.transform.position = new Vector3(-284.68f, -1.52f ,0);
+        //jiangSong.transform.Find("Spine GameObject (wushi)").transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
         PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             DialogSys2.Instance.dialogStart(29);
             longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
@@ -92,12 +95,47 @@ public class bigBridgeControl : MonoBehaviour
     }
     public void bigBridge7()
     {
+        //longWang.SetActive(true);
+        leiShen.SetActive(true);
+        PlaySpineAddEvent(leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
+            leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
+            UnRegisterAll();
+            
+        }));
+        /*PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
+            longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
+            //PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "speak", false, (() => {
+             //   longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
+            //}));
+            UnRegisterAll();
+        }));*/
+        jiangSong.transform.Find("Spine GameObject (wushi)").GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
+        jiangSong.GetComponent<Animator>().enabled = true;
+        jiangSong.GetComponent<Animator>().SetTrigger("moveToBridge");
+        DialogSys2.Instance.dialogStart(37);
+    }
+    public void bigBridge71()
+    {
+        
+        thunder.SetActive(true);
+        StartCoroutine(bigBridge7Delay());
+    }
+    IEnumerator bigBridge7Delay()
+    {
+        yield return new WaitForSeconds(5f);
+        DialogSys2.Instance.dialogStart(38);
+        thunder.GetComponent<bigBridgeEffect>().thunderStop();
+    }
+    public void bigBridge72()
+    {
+        longWang.SetActive(true);
+        /*leiShen.SetActive(true);
         PlaySpineAddEvent(leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             leiShen.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             UnRegisterAll();
             DialogSys2.Instance.dialogStart(37);
             thunder.SetActive(true);
-        }));
+        }));*/
         PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "appear", false, (() => {
             longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "speak_loop", true);
             //PlaySpineAddEvent(longWang.transform.GetChild(0).GetComponent<SkeletonAnimation>(), "speak", false, (() => {
@@ -105,9 +143,9 @@ public class bigBridgeControl : MonoBehaviour
             //}));
             UnRegisterAll();
         }));
-        jiangSong.transform.Find("Spine GameObject (wushi)").GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
-        jiangSong.GetComponent<Animator>().enabled = true;
-        jiangSong.GetComponent<Animator>().SetTrigger("moveToBridge");
+        //jiangSong.transform.Find("Spine GameObject (wushi)").GetComponent<SkeletonAnimation>().state.SetAnimation(0, "wwalk", true);
+        //jiangSong.GetComponent<Animator>().enabled = true;
+        //jiangSong.GetComponent<Animator>().SetTrigger("moveToBridge");
         
     }
     public void bigBridge8()

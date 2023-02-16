@@ -15,6 +15,7 @@ public class underWater1Ctrl : MonoBehaviour
     public GameObject huangyu;
     public GameObject lanyu;
     public GameObject player;
+    public GameObject cam;
     public float yuScale;
     public GameObject yuCanvas;
     public Vector3 targetcamPos;
@@ -240,6 +241,7 @@ public class underWater1Ctrl : MonoBehaviour
             //girlAnim.SetActive(true);
             blackMask.SetActive(false);
             girlAnim.SetActive(true);
+            cam.GetComponent<AudioSource>().Stop();
         });
         //quence.AppendInterval(5);
         //quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>

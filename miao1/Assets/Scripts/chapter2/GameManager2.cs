@@ -254,6 +254,7 @@ public class GameManager2 : MonoBehaviour
         SceneManager.LoadScene("startMenu");
         Destroy(GameObject.Find("GameManager2"));
         Destroy(GameObject.Find("language"));
+        //Destroy(GameObject.Find(""))
         Time.timeScale = 1;
     }
     public void languageChange(int i)

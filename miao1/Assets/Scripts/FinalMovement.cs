@@ -22,6 +22,7 @@ public class FinalMovement : MonoBehaviour
     public bool isGround, isJump, isDashing;
     public AudioSource walk;
     public AudioSource run;
+    
 
     bool jumpPressed;
     bool outside = true;
