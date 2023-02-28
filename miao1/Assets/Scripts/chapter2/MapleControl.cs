@@ -294,10 +294,10 @@ public class MapleControl : MonoBehaviour
             wall6.SetActive(false);
             //npc.transform.position = new Vector3(-244.25f, -4.44f, 0);            
             //npc.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "widle", true);
-            jiangyang.transform.position = new Vector3(-281f, -1.56f, 0);
+            jiangyang.transform.position = new Vector3(-260.14f, -4.42f, 0);
             jiangyang.transform.GetChild(0).GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "idle", true);
             jiangyang.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
-            
+            jiangyang.transform.GetChild(1).transform.Find("startButton (3)").gameObject.SetActive(true);
             GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
         });
     }
@@ -312,6 +312,11 @@ public class MapleControl : MonoBehaviour
             shenniao.SetActive(true);
             shenniaoCircle.SetActive(true);
         });
+    }
+    
+    public void jiangyangPos()
+    {
+        jiangyang.transform.position = new Vector3(-281f, -1.61f, 0);
     }
 }
 

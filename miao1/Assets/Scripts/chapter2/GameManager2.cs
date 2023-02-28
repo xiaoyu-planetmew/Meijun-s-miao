@@ -261,4 +261,8 @@ public class GameManager2 : MonoBehaviour
     {
         languageNum = i;
     }
+    public void timeScale(float f)
+    {
+        Time.timeScale = f;
+    }
 }

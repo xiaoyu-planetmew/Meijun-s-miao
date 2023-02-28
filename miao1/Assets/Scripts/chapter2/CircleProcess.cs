@@ -18,9 +18,10 @@ public class CircleProcess : MonoBehaviour
     public int targetProcess = 2;
     private float currentAmout = 0;
     public UnityEvent succeedEvent;
+    public bool isBird = true;
     void Start() 
     {
-        shenniao.gameObject.SetActive(true);
+        if(isBird) shenniao.gameObject.SetActive(true);
     }
   
     void Update()
@@ -49,13 +50,13 @@ public class CircleProcess : MonoBehaviour
         {
             //indicator.GetComponent<Text>().text = "激活成功";
             succeedEvent.Invoke();
-            shenniao.transform.localPosition = new Vector3(-7.09f, -1.83f, shenniao.transform.localPosition.z);
+            if(isBird) shenniao.transform.localPosition = new Vector3(-7.09f, -1.83f, shenniao.transform.localPosition.z);
             GameManager2.instance.player.GetComponent<FinalMovement>().otherAnim = false;
             //GameManager2.instance.player.GetComponent<chracterAnimEvents>().playOtherAnim(4);
         }
-        if(currentAmout > 0 && currentAmout < targetProcess && shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationName != "appeared")
+        if(currentAmout > 0 && currentAmout < targetProcess && shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationName != "appeared" && isBird)
         {
-            shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appeared", true);
+            if(isBird) shenniao.gameObject.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "appeared", true);
         }
         
         if(currentAmout <= 0)
@@ -73,7 +74,7 @@ public class CircleProcess : MonoBehaviour
             currentAmout = 0;
 
         //shenniao["shenniaodengchang"].normalizedTime = currentAmout / 2;
-        shenniao.transform.localPosition = new Vector3(shenniao.transform.localPosition.x, 17.5f-(17.5f + 4.1f) * currentAmout / targetProcess, shenniao.transform.localPosition.z);
+        if(isBird) shenniao.transform.localPosition = new Vector3(shenniao.transform.localPosition.x, 17.5f-(17.5f + 4.1f) * currentAmout / targetProcess, shenniao.transform.localPosition.z);
     }
 
     public void Clickprocess(bool bStart)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class windChime : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class windChime : MonoBehaviour
     float lastR = 0f;
     public float totalScore;
     public UnityEvent finishEvent;
+    public List<GameObject> waves = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -39,18 +41,13 @@ public class windChime : MonoBehaviour
             {
                 chimeFinish();
             }  
-        } 
-        if(Mathf.Abs(cam.transform.localPosition.x + 280) <= 1 && !finished)
-        {
-            chimeCanvas.SetActive(true);
+        }
+    }
+    public void chimeActive()
+    {
+        chimeCanvas.SetActive(true);
             MouseSet.Instance.mouseChange("shubiao_shou");
             hand.SetActive(true);
-        }else
-        {
-            chimeCanvas.SetActive(false);
-            MouseSet.Instance.mouseChange("mouseTexture");
-            hand.SetActive(false);
-        }     
     }
     void chimeScore(GameObject obj)
     {
@@ -62,6 +59,7 @@ public class windChime : MonoBehaviour
         }else{
             deltaR = Mathf.Abs(currentR - lastR);
             totalScore += deltaR;
+            
         }
         lastR = currentR;
     }
@@ -77,11 +75,22 @@ public class windChime : MonoBehaviour
     IEnumerator stopKada()
     {
         kada.gameObject.GetComponent<Image>().enabled = true;
+        if(this.GetComponent<AudioSource>().isPlaying == false)
+            {
+                this.GetComponent<AudioSource>().Play();
+            }
+        this.GetComponent<AudioSource>().volume = 0.4f;
+        DOTween.Kill("volume");
+        foreach(var obj in waves)
+        {
+            obj.GetComponent<Animator>().SetTrigger("wave");
+        }
         yield return new WaitForSeconds(0.2f);
         if(kada.GetComponent<Image>().enabled == true)
         {
             kada.GetComponent<Image>().enabled = false;
         }
+        DOTween.To(()=>this.GetComponent<AudioSource>().volume, x=>this.GetComponent<AudioSource>().volume=x, 0, 2).SetId<Tween>("volume");
     }
     void chimeFinish()
     {
@@ -95,7 +104,15 @@ public class windChime : MonoBehaviour
         }
         if(finishEvent != null)
         {
-            finishEvent.Invoke();
+            StartCoroutine(finishDelay());
         }
+    }
+    IEnumerator finishDelay()
+    {
+        yield return new WaitForSeconds(2);
+        chimeCanvas.SetActive(false);
+        this.gameObject.SetActive(false);
+        MouseSet.Instance.mouseChange("mouseTexture");
+        finishEvent.Invoke();
     }
 }

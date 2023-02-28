@@ -37,6 +37,7 @@ public class underWater1Ctrl : MonoBehaviour
     public GameObject moment3;
     public GameObject bubble;
     public GameObject girlAnim;
+    public AudioSource village;
     public GameObject mapleParticle;
     Vector3 camPos;
     // Start is called before the first frame update
@@ -242,6 +243,7 @@ public class underWater1Ctrl : MonoBehaviour
             blackMask.SetActive(false);
             girlAnim.SetActive(true);
             cam.GetComponent<AudioSource>().Stop();
+            village.Stop();
         });
         //quence.AppendInterval(5);
         //quence.Append(blackMask.GetComponent<SpriteRenderer>().DOFade(0, 2)).OnComplete(() =>

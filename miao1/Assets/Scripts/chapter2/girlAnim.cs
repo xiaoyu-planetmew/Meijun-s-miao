@@ -13,7 +13,8 @@ public class girlAnim : MonoBehaviour
     public int nowCut = 1;
     public float animSpeed = 1;
     public UnityEvent afterAnim;
-    public GameObject cam;
+    public GameObject cam; 
+    public AudioSource village;
     //public Animator anim;
 
     void Start()
@@ -122,5 +123,6 @@ public class girlAnim : MonoBehaviour
     {
         if(afterAnim != null) afterAnim.Invoke();
         cam.GetComponent<AudioSource>().Play();
+        village.Play();
     }
 }

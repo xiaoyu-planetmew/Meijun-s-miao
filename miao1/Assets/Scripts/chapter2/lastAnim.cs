@@ -89,6 +89,7 @@ public class lastAnim : MonoBehaviour
             GameManager2.instance.player.transform.localPosition= new Vector3(-47.53f, -0.24f, 0f);
             GameManager2.instance.player.transform.Find("ChracterNew").localScale = new Vector3(1, 1, 1);
             npc.transform.position = new Vector3(-40.64f, -0.9f, 0);
+            npc.transform.Find("Spine GameObject (wushi)").localScale = new Vector3(0.4f, 0.4f, 0.4f);
             jiangYang.gameObject.SetActive(true);
             jiangYang.transform.localPosition = new Vector3(-39.31f, -0.67f, 0);
             jiangYang.transform.Find("New SkeletonAnimation").transform.localScale = new Vector3(-1, 1, 1);

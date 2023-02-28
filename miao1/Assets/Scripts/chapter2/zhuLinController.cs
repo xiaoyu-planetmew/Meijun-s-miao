@@ -15,7 +15,15 @@ public class zhuLinController : MonoBehaviour
     public GameObject moment5;
     public GameObject NPC;
     public GameObject shenniao;
-    public Item bamboo;
+    public GameObject bamboo;
+    public GameObject kanZhuZi;
+    public GameObject kanZhuZiCanvas;
+    public int cutTimes = 0;
+    Vector3 camPos;
+    public GameObject cutDownButton;
+    public GameObject fuDao3;
+    public GameObject fuDao4;
+    //public GameObject
     // Start is called before the first frame update
     void Start()
     {
@@ -73,8 +81,80 @@ public class zhuLinController : MonoBehaviour
     }
     public void zhulin6()
     {
-        GameManager2.instance.AddItem(bamboo);
+        //GameManager2.instance.AddItem(bamboo);
+        kanZhuZiCanvas.SetActive(true);
+        fuDao3.SetActive(true);
         GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
         NPC.transform.Find("JiangSongCanvas").GetComponent<NearShow>().enabled = true;
+    }
+    public void zhulin7()
+    {
+        if (cutTimes == 0)
+        {
+            cutDownButton.SetActive(false);
+            GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+            camPos = GameObject.Find("Main Camera").transform.position;
+            GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = false;
+            
+            DG.Tweening.Sequence quence = DOTween.Sequence();
+
+            quence.Append(GameObject.Find("Main Camera").transform.DOMove(new Vector3(-58.16f, 26.57f, -6.69f), 3).OnComplete(() =>
+            {
+                //face.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "disappear", false);
+            }));
+            quence.AppendInterval(3).OnComplete(() =>
+            {
+                cutDownButton.SetActive(true);
+            });
+        }
+        if(cutTimes < 4 && cutTimes > 0)
+        {
+            cutDownButton.SetActive(false);
+            DG.Tweening.Sequence quence = DOTween.Sequence();
+            kanZhuZi.transform.GetChild(cutTimes-1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            kanZhuZi.transform.GetChild(cutTimes-1).GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            kanZhuZi.transform.GetChild(cutTimes-1).GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            kanZhuZi.GetComponent<Animator>().SetTrigger(cutTimes.ToString());
+            quence.AppendInterval(0.3f).OnComplete(() =>
+            {
+                cutDownButton.SetActive(true);
+            });
+        }
+        if(cutTimes >= 3)
+        {
+            cutDownButton.SetActive(false);
+            MouseSet.Instance.mouseChange("mouseTexture");
+            bamboo.SetActive(true);
+            //maple.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "disappear", false);
+            DG.Tweening.Sequence quence = DOTween.Sequence();
+            quence.AppendInterval(3);
+            //hudie.GetComponent<SkeletonAnimation>().Skeleton.A = 0;
+            //hudie.gameObject.SetActive(true);
+            //hudie.gameObject.GetComponent<Animator>().SetTrigger("appear");
+            //StartCoroutine(hudieAppear());
+            quence.Append(GameObject.Find("Main Camera").transform.DOMove(camPos, 2).OnComplete(() =>
+            {
+                //hudie.GetComponent<SkeletonAnimation>().Skeleton.A = 1;
+                GameObject.Find("Main Camera").gameObject.GetComponent<CinemachineBrain>().enabled = true;
+                GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+                fuDao4.SetActive(true);
+                //npc.gameObject.SetActive(true);
+                //npc.transform.Find("JiangSongCanvas").gameObject.GetComponent<NearShow>().enabled = true;
+                //laoPoPo.gameObject.SetActive(true);
+                //maple.gameObject.SetActive(false);
+                
+                //hudieCanvas.gameObject.SetActive(true);
+            }));
+            
+        }
+        cutTimes++;
+    }
+    public void zhulin8()
+    {
+        GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(false);
+        fuDao.transform.DOLocalMoveY(-27.38f, 7).OnComplete(() => {
+            GameManager2.instance.player.GetComponent<FinalMovement>().changeCanMove(true);
+            //fuDao.transform.Find("fudaoTrigger").gameObject.SetActive(true);
+        });
     }
 }

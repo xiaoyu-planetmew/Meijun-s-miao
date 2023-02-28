@@ -150,7 +150,7 @@ public class bigBridgeControl : MonoBehaviour
     }
     public void bigBridge8()
     {
-        bambooTube.SetActive(true);
+        bambooTube.GetComponent<windChime>().enabled = true;
     }
     public void bigBridge9()
     {
