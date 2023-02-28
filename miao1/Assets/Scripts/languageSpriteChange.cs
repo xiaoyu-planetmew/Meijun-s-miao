@@ -36,7 +36,7 @@ public class languageSpriteChange : MonoBehaviour
             this.GetComponent<RectTransform>().sizeDelta = new Vector2(ChineseSprite.bounds.size.x * 100, ChineseSprite.bounds.size.y * 100);
             //this.GetComponent<Text>().text = EnglishString;
         }
-        }
+        }else
         if (GameObject.Find("GameManager2"))
         {
             if (GameManager2.instance.languageNum == 0)
@@ -57,6 +57,9 @@ public class languageSpriteChange : MonoBehaviour
                 this.GetComponent<RectTransform>().sizeDelta = new Vector2(ChineseSprite.bounds.size.x * 100, ChineseSprite.bounds.size.y * 100);
                 //this.GetComponent<Text>().text = EnglishString;
             }
+        }else{
+            this.GetComponent<Image>().sprite = JanpanessSprite;
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(JanpanessSprite.bounds.size.x * 100, JanpanessSprite.bounds.size.y * 100);
         }
     }
 }

@@ -14237,8 +14237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 1f83b4f38fcbc024abccdb346cfc4cad, type: 2}
-  initialSkinName: 
+  skeletonDataAsset: {fileID: 11400000, guid: d7b898ad83d9b9c47ad21f23f72bd564, type: 2}
+  initialSkinName: zhujue01
   fixPrefabOverrideViaMeshFilter: 0
   initialFlipX: 0
   initialFlipY: 0
@@ -14292,7 +14292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec3c35b9665e6aa409be38bdc4220cea, type: 2}
+  - {fileID: 2100000, guid: 9da1611c273f0864ba45f6eb0de72bae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37854,10 +37854,10 @@ RectTransform:
   m_Father: {fileID: 2139585915}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -36, y: 50}
-  m_SizeDelta: {x: -986.14, y: 542}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 933.86, y: 1622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &863410178
 CanvasRenderer:

@@ -28,10 +28,13 @@ public class MouseSet : MonoBehaviour
         nowy = (int)cursorXYs[0].y;
     }
     public List<Texture> cursors = new List<Texture>();
+    public List<Vector2> cursorsPosXYs = new List<Vector2>();
     public List<Vector2> cursorXYs = new List<Vector2>();
     public Texture nowTexture;
     public int nowx;
     public int nowy;
+    public int posx;
+    public int posy;
     public Texture mouseTexture;
     public int mousex;
     public int mousey;
@@ -67,7 +70,7 @@ public class MouseSet : MonoBehaviour
     void OnGUI()
     {
         Cursor.visible = false;//�������ָ��
-        GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, nowx, nowy), nowTexture);
+        GUI.DrawTexture(new Rect(Input.mousePosition.x + posx, Screen.height - Input.mousePosition.y + posy, nowx, nowy), nowTexture);
     }
     public void mouseChange(string s)
     {
@@ -97,6 +100,8 @@ public class MouseSet : MonoBehaviour
                 nowTexture = cursors[i];
                 nowx = (int)cursorXYs[i].x;
                 nowy = (int)cursorXYs[i].y;
+                posx = (int)cursorsPosXYs[i].x;
+                posy = (int)cursorsPosXYs[i].y;
             }
         }
     }

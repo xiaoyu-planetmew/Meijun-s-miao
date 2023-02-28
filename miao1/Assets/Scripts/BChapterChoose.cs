@@ -192,6 +192,7 @@ public class BChapterChoose : MonoBehaviour
                 previousChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleCN[nnext].bounds.size.x * 100, chapterTitleCN[nnext].bounds.size.y * 100);
             }
         }else{
+            previousChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[previous];
             previousChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleJ[nnext].bounds.size.x * 100, chapterTitleJ[nnext].bounds.size.y * 100);
             
         }
@@ -251,6 +252,7 @@ public class BChapterChoose : MonoBehaviour
             
             }
         }else{
+            nextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = chapterTitleJ[next];
             nextChapter.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(chapterTitleJ[nnext].bounds.size.x * 100, chapterTitleJ[nnext].bounds.size.y * 100);
         }
         nextChapter.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = new Color32(255, 255, 255, 125);
