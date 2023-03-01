@@ -72,6 +72,7 @@ public class GameManager2 : MonoBehaviour
             DisplayItems();
 
         }
+         { if(Time.frameCount % 50 == 0) { System.GC.Collect(); } }
 
     }
 

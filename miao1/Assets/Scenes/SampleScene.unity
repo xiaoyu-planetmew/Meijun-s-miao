@@ -70993,6 +70993,13 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a7a4b83cb7ef4714bae8fde4910aadaf, type: 3}
   - {fileID: 2800000, guid: f748680a7fbe77a43a94b0e571a98fc9, type: 3}
   - {fileID: 2800000, guid: 3bb56de562b986a44a27df7994f7e8cb, type: 3}
+  cursorsPosXYs:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   cursorXYs:
   - {x: 45, y: 64}
   - {x: 197, y: 223}
@@ -71003,6 +71010,8 @@ MonoBehaviour:
   nowTexture: {fileID: 0}
   nowx: 0
   nowy: 0
+  posx: 0
+  posy: 0
   mouseTexture: {fileID: 2800000, guid: a91257663b0e4184ab921b0e04dac812, type: 3}
   mousex: 45
   mousey: 64
