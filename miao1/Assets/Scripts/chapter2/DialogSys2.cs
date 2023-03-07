@@ -110,6 +110,7 @@ public class DialogSys2 : MonoBehaviour
     }
     public void dialogStart(int Num)
     {
+        dialogFinish();
         if (!isTalking)
         {
             index = 0;

@@ -71,6 +71,7 @@ public class EventControl : MonoBehaviour
     }
     public void NPC_ButtonAct()
     {
+        DialogSys2.Instance.dialogFinish();
         if (!events[0] && !events[5])
         {
             DialogSys2.Instance.dialogStart(0);
@@ -96,7 +97,7 @@ public class EventControl : MonoBehaviour
         }
         if (events[5] && !events[7])
         {
-            DialogSys2.Instance.dialogStartMoment(false);
+            DialogSys2.Instance.dialogStart(48);
         }
         if (events[5] && events[7] && !events[8])
         {
@@ -114,7 +115,7 @@ public class EventControl : MonoBehaviour
         }
         if(events[12] && !events[13])
         {
-            DialogSys2.Instance.dialogStartMoment(false);
+            DialogSys2.Instance.dialogStart(50);
         }
         if(events[13] && !events[14])
         {
@@ -130,7 +131,7 @@ public class EventControl : MonoBehaviour
         }
         if(events[17] && !events[18])
         {
-            DialogSys2.Instance.dialogStartMoment(false);
+            DialogSys2.Instance.dialogStart(51);
         }
         if(events[18] && !events[19])
         {
@@ -147,6 +148,10 @@ public class EventControl : MonoBehaviour
         if(events[23] && !events[24])
         {
             DialogSys2.Instance.dialogStartMoment(true);
+        }
+        if(events[22] && !events[23])
+        {
+            DialogSys2.Instance.dialogStart(52);
         }
         if(events[24] && !events[25])
         {
