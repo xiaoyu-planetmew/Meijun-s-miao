@@ -16276,9 +16276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdFakeKeysStrJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
-  notHoldStrJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
+  notHoldStrJ: "\u4ECA\u306F\u3067\u304D\u306A\u3044."
   holdFakeKeysStrE: This isn't it.
-  notHoldStrE: Something's missing.
+  notHoldStrE: I can not do this now.
   _item: {fileID: 11400000, guid: e62b4a05171e793468ffc73c0df1268d, type: 2}
   fakeKeys:
   - {fileID: 11400000, guid: 62805b61dc1b7f648ba7e508ec1b8cdc, type: 2}
@@ -16287,11 +16287,14 @@ MonoBehaviour:
   - {fileID: 1739431242}
   - {fileID: 1786997732}
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
-  emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
+  emptyTipJ: "\u30ED\u30C3\u30AF\u3055\u308C\u305F\u7BB1\u3060.."
   wrongTipE: This isn't it.
-  emptyTipE: Something's missing.
+  emptyTipE: This box was locked.
   wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
-  emptyTipCN: "\u6211\u5E94\u8BE5\u53BB\u627E\u4E2A\u4E1C\u897F\u6253\u5F00\u5B83"
+  emptyTipCN: "\u8FD9\u4E2A\u76D2\u5B50\u88AB\u9501\u4F4F\u4E86\u3002"
+  chooseTipJ: "\u9375\u3092\u6301\u3063\u3066\u308B."
+  chooseTipE: I happened to have a key.
+  chooseTipCN: "\u6211\u6B63\u597D\u6709\u4E00\u628A\u94A5\u5319\u3002"
 --- !u!114 &290104217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17995,6 +17998,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &331872345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331872346}
+  - component: {fileID: 331872348}
+  - component: {fileID: 331872347}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &331872346
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331872345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 941994775}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &331872347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331872345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
+--- !u!222 &331872348
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331872345}
+  m_CullTransparentMesh: 1
 --- !u!1 &333981657
 GameObject:
   m_ObjectHideFlags: 0
@@ -27152,14 +27234,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573587174}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JanpanessString: The area ahead, I'll explore it later
-  EnglishString: The area ahead, I'll explore it later
-  ChineseString: "\u524D\u9762\u7684\u533A\u57DF,\u4EE5\u540E\u518D\u6765\u63A2\u7D22\u5427"
+  JanpanessString: "\u5F8C\u307B\u3069\u624B\u524D\u306E\u30A8\u30EA\u30A2\u3092\u63A2\u7D22\u3057\u307E\u3057\u3087\u3046."
+  EnglishString: The area in front can't pass. I'll explore it later.
+  ChineseString: "\u524D\u9762\u7684\u533A\u57DF,\u4EE5\u540E\u518D\u6765\u63A2\u7D22\u5427\u3002"
 --- !u!1001 &576592299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46064,6 +46146,139 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941770083}
+  m_CullTransparentMesh: 1
+--- !u!1 &941994774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941994775}
+  - component: {fileID: 941994778}
+  - component: {fileID: 941994777}
+  - component: {fileID: 941994776}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &941994775
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941994774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 331872346}
+  m_Father: {fileID: 1716592651}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &941994776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941994774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 941994777}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840119453}
+        m_TargetAssemblyTypeName: DialogSys, Assembly-CSharp
+        m_MethodName: girlSolo
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u55B5\u55B5\u55B5"
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &941994777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941994774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &941994778
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941994774}
   m_CullTransparentMesh: 1
 --- !u!1 &944577783
 GameObject:
@@ -74123,7 +74338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935233323b86c5049b8fa48e8db5f273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JanpanessString: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002 "
+  JanpanessString: "\u30EF\u30B7\u306E\u3088\u3046\u306B\u6B4C\u3063\u3066\u8E0A\u308B\u306E\u3060\u3002"
   EnglishString: You must sing and dance    like me.
   ChineseString: "\u4F60\u8981\u548C\u6211\u4E00\u6837\u4E00\u8FB9\u8DF3\u821E\u4E00\u8FB9\u6B4C\u5531\u3002"
 --- !u!1 &1479634053
@@ -95137,6 +95352,7 @@ RectTransform:
   - {fileID: 1489576864}
   - {fileID: 1659035536}
   - {fileID: 2095160938}
+  - {fileID: 941994775}
   m_Father: {fileID: 1397711436}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102263,9 +102479,12 @@ MonoBehaviour:
   wrongTipJ: "\u3053\u308C\u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
   wrongTipE: This isn't it.
   wrongTipCN: "\u4E0D\u662F\u8FD9\u4E2A"
-  emptyTipJ: "\u4F55\u304B\u304C\u8DB3\u308A\u306A\u3044\u3088\u3046\u3067\u3059\u3002"
-  emptyTipE: Something's missing.
-  emptyTipCN: "\u597D\u50CF\u5C11\u4E86\u70B9\u4EC0\u4E48\u4E1C\u897F"
+  emptyTipJ: "\u4ECA\u306F\u3067\u304D\u306A\u3044."
+  emptyTipE: I can not do this now.
+  emptyTipCN: "\u6211\u73B0\u5728\u505A\u4E0D\u5230"
+  chooseTipJ: "\u706B\u6253\u3061\u77F3\u306F\u3053\u306E\u30C4\u30EB\u3092\u71C3\u3084\u3059\u3002"
+  chooseTipE: The flintstone can burn these vines.
+  chooseTipCN: "\u6253\u706B\u77F3\u5E94\u8BE5\u53EF\u4EE5\u70E7\u6389\u8FD9\u4E9B\u85E4\u8513\u3002"
   wall: {fileID: 878043478}
 --- !u!212 &1862200914
 SpriteRenderer:

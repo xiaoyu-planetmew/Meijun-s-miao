@@ -21,4 +21,8 @@ public class wallTip : MonoBehaviour
             GameManager.instance.player.transform.Find("Canvas").Find("wallTip").gameObject.SetActive(false);
         }
     }
+    void OnDisable()
+    {
+        GameManager.instance.player.transform.Find("Canvas").Find("wallTip").gameObject.SetActive(false);
+    }
 }

@@ -186,6 +186,7 @@ public class MapleControl : MonoBehaviour
     }
     public void maple9()
     {
+        DialogSys2.Instance.dialogFinish();
         if (cutTimes == 0)
         {
             cutDownButton.SetActive(false);

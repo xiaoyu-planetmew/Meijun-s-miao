@@ -139,18 +139,21 @@ public class inventoryResponse : MonoBehaviour
                 GameObject.Find("birdDialogBox").transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
                 slots.GetComponent<slotsState>().turnOffInventory();
             }else{
-                tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
-                tipUI.SetActive(true);
+                //tipUI.transform.GetChild(0).GetComponent<Text>().text = wrongTip; 
+                //tipUI.SetActive(true);
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(wrongTip, false);
                 StopAllCoroutines();
-                StartCoroutine(stopTip(wrongTip, 2f));
+                //StartCoroutine(stopTip(wrongTip, 2f));
                 slots.GetComponent<slotsState>().turnOnInventory();
                 inventoryTip.SetActive(false);
                 if (GameObject.Find("GameManager"))
                 {
+                    GameManager.instance.player.GetComponent<FinalMovement>().enabled = true;
                    GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
                 }
                 if (GameObject.Find("GameManager2"))
                 {
+                    GameManager2.instance.player.GetComponent<FinalMovement>().enabled = true;
                     GameManager2.instance.player.GetComponent<FinalMovement>().continueMoving();
                 }
                 usefulItemUI.SetActive(false);

@@ -15,6 +15,9 @@ public class guluwu : MonoBehaviour
     public string emptyTipJ;
     public string emptyTipE;
     public string emptyTipCN;
+    public string chooseTipJ;
+    public string chooseTipE;
+    public string chooseTipCN;
     private GameObject burn;
     //public GameObject box;
     private bool burnt;
@@ -50,7 +53,7 @@ public class guluwu : MonoBehaviour
     }
     public void dialog()
     {
-        if(GameManager.instance.items.Count == 0)
+        if(GameManager.instance.items.Count == 0 || !GameManager.instance.items.Contains(_item))
         {
             if(GameManager.instance.languageNum == 0)
             {
@@ -67,15 +70,21 @@ public class guluwu : MonoBehaviour
         }else{
             if(GameManager.instance.languageNum == 0)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipJ, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipJ);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             if(GameManager.instance.languageNum == 1)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipE, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             if(GameManager.instance.languageNum == 2)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipCN, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipCN);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             inventoryResponse.instance.activeInventoryTip();
         }
@@ -87,6 +96,7 @@ public class guluwu : MonoBehaviour
         
         GameManager.instance.RemoveItem(_item);
         inventoryResponse.instance.becomeUseless(_item);
+        GameManager.instance.player.GetComponent<FinalMovement>().enabled = true;
     }
     public void thornBurn()
     {

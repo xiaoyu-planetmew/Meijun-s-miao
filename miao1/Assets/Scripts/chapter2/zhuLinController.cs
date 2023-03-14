@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 using Cinemachine;
 using Spine;
@@ -37,7 +38,7 @@ public class zhuLinController : MonoBehaviour
         {
             if(kaleido.transform.Find("group1").GetComponent<kaledoControl>().groupRight && kaleido.transform.Find("group1 (1)").GetComponent<kaledoControl>().groupRight && kaleido.transform.Find("group1 (2)").GetComponent<kaledoControl>().groupRight)
             {
-                kaleido.SetActive(false);
+                //kaleido.SetActive(false);
                 zhuLin3();
             }
         }
@@ -69,6 +70,20 @@ public class zhuLinController : MonoBehaviour
     }
     public void zhuLin3()
     {
+        StartCoroutine(zhulin3Delay());
+        for(int i=0; i<kaleido.transform.childCount; i++)
+        {
+            for(int j=0; j<kaleido.transform.GetChild(i).childCount; j++)
+            {
+                kaleido.transform.GetChild(i).GetChild(j).gameObject.GetComponent<kaleidoRotate>().canBeDrag = false;
+                kaleido.transform.GetChild(i).GetChild(j).gameObject.GetComponent<Image>().DOFade(0, 2);
+            }
+        }
+    }
+    IEnumerator zhulin3Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        kaleido.SetActive(false);
         moment5.SetActive(true);
     }
     public void zhuLin5()

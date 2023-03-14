@@ -110,7 +110,11 @@ public class DialogSys2 : MonoBehaviour
     }
     public void dialogStart(int Num)
     {
-        dialogFinish();
+        if(eventNum >=48 && eventNum <= 52) 
+        {
+            dialogFinish();
+            afterDialogEvents[eventNum].Invoke();
+        }
         if (!isTalking)
         {
             index = 0;

@@ -158,6 +158,7 @@ public class BRhythmManager : MonoBehaviour
         {
             comboAniControl();
         }
+        { if(Time.frameCount % 50 == 0) { System.GC.Collect(); } }
     }
     public void gameStart()
     {

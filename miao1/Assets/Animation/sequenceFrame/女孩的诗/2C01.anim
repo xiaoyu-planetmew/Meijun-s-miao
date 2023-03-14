@@ -211,6 +211,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 9
     messageOptions: 0
+  - time: 0
+    functionName: showText
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 4
+    messageOptions: 0
   - time: 0.5
     functionName: wakeupButton2C01
     data: 

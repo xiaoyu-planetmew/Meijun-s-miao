@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.AddressableAssets;
 
@@ -15,10 +16,20 @@ public class girlAnim : MonoBehaviour
     public UnityEvent afterAnim;
     public GameObject cam; 
     public AudioSource village;
+    public GameObject textLabel;
+    public TextAsset jp;
+    public TextAsset en;
+    public TextAsset ch;
+    public TextAsset textFile;
+    public Font fontJE;
+    public Font fontCN;
+    public List<string> textList = new List<string>();
     //public Animator anim;
 
     void Start()
     {
+        languageChange();
+        GetTextFromFile();
         //cam.GetComponent<AudioSource>().Stop();
         //Addressables.LoadAssetsAsync<RuntimeAnimatorController>(assetLabel, OnLoadDone);
         //Addressables.LoadAssetAsync<RuntimeAnimatorController>("sequenceFrame/女孩的诗/girlAnim.controllerrlAnim.controller").Completed += OnLoadDone;
@@ -124,5 +135,46 @@ public class girlAnim : MonoBehaviour
         if(afterAnim != null) afterAnim.Invoke();
         cam.GetComponent<AudioSource>().Play();
         village.Play();
+    }
+    public void languageChange()
+    {
+        //textfiles.Clear();
+        if (GameManager2.instance.languageNum == 0)
+        {
+            textFile = jp;
+            textLabel.GetComponent<Text>().font = fontJE;
+        }
+        if (GameManager2.instance.languageNum == 1)
+        {
+            textFile = en;
+            textLabel.GetComponent<Text>().font = fontJE;
+        }
+        if (GameManager2.instance.languageNum == 2)
+        {
+            textFile = ch;
+            textLabel.GetComponent<Text>().font = fontCN;
+        }
+    }
+    void GetTextFromFile()
+    {
+        textList.Clear();
+        var lineData = textFile.text.Split('\n');
+        foreach (var line in lineData)
+        {
+            //Debug.Log(line);
+            textList.Add(line);
+        }
+        //Debug.Log(textList.Count);
+        textList.RemoveAt(textList.Count - 1);
+        //textList.RemoveAt(textList.Count);
+    }
+    public void showText(int i)
+    {
+        textLabel.SetActive(true);
+        textLabel.GetComponent<Text>().text = textList[i];
+    }
+    public void closeText()
+    {
+        textLabel.SetActive(false);
     }
 }

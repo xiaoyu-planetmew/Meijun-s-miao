@@ -58,6 +58,36 @@ public class DialogSys : MonoBehaviour
             startButton.SetActive(false);
         }
     }
+    public void girlSolo(string str, bool isAutoClose = true)
+    {
+        textList.Clear();
+        textTalker.Clear();
+        textList.Add(str);
+        textTalker.Add("left");
+        index = 0;
+        textBackgroundLeft.gameObject.SetActive(true);
+        //textLabelleft.GetComponent<Text>().text = textList[index];
+        StartCoroutine(SetTextLeft());
+        if(isAutoClose) StartCoroutine(girlSoloClose(str, 4));
+        leftAudioRandom();
+        isTalking = true;
+        GameManager.instance.player.GetComponent<FinalMovement>().stopMoving();
+    }
+    IEnumerator girlSoloClose(string str, float t)
+    {
+        yield return new WaitForSeconds(t);
+        if(textLabelleft.GetComponent<Text>().text == str)
+        {
+            index = 0;
+            textBackgroundLeft.gameObject.SetActive(false);
+            //textBackgroundRight.gameObject.SetActive(false);
+            //nextPageButton.gameObject.SetActive(false);
+            //textLabelcn.gameObject.SetActive(false);
+            //textLabelen.gameObject.SetActive(false);
+            isTalking = false;
+            GameManager.instance.player.GetComponent<FinalMovement>().continueMoving();
+        }
+    }
     void GetTextFromFile(TextAsset file)
     {
         textList.Clear();

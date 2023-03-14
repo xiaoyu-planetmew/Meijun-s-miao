@@ -20,6 +20,9 @@ public class room2Box : MonoBehaviour
     public string emptyTipE;
     public string wrongTipCN;
     public string emptyTipCN;
+    public string chooseTipJ;
+    public string chooseTipE;
+    public string chooseTipCN;
     bool holdKeys;
     // Start is called before the first frame update
     void Start()
@@ -59,7 +62,7 @@ public class room2Box : MonoBehaviour
             StartCoroutine(close());
         }
         */
-        if(GameManager.instance.items.Count == 0)
+        if(GameManager.instance.items.Count == 0 || !GameManager.instance.items.Contains(_item))
         {
             if(GameManager.instance.languageNum == 0)
             {
@@ -76,15 +79,21 @@ public class room2Box : MonoBehaviour
         }else{
             if(GameManager.instance.languageNum == 0)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipJ, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipJ);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             if(GameManager.instance.languageNum == 1)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipE, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipE);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             if(GameManager.instance.languageNum == 2)
             {
+                GameObject.Find("NPCDialogBox").gameObject.GetComponent<DialogSys>().girlSolo(chooseTipCN, false);
                 inventoryResponse.instance.becomeUseful(_item, this.gameObject, wrongTipCN);
+                GameManager.instance.player.GetComponent<FinalMovement>().enabled = false;
             }
             inventoryResponse.instance.activeInventoryTip();
         }
@@ -98,6 +107,7 @@ public class room2Box : MonoBehaviour
             obj.SetActive(true);
         }
         this.gameObject.SetActive(false);
+        GameManager.instance.player.GetComponent<FinalMovement>().enabled = true;
     }
     IEnumerator close()
     {

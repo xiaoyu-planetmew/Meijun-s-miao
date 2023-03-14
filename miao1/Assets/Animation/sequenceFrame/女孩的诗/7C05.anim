@@ -258,6 +258,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 23
     messageOptions: 0
+  - time: 0.8333333
+    functionName: showText
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 23
+    messageOptions: 0
+  - time: 2.8333333
+    functionName: closeText
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.9166667
     functionName: playFinish
     data: 

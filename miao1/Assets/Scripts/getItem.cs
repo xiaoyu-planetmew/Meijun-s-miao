@@ -81,6 +81,11 @@ public class getItem : MonoBehaviour
         finish[_item] = true;
         //getItemTip.transform.GetChild(0).GetComponent<t
     }
+    public void girlSolo(string str)
+    {
+        textList.Clear();
+        textList.Add(str);
+    }
     public void nextTip()
     {
         StopAllCoroutines();
@@ -89,7 +94,7 @@ public class getItem : MonoBehaviour
             getItemTip.SetActive(false);
         }else if(index == textList.Count - 1)
         {
-            StartCoroutine(closeTip());
+            StartCoroutine(closeTip(textList[index].Length * 0.05f + 6f));
         }
         if(index < textList.Count)
         {
@@ -117,9 +122,9 @@ public class getItem : MonoBehaviour
         yield return new WaitForSeconds(i);
         getItemTip.transform.GetChild(1).gameObject.SetActive(true);
     }
-    IEnumerator closeTip()
+    IEnumerator closeTip(float f)
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(f);
         if(getItemTip.activeInHierarchy)
         {
             getItemTip.SetActive(false);
